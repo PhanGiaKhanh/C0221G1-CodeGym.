@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến kiểu dữ liệu toán tử</title>
+</head>
+<body>
+<script>
+    let Physical = prompt("Nhập điểm môn Vật Lý");
+    let Maths = prompt("Nhập điểm môn Toán");
+    let Biology = prompt("Nhập điểm môn Vật Lý");
+    let total = Physical + Maths + Biology;
+    let DTB = total/3;
+    DTB = DTB.toFixed(2);
+
+    document.write('Điểm môn Physical là : ' + Physical+ "<br>");
+    document.write('Điểm môn Maths là : ' + Maths + "<br>");
+    document.write('Điểm môn Biology là : ' + Biology + "<br> <hr>" );
+    document.write('Điểm môn Total là : ' + total + "<br>");
+    document.write('Điểm môn điểm trung bình cộng là : ' + DTB + "<br>");
+</script>
+<script src="B1.js"></script>
+</body>
+</html>
