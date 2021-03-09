@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện 2</title>
+</head>
+<body>
+<!--    Bài 1-->
+<form action="">
+    <label><b>Bài 1 : Chuyển đổi độ C sang độ F (F = C * 9/5 + 32)</b></label><br>
+    <input type="number" id="nhietDo" placeholder="Nhập độ C">
+    <input type="button" value="Kết quả" onclick="doCsangDoF()">
+    <input type="reset">
+    <span>Kết quả là : <span id="ketQuaB1">???</span> độ F</span>
+</form>
+<hr>
+<!--    Bài 2-->
+<form action="">
+    <b>Bài 2 : Chuyển mét sang feet (ft = m * 3.2808)</b><br>
+    <input type="number" id="met" placeholder="Nhập độ dài (mét)">
+    <input type="button" value="Kết quả" onclick="metSangFett()">
+    <input type="reset">
+    <span>Kết quả là : <span id="ketQuaB2">???</span> feet</span>
+</form>
+<hr>
+<!--    Bài 3-->
+<form action="">
+    <b>Bài 3 : Tính diện tích hình vuông biết cạnh a (m)</b><br>
+    <input type="number" id="numB3" placeholder="Nhập độ dài cạnh">
+    <input type="button" value="Kết quả" onclick="dienTichHinhVuong()">
+    <input type="reset">
+    <span>Két quả là : <span id="ketQuaB3">???</span> m2</span>
+</form>
+<hr>
+<!--    Bài 4-->
+<form action="">
+    <b>Bài 4 : Tính diện tích hình chữ nhật biết cạnh a , b (m)</b><br>
+    <input type="number" id="num1B4" placeholder="Nhập chiều rộng">
+    <input type="number" id="num2B4" placeholder="Nhập chiều dài">
+    <input type="button" value="Kết quả" onclick="dienTichChuNhat()">
+    <input type="reset">
+    <span>Két quả là : <span id="ketQuaB4">???</span> m2</span>
+</form>
+<hr>
+<!--    Bài 5-->
+<form action="">
+    <b>Bài 5 : Giải phương trình bậc 1 (ax + b = 0)</b><br>
+    <input type="number" id="num1B5" placeholder="Nhập a">
+    <input type="number" id="num2B5" placeholder="Nhập b">
+    <input type="button" value="Kết quả" onclick="phuongTrinhBac1()">
+    <input type="reset">
+    <span>Két quả là : x = <span id="ketQuaB5">???</span></span>
+</form>
+<hr>
+<!--    Bài 6-->
+<form action="">
+    <b>Bài 6 : Giải phương trình bậc 2 (ax2 + bx + c = 0)</b><br>
+    <input type="number" id="num1B6" placeholder="Nhập a">
+    <input type="number" id="num2B6" placeholder="Nhập b">
+    <input type="number" id="num3B6" placeholder="Nhập b">
+    <input type="button" value="Kết quả" onclick="phuongTrinhBac2()">
+    <input type="reset">
+    <span>Két quả là : x = <span id="ketQuaB6">???</span></span>
+</form>
+<hr>
+<!--    Bài 8-->
+<form action="">
+    <b>Bài 8 : Nhập vào kiểm tra tuổi</b><br>
+    <input type="number" id="tuoi" placeholder="Nhập tuổi">
+    <input type="button" value="Kiểm tra" onclick="kiemTraTuoi()">
+    <input type="reset">
+    <span>Kết quả là : <span id="ketQuaB8"></span></span>
+</form>
+<hr>
+<!--    Bài 9-->
+<form action="">
+    <b>Bài 9 : Kiểm tra nhập đúng cạnh của tam giác (a,b,c)</b><br>
+    <input type="number" id="canhA" placeholder="Nhập cạnh a">
+    <input type="number" id="canhB" placeholder="Nhập cạnh b">
+    <input type="number" id="canhC" placeholder="Nhập cạnh c">
+    <input type="button" value="Kiểm tra" onclick="kiemTraCanhTamGiac()">
+    <input type="reset">
+    <span>Kết quả là : <span id="ketQuaB9"></span></span>
+</form>
+<hr>
+<!--    Bài 10-->
+<form action="">
+    <b>Bài 10 : Tính giá điện</b><br>
+    <input type="number" id="soDien" placeholder="Nhập số chữ điện">
+    <input type="button" value="Kiểm tra" onclick="tinhGiaDien()">
+    <input type="reset">
+    <span>Kết quả là : <span id="ketQuaB10"></span></span>
+</form>
+<hr>
+<!--    Bài 11-->
+<form action="">
+    <b>Bài 11: Tính thuế thu nhập cá nhân</b><br>
+    <input type="number" id="soTien" placeholder="Nhập số tiền lương">
+    <input type="button" value="Kiểm tra" onclick="tinhThueThuNhap()">
+    <input type="reset">
+    <span>Kết quả là : <span id="ketQuaB11"></span> </span>
+</form>
+<hr>
+<!--    Bài 12-->
+<form action="">
+    <b>Bài 12: Tính lãi ngân hàng vietcombank</b><br>
+    <input type="number" id="money" placeholder="Nhập số tiền gửi">
+    <select name="" id="chon" >
+        <option value="Tháng">Chọn tháng - Lãi suất</option>
+        <option value="1">1 tháng - 2.9%</option>
+        <option value="2">2 tháng - 2.9%</option>
+        <option value="3">3 tháng - 3.2%</option>
+        <option value="6">6 tháng - 3.8%</option>
+        <option value="9">9 tháng - 3.8%</option>
+        <option value="12">12 tháng - 5.5%</option>
+    </select>
+    <input type="button" value="Kiểm tra" onclick="tinhLaiSuat()">
+    <input type="reset">
+    <span>Lãi sinh ra : <span id="ketQuaB12"></span> </span>
+</form>
+<script>
+    function doCsangDoF() {
+        let doC = parseFloat(document.getElementById('nhietDo').value);
+        let doF = doC * 9 / 5 + 32;
+        document.getElementById('ketQuaB1').innerHTML = doF;
+    }
+
+    function metSangFett() {
+        let m = parseFloat(document.getElementById('met').value);
+        let ft = m * 3.2808;
+        ft = ft.toFixed(2);
+        document.getElementById('ketQuaB2').innerHTML = ft;
+    }
+
+    function dienTichHinhVuong() {
+        let num = document.getElementById("numB3").value;
+        let result = num * num;
+        document.getElementById('ketQuaB3').innerHTML = result;
+    }
+
+    function dienTichChuNhat() {
+        let num1 = document.getElementById("num1B4").value;
+        let num2 = document.getElementById("num2B4").value;
+        let result = num1 * num2;
+        document.getElementById('ketQuaB4').innerHTML = result;
+    }
+
+    function phuongTrinhBac1() {
+        let num1 = parseFloat(document.getElementById("num1B5").value);
+        let num2 = parseFloat(document.getElementById("num2B5").value);
+        let result = '';
+        if (num1 === 0) {
+            if (num2 === 0) {
+                result += 'Phương trình vô số nghiệm';
+            } else {
+                result += 'Phương trình vô nghiệm';
+            }
+        } else {
+            result = -num2 / num1;
+            result = result.toFixed(2)
+        }
+        document.getElementById('ketQuaB5').innerHTML = result;
+    }
+
+    function phuongTrinhBac2() {
+        let a = parseFloat(document.getElementById("num1B6").value);
+        let b = parseFloat(document.getElementById("num2B6").value);
+        let c = parseFloat(document.getElementById("num3B6").value);
+        let x1 = '',
+            x2 = '';
+        if (a === 0) {
+            if (b === 0) {
+                if (c === 0) {
+                    x1 += 'Phương trình vô số nghiệm';
+                } else {
+                    x1 += 'Phương trình vô nghiệm';
+                }
+            } else {
+                x1 = -c / b;
+                x1 = x1.toFixed(2);
+                console.log(x1)
+            }
+        } else {
+            let delta = b * b - 4 * a * c;
+            console.log(delta);
+            if (delta < 0) {
+                x1 = 'Phương trình vô nghiệm'
+            } else if (delta === 0) {
+                x1 = -(b / 2 * a);
+            } else {
+                console.log(delta)
+                let canDelta = Math.sqrt(delta);
+                x1 = (-b + canDelta) / (2 * a);
+                x2 = (-b - canDelta) / (2 * a);
+                console.log(x1)
+                console.log(x2)
+            }
+        }
+        document.getElementById('ketQuaB6').innerHTML = x1.toFixed(2) + "&nbsp; ; &nbsp;" + x2.toFixed(2);
+    }
+
+    function kiemTraTuoi() {
+        let age = document.getElementById('tuoi').value;
+        let result = '';
+        let ageNew = parseInt(age);
+        let kiemTra = age % ageNew === 0 && age < 120 && age > 0;
+        if (kiemTra) {
+            result += 'là con người';
+        } else {
+            result += 'không phải con người';
+        }
+        document.getElementById('ketQuaB8').innerHTML = result
+    }
+
+    function kiemTraCanhTamGiac() {
+        let a = document.getElementById('canhA').value;
+        let b = document.getElementById('canhB').value;
+        let c = document.getElementById('canhC').value;
+        let lonHon0 = a > 0 && b > 0 && c > 0;
+        let canhTamGiac = lonHon0 && (a + b > c || a + c > b || c + b > a);
+        let result = ''
+        if (canhTamGiac) {
+            result += 'hình tam giác';
+        } else {
+            result += 'không phải là hình tam giác'
+        }
+        document.getElementById('ketQuaB9').innerHTML = result;
+    }
+
+    function tinhGiaDien() {
+        let soDien = document.getElementById('soDien').value;
+        let tongTien = '';
+        if (soDien > 0 && soDien <= 50) {
+            tongTien = soDien * 1.549;
+        } else if (soDien <= 100) {
+            tongTien = 50* 1.549 + (soDien-50) * 1.6;
+        } else if (soDien <= 200) {
+            tongTien = 50* 1.549 + 50 * 1.6 + (soDien-100) * 1.858;
+        } else if (soDien <= 300) {
+            tongTien = 50* 1.549 + 50 * 1.6 + 100 * 1.858 +(soDien-200) * 2.340;
+        } else if (soDien <= 400) {
+            tongTien = 50* 1.549 + 50 * 1.6 + 100 * 1.858 + 100 * 2.340 + (soDien-300) * 2.625;
+        } else {
+            tongTien = 50* 1.549 + 50 * 1.6 + 100 * 1.858 + 100 * 2.340 + 100 * 2.625 + (soDien-400) * 2.701;
+        }
+        document.getElementById('ketQuaB10').innerHTML = tongTien;
+    }
+    
+    function tinhThueThuNhap() {
+        let tien = document.getElementById('soTien').value;
+        if (tien <= 5) {
+            tien = tien * 0.05;
+        }else if (tien <= 10) {
+            tien = tien * 0.1;
+        }else if (tien <= 18) {
+            tien = tien * 0.15;
+        }else {
+            tien = tien * 0.2;
+        }
+        document.getElementById('ketQuaB11').innerHTML = tien.toFixed(2);
+    }
+
+    function tinhLaiSuat() {
+        let money = document.getElementById('money').value;
+        let option = parseInt(document.getElementById('chon').value);
+        switch (option) {
+            case 1 : case 2 :
+                money = money * 0.029;
+                break;
+            case 3 :
+                money = money * 0.032;
+                break;
+            case 6 : case 9 :
+                money = money * 0.038;
+                break;
+            case 12 :
+                money = money * 0.055;
+                break;
+        }
+        document.getElementById('ketQuaB12').innerHTML = money.toFixed(2);
+    }
+</script>
+
+</body>
+</html>

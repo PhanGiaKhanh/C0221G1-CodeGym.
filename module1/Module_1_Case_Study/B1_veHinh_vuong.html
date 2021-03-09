@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ hình chữ nhật</title>
+</head>
+<body>
+<h3>Hình chữ nhật</h3>
+
+<h1 id="figure"></h1>
+<script>
+    let string = '<table>';
+    for(let i = 0; i < 4; i++) {
+        string += "<tr>";
+        for (let j = 0; j < 5; j++) {
+            if (i === 0 || i === 3 || j === 0|| j === 0 || j === 4 )
+                string += "<td>*</td>";
+            else
+                string += "<td></td>";
+        }
+        string += "</tr>";
+    }
+    string += "</table>";
+    document.getElementById("figure").innerHTML = string;
+</script>
+</body>
+</html>

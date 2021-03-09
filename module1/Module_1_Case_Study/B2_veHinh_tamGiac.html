@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình tam giác</title>
+</head>
+<body>
+<h3>Hình tam giác</h3>
+<!--<form>-->
+<!--    <input type="number" id="num" placeholder="Nhập chiều cao hình tam giác" style="width: 200px">-->
+<!--    <input type="button" value="Enter" onclick="myFunction()">-->
+<!--    <input type="reset" value="Reset">-->
+<!--</form>-->
+<h3> Hiển thị hình tam giác</h3>
+<h1 id="tamGiac"></h1>
+<script>
+        let str = "<table>";
+        let num = 5;
+        for (let i = 0; i < num; i++) {
+            str += "<tr>";
+            for (let j = 0; j < num; j++) {
+                if (j === 0 || i === j || i === num-1) {
+                    str += '<td>*</td>';
+                }else {
+                    str += '<td></td>';
+                }
+            }
+            str += "</tr>";
+        }
+        str += '</table>';
+        document.getElementById("tamGiac").innerHTML = str;
+</script>
+</body>
+</html>

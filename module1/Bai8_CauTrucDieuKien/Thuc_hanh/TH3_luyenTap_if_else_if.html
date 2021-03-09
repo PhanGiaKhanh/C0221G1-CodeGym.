@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập If Else If</title>
+</head>
+<body>
+<script>
+    alert('Đăng nhập');
+    let name = prompt("Tên của bạn : ");
+    if (name === 'Admin'){
+        let password = prompt("Nhập mật khẩu");
+        if (password === 'TheMaster') {
+            alert('Welcome');
+        }
+        else if (password === 'null') {
+            alert('Canceled');
+        }
+        else {
+            alert('Wrong password');
+        }
+    }else if (name === 'null') {
+        alert('Canceled');
+    } else {
+        alert("I don't know you")
+    }
+</script>
+</body>
+</html>

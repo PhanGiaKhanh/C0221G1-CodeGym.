@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra nguyên âm hay phụ âm</title>
+</head>
+<body>
+<h1>Kiểm tra bằng lệnh If</h1>
+<h3 id="displayIf"></h3>
+<br>
+<hr>
+<h1>Kiểm tra bằng lệnh Switch</h1>
+<h3 id="displaySwitch"></h3>
+
+<script>
+    let input = prompt("Nhập 1 chữ cái để kiểm tra");
+    if (input === 'o'|| input === 'u'|| input === 'i'|| input === 'a'|| input === 'e'||
+        input === 'O'|| input === 'U'|| input === 'I'|| input === 'A'|| input === 'E') {
+        document.getElementById('displayIf').innerHTML = input + "&nbsp: là nguyên âm";
+    }else
+    {
+        document.getElementById('displayIf').innerHTML = input + "&nbsp: là phụ âm";
+    }
+
+
+    switch (input) {
+        case "o" :case "u" :case "i" :case "a" :case "e" :case "O" :case "U" :case "I" :case "A" :case "E" :
+            document.getElementById('displaySwitch').innerHTML = input + "&nbsp: là nguyên âm";
+            break;
+        default :
+            document.getElementById('displaySwitch').innerHTML = input + "&nbsp: là phụ âm";
+            break;
+    }
+</script>
+</body>
+</html>

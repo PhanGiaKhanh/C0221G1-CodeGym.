@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện 1</title>
+</head>
+<body>
+<form>
+<!--    bài 1-->
+    <h4>Bài 1 : Nhập vào hai số a và b, kiểm tra a chia hết cho b ko?</h4>
+    <input type="number" id="num1" placeholder="Nhập a">
+    <input type="number" id="num2" placeholder="Nhập b">
+    <input type="button" value="Kết quả" onclick="aChiaHetB()">
+    <input type="reset">
+    <span>Kết quả là : </span><span id="result"></span>
+</form>
+
+<!--    bài 2-->
+<form>
+    <label>
+        <h4>Bài 2 : Nhập tuổi và in ra kết quả nếu học sinh đó không đủ điều kiện học lớp 10</h4>
+        <input type="number" id="tuoi" placeholder="Nhập tuổi ">
+        <input type="button" value="Kết quả" onclick="tuoiHocLop10()">
+        <input type="reset" >
+        <span>Kết quả là : </span><span id="ketQuaB2"></span>
+    </label>
+</form>
+
+<!--    bài 3-->
+<form>
+    <h4>Bài 3 : Nhập số nguyên bất kỳ in ra kết quả lớn hay nhỏ hơn 0</h4>
+    <input type="number" id="numBai3" placeholder="Nhập số nguyên bất kỳ">
+    <input type="button" value="Kết quả" onclick="kiemTraLonHon0()">
+    <input type="reset">
+    <span>Kết quả là : </span><span id="ketQuaBai3"></span>
+</form>
+
+
+<!--    Bài 4  -->
+<form>
+    <h4>Bài 4 : Nhập 3 số nguyên, tìm số lớn nhất</h4>
+    <input type="number" id="num1Bai4" placeholder="Nhập a">
+    <input type="number" id="num2Bai4" placeholder="Nhập b">
+    <input type="number" id="num3Bai4" placeholder="Nhập c">
+    <input type="button" value="Kết quả" onclick="timSoLonNhat()">
+    <input type="reset">
+    <span>Kết quả là : </span><span id="ketQuaBai4"></span>
+</form>
+
+
+<!--    bài 5-->
+<form action="">
+    <h4>Bài 5 : Nhập điểm của học sinh, kiểm tra học lực</h4>
+    <input type="number" id="diemKiemTra" placeholder="Nhập điểm kiểm tra">
+    <input type="number" id="diemGiuaKy" placeholder="Nhập điểm giữa kỳ">
+    <input type="number" id="diemCuoiKy" placeholder="Nhập điểm cuối kỳ">
+    <input type="button" value="Kết quả" onclick="kiemTraHocLuc()">
+    <input type="reset">
+    <span>Kết quả là : </span><span id="ketQuaBai5"></span>
+</form>
+
+<!--    Bài 6-->
+<form action="">
+    <h4>Bài 6 : Tính hoa hồng nhận được tùy theo doanh số bán hàng</h4>
+    <input type="number" id="hoaHong" placeholder="Nhập % hoa hồng">
+    <input type="number" id="doanhSo" placeholder="Nhập doanh số">
+    <input type="button" value="Kết quả" onclick="tinhHoaHong()">
+    <input type="reset">
+    <span>Kết quả là : </span><span id="ketQuaBai6"></span>
+</form>
+
+<!--    Bài 7-->
+<form action="">
+    <h4> Bài 7 : Tính cước điện thoại </h4>
+    <input type="number" id="tien" placeholder="Nhập cước 1 phút-VND">
+    <input type="number" id="phut" placeholder="Nhập số phút đã gọi">
+    <input type="button" value="Kết quả" onclick="tinhCuocDienThoai()">
+    <input type="reset">
+    <span>Số tiền bạn phải mất là : </span><span id="ketQuaBai7"></span>
+</form>
+<script>
+    function aChiaHetB() {
+        let num1 = document.getElementById('num1').value;
+        let num2 = document.getElementById('num2').value;
+        let chiaHet = num1 % num2 === 0;
+        let display = '';
+        chiaHet ? display += '&nbsp chia hết cho &nbsp' :  display += '&nbsp không chia hết cho &nbsp';
+        document.getElementById('result').innerHTML = num1 + display + num2;
+    }
+    function tuoiHocLop10() {
+        let tuoi = document.getElementById('tuoi').value;
+        let display = '';
+        tuoi >= 15 ? display += '' : display += '&nbsp không';
+        document.getElementById('ketQuaB2').innerHTML = tuoi + display + '&nbsp đủ tuổi vào lớp 10';
+    }
+    function kiemTraLonHon0() {
+        let num = document.getElementById('numBai3').value;
+        let display = '';
+        if (num > 0) {
+            display += '&nbsp lớn hơn 0';
+        }else if (num === 0) {
+            display += '&nbsp bằng 0';
+        }else {
+            display += '&nbsp nhỏ hơn 0';
+        }
+        document.getElementById('ketQuaBai3').innerHTML = num + display
+    }
+    function timSoLonNhat() {
+    let num1 = document.getElementById('num1Bai4').value;
+    let num2 = document.getElementById('num2Bai4').value;
+    let num3 = document.getElementById('num3Bai4').value;
+    let max = 0;
+    if (num1 > num2 && num1 > num3 ) {
+        max = num1;
+    }else if (num2 > num3) {
+        max = num2;
+    }else {
+        max = num3;
+    }
+    document.getElementById('ketQuaBai4').innerHTML = max + '&nbsp là số lớn nhất';
+}
+    function kiemTraHocLuc() {
+        let diemKT = parseInt(document.getElementById('diemKiemTra').value);
+        let diemGK = document.getElementById('diemGiuaKy').value;
+        let diemCK = document.getElementById('diemCuoiKy').value;
+        let result = ((diemCK * 3 + diemGK * 2 + diemKT)/ 6);
+        result = result.toFixed(2)
+        let display = '';
+        if (result >= 8) {
+            display += '&nbsp là học sinh giỏi';
+        }else if (result >= 6.5) {
+            display += '&nbsp là học sinh khá';
+        }else if (result >= 5) {
+            display += '&nbsp là học sinh trung bình';
+        }else if (result >= 3.5) {
+            display += '&nbsp là học sinh yếu';
+        }else {
+            display += '&nbsp là học sinh kém';
+        }
+        document.getElementById('ketQuaBai5').innerHTML = result + display;
+    }
+    function tinhHoaHong() {
+        let hoaHong = document.getElementById('hoaHong').value;
+        let doanhSo = document.getElementById('doanhSo').value;
+        let result = doanhSo * hoaHong / 100;
+        document.getElementById('ketQuaBai6').innerHTML = result;
+    }
+    function tinhCuocDienThoai() {
+        let tien = parseInt(document.getElementById('tien').value);
+        let phut = parseInt(document.getElementById('phut').value);
+        let result = tien*phut;
+        document.getElementById('ketQuaBai7').innerHTML = result + '&nbsp VND';
+    }
+</script>
+
+</body>
+</html>

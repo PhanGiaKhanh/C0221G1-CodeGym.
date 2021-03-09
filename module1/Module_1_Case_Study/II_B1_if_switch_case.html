@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<h1>Lương ròng nhân viên lệnh IF</h1>
+<h3 id="luongIf"></h3>
+<hr>
+<h1>Lương ròng nhân viên lệnh Switch</h1>
+<h3 id="luongSwitch"></h3>
+
+<script>
+    let luong = prompt("lương nhân viên đơn vị triệu");
+    let luongRongIf = 0;
+    let luongRongSwitch =0;
+    if (luong >= 15) {
+        luongRongIf = luong - luong*0.2;
+    }else if(luong >= 7){
+        luongRongIf = luong - luong*0.1;
+    }else {
+        luongRongIf = luong - luong*0.05;
+    }
+    document.getElementById("luongIf").innerHTML = luongRongIf;
+
+
+    switch (luong >= 15) {
+        case true :
+            luongRongSwitch = luong - luong*0.2;
+            break;
+        case false :
+            switch (luong >= 7) {
+                case true :
+                    luongRongSwitch = luong - luong*0.1;
+                    break;
+                case false :
+                    luongRongSwitch = luong - luong*0.05;
+                    break;
+            }
+    }
+    document.getElementById("luongSwitch").innerHTML = luongRongSwitch;
+</script>
+</body>
+</html>

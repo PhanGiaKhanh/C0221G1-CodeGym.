@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Puzzle</title>
+    <style>
+        input {
+            width: 500px;
+            height: 100px;
+            margin: 0px 25%;
+        }
+    </style>
+</head>
+<body>
+
+<input type="image"><br>
+<input type="image"><br>
+<input type="image"><br>
+<input type="image"><br>
+<input type="image"><br>
+
+<script>
+    let animals = [
+        [
+            'https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part2x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part3x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part4x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part5x1.jpg'
+        ], [
+            'https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part2x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part5x1.jpg'
+        ], [
+            'https://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg',
+            'https://demo.codegym.vn/8/puzzlegame/img/monkey_part5x1.jpg'
+        ]
+    ];
+
+    let inputElements = document.querySelectorAll('input');
+
+    for (let i = 0; i < inputElements.length; i++) {
+        // tạo ảnh random trên browser
+        let j = Math.floor(Math.random() * 3);
+        inputElements[i].src = animals[j][i];
+
+        // click nhảy ảnh random
+        inputElements[i].onclick = function (e) {
+            let j = Math.floor(Math.random() * 3);
+            inputElements[i].src = animals[j][i];
+        //
+            let newArray = [inputElements[0].src,
+                            inputElements[1].src,
+                            inputElements[2].src,
+                            inputElements[3].src,
+                            inputElements[4].src];console.log(newArray);
+            for (let i =0; i< 5; i++) {
+                if (newArray.toString() === animals[0].toString() ||
+                    newArray.toString() === animals[1].toString() ||
+                    newArray.toString() === animals[2].toString()) {
+                    inputElements[i].style.boxShadow = '2px 2px 4px red'
+                }else {
+                        inputElements[i].style.boxShadow = '2px 2px 4px black'
+                    }
+            }
+        };
+    }
+</script>
+
+</body>
+</html>

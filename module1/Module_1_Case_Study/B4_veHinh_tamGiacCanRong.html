@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tam giác cân rỗng</title>
+</head>
+<body>
+<h3>Tam Giác Cân </h3>
+<h1 id="tamGiacCan"></h1>
+
+<script>
+    let edge = 5;
+    let td = '<td></td>';
+
+    let figure = '<table>';
+    for (let i = 0; i < edge; i++) {
+        figure += '<tr>';
+        for (let j = edge - 1; j > i; j--) {
+            figure += '<td></td>';
+        }
+        for (let k = 0; k < (i * 2 + 1); k++) {
+            if (k === 0 || k === i*2 || i === edge -1) {
+                figure += '<td>*</td>';
+            } else {
+                figure += '<td></td>';
+            }
+        }
+        figure += '</tr>';
+    }
+    figure += '</table>';
+    document.getElementById('tamGiacCan').innerHTML = figure;
+</script>
+</body>
+</html>

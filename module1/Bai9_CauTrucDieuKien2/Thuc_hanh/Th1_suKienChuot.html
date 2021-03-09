@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event mouse</title>
+</head>
+<body>
+<form>
+    <img id="myImage" src="img/ball.jpg"  style="width: 30px;height: 30px"/>
+    <p>Click button below to move the image to right</p>
+    <input type="button" value="Right" onclick="move(this)" />
+    <input type="button" value="Left" onclick="move(this)" />
+</form>
+
+<script>
+    let imgObj = null;
+    imgObj = document.getElementById('myImage');
+
+    function init() {
+        imgObj = document.getElementById('myImage');
+        imgObj.style.position = 'relative';
+        imgObj.style.left = '0px';
+    }
+
+    function move(ob) {
+        console.log(ob)
+        if (ob.value === 'Right') {
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        } else {
+            imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
+        }
+    }
+    window.onload = init;
+
+</script>
+</body>
+</html>

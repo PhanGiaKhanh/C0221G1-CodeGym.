@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>funny</title>
+</head>
+<body>
+<div>
+    <h2>Do you love me ?</h2>
+    <input type="button" value="Yes" onclick="alert('you are right ^^!')">
+    <input type="button" value="No" onmouseover="moveFunction(this)">
+</div>
+<script>
+    function moveFunction(ob) {
+        console.log(ob);
+        let x = Math.round(Math.random() * window.innerWidth);
+        let y = Math.round(Math.random() * window.innerHeight);
+        ob.style.position = 'absolute';
+        ob.style.left = x + 'px';
+        ob.style.top = y + 'px';
+    }
+</script>
+</body>
+</html>
