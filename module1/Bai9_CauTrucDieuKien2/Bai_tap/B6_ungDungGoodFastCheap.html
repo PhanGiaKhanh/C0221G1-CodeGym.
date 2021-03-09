@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Good</title>
 </head>
 <body>
+<input type="range" min="0" max="1" value="0" onclick="chon('Good')" id="Good"><br>
+<input type="range" min="0" max="1" value="0" onclick="chon('Cheap')" id="Cheap"><br>
+<input type="range" min="0" max="1" value="0" onclick="chon('Fast')" id="Fast"><br>
+
+<script>
+    function chon(ob) {
+        let good = document.getElementById('Good');
+        let cheap = document.getElementById('Cheap');
+        let fast = document.getElementById('Fast');
+        switch (ob) {
+            case 'Good' :
+                if (cheap.value === '1') {
+                    fast.value = 0;
+                }
+                break;
+            case 'Cheap' :
+                if (fast.value === '1') {
+                    good.value = 0;
+                }
+                break;
+            case 'Fast' :
+                if (good.value === '1') {
+                    cheap.value = 0;
+                }
+                break;
+        }
+    }
+</script>
 
 </body>
 </html>

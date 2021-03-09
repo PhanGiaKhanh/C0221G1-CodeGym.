@@ -13,8 +13,8 @@
 <script>
     function moveFunction(ob) {
         console.log(ob);
-        let x = Math.round(Math.random() * window.innerWidth);
-        let y = Math.round(Math.random() * window.innerHeight);
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
         ob.style.position = 'absolute';
         ob.style.left = x + 'px';
         ob.style.top = y + 'px';
