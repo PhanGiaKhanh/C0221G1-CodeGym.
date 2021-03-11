@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lãi suất</title>
+</head>
+<body>
+<input type="number" placeholder="nhập số tiền gửi" id="money">
+<select name="" id="option">
+    <option value="">Tháng gửi - lãi suất</option>
+    <option value="3">3 tháng - 0.3%</option>
+    <option value="5">6 tháng - 0.5%</option>
+</select>
+<input type="button" value="kết quả" onclick="check()">
+
+<script>
+    function check() {
+        let tien = parseInt(document.getElementById('money').value);
+        let option = parseInt(document.getElementById('option').value);
+        for (let i = 0; i < option; i++){
+           tien = tien + tien * option / 1000;
+        }
+        alert(tien);
+    }
+
+</script>
+</body>
+</html>

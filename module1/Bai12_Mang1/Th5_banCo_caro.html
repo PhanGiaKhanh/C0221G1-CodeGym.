@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bàn cờ caro đơn giản</title>
+</head>
+<body>
+<h3>Caro game đơn giản</h3>
+<hr>
+<h3 id="caroGame"></h3>
+<script>
+    let b = document.getElementById("caroGame");
+    let data = '';
+    let board = [];
+    for (let i = 0; i < 5; i++)  {
+        board[i] = [0,0,0,0,0];
+    }
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+       data += '<br>';
+    }
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+    b.innerHTML = data;
+
+    function changeValue() {
+        let x = parseInt(prompt('Nhập trục x :'));
+        let y = parseInt(prompt('Nhập trục y :'));
+        data = '';
+        board[x-1][y-1] = x;
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+            data += '<br>';
+        }
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+        b.innerHTML = data;
+    }
+</script>
+<br>
+<!--////////////////////////////// Up lever///////////////////////////////////////-->
+<h3>Caro game </h3>
+<hr>
+<h1 id="game"></h1>
+<input type="button" value="Start Game" onclick="startGame()">
+
+<script>
+    let display = '';
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            display += ' <input type="button" value="0">  ';
+        }
+        display += '<br>';
+    }
+    document.getElementById('game').innerHTML = display;
+
+    function startGame() {
+        let inputElements = document.querySelectorAll('input[type = "button"]');
+            for (let i = 0; i < inputElements.length; i++) {
+                inputElements[i].onclick = function (e) {
+                    if (e.target.value == '0') {
+                        e.target.value = 'x';
+                    }else if (e.target.value == 'Start Game') {
+                        e.target.value = 'Start Game';
+                    }else {
+                        e.target.value = '0';
+                    }
+                }
+            }
+    }
+</script>
+
+</body>
+</html>

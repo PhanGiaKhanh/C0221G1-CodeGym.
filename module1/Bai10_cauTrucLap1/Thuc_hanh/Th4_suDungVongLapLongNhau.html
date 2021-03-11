@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vòng lặp lòng nhau</title>
+</head>
+<body>
+        <h3>Dùng vòng for</h3>
+        <h5 id="result"></h5>
+        <h3>Dùng while</h3>
+        <h5 id="resultWhile"></h5>
+<script>
+    let display = '<table border="1">';
+    for (let i = 1; i <= 10; i++) {
+        display += '<tr>';
+        for (let j = 1; j <= 10; j++) {
+            display += '<td>' + i * j + '</td>';
+        }
+        display += '</tr>';
+    }
+    display += '</table>';
+    document.getElementById('result').innerHTML = display;
+
+    // -------------------------While---------------------------
+    let displayWhile = '<table border="1">';
+    let i = 0;
+    while (i < 10) {
+        i++;
+        displayWhile += '<tr>';
+        let j = 0;
+        while (j < 10) {
+            j++;
+            displayWhile += '<td>' + i * j + '</td>';
+        }
+        displayWhile += '</tr>';
+    }
+    displayWhile += '</table>';
+    document.getElementById('resultWhile').innerHTML = displayWhile;
+
+</script>
+</body>
+</html>

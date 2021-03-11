@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trai tim</title>
+</head>
+<body>
+<script>
+    let num = 7;
+    let display = '';
+    for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < num; j++) {
+            if (i === 1 || j != 0 && j != parseInt(num / 2) && j != (num - 1)) {
+                display += '*';
+            } else {
+                display += ' ';
+            }
+        }
+        display += '<br>';
+    }
+    for (let i = 0; i < num / 2; i++) {
+        for (let j = 0; j < i; j++) {
+            display += ' ';
+        }
+        for (let j = 0; j < num - i * 2; j++) {
+            display += '*';
+        }
+
+        display += '<br>';
+    }
+    document.write('<pre>' + display + '</pre>')
+</script>
+</body>
+</html>

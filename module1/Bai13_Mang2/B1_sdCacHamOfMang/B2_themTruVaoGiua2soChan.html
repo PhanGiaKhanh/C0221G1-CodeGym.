@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm dấu trừ vào giưa hai số chẵn</title>
+</head>
+<body>
+<script>
+    let num = prompt();
+    let result = [num[0]];
+    for (let i = 0; i < num.length; i++) {
+        if (num[i] % 2 == 0 && num[i + 1] % 2 == 0) {
+            result.push('-' , num[i + 1]);
+        } else {
+            result.push(num[i+1]);
+        }
+    }
+    alert(result.join(''));
+</script>
+</body>
+</html>

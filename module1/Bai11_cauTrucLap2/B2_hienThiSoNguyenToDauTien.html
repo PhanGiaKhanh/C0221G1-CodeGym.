@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display first prime</title>
+</head>
+<body>
+<h1 id="result"></h1>
+<script>
+    let numLoop = 0;
+    let a = 2;
+    // let kiemTra ;
+    while (numLoop <= 20) {
+        let kiemTra = true;
+        for (let i = 2; i < a/2+1; i++){
+            if (a%i === 0) {
+                kiemTra = false;
+                break;
+            }
+        }
+        if(kiemTra) {
+            document.write(a);
+            document.write('<br>');
+            numLoop ++;
+        }
+        a++;
+    }
+
+</script>
+</body>
+</html>

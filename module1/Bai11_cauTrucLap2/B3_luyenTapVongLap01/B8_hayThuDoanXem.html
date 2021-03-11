@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+<input type="number" id="khoangDoanSo" placeholder="nhập khoảng muốn đoán">
+<input type="button" value="kết quả" onclick="doanSo()">
+<script>
+    function doanSo() {
+        let khoangDoanSo = document.getElementById('khoangDoanSo').value;
+        let ketquaRandom = Math.floor(Math.random() * khoangDoanSo);
+        console.log(ketquaRandom);
+        let soLanNhap = 0;
+        while (soLanNhap < 3) {
+            let soNhap = parseInt(prompt('Nhập số nguyên để đoán'));
+            if (soNhap === ketquaRandom) {
+                alert('Chúc mừng bạn đoán 9 xác');
+                break;
+            }else {
+                alert('Chúc bạn may mắn lần sau');
+                soLanNhap ++;
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

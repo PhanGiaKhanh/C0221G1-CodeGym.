@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng 20 số fibo</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 0;
+    let c = 1;
+    let display = 0;
+    for (let i = 0; i < 20; i++) {
+        b = c;
+        c = a + c;
+        a = b;
+        display += c;
+    }
+    alert(display)
+</script>
+</body>
+</html>

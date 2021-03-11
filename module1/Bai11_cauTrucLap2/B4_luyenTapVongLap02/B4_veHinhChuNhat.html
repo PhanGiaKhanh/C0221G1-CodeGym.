@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vẽ hình vuông</title>
+</head>
+<body>
+<script>
+    let ngang = parseInt(prompt('nhập chiều dài'));
+    let doc = parseInt(prompt('nhập chiều rộng'));
+    let display = '';
+    for (let i = 0; i < ngang; i++) {
+        for (let j = 0; j < doc;  j++) {
+            if (i === 0 || i === ngang -1 ||j === 0 || j === doc -1 ) {
+                display += '*';
+
+            }else {
+                display += ' ';
+            }
+        }
+        display += '<br>';
+    }
+    document.write("<pre>"+display+"</pre>")
+</script>
+</body>
+</html>
