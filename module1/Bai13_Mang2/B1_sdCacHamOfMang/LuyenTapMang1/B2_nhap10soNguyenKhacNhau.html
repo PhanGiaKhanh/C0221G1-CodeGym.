@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập 10 số nguyên khác nhau tìm số lớn nhất và vị trí</title>
+</head>
+<body>
+<script>
+    let array = new Array();
+    let local;
+    let max;
+    for (let i = 0; i < 10; i++) {
+        array[i] = parseInt(prompt('Input element ' + i + ' of Array'));
+    }
+    max = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (max < array[i]) {
+            max = array[i];
+            local = i;
+        }
+    }
+    document.write(array + '<br>');
+    document.write(max + '<br>Vị trí' + local);
+</script>
+</body>
+</html>

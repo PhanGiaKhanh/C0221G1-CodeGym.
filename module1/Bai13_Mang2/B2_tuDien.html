@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input type="text" id="eng" placeholder="English"> <>
+<input type="text" id="vn" placeholder="VietNam">
+<input type="button" value="dich" onclick="dich()">
+
+<script>
+    let english = ['Table','Chair','Pen'];
+    let vietNam = ['Bàn','Ghế','Bút'];
+    let eng = document.getElementById('eng');
+    let vn = document.getElementById('vn');
+    function dich() {
+        let local = english.indexOf(eng.value);
+        console.log(local)
+        if (local > -1) {
+            vn.value = vietNam[local]
+        }
+    }
+
+</script>
+</body>
+</html>

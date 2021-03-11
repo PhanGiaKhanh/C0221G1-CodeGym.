@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mãng số nguyên 10 phần tử số nào lớn hơn 0</title>
+</head>
+<body>
+
+<script>
+    let array = new Array();
+    let result = '';
+    let count = 0;
+    for (let i = 0; i < 10; i++) {
+        array[i] = prompt('Input element ' + i + ' of Array');
+        if (array[i] >= 10) {
+            result += array[i] + '<br>'
+            count++;
+        }
+    }
+    document.write(result);
+</script>
+</body>
+</html>
