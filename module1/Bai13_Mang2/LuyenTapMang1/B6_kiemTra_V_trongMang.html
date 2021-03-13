@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra V trong mảng</title>
+</head>
+<body>
+<script>
+    let string = prompt('Nhập mảng cách nhau = 1 dấu nháy');
+    let array = string.split(' ');
+    let soCanTim = prompt('Nhập số cần kiểm tra');
+    let kiemTra = 0;
+    for (let element of array) {
+        if(soCanTim == element) {
+            kiemTra ++;
+        }
+    }
+    if (kiemTra >0) {
+        alert(soCanTim + ' is in the array');
+    }else {
+        alert(soCanTim + ' is not in the array');
+    }
+
+</script>
+</body>
+</html>

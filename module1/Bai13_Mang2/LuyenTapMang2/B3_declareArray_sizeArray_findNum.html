@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Declare Array and size Array finding number in Array</title>
+</head>
+<body>
+<script>
+    let inputStr = prompt('Nhập một mảng ký tự');
+    let arrStr = inputStr.split('');
+    let ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let abc = 'tbcdefghijklmnopqrstuvwxyz';
+    let count = 0;
+    let display = '';
+    for (let i = 0; i < arrStr.length; i++) {
+        if (ABC.indexOf(arrStr[i]) > -1 || abc.indexOf(arrStr[i]) > -1) {
+            count++;
+            console.log(count);
+            display += arrStr[i] + ' - ';
+        }
+    }
+    document.writeln('Mảng nhập là là ' + arrStr + '<br>');
+    document.writeln('Số ký tự trong mảng là ' + count + '<br>');
+    document.writeln('Các ký tự trong mảng là ' + display);
+</script>
+</body>
+</html>

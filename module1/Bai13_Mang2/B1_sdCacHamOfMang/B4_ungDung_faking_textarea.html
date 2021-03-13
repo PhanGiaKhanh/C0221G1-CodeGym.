@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+</head>
+<body>
+
+
+<h3>Ứng dụng vui Faking Textarea on Typing</h3>
+<textarea cols="30" rows="10" onkeypress="display(this)"></textarea>
+<script>
+    let string = 'I am supperman, you know? !! ';
+    let count = 0;
+
+    function display(ob) {
+        ob.value = 0;
+        count++;
+        ob.value ='';
+        for (let i = 0; i < count; i++){
+            ob.value += string[i];
+        }
+
+        if (count == string.length-1){
+            count = 0
+        }
+
+        setTimeout("display()", 1000)
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1 = prompt('Nhập chuỗi 1');
+    let str2 = prompt('Nhập chuỗi 2 và AutoCheck chuỗi 1,2 giống nhau ko?');
+    let arrStr2 = str2.split('');
+    let arrStr1 = str1.split('');
+    let count = 0;
+    for (let i = 0; i < arrStr2.length; i++) {
+        if (str1.indexOf(arrStr2[i]) > -1) {
+            count++;
+        }
+    }   
+    if (count == arrStr2.length && arrStr1.length == arrStr2.length) {
+        document.writeln('Chuỗi 1 và chuỗi 2 giống nhau');
+    } else {
+        document.writeln('Chuỗi 1 và chuỗi 2 KHAC NHAU');
+    }
+</script>
+</body>
+</html>

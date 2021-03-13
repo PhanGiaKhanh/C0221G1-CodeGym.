@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra V và xóa V</title>
+</head>
+<body>
+<script>
+    let string = prompt('Nhập mảng cách nhau = 1 dấu nháy');
+    let array = string.split(' ');
+    let soCanTim = prompt('Nhập số cần kiểm tra');
+    for (let i = 0; i < array.length; i++) {
+        if (soCanTim === array[i]) {
+            array.splice(i, 1);
+            array.push('0');
+        }
+    }
+    document.write(string + ' is array input <br>');
+    document.write(soCanTim + ' is in the array <br>');
+
+</script>
+</body>
+</html>

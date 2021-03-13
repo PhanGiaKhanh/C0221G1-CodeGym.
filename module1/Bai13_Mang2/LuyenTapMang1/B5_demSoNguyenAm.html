@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số nguyên âm trong Mảng</title>
+</head>
+<body>
+<script>
+    let string = prompt('Nhập mảng cách nhau = 1 dấu nháy');
+
+    let count = 0;
+    let display = '';
+    let array = string.split(' ');
+    for (let i of array) {
+        let kiemTraInt = i% parseInt(i) == 0;
+        if (i < 0 && kiemTraInt) {
+            document.write(i + '<br>');
+            count ++
+        }
+    }
+    document.write('có ' + count + 'số nguyên âm')
+</script>
+</body>
+</html>
