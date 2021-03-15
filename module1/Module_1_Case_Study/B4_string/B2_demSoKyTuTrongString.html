@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số ký tự</title>
+</head>
+<body>
+<script>
+    let inputStr = prompt('Nhập xâu ký tự');
+    let arrStr = inputStr.split('');
+    let result = '';
+    for (let i = 0; i <arrStr.length; i++) {
+        let a = arrStr[i];
+        if (result.indexOf(a) == -1) {
+            result+=arrStr[i];
+        }
+    }
+    alert(result.split('').sort().toString())
+
+</script>
+</body>
+</html>

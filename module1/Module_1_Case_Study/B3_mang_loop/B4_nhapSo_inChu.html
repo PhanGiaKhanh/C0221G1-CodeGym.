@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập số in chữ</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập số bạn cần in");
+    let number = '0123456789';
+    let chuNum = 'không một hai ba bốn năm sau bảy tám chín';
+    let arrNumber = number.split('');
+    let arrChuNum = chuNum.split(' ');
+    let arrInput = input.split('');
+    let result ='';
+    for (let i = 0; i < arrInput.length; i++) {
+            let index = arrNumber.indexOf(arrInput[i]);
+            if (index > -1) {
+                result += arrChuNum[index] + '  ' ;
+        }
+    }
+    document.writeln(input + ' = ')
+    document.writeln(result);
+</script>
+</body>
+</html>

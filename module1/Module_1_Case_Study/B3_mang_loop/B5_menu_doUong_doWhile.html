@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu đồ uống </title>
+</head>
+<body>
+<ol>
+    <li>
+        Cafe
+        <input type="button" value="cafe" onclick="goi(this.value)">
+        <span class="result"></span>
+    </li>
+    <li>
+        Cam vắt
+        <input type="button" value="cam" onclick="goi(this.value)">
+        <span class="result"></span>
+    </li>
+    <li>
+        Nước ép cà rốt
+        <input type="button" value=caRot onclick="goi(this.value)">
+        <span class="result"></span>
+    </li>
+    <li>
+        Nước ép cà chua
+        <input type="button" value="caChua" onclick="goi(this.value)">
+        <span class="result"></span>
+    </li>
+    <li>
+        Nước lọc
+        <input type="button" value="nuoc" onclick="goi(this.value)">
+        <span class="result">
+        </span>
+    </li>
+    <li>
+        Nước dừa
+        <input type="button" value="nuocDua" onclick="goi(this.value)">
+        <span class="result"></span>
+    </li>
+    <li><input type="button" value="Exit" onclick="goi(this.value)"></li>
+</ol>
+<script>
+    let spanSelectors = document.querySelectorAll('span');
+    let viTriSpan = 0;
+    let gia = 0;
+    function goi(value) {
+        do {
+            let menu = ['cafe', 'cam', 'caRot', 'caChua', 'nuoc', 'nuocDua'];
+            let donGia = [8, 15, 12, 12, 5, 15];
+            for (let i = 0; i < menu.length; i++) {
+                if (value == menu[i]) {
+                    viTriSpan = i;
+                    gia = donGia[i];
+                    spanSelectors[i].innerHTML =
+                        'Giá là : '
+                        + donGia[i]
+                        + ' Số lượng : '
+                        + '<input type="number" style="width: 40px" onblur="tien(this.value)">'
+                        + '<span class="tien"></span>';
+                }
+            }
+        } while (value == 'Exit')
+    }
+    function tien(soLuong) {
+        // console.log(spanSelectors[viTriSpan].childNodes[2])
+        spanSelectors[viTriSpan].lastChild.innerHTML = ' =>  Tổng tiền là : ' + gia * soLuong + 'k';
+    }
+</script>
+</body>
+</html>

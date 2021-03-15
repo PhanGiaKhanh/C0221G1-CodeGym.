@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tổng mảng 2 chiều</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt('kích thước mảng m'));
+    let n = parseInt(prompt('kích thước mảng n'));
+    let array = [];
+    let result = 0;
+    let number = 0;
+    for (let i = 0; i < m; i++) {
+        array[i] = [];
+        for (let j = 0; j < n; j++) {
+            array[i][j] = parseInt(prompt("nhập phần tử của vị trí thứ "))
+        }
+    }
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            number = parseInt(array[i][j]);
+            if (number % 2 === 0) {
+                result += number;
+            }
+        }
+    }
+    alert(result)
+</script>
+</body>
+</html>

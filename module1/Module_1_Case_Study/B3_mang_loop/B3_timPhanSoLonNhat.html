@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm phân số lơn nhất, bao nhiêu chỉ số</title>
+</head>
+<body>
+<script>
+    let tuSo = [5, 2, 5];
+    let mauSo = [6, 3, 4];
+    let max = tuSo[0] / mauSo[0];
+    let tuSoMax;
+    let mauSoMax
+    for (let i = 0; i < tuSo.length; i++) {
+        for (let j = 0; j < mauSo.length; j++) {
+            let phanSo = tuSo[i] / mauSo [j];
+            if (max < phanSo) {
+                max = phanSo;
+                tuSoMax = tuSo[i];
+                mauSoMax = mauSo[j];
+            }
+        }
+    }
+    alert(typeof max)
+    let arrMax = max.toString().split('');
+    let viTriDauPhay = arrMax.indexOf('.');
+    let chiSo = arrMax.length - viTriDauPhay - 1;
+    document.writeln('Phân số lơn nhất là : ' + tuSoMax + '/' + mauSoMax +'<br>')
+    document.writeln('Có chỉ số là : ' + chiSo )
+</script>
+</body>
+</html>

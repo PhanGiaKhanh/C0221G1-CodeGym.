@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prefix Sums mảng a đưa kết quả vào mảng b</title>
+</head>
+<body>
+<script>
+    let a = prompt('Nhập mảng a (các phần tử cách nhau = dấu cách ( ) )');
+    let arrA = a.split(' ');
+    let arrB = [0];
+
+    for (let i = 0; i < arrA.length; i++) {
+        arrB[i] = 0;
+        for (let j = 0; j <= i; j++) {
+            arrB[i] += parseInt(arrA[j]);
+        }
+    }
+
+    // cách :2
+    // arrB[0] = arrA[0]
+    // for (let i = 1; i < arrA.length; i++) {
+    //     arrB[i] = arrB[i-1] + arrA[i];
+    // }
+    document.writeln(arrA +'<br>');
+    document.writeln(arrB);
+
+</script>
+</body>
+</html>

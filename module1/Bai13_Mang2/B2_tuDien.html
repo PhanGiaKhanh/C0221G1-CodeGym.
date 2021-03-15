@@ -5,20 +5,27 @@
     <title>Từ điển</title>
 </head>
 <body>
+// dịch tiếng anh qua việt và ngược lại
 <input type="text" id="eng" placeholder="English"> <>
 <input type="text" id="vn" placeholder="VietNam">
 <input type="button" value="dich" onclick="dich()">
 
 <script>
-    let english = ['Table','Chair','Pen'];
-    let vietNam = ['Bàn','Ghế','Bút'];
+    let english = ['Table', 'Chair', 'Pen'];
+    let vietNam = ['Bàn', 'Ghế', 'Bút'];
     let eng = document.getElementById('eng');
     let vn = document.getElementById('vn');
+
     function dich() {
         let local = english.indexOf(eng.value);
-        console.log(local)
+        let local1 = vietNam.indexOf(vn.value);
         if (local > -1) {
             vn.value = vietNam[local]
+        } else if (local1 > -1) {
+            eng.value = english[local1]
+        } else {
+            eng.value = "không tìm thấy";
+            vn.value = "không tìm thấy";
         }
     }
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm ký tự chung</title>
+</head>
+<body>
+<script>
+    let nhapXau1 = 'aabcc';
+    let nhapXau2 = 'adcaa';
+    let arrXau1 = nhapXau1.split('');
+    let arrXau2 = nhapXau2.split('');
+
+    let kyTuChung = [];
+
+    for (let i = 0; i < arrXau1.length; i++) {
+        for (let j = 0; j < arrXau2.length; j++) {
+            if (arrXau1[i] == arrXau2[j] && kyTuChung.indexOf(arrXau1[i]) == -1) {
+                kyTuChung.push(arrXau1[i]);
+            }
+        }
+    }
+    let count1 = [0, 0];
+    let count2 = [0, 0];
+    for (let i = 0; i < kyTuChung.length; i++) {
+        for (let j = 0; j < arrXau1.length; j++) {
+            if (kyTuChung[i] === arrXau1[j]) {
+                count1[i]++;
+            }
+        }
+        for (let j = 0; j < arrXau2.length; j++) {
+            if (kyTuChung[i] === arrXau2[j]) {
+                count2[i]++;
+            }
+        }
+
+        if (count1[i] <= count2[i]) {
+            document.writeln(count1[i] + kyTuChung[i])
+        } else {
+            document.writeln(count2[i] + kyTuChung[i])
+        }
+    }
+
+</script>
+</body>
+</html>

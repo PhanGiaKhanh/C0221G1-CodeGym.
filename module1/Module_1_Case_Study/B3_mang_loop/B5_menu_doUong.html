@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu coffee</title>
+    <style>
+        input {
+            width: 24px;
+        }
+
+        td:nth-child(4) {
+            text-align: center;
+        }
+
+        td:nth-child(5) {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Món gọi</th>
+        <th>Giá</th>
+        <th>Chọn</th>
+        <th>Số lượng</th>
+        <th style="width: 100px">Tổng giá</th>
+    </tr>
+    <tr>
+        <td>
+            <b>Cafe</b>
+        </td>
+        <td class="gia" value="25000">15000</td>
+        <td class="chon"><input type="button" value="-"><input type="button" value="+"></td>
+        <td class="soLuong">0</td>
+        <td class="tongGia"></td>
+    </tr>
+    <tr>
+        <td>
+            <b>Cam vắt</b>
+        </td>
+        <td class="gia" value="25000">25000</td>
+        <td class="chon"><input type="button" value="-"><input type="button" value="+"></td>
+        <td class="soLuong">0</td>
+        <td class="tongGia"></td>
+    </tr>
+    <tr>
+        <td>
+            <b>Nước ép cà rốt</b>
+        </td>
+        <td class="gia" value="25000">22000</td>
+        <td class="chon"><input type="button" value="-"><input type="button" value="+"></td>
+        <td class="soLuong">0</td>
+        <td class="tongGia"></td>
+    </tr>
+    <tr>
+        <td>
+            <b>Nước ép cà chua</b>
+        </td>
+        <td class="gia" value="25000">22000</td>
+        <td class="chon"><input type="button" value="-"><input type="button" value="+"></td>
+        <td class="soLuong">0</td>
+        <td class="tongGia"></td>
+    </tr>
+    <tr>
+        <td>
+            <b>Nước lọc</b>
+        </td>
+        <td class="gia" value="25000">10000</td>
+        <td class="chon"><input type="button" value="-"><input type="button" value="+"></td>
+        <td class="soLuong">0</td>
+        <td class="tongGia"></td>
+    </tr>
+    <tr>
+        <td>
+            <b>Nước dừa</b>
+        </td>
+        <td class="gia" value="25000">25000</td>
+        <td class="chon"><input type="button" value="-"><input type="button" value="+"></td>
+        <td class="soLuong">0</td>
+        <td class="tongGia"></td>
+    </tr>
+</table>
+<script>
+    let chonElements = document.getElementsByClassName('chon');
+    let soLuongElements = document.getElementsByClassName('soLuong');
+    let giaElements = document.getElementsByClassName('gia');
+    let tongGiaCElements = document.getElementsByClassName('tongGia');
+    let count = [0, 0, 0, 0, 0, 0];
+    for (let i = 0; i < chonElements.length; i++) {
+        chonElements[i].onclick = function (evt) {
+            let chon = evt.target.value;
+
+            if (chon == '+') {
+                count[i]++;
+                soLuongElements[i].innerHTML = count[i];
+            } else {
+                if (count[i] > 0) {
+                    count[i]--;
+                    soLuongElements[i].innerHTML = count[i];
+                } else {
+                    count[i] = 0;
+                }
+            }
+            tongGiaCElements[i].innerHTML = giaElements[i].textContent * soLuongElements[i].textContent
+        }
+    }
+</script>
+</body>
+</html>

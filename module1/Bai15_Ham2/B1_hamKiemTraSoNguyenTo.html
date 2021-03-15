@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    // let num = prompt('Nhập số cần kiểm tra');
+    // let result = checkPrime(num);
+    // alert(result)
+
+    let count = 0;
+    let result = ''
+    while (count < 100) {
+        if (checkPrime(count)){
+            result += count;
+        }
+        count++
+    }
+    document
+    function checkPrime(num) {
+        let check = true;
+        if (num < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num%i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+</script>
+</body>
+</html>

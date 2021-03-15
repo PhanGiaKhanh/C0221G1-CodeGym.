@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm min max</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt('kích thước mảng m'));
+    let n = parseInt(prompt('kích thước mảng n'));
+    let array = [];
+    let result = '';
+    let number = 0;
+    for (let i = 0; i < m; i++) {
+        array[i] = [];
+        for (let j = 0; j < n; j++) {
+            array[i][j] = parseInt(prompt("nhập phần tử của vị trí thứ "))
+        }
+    }
+    let min = max = array[0][0];
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            number = array[i][j];
+            if (min > number) {
+                min = number;
+            }
+            if (max < number) {
+                max = number;
+            }
+        }
+    }
+    alert('Min là : ' + min +'--- Max là : ' + max)
+</script>
+</body>
+</html>

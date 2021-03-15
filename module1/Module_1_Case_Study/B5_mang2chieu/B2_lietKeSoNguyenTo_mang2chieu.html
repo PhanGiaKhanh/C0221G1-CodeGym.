@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liệt kê các số nguyên tố trong mảng 2 chiều</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt('kích thước mảng m'));
+    let n = parseInt(prompt('kích thước mảng n'));
+    let array = [];
+    let result = '';
+    let number = 0;
+    for (let i = 0; i < m; i++) {
+        array[i] = [];
+        for (let j = 0; j < n; j++) {
+            array[i][j] = parseInt(prompt("nhập phần tử của vị trí thứ "))
+        }
+    }
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            number = array[i][j];
+            if (soNguyenTo(number) == true) {
+                result += number;
+            }
+        }
+    }
+
+    function soNguyenTo(number) {
+        let kQ = true;
+        if (number < 2) {
+            kQ = false;
+        }else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    kQ = false;
+                    break;
+                }
+            }
+        }
+        return kQ;
+    }
+alert(result)
+</script>
+</body>
+</html>
