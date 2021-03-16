@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm 2 tham số</title>
+</head>
+<body>
+<script>
+    let number1 = parseInt(prompt("Input Number one : "));
+    let number2 = parseInt(prompt("Input Number two : "));
+
+    myFunction(number1, number2);
+
+    function myFunction(num1, num2) {
+        if (num1 > num2) {
+            return alert(num1 + ' lớn hơn ' + num2);
+        } else {
+            let sum = num1 + num2;
+            return alert('Tổng ' + num1 + ' ' + num2 + ' là : ' + sum)
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Input Char in Array</title>
+</head>
+<body>
+<script>
+    let str = prompt('Nhập mảng ký tự cách nhau = dấu ( )');
+    let arrStr = str.split(' ');
+    let char = prompt('Nhập ký tự cần kiểm tra');
+    let result = check(arrStr, char);
+    alert('số lần hiển thị là : ' + result);
+
+    function check(array, char) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (char === array[i]) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            return -1;
+        }
+        return count;
+    }
+</script>
+</body>
+</html>

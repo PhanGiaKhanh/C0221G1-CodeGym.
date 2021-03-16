@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích và chu vi hình tròn</title>
+</head>
+<body>
+<script>
+    let input = prompt('nhập bán kính hình tròn');
+    alert(dienTich(input));
+    alert(chuVi(input));
+    function dienTich(a) {
+        return a*a*Math.PI;
+    }
+
+    function chuVi(a) {
+        return 2*a*Math.PI;
+    }
+</script>
+</body>
+</html>

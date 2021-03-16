@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi 2 số nguyên</title>
+</head>
+<body>
+<script>
+    let num1 = parseInt(prompt('Nhập a là : '));
+    let num2 = parseInt(prompt('Nhập b là : '));
+
+    alert(num1 + '-' + num2);
+    swap();
+    alert(num1 + '-' + num2);
+
+    function swap() {
+        let c = num1;
+        num1 = num2;
+        num2 = c;
+    }
+</script>
+</body>
+</html>

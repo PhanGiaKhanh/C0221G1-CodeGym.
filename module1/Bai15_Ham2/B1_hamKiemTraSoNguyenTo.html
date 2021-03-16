@@ -6,20 +6,19 @@
 </head>
 <body>
 <script>
-    // let num = prompt('Nhập số cần kiểm tra');
-    // let result = checkPrime(num);
-    // alert(result)
 
     let count = 0;
-    let result = ''
+    let result = '';
     while (count < 100) {
         if (checkPrime(count)){
-            result += count;
+            result += count + ' ';
         }
         count++
     }
-    document
+    alert(result);
+
     function checkPrime(num) {
+
         let check = true;
         if (num < 2) {
             check = false;

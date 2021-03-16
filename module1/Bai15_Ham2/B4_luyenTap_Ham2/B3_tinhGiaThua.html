@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt('Nhập số, tìm giai thừa số đó'));
+    alert('Giai thừa ' + input + ' là ' +giaiThua(input))
+    function giaiThua(number) {
+        let result = 1;
+        for (let i = 1; i <= number; i++) {
+            result *= i;
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

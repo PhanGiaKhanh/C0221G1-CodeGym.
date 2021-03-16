@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập 3 số tìm số nguyên lớn nhất</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('Nhập số nguyên a là : '));
+    let b = parseInt(prompt('Nhập số nguyên b là : '));
+    let c = parseInt(prompt('Nhập số nguyên c là : '));
+
+    alert(findMax(a, b, c));
+
+    function findMax(a, b, c) {
+        let max = a;
+        if (b > a && b > c) {
+            max = b;
+        } else if (c > a && c >= b) {
+            max = c;
+        }
+        return max;
+    }
+</script>
+</body>
+</html>

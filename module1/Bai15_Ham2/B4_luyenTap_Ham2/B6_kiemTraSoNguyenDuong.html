@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên dương</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt('Nhập số để kiểm tra số nguyên dương ko?'));
+
+    alert(checkNum(input));
+
+    function checkNum(number) {
+        if (number >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

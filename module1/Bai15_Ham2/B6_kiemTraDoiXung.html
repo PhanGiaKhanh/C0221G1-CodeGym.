@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra đối xứng</title>
+</head>
+<body>
+<script>
+    let word = prompt('Nhập từ, kiểm tra có phải đối xứng ko?')
+
+    if (checkFirstLast(word)) {
+        if (checkWord(word)) {
+            alert("Số đối xứng")
+        } else {
+            alert("Số KHÔNG đối xứng")
+        }
+    } else {
+        alert("Số KHÔNG đối xứng")
+    }
+
+    function checkFirstLast(wordCheck) {
+        let check = true;
+        if (wordCheck[0] !== wordCheck[wordCheck.length - 1]) {
+            check = false;
+        }
+        return check;
+    }
+
+    function checkWord(wordCheck) {
+        let check = true;
+        let index = wordCheck.length;
+        let indexCenter = parseInt(index / 2);
+        for (let i = 1; i <= indexCenter; i++) {
+            if (wordCheck[i] === wordCheck[index - i - 1]) {
+                check = true;
+            } else {
+                check = false;
+            }
+        }
+        return check;
+    }
+</script>
+</body>
+</html>
