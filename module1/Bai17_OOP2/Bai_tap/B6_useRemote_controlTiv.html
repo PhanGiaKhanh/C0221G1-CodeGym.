@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Use remote control TV</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor(code) {
+            this.code = code;
+        }
+        getCode() {
+            return this.code;
+        }
+        setCode(code) {
+            this.code = code;
+        }
+        setVolume (boolean) {
+           return boolean
+        }
+        setChannel (boolean) {
+            return boolean;
+        }
+    }
+    class TiVi {
+        constructor(code) {
+            this.code = code;
+            this.channel = 1;
+            this.volume = 5;
+            this.status = false;
+        }
+        checkRemote (remote) {
+            if (remote.getCode() === this.code){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        getVolumeTV() {
+            return this.volume;
+        }
+        setVolumeTV(remote) {
+            if (this.checkRemote(remote)) {
+                if (remote.setVolume(boolean)){
+                    this.volume++;
+                }else{
+                    this.volume--;
+                }
+            }
+        }
+        setChannelTV(remote) {
+            if (this.checkRemote(remote)) {
+                if (remote.setChannel(boolean)){
+                    this.channel++;
+                }else{
+                    this.channel--;
+                }
+            }
+        }
+    }
+
+    let remote = new Remote(1);
+    let tiVi = new TiVi(1);
+
+    tiVi.checkRemote(remote);
+    tiVi.setVolume(true);
+    tiVi.setVolume(true);
+    remote.setVolume(false);
+    console.log(remote.getVolume());
+    console.log(tiVi);
+    console.log(remote);
+</script>
+</body>
+</html>

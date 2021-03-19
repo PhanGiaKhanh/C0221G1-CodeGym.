@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Description phone</title>
+</head>
+<body>
+<script>
+    function Phone(id, name) {
+        this.energy = 2;
+        this.message = '';
+
+        //  check turn on / turn off
+        this.turnOn = function () {
+            this.status = true
+        };
+        this.turnOff = function () {
+            this.status = false;
+        };
+
+        // battery
+        this.getEnergy = function () {
+            if (this.energy > 0) {
+                return this.energy;
+            }else {
+                alert('Charge Battery')
+            }
+        };
+        this.decreaseEnergy = function () {
+            if (this.energy > 0) {
+                this.energy--;
+                if (this.energy == 0) {
+                    this.status = false
+                }
+            }
+        };
+        this.chargeEnergy = function () {
+            if (this.energy < 100) {
+                this.energy++
+            }
+        };
+        // save message
+        this.setMessage = function (message) {
+            if (this.status === true) {
+                this.message = message
+            } else {
+                alert('Not turn on')
+            }
+        };
+        this.getMessage = function () {
+            return this.message
+        };
+        this.sendMessage = function (message, namePhone) {
+            if (this.status === true) {
+                namePhone.setMessage(message);
+            } else {
+                alert('Not turn on')
+            }
+        };
+
+    }
+
+    let iphone = new Phone(1, 'Iphone');
+    let oppo = new Phone(2, 'Oppo');
+    oppo.turnOn();
+    iphone.turnOn();
+    console.log(oppo);
+    console.log(iphone);
+    oppo.sendMessage('Hello Iphone', iphone);
+    // alert(iphone.getMessage());
+    // alert(iphone.getEnergy());
+    console.log(iphone.getEnergy())
+
+
+
+
+    iphone.chargeEnergy();
+    console.log(iphone.getEnergy())
+    iphone.decreaseEnergy();
+    iphone.decreaseEnergy();
+    iphone.decreaseEnergy();
+    iphone.sendMessage('hello', oppo);
+    console.log(iphone.getEnergy())
+</script>
+</body>
+</html>

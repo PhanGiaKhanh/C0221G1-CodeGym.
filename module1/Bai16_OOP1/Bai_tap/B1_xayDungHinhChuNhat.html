@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Building Rectangle</title>
+</head>
+<body>
+<div id="display">
+
+</div>
+<canvas id="myCanvas" width="500px" height="400px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            getWidth() {
+                return this.width;
+            }
+
+            setWidth(width) {
+                this.width = width;
+            }
+
+            getHeight() {
+                return this.height;
+            }
+
+            setHeight(height) {
+                this.height = height;
+            }
+
+            getAcreage() {
+                let width = this.width;
+                let height = this.height;
+                return width * height;
+            }
+
+            getPerimeter() {
+                let width = this.width;
+                let height = this.height;
+                return (width + height) * 2
+            }
+
+            createRectangle() {
+                var ctx = document.getElementById("myCanvas").getContext("2d");
+                ctx.fillStyle = "#2c38e4";
+                ctx.fillRect(0, 0, this.width, this.height);
+
+            }
+        }
+
+        let rectangle = new Rectangle(10, 10);
+        let acreage = rectangle.getAcreage();
+        let perimeter = rectangle.getPerimeter();
+        alert("Diện tích là " + acreage + "Chu vi là " + perimeter)
+
+        rectangle.setHeight(200);
+        rectangle.setWidth(100);
+
+        alert("Chiều rộng là " + rectangle.getWidth() + "Chiều cao là " + rectangle.getHeight())
+        alert("Diện tích là " + rectangle.getAcreage() + "Chu vi là " + rectangle.getPerimeter())
+
+        rectangle.createRectangle()
+        // let width = parseInt(prompt('input width'));
+        // let height = parseInt(prompt('input height'));
+        // let recta = new rectangle(width, height);
+        // let dienTich = recta.dienTich();
+        // let chuVi = recta.chuVi();
+        //
+        // document.getElementById('display').innerHTML = (
+        //     'Diện tích hình chữ nhật là : ' +
+        //     dienTich +
+        //     ' m2 <br>Chu vi hình chữ nhật là :  ' +
+        //     chuVi + ' m <hr>');
+        //
+        // createRectangle(width, height);
+        //
+        // function createRectangle(width, height) {
+        //     var ctx = document.getElementById("myCanvas").getContext("2d");
+        //     var rect = new rectangle(width, height);
+        //     ctx.beginPath();
+        //     ctx.fillRect(0, 0, rect.width, rect.height);
+        //     ctx.fill();
+        // }
+        //
+        // function rectangle(width, height) {
+        //     this.width = width;
+        //     this.height = height;
+        //     this.dienTich = function () {
+        //         return this.width * this.height;
+        //     };
+        //     this.chuVi = function () {
+        //         return (this.width + this.height) * 2;
+        //     };
+        //
+        // }
+    </script>
+</body>
+</html>

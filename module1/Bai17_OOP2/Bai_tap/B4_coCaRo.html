@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cờ ca rô</title>
+</head>
+<body>
+<script>
+    class BanCo {
+        constructor(row, col) {
+            this.row = row;
+            this.col = col;
+            this.arr = [];
+        }
+
+        createTable() {
+            let table = "<table border='1'>";
+            for (let i = 0; i < this.row; i++) {
+                table += '<tr>';
+                for (let j = 0; j < this.col; j++) {
+                    table += '<td style="width: 20px; height: 20px">'+this.arr[i][j]+'</td>'
+                }
+                table += '</tr>';
+            }
+            table += '</table>';
+            document.writeln(table);
+        }
+
+        createArray() {
+            for (let i = 0; i < this.row; i++) {
+                this.arr[i] = [];
+                for (let j = 0; j < this.col; j++) {
+                    this.arr[i][j] = '';
+                }
+            }
+        }
+
+        checkWin() {{
+                for (let i = 2; i < 12; i++) {
+                    for (let j = 2; j < 12; j++) {
+                        if (this.arr[i][j] !== ''){
+                            if (this.arr[i][j] === this.arr[i][j + 1] && this.arr[i][j] === this.arr[i][j + 2] ||
+                                this.arr[i][j] === this.arr[i + 1][j] && this.arr[i][j] === this.arr[i + 2][j] ||
+                                this.arr[i][j] === this.arr[i + 1][j + 1] && array[i][j] === this.arr[i + 2][j + 2] ||
+                                this.arr[i][j] === this.arr[i - 1][j + 1] && array[i][j] === this.arr[i - 2][j + 2]
+                            ) {
+                                alert(' YOU WIN')
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    let banCo = new BanCo(20, 20);
+    banCo.createArray()
+    banCo.createTable()
+
+</script>
+</body>
+</html>

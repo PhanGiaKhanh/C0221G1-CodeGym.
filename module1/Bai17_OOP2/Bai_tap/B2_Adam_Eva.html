@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu chuyện Adam và Eva</title>
+</head>
+<body>
+<input type="button" value="Eat" onclick="eatApple()">
+<div id="adam"></div>
+<div id="eva"></div>
+<div id="say"></div>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        decrease() {
+            this.weight--;
+        }
+
+        isEmpty() {
+            if (this.weight === 0) {
+                console.log('Ăn hết rồi');
+                return true;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.nameHuman = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            this.gender = true;
+        }
+
+        setGender(boolean) {
+            if (boolean) {
+                this.gender = true;
+            } else {
+                this.gender = false;
+            }
+        }
+
+        checkApple(apple) {
+            if (apple.getWeight() != 0) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        eat(apple) {
+            if (this.checkApple(apple)) {
+                apple.decrease();
+                this.weight++;
+            }
+        }
+
+        say(string) {
+            document.getElementById('say').innerHTML = this.nameHuman + string;
+        }
+
+        getName() {
+            return this.nameHuman;
+        }
+
+        setName(string) {
+            this.nameHuman = string;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(int) {
+            this.weight = int;
+        }
+    }
+
+    let adam = new Human('Adam', true, 50);
+    let apple = new Apple();
+    let eva = new Human('Eva', false, 45);
+
+
+    document.getElementById('adam').innerHTML = adam.nameHuman + " -- " + adam.getWeight() + ' Kg ';
+    document.getElementById('eva').innerHTML = eva.nameHuman + " -- " + eva.getWeight() + ' Kg';
+    function eatApple () {
+        let a = adam.getWeight();
+        adam.eat(apple);
+        eva.eat(apple);
+        document.getElementById('adam').innerHTML = adam.nameHuman + " -- " + adam.getWeight() + ' Kg ';
+
+        document.getElementById('eva').innerHTML = eva.nameHuman + " -- " + eva.getWeight() + ' Kg';
+        if (apple.weight == 0) {
+            alert("hết táo rồi")
+        }
+    }
+
+</script>
+</body>
+</html> 

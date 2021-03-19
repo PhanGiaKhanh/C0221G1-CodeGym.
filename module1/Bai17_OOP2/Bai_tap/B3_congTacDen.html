@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc đèn</title>
+</head>
+<body>
+<script>
+    class ElectricLamp {
+        constructor() {
+        }
+
+        turnOff() {
+            console.log('Đèn tắc');
+            this.status = false;
+        }
+
+        turnOn() {
+            console.log('Đèn sáng');
+            this.status = true;
+        }
+    }
+
+    class SwitchButton {
+        constructor() {
+            this.lamp = ''
+        }
+
+        connectToLamp(lamp) {
+            console.log('Kết nối đèn');
+            this.lamp = lamp;
+        }
+
+        switchOff() {
+            console.log("Tắc đèn");
+            this.lamp.turnOff();
+        }
+
+        switchOn() {
+            if (this.lamp !== '') {
+                console.log("Bật đèn");
+                this.lamp.turnOn();
+
+            } else {
+                console.log('Chưa kêt nối đèn ')
+            }
+        }
+    }
+
+    let buttonLamp = new SwitchButton();
+    let led = new ElectricLamp();
+
+    buttonLamp.switchOn();
+    buttonLamp.connectToLamp(led);
+    for (let i = 0; i < 10; i++) {
+        console.log('lần thứ '+ (i+1));
+        buttonLamp.switchOn();
+        buttonLamp.switchOff()
+    }
+
+
+</script>
+</body>
+</html>

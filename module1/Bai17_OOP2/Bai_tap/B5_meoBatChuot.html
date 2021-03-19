@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mèo bắt chuột</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getSpeed() {
+            return this.speed;
+        }
+
+        setSpeed(speed) {
+            this.speed = speed;
+        }
+
+        live() {
+            this.status = true;
+        }
+
+        died() {
+            this.status = false;
+        }
+
+        say() {
+            console.log('chít, chít')
+        }
+    }
+
+    class Cat {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+
+        getName() {
+            return getName;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getSpeed() {
+            return this.speed;
+        }
+
+        setSpeed(speed) {
+            this.speed = speed;
+        }
+
+        say() {
+            console.log('Meo, meo')
+        }
+
+        catch(rat) {
+            this.rat = rat;
+            if (this.speed > this.rat.speed) {
+                console.log("Bắt đượcc chuột ");
+                return true;
+            } else {
+                console.log("Không bắt được");
+                return false;
+            }
+        }
+
+        eat(rat) {
+            this.rat = rat;
+            if (this.catch(rat)) {
+                console.log(this.rat.status)
+                if (this.rat.status) {
+                    console.log('bắt chuột sống');
+                    this.setWeight(this.getWeight() + this.rat.getWeight());
+                    this.rat.setWeight(0);
+                    console.log('Ăn chuột ');
+                    console.log('Tăng cân')
+                } else if (!this.rat.status) {
+                    console.log("eo ơi! chuột chết rồi")
+                }
+            }
+        }
+    }
+
+    let mouse = new Rat("Mouse", 2, 4);
+    let cat = new Cat("Cat", 10, 5);
+    console.log(cat);
+    console.log(mouse);
+    cat.catch(mouse);
+
+    mouse.say();
+    mouse.live();
+    // mouse.died();
+    cat.eat(mouse);
+    console.log(cat);
+    console.log(mouse);
+</script>
+</body>
+</html>

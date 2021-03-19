@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoạt động của đèn pin</title>
+</head>
+<body>
+<script>
+    class Battery {
+        constructor() {
+            this.energy = 2
+        }
+
+        setEnergy(int) {
+            this.energy = int;
+        }
+
+        getEnergy() {
+            return this.energy;
+        }
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    }
+
+    class FlashLamp {
+        constructor() {
+            this.battery = ''
+        }
+
+        setBatter(battery) {
+            this.battery = battery;
+        }
+
+        getBatteryInfo() {
+            return this.battery.getEnergy();
+        }
+
+        light() {
+            if (this.status && this.battery !== '' && this.battery.energy > 0) {
+                alert("Lighting");
+                this.battery.decreaseEnergy()
+            } else {
+                alert("Not lighting")
+            }
+        }
+
+        turnOn() {
+            this.status = true;
+            alert("Bật đèn")
+        }
+
+        turnOff() {
+            this.status = false;
+            alert("Tắc đèn")
+        }
+    }
+
+    let battery = new Battery();
+    let flashLamp = new FlashLamp();
+    // cài bóng đèn vào pin
+    flashLamp.setBatter(battery);
+    alert("Mức năng lượng "+battery.energy);
+    // Bật đèn lần 1
+    flashLamp.turnOn();
+    flashLamp.light();
+    flashLamp.turnOff();
+    // Bật đèn lần 2
+    alert("Mức năng lượng "+battery.energy);
+    flashLamp.turnOn();
+    flashLamp.light();
+    flashLamp.turnOff();
+    // Bật đèn lần 3
+    alert("Mức năng lượng "+battery.energy);
+    flashLamp.turnOn();
+    flashLamp.light();
+    console.log(battery);
+    console.log(flashLamp);
+</script>
+</body>
+</html>
