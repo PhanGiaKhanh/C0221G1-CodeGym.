@@ -5,6 +5,9 @@
     <title>Công tắc đèn</title>
 </head>
 <body>
+<h3>Bật tắc bống đèn</h3>
+<img src="img/pic_bulboff.gif" alt="" id="img">
+<input type="button" id="button" value="Bật tắt" onclick="switchButton()">
 <script>
     class ElectricLamp {
         constructor() {
@@ -49,14 +52,29 @@
 
     let buttonLamp = new SwitchButton();
     let led = new ElectricLamp();
+    let a = 0;
+    function switchButton() {
+        buttonLamp.connectToLamp(led);
 
-    buttonLamp.switchOn();
-    buttonLamp.connectToLamp(led);
-    for (let i = 0; i < 10; i++) {
-        console.log('lần thứ '+ (i+1));
-        buttonLamp.switchOn();
-        buttonLamp.switchOff()
+        if (a%2 == 0) {
+            buttonLamp.switchOn();
+            document.getElementById('img').src ="img/pic_bulbon.gif";
+            document.getElementById('button').value = 'Tắt đèn';
+        }else {
+            buttonLamp.switchOff();
+            document.getElementById('img').src ="img/pic_bulboff.gif";
+            document.getElementById('button').value = 'Bật đèn';
+        }
+        a++;
     }
+
+    // buttonLamp.switchOn();
+    // buttonLamp.connectToLamp(led);
+    // for (let i = 0; i < 10; i++) {
+    //     console.log('lần thứ '+ (i+1));
+    //     buttonLamp.switchOn();
+    //     buttonLamp.switchOff()
+    // }
 
 
 </script>

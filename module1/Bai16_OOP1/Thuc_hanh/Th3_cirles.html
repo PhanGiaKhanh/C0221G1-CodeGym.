@@ -5,8 +5,7 @@
     <title>Funny Circle</title>
 </head>
 <body>
-<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
-
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
     <script>
         function Circle(x, y, radius) {
             this.x = x;
@@ -18,10 +17,10 @@
             var ctx = document.getElementById("myCanvas").getContext("2d");
             var circle = new Circle(500, 500, 80);
             ctx.beginPath();
-            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
             ctx.fill();
         }
-
+        Circle(100,100,100)
         createCircle();
     </script>
 </body>

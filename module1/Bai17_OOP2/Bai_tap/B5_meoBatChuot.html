@@ -99,7 +99,7 @@
         eat(rat) {
             this.rat = rat;
             if (this.catch(rat)) {
-                console.log(this.rat.status)
+                console.log(this.rat.status);
                 if (this.rat.status) {
                     console.log('bắt chuột sống');
                     this.setWeight(this.getWeight() + this.rat.getWeight());

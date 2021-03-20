@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mèo bắt chuột 2</title>
+</head>
+<body>
+<div style="top: 100px;position: relative">
+    <span id="cat"> <img src="img/tom.jpg" alt="mèo" style="top: 10px; left: 0px;position:absolute"></span>
+    <span id="mouse"> <img src="img/jerry.jpg" alt="mouse" style="top: 71px; left: 300px;position:absolute"></span>
+    <span id="catSay" style="position: absolute"></span>
+</div>
+
+<input type="button" value="Start" style="top: 50px; left:50px;position: relative" onclick="startGame()">
+<span id="info"> </span>
+<script>
+    class Animal {
+        constructor(name, weight, speed, image, top, left) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.image = image;
+            this.top = top;
+            this.left = left;
+        }
+
+        getImg() {
+            return '<img src="' + this.image + '" ' +
+                'style="top: ' + this.top + 'px; ' +
+                'left: ' + this.left + 'px;position:absolute"/>'
+        }
+
+        moveRight() {
+            if (!this.stopMove()) {
+                this.left += this.speed;
+            }
+        }
+        stopMove() {
+            return false;
+        }
+    }
+
+    class Cat extends Animal {
+        constructor(name, weight, speed, image, top, left) {
+            super(name, weight, speed, image, top, left);
+        }
+
+        say() {
+           return  'Meow Meow';
+        }
+
+        eat(mouse) {
+            if (mouse.live_died()) {
+                this.weight = this.weight + mouse.weight;
+                mouse.weight = 0;
+                mouse.speed = 0;
+                this.speed = 0;
+            } else {
+                this.speed = 0;
+            }
+        }
+    }
+
+    class Mouse extends Animal {
+        constructor(name, weight, speed, image, top, left, status) {
+            super(name, weight, speed, image, top, left);
+            this.status = status;
+        }
+        say() {
+            document.write('Chít chít');
+        }
+        live_died() {
+            return this.status
+        }
+    }
+
+    let cat = new Cat('Tom', 10, 15, 'img/tom.jpg', 10, 0);
+    let mouse = new Mouse('Jerry', 2, 10, 'img/jerry.jpg', 71, 300, true);
+
+    function start() {
+        if ((cat.left + 100) <= window.innerWidth - mouse.left){
+            cat.moveRight();
+            mouse.moveRight();
+        }
+        if (cat.left +200 == mouse.left) {
+            mouse.image = '';
+            cat.eat(mouse);
+            cat.stopMove();
+            mouse.stopMove();
+            document.getElementById('catSay').style.left =  cat.left+200+'px'  ;
+
+            document.getElementById('catSay').innerHTML = cat.say();
+        }
+
+        document.getElementById('info').innerHTML = "Thông tin : Mèo : " + cat.weight + " kg ------ Mouse : " + mouse.weight + " kg";
+        document.getElementById('cat').innerHTML =  cat.getImg();
+        document.getElementById('mouse').innerHTML =  mouse.getImg();
+        setTimeout(start, 50)
+    }
+    function startGame() {
+        start()
+    }
+
+    document.getElementById('info').innerHTML = "Thông tin : Mèo : " + cat.weight + " kg ------ Mouse : " + mouse.weight + " kg";
+</script>
+</body>
+</html>

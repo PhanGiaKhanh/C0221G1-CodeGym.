@@ -6,8 +6,8 @@
 </head>
 <body>
 <input type="button" value="Eat" onclick="eatApple()">
-<div id="adam"></div>
-<div id="eva"></div>
+<div><span id="adam"></span><span id="adamSay"></span></div>
+<div><span id="eva"></span><span id="evaSay"></span></div>
 <div id="say"></div>
 <script>
     class Apple {
@@ -66,7 +66,7 @@
         }
 
         say(string) {
-            document.getElementById('say').innerHTML = this.nameHuman + string;
+            document.getElementById('say').innerHTML += this.nameHuman + string + '<br>';
         }
 
         getName() {
@@ -90,16 +90,20 @@
     let apple = new Apple();
     let eva = new Human('Eva', false, 45);
 
-
+    let a = 0;
     document.getElementById('adam').innerHTML = adam.nameHuman + " -- " + adam.getWeight() + ' Kg ';
     document.getElementById('eva').innerHTML = eva.nameHuman + " -- " + eva.getWeight() + ' Kg';
     function eatApple () {
-        let a = adam.getWeight();
-        adam.eat(apple);
-        eva.eat(apple);
-        document.getElementById('adam').innerHTML = adam.nameHuman + " -- " + adam.getWeight() + ' Kg ';
-
-        document.getElementById('eva').innerHTML = eva.nameHuman + " -- " + eva.getWeight() + ' Kg';
+        if (a%2 == 0 ) {
+            adam.eat(apple);
+            document.getElementById('adam').innerHTML = adam.nameHuman + " -- " + adam.getWeight() + ' Kg ';
+            adam.say(" : anh mời em")
+        }else {
+            eva.eat(apple);
+            document.getElementById('eva').innerHTML = eva.nameHuman + " -- " + eva.getWeight() + ' Kg';
+            eva.say(" : em ăn rồi. anh ăn đi")
+        }
+        a++;
         if (apple.weight == 0) {
             alert("hết táo rồi")
         }
