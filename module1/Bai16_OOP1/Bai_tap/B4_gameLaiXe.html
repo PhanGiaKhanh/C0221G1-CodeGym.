@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game lái xe</title>
+</head>
+<h3> - Sử dụng nút W / S / A / D</h3>
+Chấm đen trên quả bóng đụng hình tròn sẽ kết thúc game :)
+<div id="display"></div>
+
+<script>
+
+    class Ball {
+        constructor(name, speed, x, y ,r) {
+            this.name = name;
+            this.speed = speed;
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.status = true;
+        }
+
+        getCanvas() {
+            return '<canvas id="myCanvas" width="800px" height="500px"\n' +
+                '        style="border:5px solid black; margin: 20px  20%; position: absolute ">\n' +
+                '</canvas>'
+        }
+
+        moveBall(event) {
+            switch (event) {
+                case 115:
+                    if (this.y <= 440) {
+                        this.y += this.speed;
+                    }
+                    break;
+                case 119:
+                    if (this.y >= 20) {
+                        this.y -= this.speed;
+                    }
+                    break;
+                case 97:
+                    if (this.x > 0) {
+                        this.x -= this.speed;
+                    }
+                    break;
+                case 100:
+                    if (this.x < 750) {
+                        this.x += this.speed;
+                    }
+                    break;
+            }
+        }
+
+        show(ctx) {
+            let image = new Image();
+            image.src = 'img/ball2.png';
+            let xPosition = this.x;
+            let yPosition = this.y;
+            image.onload = function () {
+                ctx.drawImage(image, xPosition, yPosition);
+            };
+        }
+        circles (ctx) {
+            let x = this.x;
+            let y = this.y;
+            let radius = this.r;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+
+        checkItem (item){
+            if (item.x +10 >= this.x && item.x-10 <= this.x &&
+                item.y  + 10 >= this.y && item.y-10 <=this.y){
+                this.status = false;
+            }
+        }
+    }
+
+    class Item {
+        constructor(x, y ,r) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+        }
+        circles (ctx) {
+            let x = this.x;
+            let y = this.y;
+            let radius = this.r;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+    }
+
+    let ball = new Ball('ball', 10, 370, 220, 5);
+    let item = new Item( 400, 150, 1);
+    let item2 = new Item( 400, 150, 20);
+
+
+    document.getElementById('display').innerHTML = ball.getCanvas();
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    ball.show(ctx);
+    item.circles(ctx);
+    item2.circles(ctx);
+    ball.circles(ctx)
+
+    document.onkeypress = function (e) {
+        document.getElementById('display').innerHTML = ball.getCanvas();
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+
+        item.circles(ctx);
+        item2.circles(ctx);
+        ball.show(ctx);
+        ball.circles(ctx);
+
+
+        let i = e.which;
+        ball.moveBall(i);
+        ball.checkItem(item);
+        if (!ball.status) {
+            alert("Game Over")
+
+
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
