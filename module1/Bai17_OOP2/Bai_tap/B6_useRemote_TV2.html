@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote và TiVi</title>
+    <style>
+        #tiVi {
+            height: 200px;
+            width: 200px;
+        }
+        div {
+            width: 200px;
+            margin:  auto;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 20px; background: #b3b3b3"><b>TiVi</b></div>
+<div id="tiVi" ></div>
+<div style="height: 100px; margin-top: 30px; background: lightyellow">
+    <h4>Remote</h4>
+    <input type="button" value="Bật tắt" onclick="turnOnOff()">
+    <input type="button" value="Chuyển kênh" onclick="channelTV()">
+</div>
+<script>
+    class TiVi {
+        constructor(status) {
+            this.status = status;
+            this.channel = ['red', 'yellow' , 'blue', 'orange'];
+            this.display = '';
+            this.a = 0;
+        }
+        checkButton(buttonOnOff) {
+            this.status = buttonOnOff.status;
+            console.log(this.status);
+            if (!this.status) {
+                this.display = '#333333';
+                document.getElementById('tiVi').style.backgroundColor = this.display;
+            } else {
+                this.display = 'white';
+                document.getElementById('tiVi').style.backgroundColor = this.display;
+            }
+            console.log(this.display)
+            console.log(this.status)
+        }
+        changeChannel () {
+            if (this.status) {
+                this.display = this.channel[this.a];
+                this.a++;
+                document.getElementById('tiVi').style.backgroundColor = this.channel[this.a];
+                if (this.a === 3) {
+                    this.a = 0;
+                }
+            }
+        }
+        displayTV () {
+            console.log('displayTV');
+            console.log(this.display)
+            return document.getElementById('tiVi').style.backgroundColor = this.display;
+
+        }
+    }
+    class Button {
+        constructor(status) {
+            this.status = status;
+        }
+        turnOnTurnOff () {
+            this.status = !this.status;
+            console.log(this.status + 'button')
+        }
+    }
+
+    let button = new Button(false);
+    let tiVi = new TiVi(false);
+
+    tiVi.checkButton(button);
+    tiVi.displayTV()
+    function turnOnOff() {
+        button.turnOnTurnOff();
+        tiVi.checkButton(button);
+        // tiVi.displayTV()
+    }
+    function channelTV() {
+        tiVi.changeChannel();
+        console.log('channelTV')
+    }
+</script>
+
+
+</body>
+</html>

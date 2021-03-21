@@ -5,47 +5,88 @@
     <title>Cờ ca rô</title>
 </head>
 <body>
+<div id="banCo"></div>
 <script>
     class BanCo {
         constructor(row, col) {
             this.row = row;
             this.col = col;
             this.arr = [];
+            this.x = 'O';
+            this.table = '';
+            this.win = false;
         }
 
         createTable() {
-            let table = "<table border='1'>";
-            for (let i = 0; i < this.row; i++) {
-                table += '<tr>';
-                for (let j = 0; j < this.col; j++) {
-                    table += '<td style="width: 20px; height: 20px">'+this.arr[i][j]+'</td>'
+           this.table = "<table border='1'>";
+            for (let i = 2; i < this.row+2; i++) {
+                this.table += '<tr>';
+                for (let j = 2; j < this.col+2; j++) {
+                    this.table += '<td style="width: 20px; height: 20px; text-align: center" onclick="play(' + i + ',' + j + ')">' + this.arr[i][j] + '</td>'
                 }
-                table += '</tr>';
+                this.table += '</tr>';
             }
-            table += '</table>';
-            document.writeln(table);
+            this.table += '</table>';
+            return document.getElementById('banCo').innerHTML = this.table;
         }
 
         createArray() {
-            for (let i = 0; i < this.row; i++) {
+            for (let i = 0; i < this.row+8; i++) {
                 this.arr[i] = [];
-                for (let j = 0; j < this.col; j++) {
+                for (let j = 0; j < this.col+8; j++) {
                     this.arr[i][j] = '';
                 }
             }
         }
 
-        checkWin() {{
-                for (let i = 2; i < 12; i++) {
-                    for (let j = 2; j < 12; j++) {
-                        if (this.arr[i][j] !== ''){
-                            if (this.arr[i][j] === this.arr[i][j + 1] && this.arr[i][j] === this.arr[i][j + 2] ||
-                                this.arr[i][j] === this.arr[i + 1][j] && this.arr[i][j] === this.arr[i + 2][j] ||
-                                this.arr[i][j] === this.arr[i + 1][j + 1] && array[i][j] === this.arr[i + 2][j + 2] ||
-                                this.arr[i][j] === this.arr[i - 1][j + 1] && array[i][j] === this.arr[i - 2][j + 2]
-                            ) {
-                                alert(' YOU WIN')
+        playing(i, j) {
+            if (!this.win) {
+                if (this.x == 'O') {
+                    this.arr[i][j] = 'X';
+                    this.x = 'X';
+                } else {
+                    this.arr[i][j] = 'O';
+                    this.x = 'O';
+                }
+            } else {
+                alert('kết thúc trò chơi')
+            }
+        }
+
+        checkWin3 () {
+            for (let i = 2; i < this.row +2; i++) {
+                for (let j = 2; j < this.col+2; j++) {
+                    if (this.arr[i][j] !== ''){
+                        if (this.arr[i][j] === this.arr[i][j + 1] && this.arr[i][j] === this.arr[i][j + 2] ||
+                            this.arr[i][j] === this.arr[i + 1][j] && this.arr[i][j] === this.arr[i + 2][j] ||
+                            this.arr[i][j] === this.arr[i + 1][j + 1] && this.arr[i][j] === this.arr[i + 2][j + 2] ||
+                            this.arr[i][j] === this.arr[i - 1][j + 1] && this.arr[i][j] === this.arr[i - 2][j + 2]
+                        ) {
+                            this.win = true;
+                            alert(' YOU WIN')
+                        }
+                    }
+                }
+            }
+        }
+        checkWin5 () {
+            let count = 0;
+            for (let i = 2; i < this.row +2; i++) {
+                for (let j = 2; j < this.col+2; j++) {
+                    if (this.arr[i][j] !== ''){
+                        for (let k = 1; k <5; k++) {
+                            if (this.arr[i][j] === this.arr[i][j+k] ||
+                                this.arr[i][j] === this.arr[i+k][j] ||
+                                this.arr[i][j] === this.arr[i-k][j+k] ||
+                                this.arr[i][j] === this.arr[i+k][j+k] ){
+                                count++;
+                            } else {
+                                count = 0
                             }
+                        }
+                        if (count === 4) {
+                            this.win = true;
+                            alert('YOU WIN')
                         }
                     }
                 }
@@ -54,8 +95,13 @@
     }
 
     let banCo = new BanCo(20, 20);
-    banCo.createArray()
-    banCo.createTable()
+    banCo.createArray();
+    banCo.createTable();
+    function play(i,j ){
+        banCo.playing(i,j)
+        banCo.createTable();
+        banCo.checkWin5()
+    }
 
 </script>
 </body>
