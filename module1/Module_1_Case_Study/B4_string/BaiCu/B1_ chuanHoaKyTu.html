@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuẩn hóa ký tự vd TRUong > Truong</title>
+</head>
+<body>
+<script>
+    let str = prompt('Nhập đoạn text cần chuẩn hóa');
+    let lowStr = str.toLowerCase();
+    let arrStr = lowStr.split(' ');
+    let arr = []
+    // let a = ' ';
+    // for (let i = 0; i < arrStr.length; i++) {
+    //     let b = arrStr[i];
+    //     if(a == ' ' && b != ' ') {
+    //        arrStr[i] = arrStr[i].toUpperCase();
+    //     }
+    //     a = b;
+    // }
+    // alert(arrStr.join(''))
+    //
+
+    for (let i = 0; i < arrStr.length; i++) {
+        if (arrStr[i]) { // loại khoảng trống
+            arr.push(arrStr[i][0].toUpperCase() + arrStr[i].slice(1));
+            console.log(arrStr[i][0])
+        }
+
+    }
+    alert(arr.join(' '))
+</script>
+</body>
+</html>

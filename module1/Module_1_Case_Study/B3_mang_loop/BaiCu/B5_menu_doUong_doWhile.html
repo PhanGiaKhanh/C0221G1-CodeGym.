@@ -55,13 +55,13 @@
                         'Giá là : '
                         + donGia[i]
                         + ' Số lượng : '
-                        + '<input type="number" style="width: 40px" onblur="tien(this.value)">'
+                        + '<input type="number" style="width: 40px" onblur="input(this.value)">'
                         + '<span class="tien"></span>';
                 }
             }
         } while (value == 'Exit')
     }
-    function tien(soLuong) {
+    function input(soLuong) {
         // console.log(spanSelectors[viTriSpan].childNodes[2])
         spanSelectors[viTriSpan].lastChild.innerHTML = ' =>  Tổng tiền là : ' + gia * soLuong + 'k';
     }

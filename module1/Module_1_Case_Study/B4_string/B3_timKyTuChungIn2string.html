@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm ký tự chung trong hai sâu ký tự</title>
+</head>
+<body>
+<script>
+    let s1 = "cabca".split(''),
+        s2 = "adcaa".split(''),
+        s3 = "";
+    for (let i = 0; i < s1.length; i++){
+        // Cách 1
+        if (s2.indexOf(s1[i])>-1) {
+            s3 += s1[i];
+            s2.splice(i,1);
+        }
+        // Cách 2
+        // for(let j = 0; j < s2.length; j++) {
+        //     if (s1[i] === s2[j]){
+        //         s3 += s1[i];
+        //         s2.splice(i,1);
+        //         break;
+        //     }
+        // }
+    }
+    let count = s3.length;
+    alert(s3)
+</script>
+</body>
+</html>

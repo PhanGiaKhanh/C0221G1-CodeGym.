@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu đồ uống</title>
+</head>
+<body>
+<ol>
+    <li>Cafe : 10k</li>
+    <li>Cam vắt : 15k</li>
+    <li>Nước ép cà rốt : 12k</li>
+    <li>Nước ép cà chua : 12k</li>
+    <li>Nước lọc : 8k</li>
+    <li>Nước dừa : 15k</li>
+</ol>
+<input type="button" value="Mua hàng" onclick="orderDrink()">
+<p id="result"></p>
+<script>
+    function orderDrink() {
+        let tongTien = 0;
+        let choose;
+        let array = [10,15,12,12,8,15];
+        do {
+            choose = parseInt(prompt('Chọn đồ uống : \n' +
+                '1. Cafe \n' +
+                '2. Cam bắt \n' +
+                '3. Nước ép cà rốt \n' +
+                '4. Nước ép cà chua \n' +
+                '5. Nước lọc \n' +
+                '6. Nước Dừa \n' +
+                '7. Exit'));
+            if (choose == 7) {
+                break;
+            }
+            let amount = parseInt(prompt('Số lượng : '));
+            tongTien +=( array[choose-1] *amount);
+
+        } while (true);
+        document.getElementById('result').innerHTML = 'Tổng tiền là : ' + tongTien +'k';
+    }
+
+</script>
+</body>
+</html>

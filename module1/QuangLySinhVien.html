@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sinh viên</title>
+</head>
+<body>
+<p id="display"></p>
+
+
+<script>
+    class Student {
+        constructor(id, name, age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getAge() {
+            return this.age;
+        }
+
+        setAge(age) {
+            this.age = age;
+        }
+
+        toString() {
+
+        }
+    }
+
+    let sinhVien = new Student(11, 'Nguyễn Văn A', 18);
+    let sinhVien1 = new Student(12, 'Nguyễn Văn B', 18);
+    let sinhVien2 = new Student(13, 'Nguyễn Văn C', 18);
+
+    let listStudent = [sinhVien, sinhVien1, sinhVien2];
+    display(listStudent)
+
+    function display(list) {
+        let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>ID</th>\n' +
+            '        <th>NAME</th>\n' +
+            '        <th>AGE</th>\n' +
+            '        <th>Edit</th>\n' +
+            '        <th>Delete</th>\n' +
+            '    </tr>';
+
+        for (let i = 0; i < list.length; i++) {
+            let show = list[i];
+            tableString += '<tr>\n' +
+                '        <td style="text-align: center" >' + (i + 1) + '</td>\n' +
+                '        <td style="text-align: center" >' + show.getId() + '</td>\n' +
+                '        <td style="text-align: center">' + show.getName() + '</td>\n' +
+                '        <td style="text-align: center">' + show.getAge() + '</td>\n' +
+                '        <td><input type="button" value="Edit" onclick="editStudent(' + i + ')"></td>\n' +
+                '        <td><input type="button" value="Delete" onclick="deleteStudent(' + i + ')"></td>\n' +
+                '    </tr>\n'
+        }
+        tableString += '</table>'
+        let addString = '<input type="button" value="Add Student" onclick="addStudent()">';
+        document.getElementById('display').innerHTML = tableString + addString
+    }
+
+    function editStudent(index) {
+        let show = listStudent[index];
+        // let inputEdit = '<input type="text" placeholder="'+show.id+'"><br>' +
+        //     '<input type="text" placeholder="'+show.getName()+'">  <br>' +
+        //     '<input type="text" placeholder="'+show.getAge()+'">';
+        // document.getElementById('edit').innerHTML = inputEdit
+
+        let promptEdit = prompt('Chọn thay đổi sinh viên ' + show.getName() + ' : \n' +
+            '1. ID : '+ show.getId()+ '\n' +
+            '2. Name : '+ show.getName()+ '\n' +
+            '3. Age : '+ show.getAge()+ '\n' +
+            '4. Exit');
+        switch (promptEdit) {
+            case '1':
+                let editId = prompt('Nhập ID thay đổi');
+                show.setId(editId);
+                break;
+            case '2':
+                let editName = prompt('Nhập Name thay đổi');
+                show.setName(editName)
+                break;
+            case '3':
+                let editAge = prompt('Nhập Age thay đổi');
+                show.setAge(editAge)
+                break;
+            case '4':
+                break
+            default :
+                alert("Tôi không hiểu bạn chọn cái gì?")
+        }
+        display(listStudent)
+    }
+
+    function deleteStudent(index) {
+        listStudent.splice(index, 1);
+        display(listStudent)
+    }
+    
+    function addStudent() {
+        let inputId = prompt("Nhập Id : ");
+        let inputName = prompt("Nhập Name : ");
+        let inputAge = prompt("Nhập Age : ");
+        let student = new Student(inputId, inputName, inputAge);
+        listStudent.push(student);
+        display(listStudent)
+    }
+</script>
+</body>
+</html>

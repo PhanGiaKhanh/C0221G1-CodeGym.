@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự (tiếng anh)</title>
+</head>
+<body>
+<script>
+    let nguyenAm = 'ouiaeOUIAE';
+    let chuCai = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let char;
+    let check = false;
+    do {
+        char = prompt("Nhập ký tự vào mảng");
+        check = isNaN(char) && char.length === 1;
+    } while (!check);
+
+    let index = nguyenAm.indexOf(char);
+    if (index > -1) {
+        alert(char + ' là nguyên âm');
+    } else {
+        alert(char + ' là phụ âm');
+    }
+
+</script>
+</body>
+</html>

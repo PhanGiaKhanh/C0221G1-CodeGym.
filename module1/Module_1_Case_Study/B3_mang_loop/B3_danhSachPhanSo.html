@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm phân số lơn nhất</title>
+</head>
+<body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    let a = numerators;
+    let b = denominators;
+    let max ;
+    let index = 0;
+    for (let i = 0; i<a.length; i++) {
+        max = a[0]/b[0];
+        if (max < a[i]/b[i]) {
+            max = a[i]/b[i]
+            index =i;
+        }
+    }
+
+    alert(a[index] + '/' + b[index] + ' chỉ số là ' + index)
+</script>
+</body>
+</html>

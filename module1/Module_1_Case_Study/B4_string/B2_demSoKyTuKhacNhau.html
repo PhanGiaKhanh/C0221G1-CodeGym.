@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số ký tự khác nhau trong sâu</title>
+</head>
+<body>
+<script>
+    let s = "cabca";
+    let arr = [];
+    for (let i =0; i < s.length; i++) {
+        if (arr.indexOf(s[i]) === -1) {
+            arr.push(s[i]);
+        }
+    }
+    let count = arr.length;
+    let string = arr.sort().join(' ');
+    alert('Có '+ count + ' ký tự khác nhau là : ' + string )
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng số chẳn trong Array m*n</title>
+</head>
+<body>
+<script>
+    let inputM = parseInt(prompt('Nhập kích thước mảng'));
+    let inputN = parseInt(prompt('Nhập kích thước mảng con'));
+    let arr = [];
+    let sum = 0;
+    for (let i = 0; i < inputM; i++) {
+        arr[i] = [];
+        alert('Nhập mảng thứ ' + i);
+        for (let j = 0; j < inputN; j++) {
+            let input = parseInt(prompt('Nhập phần tử thứ ' + j));
+            arr[i].push(input);
+            if (input%2===0) {
+                sum += input;
+            }
+        }
+    }
+    console.log(arr);
+    document.write(sum + '<br>');
+    document.write(arr)
+</script>
+</body>
+</html>

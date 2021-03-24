@@ -2,9 +2,167 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Xổ số VitetLot</title>
+    <style>
+        #box {
+            width: 500px;
+            margin: 50px auto;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div id="box">
+    <h2>Xổ số VitetLot</h2>
+    <div id="system"></div>
+    <div id="user"></div>
+    <input type="button" value="Mua vé" onclick="buyTicket()">
+    <input type="button" value="Tự động" onclick="randomTicket()">
+    <input type="button" value="Xổ Số" onclick="xoVietLot()">
+
+</div>
+
+<script>
+    class XoSo {
+        constructor(numbers, limit) {
+            this.numbers = numbers;
+            this.limit = limit;
+            this.arrayUser = [];
+            this.arraySystem = [];
+            this.count = 0;
+        }
+        getLimit () {
+            return this.limit
+        }
+
+        getArrayUser() {
+            return this.arrayUser
+        }
+
+        getArraySystem() {
+            return this.arraySystem
+        }
+
+        getNumbers() {
+            return this.numbers
+        }
+
+        setNumbers(numbers) {
+            this.numbers = numbers;
+        }
+
+        systemNumber(boolean) {
+            let system = '';
+            for (let i = 0; i < this.numbers; i++) {
+                if (boolean) {
+                    let ran = (Math.random() * this.limit).toFixed();
+                    this.arraySystem.push(ran);
+
+                    system += '<input type="text" value="' + ran + '" style="width: 40px; margin: 5px 1px; text-align: center; background: yellow" readonly>  '
+                } else {
+                    system += '<input type="text"  style="width: 40px; margin: 5px 1px; text-align: center; background: yellow " readonly>   '
+                }
+            }
+            document.getElementById('system').innerHTML = system;
+        }
+
+        userRandom(arr) {
+            if ( this.count <4) {
+                this.arrayUser.push(arr) ;
+                let system = '';
+                for (let i = 0; i < this.numbers; i++) {
+                    system += '<input type="text" ' +
+                        'value="' + arr[i] + '" ' +
+                        'style="width: 40px; margin: 5px 1px; text-align: center" readonly>   '
+                }
+                this.count++;
+                return system;
+            }else {
+                alert('bạn chỉ được mua 4 vé/người')
+            }
+
+        }
+
+        userInput() {
+            let system = '';
+            for (let i = 0; i < this.numbers; i++) {
+                // system += '<input type="number" min="0" max="99" style="width: 40px; margin: 5px 1px; text-align: center" >   '
+                system += '<select name="" id="inputNum' + (i + 1) + '">\n' +
+                    '    <option value="Nhập số" style="text-align: center">Số ' + (i + 1) + '</option>\n';
+                for (let j = 0; j < this.limit; j++) {
+                    system += '    <option value="' + j + '">' + j + '</option>\n'
+                }
+                system += '</select>   ';
+            }
+            document.getElementById('user').innerHTML = system + '<br>';
+        }
+
+        getInputNumber() {
+            if (this.count <4) {
+                let getInput = [];
+                for (let i = 1; i <= this.numbers; i++) {
+                    let id = 'inputNum'+i;
+                    let value = document.getElementById(id).value;
+                    getInput.push(value)
+                }
+                this.arrayUser.push(getInput);
+
+
+
+                let system = '';
+                for (let i = 0; i < this.numbers; i++) {
+                    system += '<input type="number" min="0" max="'+this.limit+'" value="'+ getInput[i] +'" ' +
+                        'style="width: 40px; margin: 5px 1px; text-align: center" readonly>   '
+
+                }
+                this.count++;
+                document.getElementById('user').innerHTML = system + '<br>';
+            }
+            else {
+                alert('bạn chỉ được mua 4 vé/người')
+            }
+        }
+
+    }
+
+    let xoSo = new XoSo(6,10);
+    // xoSo.show()
+    xoSo.systemNumber(false);
+    xoSo.userInput();
+    let count = 0;
+
+    function randomTicket() {
+        let arr = []
+        if (count < 5) {
+            for (let i = 0; i < xoSo.getNumbers(); i++) {
+                arr[i] = (Math.random() * xoSo.limit).toFixed();
+            }
+            document.getElementById('user').innerHTML += xoSo.userRandom(arr) + "<br>";
+            count++
+        }
+    }
+
+    function xoVietLot() {
+        xoSo.systemNumber(true);
+        let result = 0;
+        for (let i = 0; i < xoSo.getArrayUser().length; i++) {
+            for (let j = 0; j < xoSo.getArrayUser().length; j++) {
+                if (xoSo.getArrayUser()[i] == xoSo.getArraySystem()[i]) {
+                    result = 1;
+                }
+            }
+        }
+        if (result) {
+            alert("Chúc mừng bạn đã trúng xổ số")
+        } else {
+            alert("Chúc ban may mắn lần sau")
+        }
+    }
+
+    function buyTicket() {
+        xoSo.getInputNumber()
+
+    }
+</script>
 </body>
 </html>

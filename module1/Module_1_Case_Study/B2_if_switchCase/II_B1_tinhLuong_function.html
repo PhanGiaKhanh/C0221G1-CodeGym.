@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiền lương và Thuế</title>
+</head>
+<body>
+
+<script>
+    // Bài 1: Viết một chương trình để nhập lương nhân viên, tính thuế thu nhập và lương ròng
+do {
+    let input = prompt('Nhập tiền lương của bạn đơn vị VND');
+    if (!isNaN(input) && input.length >0) {
+        let thue,
+            luong;
+        if (input >= 15000000) {
+            thue = input * 20/ 100;
+            luong = input - thue;
+        } else if (input >= 7000000) {
+            thue = input * 10/ 100;
+            luong = input - thue;
+        } else {
+            thue = input * 5/ 100;
+            luong = input - thue;
+        }
+        alert('Lương nhân viên = ' + input + ' VND' +
+            '\nTiền thuế = ' + thue + ' VND' +
+            '\nLương ròng = '+luong+' VND') ;
+        break;
+    }
+}while (true)
+
+
+
+
+
+</script>
+</body>
+</html>

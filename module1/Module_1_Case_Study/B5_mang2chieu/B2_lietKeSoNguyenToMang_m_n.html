@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liệt kê số nguyên tố</title>
+</head>
+<body>
+<script>
+    let inputM = parseInt(prompt('Nhập kích thước mảng'));
+    let inputN = parseInt(prompt('Nhập kích thước mảng con'));
+    let arr = [];
+    let newArr = [];
+    for (let i = 0; i < inputM; i++) {
+        arr[i] = [];
+        alert('Nhập mảng thứ ' + i);
+        for (let j = 0; j < inputN; j++) {
+            let input = parseInt(prompt('Nhập phần tử thứ ' + j));
+            arr[i].push(input);
+            let check = soNguyenTo(input) && newArr.indexOf(input) === -1;
+            if (check) {
+                newArr.push(input);
+            }
+        }
+    }
+    document.write(arr + '<br>');
+    document.write(newArr.length + '<br>');
+    document.write(newArr);
+
+    function soNguyenTo(number) {
+        let check = true;
+        if (number < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+</script>
+</body>
+</html>

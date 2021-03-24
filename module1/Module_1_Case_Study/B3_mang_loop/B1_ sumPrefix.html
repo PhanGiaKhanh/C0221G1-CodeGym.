@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    // Bài 1: Cho mảng a chỉ chứa các số nguyên
+    // Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+    // b[0]   = a[0]
+    // b[1]   = a[0] + a[1]
+    // b[2]   = a[0] + a[1] + a[2]
+    // ...
+    // b[n - 1] = a[0] + a[1] + ... + a[n - 1]
+
+    let arr ;
+    let newArr = [];
+    do {
+        let count = 0
+        arr = prompt("Nhập các phần tử ( Số )của mảng cách nhau bằng dấu (,)");
+        arr = arr.split(',');
+        for (let i=0; i<arr.length; i++){
+            if (!isNaN(arr[i])) {
+                count ++;
+            }
+        }
+        if (count == arr.length){
+            break
+        }
+        alert('Bạn nhập sai điều kiện')
+    }while (true);
+
+    for(let i=0; i <arr.length ; i++) {
+        newArr[i] =0;
+        for(let j = 0; j<=i; j++ ){
+            newArr[i] += parseInt(arr[j]);
+        }
+    }
+    alert(newArr)
+
+</script>
+</body>
+</html>

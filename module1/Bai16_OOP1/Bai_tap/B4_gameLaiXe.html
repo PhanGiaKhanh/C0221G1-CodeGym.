@@ -27,7 +27,7 @@ Chấm đen trên quả bóng đụng hình tròn sẽ kết thúc game :)
         }
 
         moveBall(event) {
-            switch (event) {
+            switch (event.key) {
                 case 115:
                     if (this.y <= 440) {
                         this.y += this.speed;
@@ -125,6 +125,7 @@ Chấm đen trên quả bóng đụng hình tròn sẽ kết thúc game :)
         }
 
     }
+    // document.addEventListener('keydown', ball.moveBall())
 
 
 </script>

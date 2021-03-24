@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let A = [7,2,5,3,5,3];
+    let B = [7,2,5,4,6,3,5,3];
+    let newArr = [];
+    for(let i=0; i< B.length; i++) {
+        if (A.indexOf(B[i]) === -1) {
+            newArr.push(B[i]);
+        }
+    }
+    alert(newArr)
+</script>
+</body>
+</html>
