@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sổ xố Việt Lot</title>
+</head>
+<body>
+<h1>Xổ số Việt Lot</h1>
+<h3>Hệ thống </h3>
+<div id="system"></div>
+<h3>Người chơi</h3>
+<div id="user"></div>
+<hr>
+<input type="button" value="Mua vé" id="btnUser" onclick="buyTicket()">
+<input type="button" value="Kết quả" id="btnResult" onclick="randomNumber()">
+
+<script>
+    class XoSo {
+        constructor() {
+            this.listNum = 6;
+            this.maxNum = 100;
+        }
+
+        getListNum() {
+            return this.listNum;
+        }
+
+        getMaxNum() {
+            return this.maxNum;
+        }
+
+        displaySystem(boolean) {
+            let display = '';
+            for (let i = 0; i < this.listNum; i++) {
+                let randomNum = '';
+                if (boolean) {
+                    randomNum = Math.floor(Math.random() * this.maxNum)
+                }
+                display += '<input type="text" value="' + randomNum + '" style="width: 50px; text-align: center" placeholder="Random" readonly>';
+            }
+            document.getElementById('system').innerHTML = display;
+        }
+    }
+
+    class User {
+        constructor() {
+            this.array = []
+        }
+
+        getArrayNumber() {
+            return this.arrayNumber;
+        }
+
+        displayUser() {
+            let display = '';
+            let arr = this.array;
+            for (let i = 0; i < arr.length; i++) {
+                let array = arr[i];
+                console.log(array)
+                for (let j = 0; j < 6; j++) {
+                    display += '<input type="text" value="' + array[j] + '" style="width: 50px; text-align: center"  placeholder="Số ' + (j + 1) + '" readonly>';
+                }
+                display += '<br>'
+            }
+            document.getElementById('user').innerHTML = display;
+        }
+        buyTicket(xoSo) {
+            let count = 0;
+            do {
+                let input = parseInt(prompt('Lựa chọn : \n' +
+                    '1. Tự mua vé \n' +
+                    '2. Tự động mua vé \n' +
+                    '3. Kết thúc'));
+                if (input == 3) {
+                    break;
+                }
+                let arrayNumber = [];
+                switch (input) {
+                    case 1 :
+                        for (let i = 0; i < xoSo.getListNum(); i++) {
+                            let inputTicket = prompt('Nhập số 1 ');
+                            arrayNumber[i] = inputTicket;
+                        }
+                        this.array.push(arrayNumber);
+                        break;
+                    case 2 :
+                        for (let i = 0; i < xoSo.getListNum(); i++) {
+                            let inputTicket = Math.floor(Math.random() * xoSo.getMaxNum());
+                            arrayNumber[i] = inputTicket;
+                        }
+                        this.array.push(arrayNumber);
+                        break;
+                }
+                count++;
+            } while (count < 4);
+            this.displayUser()
+        }
+    }
+
+    let xoSo = new XoSo();
+    let user = new User();
+
+    xoSo.displaySystem();
+
+    function randomNumber() {
+        xoSo.displaySystem(true);
+        document.getElementById('btnResult').disabled = true;
+    }
+
+    function buyTicket() {
+        xoSo.displaySystem();
+        user.buyTicket(xoSo);
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm max min trong mảng m*m</title>
+</head>
+<body>
+<script>
+    let inputM = parseInt(prompt('Nhập kích thước mảng'));
+    let inputN = parseInt(prompt('Nhập kích thước mảng con'));
+    let arr = [];
+    let min,
+        max;
+    for (let i = 0; i < inputM; i++) {
+        arr[i] = [];
+        alert('Nhập mảng thứ ' + i);
+        for (let j = 0; j < inputN; j++) {
+            let input = parseInt(prompt('Nhập phần tử thứ ' + j));
+            arr[i].push(input);
+        }
+    }
+    min = arr[0][0];
+    max = arr[0][0];
+
+    for (let i = 0; i < inputM; i++) {
+        for (let j = 0; j < inputN; j++) {
+            if (max < arr[i][j]) {
+                max = arr[i][j];
+            }
+            if (min > arr[i][j]) {
+                min = arr[i][j];
+            }
+        }
+    }
+
+    console.log(arr.length);
+    document.write(arr + '<br>');
+    document.write("Phần tử min là : " + min + "\n" +
+        "Phần tử max là : " + max)
+</script>
+</body>
+</html>
