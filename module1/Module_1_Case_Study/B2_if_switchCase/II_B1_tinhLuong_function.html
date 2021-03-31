@@ -9,21 +9,19 @@
 <script>
     // Bài 1: Viết một chương trình để nhập lương nhân viên, tính thuế thu nhập và lương ròng
 do {
-    let input = prompt('Nhập tiền lương của bạn đơn vị VND');
-    if (!isNaN(input) && input.length >0) {
-        let thue,
-            luong;
-        if (input >= 15000000) {
-            thue = input * 20/ 100;
-            luong = input - thue;
-        } else if (input >= 7000000) {
-            thue = input * 10/ 100;
-            luong = input - thue;
+    let tien = prompt('Nhập tiền lương của bạn đơn vị VND');
+    if (!isNaN(tien) && tien.length >0) {
+        let thue;
+        let luong;
+        if (tien >= 15000000) {
+            thue = tien * 20/ 100;
+        } else if (tien >= 7000000) {
+            thue = tien * 10/ 100;
         } else {
-            thue = input * 5/ 100;
-            luong = input - thue;
+            thue = tien * 5/ 100;
         }
-        alert('Lương nhân viên = ' + input + ' VND' +
+        luong = tien - thue;
+        alert('Lương nhân viên = ' + tien + ' VND' +
             '\nTiền thuế = ' + thue + ' VND' +
             '\nLương ròng = '+luong+' VND') ;
         break;

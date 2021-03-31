@@ -9,14 +9,14 @@
     let a = 0;
     let b = 0;
     let c = 1;
-    while (true) {
+    while (c < 10000) {
         c = c + a;
         a = b;
         b = c;
         document.write(c);
-        if ( c > 1000000000) {
-            break;
-        }
+        // if ( c > 1000000000) {
+        //     break;
+        // }
 
     }
 </script>

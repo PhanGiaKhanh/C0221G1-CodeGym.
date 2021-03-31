@@ -10,12 +10,11 @@
     let denominators = [6, 3, 4];
     let a = numerators;
     let b = denominators;
-    let max ;
+    let max = a[0]/b[0];
     let index = 0;
     for (let i = 0; i<a.length; i++) {
-        max = a[0]/b[0];
         if (max < a[i]/b[i]) {
-            max = a[i]/b[i]
+            max = a[i]/b[i];
             index =i;
         }
     }
