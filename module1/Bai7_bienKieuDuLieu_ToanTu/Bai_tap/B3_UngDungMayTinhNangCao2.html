@@ -13,65 +13,65 @@
     </style>
 </head>
 <body>
-    <table border="1" style="border-collapse: collapse">
-        <tr>
-            <td colspan="4">
-                <input type="text" id="INPUT" value="0" style="width:110px">
-            </td>
-        </tr>
-        <tr>
-            <td><input type="button" value="(" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value=")" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="<" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="AC" onclick="clickOn(this.value)"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="7" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="8" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="9" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="/" onclick="clickOn(this.value)"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="4" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="5" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="6" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="*" onclick="clickOn(this.value)"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="1" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="2" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="3" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="-" onclick="clickOn(this.value)"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="0" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="." onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="=" onclick="clickOn(this.value)"></td>
-            <td><input type="button" value="+" onclick="clickOn(this.value)"></td>
-        </tr>
-    </table>
+<table border="1" style="border-collapse: collapse">
+    <tr>
+        <td colspan="4">
+            <input type="text" id="INPUT" value="0" style="width:110px">
+        </td>
+    </tr>
+    <tr>
+        <td><input type="button" value="(" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value=")" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="<" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="AC" onclick="clickOn(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="8" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="9" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="/" onclick="clickOn(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="5" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="6" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="*" onclick="clickOn(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="2" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="3" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="-" onclick="clickOn(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="0" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="." onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="=" onclick="clickOn(this.value)"></td>
+        <td><input type="button" value="+" onclick="clickOn(this.value)"></td>
+    </tr>
+</table>
 
-    <script>
-        let number = '' ;
-        function clickOn(ob) {
-            switch (ob) {
-                case '+':
-                    number += '+';
-                    break;
-                case '=':
-                    number = eval(number);
-                    break;
-                case 'AC':
-                    number = 0;
-                    break;
-                case '<':
-                    number = number.substr(0, number.length - 1);
-                    break;
-                default :
-                    number += ob;
-            }
-            document.getElementById("INPUT").value = number;
+<script>
+    let number = '' ;
+    function clickOn(ob) {
+        switch (ob) {
+            case '+':
+                number += '+';
+                break;
+            case '=':
+                number = eval(number);
+                break;
+            case 'AC':
+                number = 0;
+                break;
+            case '<':
+                number = number.substr(0, number.length - 1);
+                break;
+            default :
+                number += ob;
         }
-    </script>
+        document.getElementById("INPUT").value = number;
+    }
+</script>
 </body>
 </html>
