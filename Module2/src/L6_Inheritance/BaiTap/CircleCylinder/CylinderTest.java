@@ -5,7 +5,7 @@ public class CylinderTest {
         Cylinder cylinder = new Cylinder();
         System.out.println(cylinder);
 
-        cylinder = new Cylinder(8,6,"Blue");
+        cylinder = new Cylinder(6,8,"Blue");
         System.out.println(cylinder);
     }
 }

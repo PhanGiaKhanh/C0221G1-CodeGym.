@@ -16,11 +16,7 @@ public class Cylinder extends Circle {
         this.height = height;
     }
     public double getVolume(){
-        return Math.floor(getPerimeter()*height*100)/100;
-    }
-    @Override
-    public double getArea() {
-        return Math.floor(2*Math.PI*getRadius()*(getRadius()+height)*100)/100;
+        return Math.floor(super.getArea()*height*100)/100;
     }
     @Override
     public String toString(){
