@@ -1,4 +1,4 @@
-package bai12_java_collection_framework.thuc_hanh;
+package bai12_java_collection_framework.thuc_hanh.hash_map_hash_set;
 
 public class Student {
     private String name;
@@ -41,6 +41,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student@name=" + name + ",age=" + age + ",address=" + address;
+        return "Student: name=" + name + " ,age=" + age + " ,address=" + address;
     }
 }

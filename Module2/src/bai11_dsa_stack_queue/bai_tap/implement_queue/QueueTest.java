@@ -1,13 +1,13 @@
 package bai11_dsa_stack_queue.bai_tap.implement_queue;
 
-public class Solution{
+public class QueueTest {
     public static void main(String[] args) {
-        Queue solution = new Queue();
-        solution.deQueue();
-        solution.enQueue(1);
-        solution.enQueue(2);
-        solution.enQueue(3);
-        solution.deQueue();
-        solution.displayQueue();
+        Queue queue = new Queue();
+        queue.deQueue();
+        queue.enQueue(1);
+        queue.enQueue(2);
+        queue.enQueue(3);
+        queue.deQueue();
+        queue.displayQueue();
     }
 }

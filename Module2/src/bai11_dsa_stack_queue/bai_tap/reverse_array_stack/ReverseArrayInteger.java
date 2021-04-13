@@ -4,7 +4,7 @@ import bai11_dsa_stack_queue.thuc_hanh.implement_stack.MyGenericStack;
 
 import java.util.Arrays;
 
-public class ReverseArray {
+public class ReverseArrayInteger {
     public static void main(String[] args) {
         MyGenericStack<Integer> stack = new MyGenericStack();
         int[] array = new int[]{1,2,3,4,5};

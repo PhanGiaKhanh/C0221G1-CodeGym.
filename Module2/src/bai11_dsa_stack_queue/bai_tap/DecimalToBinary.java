@@ -2,11 +2,11 @@ package bai11_dsa_stack_queue.bai_tap;
 
 import java.util.*;
 
-public class ThapPhanSangNhiPhan {
+public class DecimalToBinary {
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter 1 number integer: ");
+        System.out.print("Enter 1 number decimal: ");
         int number = Integer.parseInt(scanner.nextLine());
 
         exchangeBinary(stack, number);

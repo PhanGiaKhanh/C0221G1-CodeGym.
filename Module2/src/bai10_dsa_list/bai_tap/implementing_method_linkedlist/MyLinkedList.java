@@ -46,16 +46,16 @@ public class MyLinkedList<E> {
 
     public void addLast(E element) {
         Node temp = head;
-        for (int i = 0; temp.next != null; i++) {
+        while(temp.next != null){ // temp.next = null > ngừng vòng lặp và lấy temp là giá trị cuối cùng
             temp = temp.next;
         }
-        temp.next = new Node(element);
-//        head.next = new Node(element);
+        temp.next = new Node(element); // trỏ temp.next đến phần tử mới
+        temp.next.next = null; // trỏ next của phần tử mới đến null
         numNodes++;
     }
 
 
-
+// hàm get1 tạo ra để test chạy chương trình nên ko có get1
     public Object get1(int index) {
         if (index >= numNodes || index <= 0) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size " + index);
@@ -135,8 +135,8 @@ public class MyLinkedList<E> {
         }
         return index;
     }
+    // hàm này ko cần thiết vì ko thể tăng độ rộng
 //    public void ensureCapacity(int minCapacity){
-//
 //    }
     public E get(int index){
         Node temp = head;
@@ -149,13 +149,7 @@ public class MyLinkedList<E> {
         }
         return result;
     }
-    //    public E get(int index) {
-//        Node temp = head;
-//        for (int i = 0; i < index - 1; i++) {
-//            temp = temp.next;
-//        }
-//        return (E) temp;
-//    }
+
     public E getFist(){
         return (E) head;
     }
