@@ -7,7 +7,7 @@ public interface Tree<E> {
 
     int getSize();
 
-    void postOrder();
+    void postOrder();void postOrder1();
 
     void deleteRec();
 }

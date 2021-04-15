@@ -73,6 +73,18 @@ public class BTS<E extends Comparable<E>> extends AbstractTree<E> {
             System.out.println(root.element);
         }
     }
+    @Override
+    public void postOrder1() {
+        postOrder(root);
+    }
+
+    protected void postOrder1(TreeNode<E> root) {
+        if (root != null) {
+            System.out.println(root.element);
+            postOrder(root.left);
+            postOrder(root.right);
+        }
+    }
 
     public void deleteKey(E key) {
         root = deleteRec(root, key);
