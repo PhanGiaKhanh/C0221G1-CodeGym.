@@ -1,4 +1,4 @@
-package bai12_java_collection_framework.bai_tap.optional_postorder_binary_tree;
+package bai12_java_collection_framework.bai_tap;
 
 import bai12_java_collection_framework.thuc_hanh.set_find_binary.BTS;
 

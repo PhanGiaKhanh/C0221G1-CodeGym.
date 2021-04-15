@@ -4,10 +4,10 @@ public class BTS<E extends Comparable<E>> extends AbstractTree<E> {
     protected TreeNode<E> root;
     protected int size = 0;
 
-    public BTS (){
+    public BTS() {
     }
 
-    public BTS (E[] objects){
+    public BTS(E[] objects) {
         for (int i = 0; i < objects.length; i++) {
             insert(objects[i]);
         }
@@ -48,48 +48,50 @@ public class BTS<E extends Comparable<E>> extends AbstractTree<E> {
     public int getSize() {
         return size;
     }
+
     @Override
     public void inorder() {
         inorder(root);
     }
+
     protected void inorder(TreeNode<E> root) {
-        if (root == null) return;
-        inorder(root.left);
-        System.out.println(root.element + " ");
-        inorder(root.right);
-    }
-    public void postOrder(){
-        postOrder(root);
-    }
-    protected void postOrder(TreeNode<E> root){
-        if(root != null)
-        {
-            postOrder(root.left);
-            postOrder(root.right);
-            System.out.println( root.element);
+        if (root == null) {
+            inorder(root.left);
+            System.out.println(root.element + " ");
+            inorder(root.right);
         }
     }
-    void deleteKey(E key)
-    {
+
+    public void postOrder() {
+        postOrder(root);
+    }
+
+    protected void postOrder(TreeNode<E> root) {
+        if (root != null) {
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.println(root.element);
+        }
+    }
+
+    public void deleteKey(E key) {
         root = deleteRec(root, key);
     }
 
     /* A recursive function to insert a new key in BST */
-    TreeNode<E> deleteRec(TreeNode<E> root, E key)
-    {
+    protected TreeNode<E> deleteRec(TreeNode<E> root, E key) {
         /* Base Case: If the tree is empty */
         if (root == null) return root;
 
         /* Otherwise, recur down the tree */
-        if (key.compareTo( root.element) <0)
+        if (key.compareTo(root.element) < 0)
             root.left = deleteRec(root.left, key);
         else if (key.compareTo(root.element) > 0)
             root.right = deleteRec(root.right, key);
 
             // if key is same as root's key, then This is the node
             // to be deleted
-        else
-        {
+        else {
             // node with only one child or no child
             if (root.left == null)
                 return root.right;
@@ -106,14 +108,32 @@ public class BTS<E extends Comparable<E>> extends AbstractTree<E> {
 
         return root;
     }
-    E minValue(TreeNode<E> root)
-    {
+
+    protected E minValue(TreeNode<E> root) {
         E minv = root.element;
-        while (root.left != null)
-        {
+        while (root.left != null) {
             minv = root.left.element;
             root = root.left;
         }
         return minv;
+    }
+
+    protected boolean Search(E key) {
+        TreeNode<E> current = root;
+        while (current.left !=null){
+            if (key.compareTo(current.element)>0) current.left = current;
+            else if (key.compareTo(current.element)<0) current.right = current;
+            else {
+                if (current.element.compareTo(key)==0){
+                    return true;
+                }
+                if (current == null){
+                    System.out.println("không tìm thấy");
+                    return false;
+                }
+
+            }
+        }
+        return false;
     }
 }
