@@ -1,6 +1,5 @@
-package bai_tap_them.zoo;
+package bai_tap_them.b1_zoo;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class TestZoo {

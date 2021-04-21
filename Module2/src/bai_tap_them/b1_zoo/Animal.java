@@ -1,6 +1,4 @@
-package bai_tap_them.zoo;
-
-import case_study.controllers.Input_InformationServices;
+package bai_tap_them.b1_zoo;
 
 import java.util.Scanner;
 
