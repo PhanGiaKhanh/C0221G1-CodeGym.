@@ -29,6 +29,7 @@ public class CopyFileText {
             System.out.print((char) c);
             c = fileReader.read();
         }
+
         fileReader.close();
 
         String s = "Trung tam java";
