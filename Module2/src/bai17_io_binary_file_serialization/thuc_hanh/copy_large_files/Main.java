@@ -1,4 +1,4 @@
-package bai17_io_binary_file_serialization.thuc_hanh;
+package bai17_io_binary_file_serialization.thuc_hanh.copy_large_files;
 
 import java.io.*;
 import java.nio.file.Files;

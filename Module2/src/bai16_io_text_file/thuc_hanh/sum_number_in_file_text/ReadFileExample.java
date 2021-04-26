@@ -1,4 +1,4 @@
-package bai16_io_text_file.thuc_hanh;
+package bai16_io_text_file.thuc_hanh.sum_number_in_file_text;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class ReadFileText {
+public class ReadFileExample {
     public void readFileText(String filePath) {
         try {
             // Đọc file theo đường dẫn
@@ -34,5 +34,12 @@ public class ReadFileText {
             System.err.println("Fie không tồn tại or nội dung có lỗi!");
         }
     }
+    public static void main(String[] args) {
+        System.out.println("Nhập đường dẫn file: ");
+        Scanner scanner = new Scanner(System.in);
+        String path = scanner.nextLine();
 
+        ReadFileExample readfileEx = new ReadFileExample();
+        readfileEx.readFileText(path);
+    }
 }
