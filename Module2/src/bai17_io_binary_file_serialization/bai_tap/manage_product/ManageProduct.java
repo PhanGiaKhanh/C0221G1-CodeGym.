@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class ManageProduct {
     List<Product> listProduct = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
+    String path = "src/bai17_io_binary_file_serialization/bai_tap/manage_product/list.txt";
 
     public void createProduct() {
         Product ly = new Product("01", "Ly", "Song Long", 12000, "Gia dụng");
@@ -20,9 +21,15 @@ public class ManageProduct {
         listProduct.add(chen);
         listProduct.add(to);
         listProduct.add(bat);
+        try {
+            writeFile(path, listProduct);
+        } catch (Exception e) {
+            System.out.println("Lỗi " + e);
+        }
+
     }
 
-    public void menuProduct() {
+    public void menuProduct()  {
         int choose;
         boolean isExit = false;
         do {
@@ -30,6 +37,7 @@ public class ManageProduct {
                     "2. Delete product\n" +
                     "3. Show list product \n" +
                     "4. Search id \n" +
+                    "5. Exit \n" +
                     "Choose:  ");
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -47,6 +55,9 @@ public class ManageProduct {
                     break;
                 case 5:
                     isExit = true;
+                    break;
+                default:
+                    System.err.println("________Please choose 1-5________");
             }
             if (isExit) {
                 break;
@@ -58,21 +69,46 @@ public class ManageProduct {
     }
 
     private void showListProduct() {
+        try {
+            List<Product> listShow = readFile(path);
+            listShow.forEach(e -> System.out.println(e));
+        }catch (Exception e){
+            System.out.println("Lỗi không tìm thấy file " +e );
+        }
+
     }
 
     private void deleteProduct() {
+
     }
 
     private void addProduct() {
-        System.out.println("Add new product :");
-        System.out.print("Please input product code: ");
-        System.out.print("Please input product name: ");
-        System.out.print("Please input manafacturer: ");
-        System.out.print("Please input price");
-        System.out.print("Please input other description: ");
+        String productCode;
+        String productName;
+        String manufacturer;
+        double price;
+        String otherDescription;
+        try {
+            System.out.println("Add new product :");
+            System.out.print("Please input product code: ");
+            productCode = scanner.nextLine();
+            System.out.print("Please input product name: ");
+            productName = scanner.nextLine();
+            System.out.print("Please input manafacturer: ");
+            manufacturer = scanner.nextLine();
+            System.out.print("Please input price");
+            price = Double.parseDouble(scanner.nextLine());
+            System.out.print("Please input other description: ");
+            otherDescription = scanner.nextLine();
+            listProduct.add(new Product(productCode, productName, manufacturer, price, otherDescription));
+            writeFile(path, listProduct);
+        }catch (Exception e) {
+            System.err.println("Lỗi " + e);
+        }
+
     }
 
-    public void writeFile(String path, List<Product> products) throws Exception {
+    public void writeFile(String path, List<Product> products) {
         try {
             FileOutputStream fo = new FileOutputStream(path);
             ObjectOutputStream oos = new ObjectOutputStream(fo);
