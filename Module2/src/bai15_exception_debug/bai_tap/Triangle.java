@@ -24,8 +24,8 @@ public class Triangle {
             double result = Triangle(side1, side2, side3);
             System.out.println("Valid triangle sides");
         } catch (Exception e) {
-            System.out.println("Exception: Invalid Triangle Side Numbers");
+            System.out.println("Validate: Invalid Triangle Side Numbers");
         }
-        System.out.println("Exception continues......");
+        System.out.println("Validate continues......");
     }
 }

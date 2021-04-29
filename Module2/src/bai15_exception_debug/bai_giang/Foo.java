@@ -14,7 +14,7 @@ public class Foo {
         }catch (ArithmeticException e) {
             System.out.println("Arithmetic");
         }catch (Exception ae) {
-            System.out.println("Exception");
+            System.out.println("Validate");
         }
         System.out.println("finished");
     }

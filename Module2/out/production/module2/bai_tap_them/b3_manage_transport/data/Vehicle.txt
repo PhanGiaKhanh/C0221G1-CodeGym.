@@ -1,0 +1,9 @@
+43A-212.56,Toyota,2019,Xe du lịch,Nguyễn Văn A,5
+43A-212.56,Toyota,2019,Du lịch,Nguyễn Văn A,5
+43B-453.88,Huyndai,2020,Xe khách,Nguyễn Văn B,45
+43B-453.89,Ford,2020,Xe khách,Nguyễn Văn C,16
+43-K1-678.56,Yamaha,2019,Nguyễn Văn A,100
+43-H1-345.89,Honda,2019,Nguyễn Văn B,150
+43-AK-765.23,Yamaha,2019,Nguyễn Văn C,50
+43C-012.34,Huyndai,2019,Nguyễn Văn A,3
+43C-47.678,Dongfeng,2020,Nguyễn Văn B,9

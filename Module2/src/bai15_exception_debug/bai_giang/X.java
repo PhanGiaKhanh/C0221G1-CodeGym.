@@ -7,7 +7,7 @@ public class X {
 //            System.out.print("A");
 //        }catch (RuntimeException ex){
 //            System.out.print("B");
-//        }catch (Exception ex1){
+//        }catch (Validate ex1){
 //            System.out.print("C");
 //        }finally{
 //            System.out.print("D");
