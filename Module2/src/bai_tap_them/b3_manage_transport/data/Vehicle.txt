@@ -6,3 +6,4 @@
 43-H1-345.89,Honda,2019,Nguyễn Văn B,150
 43-AK-765.23,Yamaha,2019,Nguyễn Văn C,50
 43C-012.34,Huyndai,2019,Nguyễn Văn A,3
+43A-012.34,Huyndai,2019,Nguyễn Văn A,3

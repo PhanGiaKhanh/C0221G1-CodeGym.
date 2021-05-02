@@ -21,7 +21,7 @@ public class Triangle2ChuaXong {
                 System.out.println(" lỗi " + e);
 //            System.out.println(e.getMessage());//in ra tin nhan loi
             }
-//            catch (Validate e){
+//            catch (ThemThuocTinh e){
 //                System.out.println("Lỗi nhập dữ liệu tại  " + e);
 //            }
             catch (NumberFormatException e){

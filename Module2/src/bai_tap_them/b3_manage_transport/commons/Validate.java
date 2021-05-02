@@ -6,48 +6,48 @@ public class Validate {
     private static Scanner scanner = new Scanner(System.in);
 
     public static String validateBienKiemSoat(String regex) {
-        String bienKiemSoat;
+        String input;
         do {
             System.out.println("Nhập biển kiểm soát: XXC|Y-XXX.XXX  ");
-            bienKiemSoat = scanner.nextLine();
-            if (bienKiemSoat.matches(regex)) {
+            input = scanner.nextLine();
+            if (input.matches(regex)) {
                 break;
             }
             System.err.println("_____Nhập sai định dạng_____");
         } while (true);
-        return bienKiemSoat;
+        return input;
     }
 
     public static String validateHangSanXuat() {
-        String hangSanXuat;
+        String input;
         String regex = "^[A-Z][a-z]+$";
         do {
             System.out.println("Nhập hãng sản xuất: (vd: Huyndai)  ");
-            hangSanXuat = scanner.nextLine();
-            if (hangSanXuat.matches(regex)) {
+            input = scanner.nextLine();
+            if (input.matches(regex)) {
                 break;
             }
             System.err.println("_____Nhập sai định dạng_____");
         } while (true);
-        return hangSanXuat;
+        return input;
     }
 
     public static int validateNamSanXuat() {
-        String namSanXuat;
+        String input;
         String regex = "^[12][0-9]{3}$";
         do {
             System.out.println("Nhập năm sản xuất: (vd: 2020)  ");
-            namSanXuat = scanner.nextLine();
-            if (namSanXuat.matches(regex)) {
+            input = scanner.nextLine();
+            if (input.matches(regex)) {
                 break;
             }
             System.err.println("_____Nhập sai định dạng_____");
         } while (true);
-        return Integer.parseInt(namSanXuat);
+        return Integer.parseInt(input);
     }
 
     public static String validateChuSoHuu() {
-        String chuSoHuu;
+        String input;
         String regex = "^[A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơ" +
                 "ƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềể" +
                 "ỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừ" +
@@ -57,22 +57,22 @@ public class Validate {
                 "ễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+)*$";
         do {
             System.out.println("Nhập chủ sở hữu: (vd: Nguyễn Văn)  ");
-            chuSoHuu = scanner.nextLine();
-            if (chuSoHuu.matches(regex)) {
+            input = scanner.nextLine();
+            if (input.matches(regex)) {
                 break;
             }
             System.err.println("_____Nhập sai định dạng_____");
         } while (true);
-        return chuSoHuu;
+        return input;
     }
     public static int validateSoChoNgoi() {
-        String soChoNgoi;
+        String input;
         String regex = "^[1-9][0-9]*$";
         do {
             try{
                 System.out.println("Nhập số chỗ ngồi: (vd: 20)  ");
-                soChoNgoi = scanner.nextLine();
-                if (soChoNgoi.matches(regex)) {
+                input = scanner.nextLine();
+                if (input.matches(regex)) {
                     break;
                 }
                 throw new Exception("Nhập sai định dạng ");
@@ -80,17 +80,17 @@ public class Validate {
                 e.printStackTrace();
             }
         } while (true);
-        return Integer.parseInt(soChoNgoi);
+        return Integer.parseInt(input);
     }
 
     public static String validateTrongTai() {
-        String trongTai;
+        String input;
         String regex = "^[0-9]+$";
         do {
             try{
                 System.out.println("Nhập số trọng tải: (vd: 20)  ");
-                trongTai = scanner.nextLine();
-                if (trongTai.matches(regex)) {
+                input = scanner.nextLine();
+                if (input.matches(regex)) {
                     break;
                 }
                 throw new Exception("Nhập sai định dạng ");
@@ -98,16 +98,16 @@ public class Validate {
                 e.printStackTrace();
             }
         } while (true);
-        return trongTai;
+        return input;
     }
     public static Double validateCongSuat() {
-        String congSuat;
+        String input;
         String regex = "^[0-9]+$";
         do {
             try{
                 System.out.println("Nhập số công suất: (vd: 20)  ");
-                congSuat = scanner.nextLine();
-                if (congSuat.matches(regex)) {
+                input = scanner.nextLine();
+                if (input.matches(regex)) {
                     break;
                 }
                 throw new Exception("Nhập sai định dạng ");
@@ -115,6 +115,6 @@ public class Validate {
                 e.printStackTrace();
             }
         } while (true);
-        return Double.parseDouble(congSuat);
+        return Double.parseDouble(input);
     }
 }
