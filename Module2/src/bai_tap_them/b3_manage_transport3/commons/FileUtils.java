@@ -23,6 +23,7 @@ public class FileUtils {
                 bw.write(vehicle.toString());
                 bw.newLine();
             }
+            bw.flush();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

@@ -1,17 +1,17 @@
 package case_study.models;
 
 public abstract class Service {
-    private String id;
-    private String serviceName;
-    private double area;
-    private int price;
-    private int capacity;
-    private int rentType;
+    protected String id;
+    protected String serviceName;
+    protected double area;
+    protected int price;
+    protected int capacity;
+    protected String rentType;
 
     public Service() {
     }
 
-    public Service(String id, String serviceName, double area, int price, int capacity, int rentType) {
+    public Service(String id, String serviceName, double area, int price, int capacity, String rentType) {
         this.id = id;
         this.serviceName = serviceName;
         this.area = area;
@@ -60,11 +60,11 @@ public abstract class Service {
         this.capacity = capacity;
     }
 
-    public int getRentType() {
+    public String getRentType() {
         return rentType;
     }
 
-    public void setRentType(int rentType) {
+    public void setRentType(String rentType) {
         this.rentType = rentType;
     }
 
@@ -78,5 +78,5 @@ public abstract class Service {
                 "\nrentType=" + rentType;
     }
 
-    public abstract String showInfor();
+    public abstract void showInfo();
 }

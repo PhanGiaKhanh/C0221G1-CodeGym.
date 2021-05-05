@@ -10,9 +10,9 @@ public class TestZoo {
         int choose;
         do {
 
-            System.out.print("1. Add room" +
+            System.out.print("1. AddObject room" +
                     "\n2. Delete room" +
-                    "\n3. Add animal " +
+                    "\n3. AddObject animal " +
                     "\n4. Delete animal" +
                     "\n5. Display animals" +
                     "\n6. Exit " +

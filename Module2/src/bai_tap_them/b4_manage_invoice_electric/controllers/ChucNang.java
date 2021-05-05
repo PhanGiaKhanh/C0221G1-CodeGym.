@@ -15,15 +15,12 @@ public class ChucNang {
                 System.out.println("Nhập lựa chọn(1-4): ");
                 choose = Byte.parseByte(scanner.nextLine());
                 switch (choose){
-                    case 1:
-                    case 2:
+                    case 1: ThemMoi.khachHangVN();break;
+                    case 2: ThemMoi.khachHangNN();break;
                     case 3: return;
                     case 4: System.exit(0);
                     default:
                         System.err.println("Vui lòng nhập trong khoảng 1~4");break;
-                }
-                if (String.valueOf(choose).matches("^\\D$")){
-                    throw new Exception("Lỗi chương trình");
                 }
             }catch (Exception e){
                 e.printStackTrace();

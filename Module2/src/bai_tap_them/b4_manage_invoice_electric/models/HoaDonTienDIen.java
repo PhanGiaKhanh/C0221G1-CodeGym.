@@ -1,24 +1,17 @@
 package bai_tap_them.b4_manage_invoice_electric.models;
 
-public abstract class HoaDonTienDIen {
+public class HoaDonTienDIen implements HienThi {
     protected String maHoaDon;
     protected String maKhachHang;
     protected String ngayRaHoaDon;
-    protected int soLuongTieuThu;
+    protected double soLuongTieuThu;
     protected double donGia;
     protected double thanhTien;
 
     public HoaDonTienDIen() {
     }
-    public HoaDonTienDIen(String[] strings){
-        this.maHoaDon = strings[0];
-        this.maKhachHang = strings[1];
-        this.ngayRaHoaDon = strings[2];
-        this.soLuongTieuThu = Integer.parseInt(strings[3]);
-        this.donGia = Double.parseDouble(strings[4]);
-        this.thanhTien = Double.parseDouble(strings[5]);
-    }
-    public HoaDonTienDIen(String maHoaDon, String maKhachHang, String ngayRaHoaDon, int soLuongTieuThu, double donGia, double thanhTien) {
+
+    public HoaDonTienDIen(String maHoaDon, String maKhachHang, String ngayRaHoaDon, double soLuongTieuThu, double donGia, double thanhTien) {
         this.maHoaDon = maHoaDon;
         this.maKhachHang = maKhachHang;
         this.ngayRaHoaDon = ngayRaHoaDon;
@@ -29,7 +22,7 @@ public abstract class HoaDonTienDIen {
 
     @Override
     public String toString() {
-        return  maHoaDon +
+        return maHoaDon +
                 "," + maKhachHang +
                 "," + ngayRaHoaDon +
                 "," + soLuongTieuThu +
@@ -37,8 +30,17 @@ public abstract class HoaDonTienDIen {
                 "," + thanhTien;
     }
 
-    public abstract void showInfo();
-
+    @Override
+    public void showInfo() {
+        System.out.println("HoaDonTienDIen{" +
+                "maHoaDon='" + maHoaDon + '\'' +
+                ", maKhachHang='" + maKhachHang + '\'' +
+                ", ngayRaHoaDon='" + ngayRaHoaDon + '\'' +
+                ", soLuongTieuThu=" + soLuongTieuThu +
+                ", donGia=" + donGia +
+                ", thanhTien=" + thanhTien +
+                '}');
+    }
     public String getMaHoaDon() {
         return maHoaDon;
     }
@@ -63,7 +65,7 @@ public abstract class HoaDonTienDIen {
         this.ngayRaHoaDon = ngayRaHoaDon;
     }
 
-    public int getSoLuongTieuThu() {
+    public double getSoLuongTieuThu() {
         return soLuongTieuThu;
     }
 
@@ -86,4 +88,6 @@ public abstract class HoaDonTienDIen {
     public void setThanhTien(double thanhTien) {
         this.thanhTien = thanhTien;
     }
+
+
 }

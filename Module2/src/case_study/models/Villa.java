@@ -8,30 +8,57 @@ public class Villa extends Service {
 
     public Villa() {
     }
-
-    @Override
-    public String showInfor() {
-        return super.toString()
-                + "\nStandard: " + standard
-                + "\nComfort: " + convenient
-                + "\nFloors: " + floors
-                + "\nPool Area: " + poolArea;
+    public Villa(String[] list) {
+        this.id = list[0];
+        this.serviceName = list[1];
+        this.area = Double.parseDouble(list[2]);
+        this.price = Integer.parseInt(list[3]);
+        this.capacity = Integer.parseInt(list[4]);
+        this.rentType = list[5];
+        this.standard = list[6];
+        this.convenient = list[7];
+        this.floors = Integer.parseInt(list[8]);
+        this.poolArea = Double.parseDouble(list[9]);
     }
 
-    public Villa(String standard, String convenient, int floors, double poolArea) {
-        this.standard = standard;
-        this.convenient = convenient;
-        this.floors = floors;
-        this.poolArea = poolArea;
-    }
-
-    public Villa(String id, String serviceName, double area, int price, int capacity, int rentType, String standard, String convenient, int floors, double poolArea) {
+    public Villa(String id, String serviceName, double area, int price, int capacity, String rentType, String standard, String convenient, int floors, double poolArea) {
         super(id, serviceName, area, price, capacity, rentType);
         this.standard = standard;
         this.convenient = convenient;
         this.floors = floors;
         this.poolArea = poolArea;
     }
+
+    @Override
+    public String toString() {
+        return id + '\'' +
+                "," + serviceName +
+                "," + area +
+                "," + price +
+                "," + capacity +
+                "," + rentType +
+                "," + standard +
+                "," + convenient +
+                "," + floors +
+                "," + poolArea;
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println("Villa{" +
+                ", id='" + id + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", area=" + area +
+                ", price=" + price +
+                ", capacity=" + capacity +
+                ", rentType='" + rentType + '\'' +
+                ", standard='" + standard + '\'' +
+                ", convenient='" + convenient + '\'' +
+                ", floors=" + floors +
+                ", poolArea=" + poolArea +
+                '}');
+    }
+
 
     public String getStandard() {
         return standard;
@@ -63,15 +90,5 @@ public class Villa extends Service {
 
     public void setPoolArea(double poolArea) {
         this.poolArea = poolArea;
-    }
-
-    @Override
-    public String toString() {
-        return "Villa{" +
-                "standard=" + standard +
-                ", comfort='" + convenient + '\'' +
-                ", floors=" + floors +
-                ", poolArea=" + poolArea +
-                '}';
     }
 }

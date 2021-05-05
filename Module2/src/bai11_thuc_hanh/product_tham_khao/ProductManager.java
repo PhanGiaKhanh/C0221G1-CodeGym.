@@ -131,7 +131,7 @@ public class ProductManager extends Products  {
         System.exit(0);
     }
     public static void menu(){
-        System.out.println("1. Add Products : ");
+        System.out.println("1. AddObject Products : ");
         System.out.println("2. Edits Products : ");
         System.out.println("3. Delete Products : ");
         System.out.println("4. Sort Products ID : ");

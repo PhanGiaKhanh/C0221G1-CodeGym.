@@ -19,7 +19,7 @@
 //    }
 //
 //    @Override
-//    /** Add a new element at the specified index */
+//    /** AddObject a new element at the specified index */
 //    public void add(int index, E e) {
 //        ensureCapacity();
 //// Move the elements to the right after the specified index
@@ -190,24 +190,24 @@
 //        // Create a list
 //        MyList list = new MyArrayList();
 //
-//        // Add elements to the list
-//        list.add("America"); // Add it to the list
+//        // AddObject elements to the list
+//        list.add("America"); // AddObject it to the list
 //        System.out.println("(1) " + list);
 //
-//        list.add(0, "Canada"); // Add it to the beginning of the list
+//        list.add(0, "Canada"); // AddObject it to the beginning of the list
 //        System.out.println("(2) " + list);
 //
-//        list.add("Russia"); // Add it to the end of the list
+//        list.add("Russia"); // AddObject it to the end of the list
 //
 //        System.out.println("(3) " + list);
 //
-//        list.add("France"); // Add it to the end of the list
+//        list.add("France"); // AddObject it to the end of the list
 //        System.out.println("(4) " + list);
 //
-//        list.add(2, "Germany"); // Add it to the list at index 2
+//        list.add(2, "Germany"); // AddObject it to the list at index 2
 //        System.out.println("(5) " + list);
 //
-//        list.add(5, "Norway"); // Add it to the list at index 5
+//        list.add(5, "Norway"); // AddObject it to the list at index 5
 //        System.out.println("(6) " + list);
 //
 //        // Remove elements from the list

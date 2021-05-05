@@ -6,7 +6,7 @@ import java.util.Collections;
 public class CollectionsReverse {
     public static void main(String[] args) {
         ArrayList aList = new ArrayList();
-//Add elements to ArrayList object
+//AddObject elements to ArrayList object
         aList.add("1");
         aList.add("2");
         aList.add("3");

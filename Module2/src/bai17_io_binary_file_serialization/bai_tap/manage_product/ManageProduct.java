@@ -33,9 +33,9 @@ public class ManageProduct {
         int choose;
         boolean isExit = false;
         do {
-            System.out.println("1. Add product\n" +
+            System.out.println("1. AddObject product\n" +
                     "2. Delete product\n" +
-                    "3. Show list product \n" +
+                    "3. ShowObject list product \n" +
                     "4. Search id \n" +
                     "5. Exit \n" +
                     "Choose:  ");
@@ -89,7 +89,7 @@ public class ManageProduct {
         double price;
         String otherDescription;
         try {
-            System.out.println("Add new product :");
+            System.out.println("AddObject new product :");
             System.out.print("Please input product code: ");
             productCode = scanner.nextLine();
             System.out.print("Please input product name: ");
