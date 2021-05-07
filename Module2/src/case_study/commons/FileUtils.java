@@ -60,7 +60,7 @@ public class FileUtils {
         }
     }
       public static List<Service> read(String fileName) {
-        String path = PATH + fileName;
+        String path = fileName;
         File file = null;
         List<Service> list = new ArrayList<>();
         FileReader fileReader = null;

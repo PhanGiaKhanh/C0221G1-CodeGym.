@@ -69,7 +69,7 @@ public class HoaDonTienDIen implements HienThi {
         return soLuongTieuThu;
     }
 
-    public void setSoLuongTieuThu(int soLuongTieuThu) {
+    public void setSoLuongTieuThu(double soLuongTieuThu) {
         this.soLuongTieuThu = soLuongTieuThu;
     }
 

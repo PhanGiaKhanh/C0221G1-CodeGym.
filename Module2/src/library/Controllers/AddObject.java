@@ -9,36 +9,51 @@ public class AddObject {
 
     public static String add(String property, String regex) {
         String input = null;
-        do {
+        while (true) {
             try {
                 System.out.println("Nhập " + property + ": " + regex);
                 input = scanner.nextLine();
                 if (!input.matches(regex)) {
                     throw new MessageException("Lỗi định dạng " + property + ": " + regex);
                 }
-                break;
+                return input;
             } catch (MessageException v) {
                 System.err.println(v.getMessage());
             }
-        } while (true);
-        return input;
+        }
     }
 
     public static String add(String property, String regex, String message) {
         String input = null;
-        do {
+        while (true){
             try {
                 System.out.println("Nhập " + property + ": " + message);
                 input = scanner.nextLine();
                 if (!input.matches(regex)) {
                     throw new MessageException("Lỗi định dạng " + property + ": " + regex);
                 }
-                break;
+                return input;
             } catch (MessageException v) {
                 System.err.println(v.getMessage());
             }
-        } while (true);
-        return input;
+        }
     }
 
+    public static String kiemTraNgoaiLeNhapVao(String property, String regex, Exception exception) {
+        String nhapThuocTinh;
+        do {
+            try {
+                System.out.println("Nhập: " + property);
+                nhapThuocTinh = new Scanner(System.in).nextLine();
+                if (!nhapThuocTinh.matches(regex)) {
+                    throw new Exception();
+                }
+                break;
+            } catch (Exception e) {
+                System.err.println(exception.getMessage());
+                System.err.println("Lỗi định dạng: " + regex + "\nNhập lại: ");
+            }
+        } while (true);
+        return nhapThuocTinh;
+    }
 }

@@ -10,31 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtils {
-    private static final String PATH = "src/bai_tap_them/b3_manage_transport3/data/";
+    private static final String PATH = "";
 
     public static void writeList(String fileName, List<PhuongTien> lists, boolean status) {
-        String path = PATH + fileName;
-        FileWriter fileWriter = null;
-        BufferedWriter bw = null;
-        try {
-            fileWriter = new FileWriter(path, status);
-            bw = new BufferedWriter(fileWriter);
-            for (PhuongTien list : lists) {
-                bw.write(list.toString());
-                bw.newLine();
-            }
-            bw.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bw.close();
-                fileWriter.close();
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     public static void writeString(String fileName, String string, boolean status) {

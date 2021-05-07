@@ -35,4 +35,20 @@ public class KhachVietNam extends KhachHang {
                 ", dinhMucTieuThu='" + dinhMucTieuThu + '\'' +
                 '}');
     }
+
+    public String getLoaiKhachHang() {
+        return loaiKhachHang;
+    }
+
+    public void setLoaiKhachHang(String loaiKhachHang) {
+        this.loaiKhachHang = loaiKhachHang;
+    }
+
+    public String getDinhMucTieuThu() {
+        return dinhMucTieuThu;
+    }
+
+    public void setDinhMucTieuThu(String dinhMucTieuThu) {
+        this.dinhMucTieuThu = dinhMucTieuThu;
+    }
 }

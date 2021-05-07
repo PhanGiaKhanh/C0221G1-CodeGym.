@@ -37,6 +37,10 @@ public class AddNewServices {
             }
         }while (true);
     }
+
+    public static void main(String[] args) {
+
+    }
     public static void addVilla(){
         System.out.println("Nhập thông tin villa");
         String ma = "SVVL";
@@ -71,6 +75,7 @@ public class AddNewServices {
         list1.add(villa);
         FileUtils.write(Common.DATA_SERVICE,list1,true);
     }
+
     public static void addHouse(){
         System.out.println("Nhập thông tin house");
         String ma = "SVHO";
