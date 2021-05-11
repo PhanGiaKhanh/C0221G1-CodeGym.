@@ -18,6 +18,9 @@ public abstract class CanBo {
         this.diaChi = diaChi;
     }
 
+    public CanBo(String id, String loaiCB, String hoTen, String ngaySinh, String gioiTinh, String diaChi) {
+    }
+
     @Override
     public String toString() {
         return id +

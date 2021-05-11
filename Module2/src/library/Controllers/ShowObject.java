@@ -12,7 +12,7 @@ import java.util.*;
 
 public class ShowObject {
     public static void allOto(){
-        List<PhuongTien> lists = FileUtils.readList(Regex.FILE_NAME);
+        List<PhuongTien> lists = FileUtils.readList(" ");
         for (PhuongTien list : lists){
             if (list instanceof Oto) {
                 list.showInfo();
@@ -21,7 +21,7 @@ public class ShowObject {
     }
 
     public static void allNameOto(){
-        List<PhuongTien> lists = FileUtils.readList(Regex.FILE_NAME);
+        List<PhuongTien> lists = FileUtils.readList(" ");
         for (int i = 0; i< lists.size(); i++){
             if (lists.get(i) instanceof Oto) {
                 System.out.println(((Oto) lists.get(i)).getName());;
@@ -31,7 +31,7 @@ public class ShowObject {
 
     public static void allNameOtoSort() {
         List<PhuongTien> listOto = new ArrayList<>();
-        List<PhuongTien> lists = FileUtils.readList(Regex.FILE_NAME);
+        List<PhuongTien> lists = FileUtils.readList(" ");
         for (PhuongTien list : lists){
             if (list instanceof Oto) {
                 listOto.add(list);
@@ -43,7 +43,7 @@ public class ShowObject {
 
     private static void allNameOtoTreeSet() {
         List<PhuongTien> listOto = new ArrayList<>();
-        List<PhuongTien> lists = FileUtils.readList(Regex.FILE_NAME);
+        List<PhuongTien> lists = FileUtils.readList(" ");
         for (PhuongTien list : lists){
             if (list instanceof Oto) {
                 if (!listOto.contains(list)) {

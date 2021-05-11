@@ -92,24 +92,26 @@ public class DieuKhienDanhSach {
         String ten = ThemCanBo.them("tên", Chung.NAME_VN);
         CanBo canBo;
         String chon;
-        for (int i = 0; i < canBoList.size(); i++) {
-            canBo = canBoList.get(i);
-            if (canBo.getHoTen().equals(ten)) {
-                System.out.println("Bạn muốn chỉnh sửa thông tin của cán bộ : ");
-                canBo.showInfo();
-                System.out.println("1. Có\n" +
-                        "2. Không\n" +
-                        "Chọn 1 hoặc 2");
-                chon = scanner.nextLine();
-                switch (chon) {
-                    case "1":
-                        if (canBo instanceof CongNhan) {
+        while (true) {
+            for (int i = 0; i < canBoList.size(); i++) {
+                canBo = canBoList.get(i);
+                if (canBo.getHoTen().equals(ten)) {
+                    System.out.println("Bạn muốn chỉnh sửa thông tin của cán bộ : ");
+                    canBo.showInfo();
+                    System.out.println("1. Có\n" +
+                            "2. Không\n" +
+                            "Chọn 1 hoặc 2");
+                    chon = scanner.nextLine();
+                    switch (chon) {
+                        case "1":
+                            if (canBo instanceof CongNhan) {
 //                            canBo = ;
-                        }
-                        DocGhiFile.vetFile("canBo.csv", canBoList, false);
-                        return;
-                    case "2":
-                        return;
+                            }
+                            DocGhiFile.vetFile("canBo.csv", canBoList, false);
+                            return;
+                        case "2":
+                            return;
+                    }
                 }
             }
         }

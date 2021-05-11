@@ -14,7 +14,7 @@ public class CongNhan extends CanBo {
     @Override
     public String toString() {
         return id +
-                "," + hoTen +
+                ",3," + hoTen +
                 "," + ngaySinh +
                 "," + gioiTinh +
                 "," + diaChi +
@@ -25,7 +25,7 @@ public class CongNhan extends CanBo {
     public void showInfo() {
         System.out.println("CongNhan{" +
                 "id = " + id +
-                "hoTen='" + hoTen + '\'' +
+                ", hoTen='" + hoTen + '\'' +
                 ", ngaySinh='" + ngaySinh + '\'' +
                 ", gioiTinh='" + gioiTinh + '\'' +
                 ", diaChi='" + diaChi + '\'' +

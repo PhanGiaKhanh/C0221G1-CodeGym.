@@ -20,7 +20,7 @@ public class ID_Auto {
         String ma = "SVRO-";
         String regex = "^SVRO-[0-9]{4}$";
         List<Service> objects = new ArrayList<>();
-        List<Service> lists = FileUtils.read("src/library/Controllers/file.csv");
+        List<Service> lists = FileUtils.read(" ");
         for (Service list : lists) {
             if (list instanceof Room) {
                 objects.add(list);
@@ -40,7 +40,7 @@ public class ID_Auto {
 
     public static String id_0001() {
         String regex = "^[0-9]{4}$";
-        List<Service> lists = FileUtils.read("src/library/Controllers/file.csv");
+        List<Service> lists = FileUtils.read(" ");
         List<Service> objects = new ArrayList<>();
         for (Service list : lists) {
             if (list instanceof Room) {

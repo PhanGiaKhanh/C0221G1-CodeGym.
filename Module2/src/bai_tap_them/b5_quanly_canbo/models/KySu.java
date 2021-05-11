@@ -18,7 +18,7 @@ public class KySu extends CanBo{
     @Override
     public String toString() {
         return id +
-                "," + hoTen +
+                ",1," + hoTen +
                 "," + ngaySinh +
                 "," + gioiTinh +
                 "," + diaChi +
@@ -29,7 +29,7 @@ public class KySu extends CanBo{
     public void showInfo() {
         System.out.println("KySu{" +
                 "id = " + id +
-                "hoTen='" + hoTen + '\'' +
+                ", hoTen='" + hoTen + '\'' +
                 ", ngaySinh='" + ngaySinh + '\'' +
                 ", gioiTinh='" + gioiTinh + '\'' +
                 ", diaChi='" + diaChi + '\'' +

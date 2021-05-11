@@ -51,14 +51,14 @@ public class DocGhiFile {
 
             while ((line=bufferedReader.readLine()) != null){
                 array = line.split(",");
-                if (line.contains("/7")){
-                    CanBo congNhan = new CongNhan(array[0],array[1],array[2],array[3],array[4],array[5]);
+                if (array[1].equals("3")){
+                    CanBo congNhan = new CongNhan(array[0],array[2],array[3],array[4],array[5],array[6]);
                     list.add(congNhan);
-                } else if (line.contains("PV")){
-                    CanBo nhanVien = new NhanVien(array[0],array[1],array[2],array[3], array[4],array[5]);
+                } else if (array[1].equals("2")){
+                    CanBo nhanVien = new NhanVien(array[0],array[2],array[3],array[4],array[5],array[6]);
                     list.add(nhanVien);
-                } else {
-                    CanBo kySu = new KySu(array[0],array[1],array[2],array[3], array[4],array[5]);
+                } else if (array[1].equals("1")){
+                    CanBo kySu = new KySu(array[0],array[2],array[3],array[4],array[5],array[6]);
                     list.add(kySu);
                 }
             }

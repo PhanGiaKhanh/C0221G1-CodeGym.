@@ -3,20 +3,19 @@ package library.Controllers;
 import java.util.Scanner;
 
 public class MainController {
-    private static  Scanner scanner = new Scanner(System.in);
 
     public static void displayMenu(){
         String choose = "";
         while (true){
-            System.out.println("1.\tAddObject New Services\n" +
-                    "2.\tShowObject Services\n" +
-                    "3.\tAddObject New Customer\n" +
-                    "4.\tShowObject Information of Customer\n" +
-                    "5.\tAddObject New Booking\n" +
-                    "6.\tBack Menu" +
-                    "7.\tExit");
+            System.out.println("1.\t \n" +
+                    "2.\t \n" +
+                    "3.\t \n" +
+                    "4.\t \n" +
+                    "5.\t \n" +
+                    "6.\t Trở lại" +
+                    "7.\t Thoát");
             System.out.println("Chọn chức năng (1-7)");
-            choose = scanner.nextLine();
+            choose = new Scanner(System.in).nextLine();
             switch (choose){
                 case "1": break;
                 case "2": break;
