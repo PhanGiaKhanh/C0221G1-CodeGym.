@@ -32,5 +32,5 @@ create table Mark(
     ExamTimes tinyint default 1,
     unique (SubID, StudentID),
     foreign key (SubID) references `Subject`(SubID),
-    foreign key (StudentID) references Student(StudentID),
-);
+    foreign key (StudentID) references Student(StudentID)
+    );
