@@ -85,12 +85,19 @@ create table khach_hang(
     email varchar(45) not null unique,
     dia_chi varchar(45) not null
 );
+
 insert into khach_hang(id_loai_khach, ho_ten, ngay_sinh, so_cmnd, sdt, email, dia_chi) values 
 (1, "Nguyễn Huyền Trang", "2000-01-01", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội"),
 (2, "Thái Hoàng Long", "2002-01-01", "1231231232", "0905222222", "long@gmail.com", "Đà Nẵng"),
 (3, "Hoàng Cường", "1999-01-01", "1231231233", "0905333333", "cuong@gmail.com", "HCM"),
 (4, "Tấn Công", "1899-01-01", "1231231234", "0905444444", "cong@gmail.com", "Huế"),
-(5, "Thái Hoàng An", "2001-01-01", "1231231235", "090555555", "an@gmail.com", "Hà Nội");
+(5, "Hà Thái Thú", "2006-12-11", "1231231235", "090555555", "thu@gmail.com", "Quảng Trị"),
+(1, "Ngụy Hàn Tuấn", "2004-11-14", "1231231236", "0905666666", "tuan@gmail.com", "Đà Nẵng"),
+(2, "Hùng Vương", "1989-05-01", "1231231237", "0905777777", "vuong@gmail.com", "Huế"),
+(3, "Công Hùng", "1980-04-28", "1231231238", "0905888888", "hung@gmail.com", "Quảng Trị"),
+(1, "Đào Văn Bá", "2008-12-22", "1231231239", "0905999999", "ba@gmail.com", "Đà Nẵng"),
+(2, "Thái Hoàng An", "2001-01-01", "1231231230", "090555554", "an@gmail.com", "Hà Nội");
+
 create table kieu_thue(
 	id_kieu_thue int not null auto_increment primary key,
     ten_kieu_thue varchar(45) not null,
@@ -127,18 +134,18 @@ create table dich_vu(
 );
 
 insert into dich_vu(ten_dich_vu, dien_tich, so_tang, so_nguoi_toi_da, chi_phi_thue, id_kieu_thue, id_loai_dich_vu, trang_thai) values 
-("Villa", 300, 2, 10, 5000000, 3, 1, "hoạt động"),
-("House", 100, 2, 5, 3000000, 3, 2, "hoạt động"),
-("Room", 80, 2, 3, 1000000, 2, 3, "hoạt động"),
-("House", 100, 2, 6, 3000000, 3, 2, "hoạt động"),
-("Villa", 500, 2, 8, 5000000, 1, 1, "hoạt động"),
-("Villa", 600, 2, 5, 5000000, 2, 1, "hoạt động");
+("Villa1", 300, 2, 10, 5000000, 3, 1, "hoạt động"),
+("House1", 100, 2, 5, 3000000, 3, 2, "hoạt động"),
+("Room1", 80, 2, 3, 1000000, 2, 3, "hoạt động"),
+("House2", 100, 2, 6, 3000000, 3, 2, "hoạt động"),
+("Villa2", 500, 2, 8, 5000000, 1, 1, "hoạt động"),
+("Villa3", 600, 2, 5, 5000000, 2, 1, "hoạt động");
 
 create table dich_vu_di_kem(
 	id_dich_vu_di_kem int not null auto_increment primary key,
     ten_dich_vu_di_kem varchar(45) not null,
-    gia int not null,
-    don_vi int not null,
+    gia int default 0,
+    don_vi int default 0,
     trang_thai_kha_dung varchar(45)
 );
 
@@ -159,20 +166,43 @@ create table hop_dong(
     foreign key (id_dich_vu) references dich_vu(id_dich_vu),
     ngay_lam_hop_dong date,
     ngay_ket_thuc date,
-    tien_dat_coc int ,
-    tong_tien int 
+    tien_dat_coc int default 0 ,
+    tong_tien int default 0 
 );
 
+insert into hop_dong(id_nhan_vien, id_khach_hang, id_dich_vu )values
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 2),
+(4, 1, 3),
+(5, 2, 2),
+(6, 2, 5),
+(7, 1, 4),
+(8, 6, 2)
+;
 
+select * from nhan_vien;
+select * from khach_hang;
+select * from dich_vu;
+select * from hop_dong;
+select * from dich_vu_di_kem;
 create table hop_dong_chi_tiet(
 	id_hop_dong_chi_tiet int not null auto_increment primary key,
     id_hop_dong int,
     id_dich_vu_di_kem int,
-    so_luong int not null,
+    so_luong int default 0,
     foreign key (id_hop_dong) references hop_dong(id_hop_dong),
     foreign key (id_dich_vu_di_kem) references dich_vu_di_kem(id_dich_vu_di_kem)
 );
-
+	
+insert into hop_dong_chi_tiet (id_hop_dong, id_dich_vu_di_kem, so_luong) values
+(1, 1, 2),
+(2, 4, 4),
+(6, 2, 5),
+(4, 4, 4),
+(5, 3, 6),
+(3, 5, 1)
+;
 
 select * from vi_tri;
 select * from trinh_do;

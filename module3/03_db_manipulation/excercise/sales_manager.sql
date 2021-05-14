@@ -90,10 +90,15 @@ group by  o.c_id, c.c_name, p.p_name;
 -- group by o.c_id, c.c_name, p.p_name;
 
 -- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
+-- select c.c_name
+-- from customer c
+-- where not exists 
+-- (select o.c_id from `order` o where  o.c_id = c.c_id );
+
 select c.c_name
-from customer c
-where not exists (
-select o.c_id from `order` o where  o.c_id = c.c_id );
+from customer c left join  `order` o 
+on o.c_id = c.c_id
+where o.c_id is null;
 
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn
 select o.o_id, o.o_date, sum(p.p_price* od_qty) as "giá"
