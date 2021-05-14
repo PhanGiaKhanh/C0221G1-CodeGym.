@@ -54,14 +54,14 @@ create table nhan_vien(
     unique(so_cmnd, email, sdt)
 );
 insert into nhan_vien(ho_ten, id_vi_tri, id_trinh_do, id_bo_phan, ngay_sinh, so_cmnd, luong, sdt, email, dia_chi) values
-("Nguyễn Văn A", 1, 1, 2, "2000-01-01", "2012312312", "5000000", "0905123123", "vanA@gmail.com", "Nguyễn Huệ"),
-("Nguyễn Văn Anh", 4, 2, 2, "2001-12-11", "2112312312", "8000000", "0905123234", "anh@gmail.com", "Nguyễn Hoàng"),
-("Nguyễn Văn Hiếu", 1, 1,2, "1999-11-11", "2212312312", "5000000", "0905123345", "hieu@gmail.com", "Hùng Vương"),
-("Nguyễn Văn Hoàng",5, 4 , 1, "1998-08-24", "2312312312", "15000000", "0905567563", "hoang@gmail.com", "29 thang 3"),
-("Nguyễn Thị Hiếu", 3, 4, 2, "1988-08-23", "2412312312", "12000000", "0905343563", "thihieu@gmail.com", "Hùng Vương"),
-("Nguyễn Văn Toản", 4, 3, 2, "1998-04-17", "2512312312", "7000000", "0905555563", "toan@gmail.com", "Kim Ánh"),
-("Nguyễn Thị Loan", 2, 1, 3,"1996-08-07", "2612312312", "5000000", "0905080563", "loan@gmail.com", "Hoàng Thị Loan"),
-("Nguyễn Kim Anh", 6, 4, 4,"1993-05-28", "2712312312", "18000000", "0905570563", "anh@gmail.com", "29 thang 3");
+("Nguyễn Văn A", 1, 1, 2, "2000-01-01", "2012312312", "5000000", "0905123123", "vanA@gmail.com", "Đà Nẵng"),
+("Nguyễn Văn Anh", 4, 2, 2, "2001-12-11", "2112312312", "8000000", "0905123234", "anh@gmail.com", "Đà Nẵng"),
+("Nguyễn Văn Hiếu", 1, 1,2, "1999-11-11", "2212312312", "5000000", "0905123345", "hieu@gmail.com", "Huế"),
+("Nguyễn Văn Hoàng",5, 4 , 1, "1998-08-24", "2312312312", "15000000", "0905567563", "hoang@gmail.com", "HCM"),
+("Nguyễn Thị Hiếu", 3, 4, 2, "1988-08-23", "2412312312", "12000000", "0905343563", "thihieu@gmail.com", "Đà Nẵng"),
+("Nguyễn Văn Toản", 4, 3, 2, "1998-04-17", "2512312312", "7000000", "0905555563", "toan@gmail.com", "Hà Nội"),
+("Nguyễn Thị Loan", 2, 1, 3,"1996-08-07", "2612312312", "5000000", "0905080563", "loan@gmail.com", "Đà Nẵng"),
+("Nguyễn Kim Anh", 6, 4, 4,"1993-05-28", "2712312312", "18000000", "0905570563", "anh@gmail.com", "HCM");
 create table loai_khach(
 	id_loai_khach int not null auto_increment primary key,
     ten_loai_khach varchar(45)
@@ -86,11 +86,11 @@ create table khach_hang(
     dia_chi varchar(45) not null
 );
 insert into khach_hang(id_loai_khach, ho_ten, ngay_sinh, so_cmnd, sdt, email, dia_chi) values 
-(1, "Nguyễn Huyền Trang", "2000-01-01", "1231231231", "0905111111", "trang@gmail.com", "Đường số 1"),
-(2, "Thái Hoàng Long", "2002-01-01", "1231231232", "0905222222", "long@gmail.com", "Đường số 2"),
-(3, "Hoàng Cường", "1999-01-01", "1231231233", "0905333333", "cuong@gmail.com", "Đường số 3"),
-(4, "Tấn Công", "1899-01-01", "1231231234", "0905444444", "cong@gmail.com", "Đường số 4"),
-(5, "Thái Hoàng An", "2001-01-01", "1231231235", "090555555", "an@gmail.com", "Đường số 5");
+(1, "Nguyễn Huyền Trang", "2000-01-01", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội"),
+(2, "Thái Hoàng Long", "2002-01-01", "1231231232", "0905222222", "long@gmail.com", "Đà Nẵng"),
+(3, "Hoàng Cường", "1999-01-01", "1231231233", "0905333333", "cuong@gmail.com", "HCM"),
+(4, "Tấn Công", "1899-01-01", "1231231234", "0905444444", "cong@gmail.com", "Huế"),
+(5, "Thái Hoàng An", "2001-01-01", "1231231235", "090555555", "an@gmail.com", "Hà Nội");
 create table kieu_thue(
 	id_kieu_thue int not null auto_increment primary key,
     ten_kieu_thue varchar(45) not null,
@@ -98,9 +98,9 @@ create table kieu_thue(
 );
 insert into kieu_thue(ten_kieu_thue, gia) values
 ("năm", 1000),
-("thang", 100),
-("ngay", 10),
-("gio", 2);
+("tháng", 100),
+("ngày", 10),
+("giờ", 2);
 
 create table loai_dich_vu(
 	id_loai_dich_vu int not null auto_increment primary key,
@@ -157,9 +157,9 @@ create table hop_dong(
     foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien),
     foreign key (id_khach_hang) references khach_hang(id_khach_hang),
     foreign key (id_dich_vu) references dich_vu(id_dich_vu),
-    ngay_lam_hop_dong date not null,
-    ngay_ket_thuc date not null,
-    tien_dat_coc int not null,
+    ngay_lam_hop_dong date,
+    ngay_ket_thuc date,
+    tien_dat_coc int ,
     tong_tien int 
 );
 
