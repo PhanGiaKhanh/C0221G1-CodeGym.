@@ -61,7 +61,7 @@ select * from product;
 select * from order_detail;
 
 -- Hiển thị các thông tin  gồm oID, oDate, oPrice bảng Order
-select o.o_id, o.o_date, p.p_price, count(o_date) as "số lượng"
+select o.o_id, o.o_date, p.p_price, count(o_date) as "so_luong"
 from `order` o, order_detail od, product p
 where o.o_id = od.o_id
 and p.p_id = od.o_id
@@ -74,7 +74,7 @@ group by o.o_id, o.o_date, p.p_price;
 -- group by o.o_id, o.o_date, p.p_price;
  
  -- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
-select o.c_id, c.c_name, p.p_name, count(p_name) as "số lượng"
+select o.c_id, c.c_name, p.p_name, count(p_name) as "so_luong"
 from customer c, `order` o, product p, order_detail od
 where c.c_id = o.c_id 
 and o.o_id = od.o_id 
@@ -101,7 +101,7 @@ on o.c_id = c.c_id
 where o.c_id is null;
 
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn
-select o.o_id, o.o_date, sum(p.p_price* od_qty) as "giá"
+select o.o_id, o.o_date, sum(p.p_price* od_qty) as "price"
 from  `order` o, product p, order_detail od
 where o.o_id = od.o_id 
 and od.p_id = p.p_id

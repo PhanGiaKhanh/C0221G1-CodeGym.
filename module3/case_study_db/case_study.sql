@@ -88,6 +88,7 @@ create table khach_hang(
 
 insert into khach_hang(id_loai_khach, ho_ten, ngay_sinh, so_cmnd, sdt, email, dia_chi) values 
 (1, "Nguyễn Huyền Trang", "2000-01-01", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội"),
+(1, "Nguyễn Huyền Trang", "1998-01-01", "2231231231", "0905111112", "trang1@gmail.com", "Vinh"),
 (2, "Thái Hoàng Long", "2002-01-01", "1231231232", "0905222222", "long@gmail.com", "Đà Nẵng"),
 (3, "Hoàng Cường", "1999-01-01", "1231231233", "0905333333", "cuong@gmail.com", "HCM"),
 (4, "Tấn Công", "1899-01-01", "1231231234", "0905444444", "cong@gmail.com", "Huế"),
@@ -96,7 +97,10 @@ insert into khach_hang(id_loai_khach, ho_ten, ngay_sinh, so_cmnd, sdt, email, di
 (2, "Hùng Vương", "1989-05-01", "1231231237", "0905777777", "vuong@gmail.com", "Huế"),
 (3, "Công Hùng", "1980-04-28", "1231231238", "0905888888", "hung@gmail.com", "Quảng Trị"),
 (1, "Đào Văn Bá", "2008-12-22", "1231231239", "0905999999", "ba@gmail.com", "Đà Nẵng"),
-(2, "Thái Hoàng An", "2001-01-01", "1231231230", "090555554", "an@gmail.com", "Hà Nội");
+(2, "Thái Hoàng An", "2001-01-01", "1231231230", "090555554", "an@gmail.com", "Hà Nội"),
+(2, "Thái Hoàng An", "1992-01-01", "2341231230", "090355554", "an1@gmail.com", "Đà Nẵng"),
+(1, "An Bình", "1994-01-01", "3341231230", "090455554", "anbinh@gmail.com", "Quảng Ngãi"),
+(1, "Bỉ Bỉ Đông", "1990-01-01", "4341231230", "090255554", "bibidong@gmail.com", "Vinh");
 
 create table kieu_thue(
 	id_kieu_thue int not null auto_increment primary key,
@@ -125,7 +129,7 @@ create table dich_vu(
     dien_tich int not null,
     so_tang int not null,
     so_nguoi_toi_da int not null,
-    chi_phi_thue varchar(45),
+    chi_phi_thue int default 0,
     id_kieu_thue int,
     id_loai_dich_vu int,
     foreign key (id_kieu_thue) references kieu_thue(id_kieu_thue),
@@ -138,8 +142,11 @@ insert into dich_vu(ten_dich_vu, dien_tich, so_tang, so_nguoi_toi_da, chi_phi_th
 ("House1", 100, 2, 5, 3000000, 3, 2, "hoạt động"),
 ("Room1", 80, 2, 3, 1000000, 2, 3, "hoạt động"),
 ("House2", 100, 2, 6, 3000000, 3, 2, "hoạt động"),
-("Villa2", 500, 2, 8, 5000000, 1, 1, "hoạt động"),
-("Villa3", 600, 2, 5, 5000000, 2, 1, "hoạt động");
+("Villa2", 500, 2, 8, 7000000, 1, 1, "hoạt động"),
+("Villa3", 600, 3, 10, 8000000, 2, 1, "hoạt động"),
+("House3", 100, 3, 8, 3000000, 2, 1, "hoạt động"),
+("Room2", 100, 3, 6, 1500000, 2, 1, "hoạt động"),
+("Room3", 100, 3, 6, 1500000, 2, 1, "hoạt động");
 
 create table dich_vu_di_kem(
 	id_dich_vu_di_kem int not null auto_increment primary key,
@@ -170,22 +177,22 @@ create table hop_dong(
     tong_tien int default 0 
 );
 
-insert into hop_dong(id_nhan_vien, id_khach_hang, id_dich_vu )values
-(1, 1, 1),
-(2, 2, 1),
-(3, 3, 2),
-(4, 1, 3),
-(5, 2, 2),
-(6, 2, 5),
-(7, 1, 4),
-(8, 6, 2)
+insert into hop_dong(id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc)values
+(1, 1, 1, "2019-01-22", "2020-03-10"),
+(2, 2, 1, "2019-03-22", "2021-05-10"),
+(3, 3, 2, "2018-02-22", "2020-10-18"),
+(4, 1, 3, "2018-01-22", "2019-02-11"),
+(5, 2, 2, "2019-04-22", "2021-10-01"),
+(6, 2, 5, "2018-06-22", "2020-07-15"),
+(7, 1, 4, "2019-09-22", "2020-10-19"),
+(7, 2, 4, "2019-09-22", "2020-10-19"),
+(7, 3, 8, "2018-09-22", "2020-10-19"),
+(7, 3, 3, "2019-06-04", "2020-10-19"),
+(7, 13, 5, "2018-09-22", "2020-10-19"),
+(7, 14, 4, "2018-09-22", "2020-10-19"),
+(8, 6, 2, "2020-01-01", "2021-04-16")
 ;
 
-select * from nhan_vien;
-select * from khach_hang;
-select * from dich_vu;
-select * from hop_dong;
-select * from dich_vu_di_kem;
 create table hop_dong_chi_tiet(
 	id_hop_dong_chi_tiet int not null auto_increment primary key,
     id_hop_dong int,
@@ -197,22 +204,28 @@ create table hop_dong_chi_tiet(
 	
 insert into hop_dong_chi_tiet (id_hop_dong, id_dich_vu_di_kem, so_luong) values
 (1, 1, 2),
+(1, 2, 4),
+(11, 3, 1),
+(11, 1, 5),
 (2, 4, 4),
+(2, 1, 4),
 (6, 2, 5),
-(4, 4, 4),
+(6, 1, 5),
+(12, 4, 4),	
+(12, 2, 4),	
 (5, 3, 6),
 (3, 5, 1)
 ;
 
-select * from vi_tri;
-select * from trinh_do;
-select * from bo_phan;
-select * from dich_vu;
-select * from dich_vu_di_kem;
-select * from hop_dong;
-select * from hop_dong_chi_tiet;
-select * from khach_hang;
-select * from kieu_thue;
-select * from loai_dich_vu;
-select * from loai_khach;
-select * from nhan_vien;
+-- select * from vi_tri;
+-- select * from trinh_do;
+-- select * from bo_phan;
+-- select * from dich_vu;
+-- select * from dich_vu_di_kem;
+-- select * from hop_dong;
+-- select * from hop_dong_chi_tiet;
+-- select * from khach_hang;
+-- select * from kieu_thue;
+-- select * from loai_dich_vu;
+-- select * from loai_khach;
+-- select * from nhan_vien;
