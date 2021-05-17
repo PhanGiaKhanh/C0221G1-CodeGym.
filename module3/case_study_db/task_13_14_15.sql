@@ -6,12 +6,18 @@ create view so_lan_su_dung_dvdk as
 	select dvdk.ten_dich_vu_di_kem,sum(hdct.so_luong) as so_lan_su_dung
     from dich_vu_di_kem dvdk
     join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
-    join hop_dong hd on hdct.id_hop_dong = hd.id_hop_dong
     group by dvdk.ten_dich_vu_di_kem;
     
 select ten_dich_vu_di_kem, max(so_lan_su_dung)
 from so_lan_su_dung_dvdk;
 
+-- cách 2
+select a.ten_dich_vu_di_kem, max(a.so_lan_su_dung) 
+from (select dvdk.ten_dich_vu_di_kem,sum(hdct.so_luong) as so_lan_su_dung
+    from dich_vu_di_kem dvdk
+    join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+    group by dvdk.ten_dich_vu_di_kem) as a;
+    
 -- 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
 -- Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung
 select hd.id_hop_dong, ldv.ten_loai_dich_vu, dvdk.ten_dich_vu_di_kem, hdct.so_luong , count(dvdk.id_dich_vu_di_kem) as "lan_xuat_hien"
