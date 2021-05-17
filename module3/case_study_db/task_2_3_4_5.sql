@@ -4,9 +4,9 @@ use case_study_db;
 -- 2.	Hiển thị thông tin của tất cả nhân viên - có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 ký tự.
 select *
 from nhan_vien
-where ho_ten like "H%" 
+where (ho_ten like "H%" 
 or ho_ten like "T%" 
-or ho_ten like "K%" 
+or ho_ten like "K%")
 having length(ho_ten) <= 15;
 
 
@@ -14,7 +14,7 @@ having length(ho_ten) <= 15;
 select *
 from khach_hang
 where dia_chi in ("Đà Nẵng", "Quảng Trị")
-having year(ngay_sinh) between year(now())-50 and year(now())-18;
+having year(now()) - year(ngay_sinh) between 18 and 50;
 -- select *
 -- from khach_hang
 -- where dia_chi in ("Đà Nẵng", "Quảng Trị");
@@ -33,12 +33,14 @@ order by count(*);
 -- 5.	Hiển thị IDKhachHang, HoTen, TenLoaiKhach, IDHopDong, TenDichVu, NgayLamHopDong, NgayKetThuc, TongTien 
 --  (Với TongTien được tính theo công thức như sau: ChiPhiThue + SoLuong*Gia, với SoLuong và Giá là từ bảng DichVuDiKem) 
 --  cho tất cả các Khách hàng đã từng đặt phỏng. (Những Khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
-select kh.id_khach_hang, kh.ho_ten, lk.ten_loai_khach, dv.ten_dich_vu, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, (dvdk.gia*hdct.so_luong+dv.chi_phi_thue) as "TongTien"
+select kh.id_khach_hang, kh.ho_ten, lk.ten_loai_khach, dv.ten_dich_vu, hd.ngay_lam_hop_dong, 
+hd.ngay_ket_thuc, sum(dvdk.gia*hdct.so_luong+dv.chi_phi_thue) as "TongTien"
 from khach_hang kh
 left join loai_khach lk on kh.id_loai_khach = lk.id_loai_khach 
 left join hop_dong hd on  kh.id_khach_hang = hd.id_khach_hang
 left join dich_vu dv on hd.id_dich_vu = dv.id_dich_vu
 left join hop_dong_chi_tiet hdct on  hd.id_hop_dong = hdct.id_hop_dong
-left join dich_vu_di_kem dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem;
+left join dich_vu_di_kem dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
+group by id_khach_hang;
 
 

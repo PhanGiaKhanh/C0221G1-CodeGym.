@@ -7,7 +7,9 @@ select dv.id_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.chi_phi_thue, hd.ngay_lam
 from dich_vu dv
 join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
 join hop_dong hd on hd.id_dich_vu = dv.id_dich_vu
-where  not (month(ngay_lam_hop_dong) in (1,2,3) and year(ngay_lam_hop_dong) = 2019);
+where dv.id_dich_vu not in (select hd.id_dich_vu 
+	from hop_dong hd
+    where (month(ngay_lam_hop_dong) in (1,2,3) and year(ngay_lam_hop_dong) = 2019 ));
 
 -- 7.	Hiển thị thông tin IDDichVu, TenDichVu, DienTich, SoNguoiToiDa, ChiPhiThue, TenLoaiDichVu 
 -- của tất cả các loại dịch vụ đã từng được Khách hàng đặt phòng trong năm 2018 
@@ -16,11 +18,12 @@ select dv.id_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.dien_tich, dv.chi_phi_thu
 from dich_vu dv
 join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
 join hop_dong hd on hd.id_dich_vu = dv.id_dich_vu
-where year(ngay_lam_hop_dong) = 2018
+where (year(ngay_lam_hop_dong) = 2018
 and dv.id_dich_vu not in (
-select id_dich_vu 
-from hop_dong
-where year(ngay_lam_hop_dong) = 2019);
+	select id_dich_vu 
+	from hop_dong
+	where year(ngay_lam_hop_dong) = 2019)
+);
 
 -- and id_dich_vu not in (year(ngay_lam_hop_dong)=2019)
  
@@ -44,14 +47,13 @@ select kh.ho_ten
 from khach_hang kh;
 -- 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019
 --  thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
- select kh.ho_ten,kh.ngay_sinh, hd.ngay_lam_hop_dong, month(hd.ngay_lam_hop_dong) as "thang"
- , sum(dvdk.gia*hdct.so_luong + dv.chi_phi_thue) as "doanh_thu"
+ select kh.ho_ten,hd.ngay_lam_hop_dong,  month(hd.ngay_lam_hop_dong) as "thang" , sum(dvdk.gia*hdct.so_luong + dv.chi_phi_thue) as "doanh_thu"
  from khach_hang kh, hop_dong hd, hop_dong_chi_tiet hdct, dich_vu_di_kem dvdk, dich_vu dv
- where kh.id_khach_hang = hd.id_khach_hang
+ where (kh.id_khach_hang = hd.id_khach_hang
  and hd.id_hop_dong = hdct.id_hop_dong
  and hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
- and hd.id_dich_vu = dv.id_dich_vu
- group by ngay_lam_hop_dong
+ and hd.id_dich_vu = dv.id_dich_vu)
+ group by month(ngay_lam_hop_dong)
  having year(hd.ngay_lam_hop_dong)=2019
  
  
