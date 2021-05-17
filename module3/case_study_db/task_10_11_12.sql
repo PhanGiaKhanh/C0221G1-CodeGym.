@@ -32,9 +32,12 @@ join nhan_vien nv on hd.id_nhan_vien = nv.id_nhan_vien
 join dich_vu dv on dv.id_dich_vu = hd.id_dich_vu
 join hop_dong_chi_tiet hdct on hdct.id_hop_dong = hd.id_hop_dong
 join dich_vu_di_kem dvdk on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
-where ((year(hd.ngay_lam_hop_dong) = 2019 and month(hd.ngay_lam_hop_dong)>=10)
-and hd.id_dich_vu not in (select hd.id_dich_vu
-	from hop_dong hd
-    where (year(hd.ngay_lam_hop_dong)= 2019 AND month(hd.ngay_lam_hop_dong)<= 6)
-))
+where (
+	(year(hd.ngay_lam_hop_dong) = 2019 and month(hd.ngay_lam_hop_dong)>=10)
+	and hd.id_dich_vu not in (
+		select hd.id_dich_vu
+		from hop_dong hd
+		where (year(hd.ngay_lam_hop_dong)= 2019 AND month(hd.ngay_lam_hop_dong)<= 6)
+	)
+)
 group by id_hop_dong;
