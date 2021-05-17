@@ -67,7 +67,7 @@ where o.o_id = od.o_id
 and p.p_id = od.o_id
 group by o.o_id, o.o_date, p.p_price;
 
--- select o.o_id, o.o_date, p.p_price, count(o_date) as "số lượng"
+-- select o.o_id, o.o_date, p.p_price, count(o_date) as "so_luong"
 -- from `order` o 
 -- join order_detail od on o.o_id = od.o_id
 -- join product p on p.p_id = od.o_id
@@ -82,7 +82,7 @@ and od.p_id = p.p_id
 group by  o.c_id, c.c_name, p.p_name;
 
 
--- select o.c_id, c.c_name, p.p_name, count(p_name) as "số lượng"
+-- select o.c_id, c.c_name, p.p_name, count(p_name) as "so_luong"
 -- from customer c
 -- inner join `order` o on c.c_id = o.c_id
 -- inner join order_detail od on o.o_id = od.o_id

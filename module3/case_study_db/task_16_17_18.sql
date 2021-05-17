@@ -29,18 +29,13 @@ group by hd.id_hop_dong
 having tong_tien > 10000000;
 
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràngbuộc giữa các bảng).
-delete from khach_hang
-where (
-	id_khach_hang in (
+delete
+from khach_hang
+where id_khach_hang in (
 	select id_khach_hang
     from hop_dong
-    where year(ngay_lam_hop_dong) < 2016)
+    where year(ngay_lam_hop_dong) < 2016
 );
-select kh.ho_ten, year(hd.ngay_lam_hop_dong) as years, count(id_hop_dong)
-from hop_dong hd, khach_hang kh
-where hd.id_khach_hang= kh.id_khach_hang
-group by kh.ho_ten;
--- chưa xong
 
 
 

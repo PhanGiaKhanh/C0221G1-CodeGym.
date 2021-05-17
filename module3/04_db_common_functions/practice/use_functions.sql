@@ -5,7 +5,7 @@ select * from student;
 select * from `subject`;
 
 --  Sử dụng hàm count để hiển thị số lượng sinh viên ở từng nơi
-select address, count(id_stu) as "số lượng học viên"
+select address, count(id_stu) as "so_luong_hoc_vien"
 from student
 group by address;
 
