@@ -37,5 +37,3 @@ where id_khach_hang in (
     where year(ngay_lam_hop_dong) < 2016
 );
 
-
-

@@ -25,7 +25,6 @@ and dv.id_dich_vu not in (
 	where year(ngay_lam_hop_dong) = 2019)
 );
 
--- and id_dich_vu not in (year(ngay_lam_hop_dong)=2019)
  
 --  8.	Hiển thị thông tin HoTenKhachHang có trong hệ thống, với yêu cầu HoThenKhachHang không trùng nhau.
 -- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên
@@ -47,13 +46,23 @@ select kh.ho_ten
 from khach_hang kh;
 -- 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019
 --  thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
- select kh.ho_ten,hd.ngay_lam_hop_dong,  month(hd.ngay_lam_hop_dong) as "thang" , sum(dvdk.gia*hdct.so_luong + dv.chi_phi_thue) as "doanh_thu"
- from khach_hang kh, hop_dong hd, hop_dong_chi_tiet hdct, dich_vu_di_kem dvdk, dich_vu dv
- where (kh.id_khach_hang = hd.id_khach_hang
- and hd.id_hop_dong = hdct.id_hop_dong
- and hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
- and hd.id_dich_vu = dv.id_dich_vu)
- group by month(ngay_lam_hop_dong)
- having year(hd.ngay_lam_hop_dong)=2019
+ create view doanh_thu_dv_dvdk as
+ -- doanh thu bên dịch vụ
+ select kh.ho_ten, year(hd.ngay_lam_hop_dong) as years, month(hd.ngay_lam_hop_dong) as months,(dv.chi_phi_thue)
+ from khach_hang kh
+ join hop_dong hd on hd.id_khach_hang = kh.id_khach_hang
+ join dich_vu dv on dv.id_dich_vu = hd.id_dich_vu
+ group by months
+ union all
+ -- doanh thu bên dịch vụ đi kèm
+ select kh.ho_ten, year(hd.ngay_lam_hop_dong) as years, month(hd.ngay_lam_hop_dong) as months ,sum(dvdk.gia*hdct.so_luong) as "doanh_thu_dvdk"
+ from khach_hang kh
+ join hop_dong hd on hd.id_khach_hang = kh.id_khach_hang
+ join hop_dong_chi_tiet hdct on hdct.id_hop_dong = hd.id_hop_dong
+ join dich_vu_di_kem dvdk on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+ group by months;
  
- 
+ select ho_ten, years, months, sum(chi_phi_thue) as tong_doanh_thu
+ from  doanh_thu_dv_dvdk
+ group by months
+ order by months;
