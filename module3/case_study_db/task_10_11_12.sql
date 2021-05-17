@@ -3,11 +3,11 @@ use case_study_db;
 -- 10.	Hiển thị thông tin tương ứng với từng Hợp đồng thì đã sử dụng bao nhiêu Dịch vụ đi kèm.
 --  Kết quả hiển thị bao gồm IDHopDong, NgayLamHopDong, NgayKetthuc, TienDatCoc, SoLuongDichVuDiKem 
 --  (được tính dựa trên việc count các IDHopDongChiTiet).
-select hd.id_hop_dong, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc, count(hdct.id_hop_dong) "so_luong"
-from hop_dong hd, hop_dong_chi_tiet hdct
-where hd.id_hop_dong = hdct.id_hop_dong
+select hd.id_hop_dong, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc, count(hdct.id_hop_dong_chi_tiet) "so_luong"
+from hop_dong hd 
+join hop_dong_chi_tiet hdct on hd.id_hop_dong = hdct.id_hop_dong
 group by id_hop_dong
-order by count(id_hop_dong) desc;
+order by so_luong desc;
 
 -- 11.	Hiển thị thông tin các Dịch vụ đi kèm đã được sử dụng bởi những Khách hàng có 
 -- TenLoaiKhachHang là “Diamond” và có địa chỉ là “Vinh” hoặc “Quảng Ngãi”.
