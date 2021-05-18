@@ -16,9 +16,9 @@ where id_sub in (
 
 -- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên,
 --  xếp hạng theo thứ tự điểm giảm dần
-select s.name_stu, s.address, s.phone, avg(m.mark) as "avg", count(m.id_sub) as "count_subject"
+select s.name_stu, s.address, s.phone, round(avg(m.mark))as "avgs", count(m.id_sub) as "count_subject"
 from student s
 left join mark m on m.id_stu = s.id_stu
 group by s.name_stu
-
+order by avgs desc
 
