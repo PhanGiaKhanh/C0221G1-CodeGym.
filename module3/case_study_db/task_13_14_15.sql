@@ -2,22 +2,16 @@ use case_study_db;
 
 -- 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. 
 -- (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
--- cách 1
-create view so_lan_su_dung_dvdk as
-	select dvdk.ten_dich_vu_di_kem, dvdk.gia, dvdk.don_vi, sum(hdct.so_luong) as so_lan_su_dung
-    from dich_vu_di_kem dvdk
-    join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
-    group by dvdk.id_dich_vu_di_kem;
-    
-select ten_dich_vu_di_kem, gia, don_vi, max(so_lan_su_dung)
-from so_lan_su_dung_dvdk;
+select dvdk.id_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem, dvdk.gia, dvdk.don_vi, sum(hdct.so_luong) as so_luong_su_dung
+from dich_vu_di_kem dvdk
+join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+group by hdct.id_dich_vu_di_kem
+having so_luong_su_dung >= all (
+	select sum(so_luong)
+    from hop_dong_chi_tiet 
+    group by id_dich_vu_di_kem
+    );
 
--- cách 2
-select a.ten_dich_vu_di_kem, max(a.so_lan_su_dung) 
-from (select dvdk.ten_dich_vu_di_kem,sum(hdct.so_luong) as so_lan_su_dung
-    from dich_vu_di_kem dvdk
-    join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
-    group by dvdk.ten_dich_vu_di_kem) as a;
     
 -- 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
 -- Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung

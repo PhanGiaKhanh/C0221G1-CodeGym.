@@ -92,15 +92,27 @@ call insert_products(6, "SS-021", "Samsung21", 250, 200, "new", 1)
 
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 delimiter //
-create procedure edit_p_name (inp_id int, inp_name varchar(45))
+create procedure edit_p_name (
+	inp_id int,
+    inp_code varchar(10),
+    inp_name varchar(45),
+    inp_price int,
+    inp_amount int,
+    inp_description varchar(45),
+    inp_status bool)
 begin
 	update products
-    set p_name = inp_name
+    set p_code = inp_code, 
+		p_name = inp_name,
+        p_price = inp_price,
+        p_amount = inp_amount,
+        p_description = inp_description,
+        p_status = inp_status
     where id = inp_id;
 end; //
 delimiter ;
 
-call edit_p_name (1, "Ss10");
+call edit_p_name (1, "Ss10", "Samsung10", 80, 80, "newlive", 1);
 
 -- Tạo store procedure xoá sản phẩm theo id
 delimiter //
