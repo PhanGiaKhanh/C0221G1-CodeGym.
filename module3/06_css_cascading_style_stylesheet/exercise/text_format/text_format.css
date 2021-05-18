@@ -11,6 +11,12 @@ span {
 }
 
 a {
-    text-decoration: none;
+    /*text-decoration: none;*/
     color: #0645ad;
+    font-family: Arial;
+}
+
+sup {
+    font-size: 10px;
+    font-weight: bold;
 }
