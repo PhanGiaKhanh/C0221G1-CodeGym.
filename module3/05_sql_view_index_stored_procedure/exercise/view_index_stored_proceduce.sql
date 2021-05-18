@@ -69,22 +69,22 @@ call ps_products();
 -- Tạo store procedure thêm một sản phẩm mới
 delimiter // 
 create procedure insert_products (
-	id int,
-    p_code varchar(10),
-    p_name varchar(45),
-    p_price int,
-    p_amount int,
-    p_description varchar(45),
-    p_status bool)
+	inp_id int,
+    inp_code varchar(10),
+    inp_name varchar(45),
+    inp_price int,
+    inp_amount int,
+    inp_description varchar(45),
+    inp_status bool)
 begin 
 	insert into products values
-    (id,
-    p_code,
-    p_name,
-    p_price,
-    p_amount,
-    p_description,
-    p_status);
+    (inp_id,
+    inp_code,
+    inp_name,
+    inp_price,
+    inp_amount,
+    inp_description,
+    inp_status);
 end; //
 delimiter ;
 
