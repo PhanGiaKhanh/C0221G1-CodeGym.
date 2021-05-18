@@ -1,10 +1,6 @@
 use case_study_db;
 
 -- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
-select nv.ho_ten, year(hd.ngay_lam_hop_dong)
-from nhan_vien nv, hop_dong hd
-where nv.id_nhan_vien = hd.id_nhan_vien;
-
 delete from nhan_vien
 where id_nhan_vien not in (
 	select id_nhan_vien
@@ -24,7 +20,7 @@ join khach_hang kh on kh.id_khach_hang = hd.id_khach_hang
 join loai_khach lk on lk.id_loai_khach = kh.id_loai_khach
 group by kh.id_khach_hang
 union all
--- tổng tiền theo thang dvdk
+-- tổng tiền theo tháng dvdk
 select kh.ho_ten, lk.ten_loai_khach, month(ngay_lam_hop_dong) as months, hd.ngay_lam_hop_dong, sum(dvdk.gia*hdct.so_luong) as tong_tien
 from hop_dong hd
 join hop_dong_chi_tiet hdct on hdct.id_hop_dong = hd.id_hop_dong
@@ -43,8 +39,7 @@ having tong > 10000000;
 
 
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràng buộc giữa các bảng).
-delete
-from khach_hang
+delete from khach_hang
 where id_khach_hang in (
 	select id_khach_hang
     from hop_dong

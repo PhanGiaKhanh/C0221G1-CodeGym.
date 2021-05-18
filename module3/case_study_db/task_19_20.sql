@@ -13,8 +13,8 @@ create view so_lan_su_dung_dvdk_2019 as
 
 update dich_vu_di_kem 
 set gia = gia * 2
-where id_dich_vu_di_kem in (
-	select id_dich_vu_di_kem from so_lan_su_dung_dvdk_2019
+where ten_dich_vu_di_kem in (
+	select ten_dich_vu_di_kem from so_lan_su_dung_dvdk_2019
 );
 
 -- cách 2     
