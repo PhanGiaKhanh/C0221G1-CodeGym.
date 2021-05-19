@@ -7,7 +7,6 @@ use case_study_db;
 drop procedure if exists sp_2;
 delimiter //
 create procedure sp_2 (	
-	inp_id_hop_dong int,
     inp_id_nhan_vien int,
     inp_id_khach_hang int,
     inp_id_dich_vu int,
@@ -18,12 +17,17 @@ create procedure sp_2 (
 
 begin
 	if (
-		inp_id_hop_dong not in ( select id_hop_dong from hop_dong)
-		and id_khach_hang in (select id_khach_hang from khach_hang)
-        and id_dich_vu in (select id_dich_vu from dich_vu) 
-        and id_nhan_vien in (select id_nhan_vien from nhan_vien)
-	)then insert into hop_dong values (
-			inp_id_hop_dong,
+		inp_id_khach_hang in (select id_khach_hang from khach_hang)
+        and inp_id_dich_vu in (select id_dich_vu from dich_vu) 
+        and inp_id_nhan_vien in (select id_nhan_vien from nhan_vien)	
+	)then insert into hop_dong (
+			id_nhan_vien,
+			id_khach_hang,
+			id_dich_vu,
+			ngay_lam_hop_dong,
+			ngay_ket_thuc,
+			tien_dat_coc)
+	values (
 			inp_id_nhan_vien,
 			inp_id_khach_hang,
 			inp_id_dich_vu,
@@ -48,6 +52,8 @@ after delete
 on hop_dong for each row
 begin
 	set @result = (select count(*) from hop_dong);
+    select concat("số lượng hợp đồng là ", @result) 
+    as log into outfile ' C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/log1.txt';
 end; //
 delimiter ;
 -- drop trigger tr_1;
@@ -67,7 +73,8 @@ after update
 on hop_dong for each row
 begin
 	if (datediff(new.ngay_ket_thuc,old.ngay_lam_hop_dong) <2) then
-		SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = "phù hợp";
+		select "update thành công"
+		as log into outfile ' C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/log2.txt';
 	else 
 		SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = "không phù hợp";
 	end if;
