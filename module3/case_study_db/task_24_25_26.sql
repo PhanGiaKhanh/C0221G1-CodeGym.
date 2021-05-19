@@ -21,7 +21,8 @@ begin
 		inp_id_hop_dong not in ( select id_hop_dong from hop_dong)
 		and id_khach_hang in (select id_khach_hang from khach_hang)
         and id_dich_vu in (select id_dich_vu from dich_vu) 
-        )then insert into hop_dong values (
+        and id_nhan_vien in (select id_nhan_vien from nhan_vien)
+	)then insert into hop_dong values (
 			inp_id_hop_dong,
 			inp_id_nhan_vien,
 			inp_id_khach_hang,
