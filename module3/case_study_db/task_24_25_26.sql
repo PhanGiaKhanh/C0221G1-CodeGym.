@@ -4,7 +4,7 @@ use case_study_db;
 -- yêu cầu Sp_2 phải thực hiện kiểm tra tính hợp lệ của dữ liệu bổ sung,
 --  với nguyên tắc không được trùng khóa chính và đảm bảo toàn vẹn tham 
 --  chiếu đến các bảng liên quan.
-
+drop procedure if exists sp_2;
 delimiter //
 create procedure sp_2 (	
 	inp_id_hop_dong int,
@@ -17,16 +17,11 @@ create procedure sp_2 (
     out result varchar(45))
 
 begin
-	if (inp_id_hop_dong not in ( select id_hop_dong from hop_dong)) then
-		insert into hop_dong (
-			id_hop_dong,
-			id_nhan_vien,
-			id_khach_hang,
-			id_dich_vu,
-			ngay_lam_hop_dong,
-			ngay_ket_thuc,
-			tien_dat_coc	
-		) values (
+	if (
+		inp_id_hop_dong not in ( select id_hop_dong from hop_dong)
+		and id_khach_hang in (select id_khach_hang from khach_hang)
+        and id_dich_vu in (select id_dich_vu from dich_vu) 
+        )then insert into hop_dong values (
 			inp_id_hop_dong,
 			inp_id_nhan_vien,
 			inp_id_khach_hang,
@@ -35,9 +30,9 @@ begin
 			inp_ngay_ket_thuc,
 			inp_tien_dat_coc	
 		);
-        set result = "Nhập thành công dữ liệu";
+        SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT =  "Nhập thành công dữ liệu";
     else
-		set result = "id_hop_dong đã tồn tại";
+		SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = "id_hop_dong đã tồn tại";
 	end if;
 end; //
 delimiter ;
@@ -45,6 +40,7 @@ delimiter ;
 -- 25.	Tạo triggers có tên Tr_1 Xóa bản ghi trong bảng HopDong thì hiển 
 -- thị tổng số lượng bản ghi còn lại có trong bảng HopDong ra giao diện 
 -- console của database
+drop trigger if exists tr_1;
 delimiter //
 create trigger tr_1
 after delete
@@ -63,18 +59,19 @@ select @result as so_luong;
 -- 26.	Tạo triggers có tên Tr_2 Khi cập nhật Ngày kết thúc hợp đồng, cần 
 -- kiểm tra xem thời gian cập nhật có phù hợp hay không, với quy tắc sau: 
 -- Ngày kết thúc hợp đồng phải lớn hơn ngày làm hợp đồng ít nhất là 2 ngày.
+drop trigger if exists tr_2;
 delimiter //
 create trigger tr_2
 after update
 on hop_dong for each row
 begin
 	if (datediff(new.ngay_ket_thuc,old.ngay_lam_hop_dong) <2) then
-		set @kq="phù hợp";
+		SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = "phù hợp";
 	else 
-		set @kq="không phù hợp";
+		SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = "không phù hợp";
 	end if;
 end; //
 delimiter ;
-drop trigger tr_2;
-select @kq
+
+
  
