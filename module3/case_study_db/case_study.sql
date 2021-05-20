@@ -3,22 +3,22 @@ use case_study_db;
 
 create table vi_tri(
 	id_vi_tri int not null auto_increment primary key,
-    ten_vi_tri varchar(45) not null
+    ten_vi_tri varchar(45) 
 );
 
 create table trinh_do(
 	id_trinh_do int not null auto_increment primary key,
-    ten_trinh_do varchar(45) not null
+    ten_trinh_do varchar(45) 
 );
 
 create table bo_phan(
 	id_bo_phan int not null auto_increment primary key,
-    ten_bo_phan varchar(45) not null
+    ten_bo_phan varchar(45) 
 );
 
 create table nhan_vien(
 	id_nhan_vien int not null auto_increment primary key,
-    ho_ten varchar(50) not null,
+    ho_ten varchar(50),
     id_vi_tri int,
     id_trinh_do int,
     id_bo_phan int,
@@ -31,12 +31,12 @@ create table nhan_vien(
     foreign key (id_bo_phan) references bo_phan(id_bo_phan)
     on update cascade
     on delete cascade,
-    ngay_sinh  date not null,
-    so_cmnd varchar(45) not null,
-    luong varchar(45) not null,
-    sdt varchar(10) not null,
-    email varchar(45) not null,
-    dia_chi varchar(45) not null,
+    ngay_sinh  date,
+    so_cmnd varchar(45),
+    luong varchar(45),
+    sdt varchar(10),
+    email varchar(45),
+    dia_chi varchar(45),
     unique(so_cmnd, email, sdt)
 );
 
@@ -51,18 +51,18 @@ create table khach_hang(
     foreign key (id_loai_khach) references loai_khach(id_loai_khach)
     on update cascade
     on delete cascade,
-    ho_ten varchar(45) not null,
-    ngay_sinh date not null,
-    so_cmnd varchar(45) not null unique,
-    sdt varchar(10) not null,
-    email varchar(45) not null unique,
-    dia_chi varchar(45) not null
+    ho_ten varchar(45) ,
+    ngay_sinh date ,
+    so_cmnd varchar(45),
+    sdt varchar(10) ,
+    email varchar(45)  ,
+    dia_chi varchar(45) 
 );
 
 create table kieu_thue(
 	id_kieu_thue int not null auto_increment primary key,
     ten_kieu_thue varchar(45) not null,
-    gia int not null
+    gia int default 0
 );
 
 create table loai_dich_vu(
@@ -72,10 +72,10 @@ create table loai_dich_vu(
 
 create table dich_vu(
 	id_dich_vu int not null auto_increment primary key,
-    ten_dich_vu varchar(45) not null,
-    dien_tich int not null,
-    so_tang int not null,
-    so_nguoi_toi_da int not null,
+    ten_dich_vu varchar(45) ,
+    dien_tich int ,
+    so_tang int ,
+    so_nguoi_toi_da int ,
     chi_phi_thue int default 0,
     id_kieu_thue int,
     id_loai_dich_vu int,
@@ -90,7 +90,7 @@ create table dich_vu(
 
 create table dich_vu_di_kem(
 	id_dich_vu_di_kem int not null auto_increment primary key,
-    ten_dich_vu_di_kem varchar(45) not null,
+    ten_dich_vu_di_kem varchar(45) ,
     gia int default 0,
     don_vi int default 0,
     trang_thai_kha_dung varchar(45)
