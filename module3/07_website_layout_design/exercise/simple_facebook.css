@@ -1,0 +1,149 @@
+body {
+    background: #F0F2F5;
+}
+header {
+    width: 100%;
+    height: 56px;
+    background: #6472ff;
+    line-height: 56px;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.5); /*Đổ bóng cho menu*/
+    position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
+    top: 0; /*Nằm trên cùng*/
+    left: 0; /*Nằm sát bên trái*/
+}
+
+li {
+    list-style: none;
+}
+
+header ul li {
+    float: left;
+    display: inline;
+}
+
+header ul .col-6 li {
+    width: 100px;
+    background: #1e00ff;
+    text-align: center;
+    color: white;
+}
+
+header ul .col-6 li:hover {
+    background: deepskyblue;
+    color: black;
+    border-radius: 10px;
+}
+
+header .col-3:first-child {
+    padding-left: 20px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.col-3 {
+    width: 25%;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+div {
+    float: left;
+}
+
+header div:last-child {
+    text-align: right;
+    padding-right: 20px;
+}
+
+header ul div a {
+    text-decoration: none;
+    color: white;
+}
+
+header ul div input {
+    height: 35px;
+    width: 180px;
+    border: 10px;
+    border-radius: 10px;
+}
+
+header ul div li {
+    width: 40px;
+}
+
+main {
+    padding-top: 56px;
+}
+
+left {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    height: 450px;
+    overflow: hidden;
+
+    display: inline;
+    /*box-shadow: 0px 2px 2px rgba(0,0,0,0.5); !*Đổ bóng cho menu*!*/
+    /*position: fixed; !*Cho menu cố định 1 vị trí với top và left*!*/
+    top: 56px; /*Nằm trên cùng*/
+    left: 0; /*Nằm sát bên trái*/
+}
+
+left:hover {
+    overflow: scroll;
+}
+
+left li {
+    height: 44px;
+    padding-left: 20px;
+    line-height: 44px;
+    border-radius: 10px;
+}
+
+left li:hover {
+    background: #E4E6E9;
+}
+
+
+between {
+    float: left;
+    overflow: auto;
+    height: 450px;
+}
+
+between .contain {
+    margin: 15px 30px;
+    padding: 20px;
+    height: 200px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+}
+right {
+    margin: 0px;
+    padding: 30px;
+    float: left;
+    box-sizing: border-box;
+
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    line-height: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    background: blue;
+    color: white;
+
+}
