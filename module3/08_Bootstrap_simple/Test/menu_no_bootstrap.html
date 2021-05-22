@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .child {
+            width: 50px;
+            height: 50px;
+            background: #43ff67;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid;
+            /*float: left;*/
+        }
+
+        .child:hover {
+            background: #6c757d;
+            color: white;
+        }
+
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            background: skyblue;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #menu {
+            margin: 0px;
+            padding: 0px;
+            height: 60px;
+            width: 100%;
+        }
+
+        .nav {
+            display: flex;
+        }
+
+        .nav .child .sup-nav {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        .nav .child:hover .sup-nav {
+            display: block;
+        }
+
+        .sup-nav .child .nav {
+            display: none;
+            margin-top: -50px;
+            margin-left: 11px;
+            padding-top: 0px;
+        }
+
+        .sup-nav .child:hover .nav {
+            display: block;
+        }
+
+        .sup-nav .child:hover .nav .child {
+            background: #6472ff;
+        }
+
+        .sup-nav .child .nav .child:hover {
+            background: #0c4128;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+</div>
+
+<div id="menu">
+    <ul class="nav">
+        <li class="child">1</li>
+        <li class="child">2
+            <ul class="sup-nav">
+                <li class="child">1
+                    <ul class="nav">
+                        <li class="child">1</li>
+                        <li class="child">2</li>
+                        <li class="child">3</li>
+                        <li class="child">4</li>
+                    </ul>
+                </li>
+                <li class="child">2</li>
+                <li class="child">3</li>
+                <li class="child">4</li>
+            </ul>
+        </li>
+        <li class="child">3
+            <ul class="sup-nav">
+                <li class="child">A</li>
+                <li class="child">B</li>
+                <li class="child">C</li>
+                <li class="child">D</li>
+            </ul>
+        </li>
+        <li class="child">4</li>
+    </ul>
+</div>
+</body>
+</html>

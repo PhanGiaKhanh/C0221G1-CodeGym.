@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create box</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+        }
+        .row-4box {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .box-p {
+            width: 24%;
+            float: left;
+            border-bottom: 5px solid white;
+            box-sizing: border-box;
+        }
+        .box {
+            width: 100%;
+            height: 200px;
+            position: relative;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            background-size: cover;
+            position: absolute;
+            bottom: 0px ;
+        }
+
+        .box .text {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            position: absolute;
+            bottom: 0px;
+            background: #6c757d;
+            opacity: 0.5;
+            color: black;
+            font-weight: bolder;
+
+        }
+    </style>
+</head>
+<body>
+<div class="row-4box">
+    <div class="box-p">
+        <div class="box">
+            <img src="img/thien_nhien.png"
+                 alt="Image Text">
+            <div class="text">Thiên nhiên</div>
+        </div>
+    </div>
+
+    <div class="box-p">
+        <div class="box">
+            <img src="img/thien_nhien.png"
+                 alt="Image Text">
+            <div class="text">Thiên nhiên</div>
+        </div>
+    </div>
+
+    <div class="box-p">
+        <div class="box">
+            <img src="img/thien_nhien.png"
+                 alt="Image Text">
+            <div class="text">Thiên nhiên</div>
+        </div>
+    </div>
+
+    <div class="box-p">
+        <div class="box">
+            <img src="img/thien_nhien.png"
+                 alt="Image Text">
+            <div class="text">Thiên nhiên</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
