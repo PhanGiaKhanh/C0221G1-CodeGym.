@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test justify content</title>
+    <style>
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        li {
+            list-style: none;
+        }
+        .nav-item{
+            width: 50px;
+            height: 50px;
+            background: #43ff67;
+
+        }
+        .sup-nav-item  {
+            width: 50px;
+            height: 50px;
+            background: #637fff;
+            margin-left: 10px;
+        }
+        .main {
+
+            background: #6c757d;
+
+        }
+        .nav {
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sup-nav {
+            margin-top: 31px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <ul class="nav">
+        <li class="nav-item">A</li>
+        <li class="nav-item">B
+            <ul class="sup-nav">
+                <li class="sup-nav-item">1</li>
+                <li class="sup-nav-item">2</li>
+                <li class="sup-nav-item">3</li>
+            </ul>
+        </li>
+        <li class="nav-item">C</li>
+        <li class="nav-item">D</li>
+    </ul>
+</div>
+</body>
+</html>

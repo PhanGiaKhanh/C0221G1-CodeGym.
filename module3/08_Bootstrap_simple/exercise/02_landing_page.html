@@ -5,8 +5,6 @@
     <title>Xây dựng landing page</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <script src="js/bootstrap.js"></script>
-    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">-->
-    <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>-->
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -105,29 +103,16 @@
 </nav>
 
 <!-- img title-->
-<!--<div class="card mb-3" style="max-width: 100%; height: 503px">-->
-<!--    <div class="row g-0">-->
-<!--        <div class="col-md-8" style="width: 40%; height: 503px">-->
-<!--            <div class="card-body">-->
-<!--                <h5 class="card-title">Card title</h5>-->
-<!--                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to-->
-<!--                    additional content. This content is a little bit longer.</p>-->
-<!--                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-md-4">-->
-<!--            <img src="img/Surface_Home_Hero_Spring_21_color_V3.jpg" alt="..." class="img-thumbnail">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <div class="container-fluid">
-    <div class="card bg-dark text-white">
-        <img src="img/Surface_Home_Hero_Spring_21_color_V3.jpg" class="card-img" alt="...">
-        <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
+    <div class="carousel bg-dark text-white">
+        <img src="img/Surface_Home_Hero_Spring_21_color_V3.jpg" class="w-100 " style="height: 570px; background-repeat: no-repeat" alt="...">
+<!--        <div class="form-select"></div>-->
+        <div class="card-img-overlay modal-sm btn-group-vertical text-dark">
+            <div class="bg-warning ">See what's news</div>
+            <div class="display-6 ">Style and speed</div>
+            <p class="card-text">Do it all with a perfect balance of sleek design, performance, immersive audio, HD
+                video calls, vibrant touchscreen, choice of two sizes, and two keyboard finishes.</p>
+            <a class="text-decoration-none text-primary" href="#">Last updated 3 mins ago</a>
         </div>
     </div>
 </div>
@@ -218,49 +203,203 @@
 
 <!--text-->
 <div class="container my-4 px-5">
-    <div class="row">
-        <div class="text-center">
-            <h2>Original by design</h2>
-            <div class="my-4 px-5">
-                Whether you do your best thinking at home or in nature, alone or with others, every Surface has been
-                designed to fuel your originality. You never know where your next inspiration will come from. Check
-                out these true originals and their stories.
-            </div>
-            <p class="text-primary fw-bolder">Meet our Surface originals <a href="#"
-                                                                            class="text-decoration-none fw-bolder">></a>
-            </p></div>
+    <div class="row text-center">
+        <h2>Original by design</h2>
+        <div class="my-4 px-5">
+            Whether you do your best thinking at home or in nature, alone or with others, every Surface has been
+            designed to fuel your originality. You never know where your next inspiration will come from. Check
+            out these true originals and their stories.
+        </div>
+        <p class="text-primary fw-bolder">Meet our Surface originals <a href="#"
+                                                                        class="text-decoration-none fw-bolder">></a>
+        </p>
     </div>
 </div>
 <!--end text-->
 
 <!--section img-->
 <div class="container-fluid">
-    <div class="row bg-primary" style="height: 500px">
-        <div class="col">
-            <div class="carousel slide">
-                <div class="">
-                    <img src="img/Surface_Home_Mosic_Fall_20_Pro_7_en-us_V2.png" class=" w-100 h-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col carousel slide">
+            <img src="img/Surface_Home_Mosic_Spring_21_BS_color_V2.jpg" class=" w-100 h-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-dark">
+                <p class="display-6">First slide label</p>
+                <p>Some representative placeholder content for the first slide.</p>
+                <p class="text-primary fw-bolder">
+                    Meet our Surface originals
+                    <a href="#" class="text-decoration-none fw-bolder">></a>
+                </p>
             </div>
         </div>
-        <div class="col">
-            <div class="carousel slide">
-                <div class="">
-                    <img src="img/Surface_Home_Mosic_Fall_20_Pro_7_en-us_V2.png" class=" w-100 h-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
+
+        <div class="col carousel slide">
+            <img src="img/Surface_Home_Mosic_Fall_20_Pro_7_en-us_V2.png" class=" w-100 h-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-dark">
+                <p class="display-6">First slide label</p>
+                <p>Some representative placeholder content for the first slide.</p>
+                <p class="text-primary fw-bolder">
+                    Meet our Surface originals
+                    <a href="#" class="text-decoration-none fw-bolder">></a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="col carousel slide">
+            <img src="img/Surface_Home_Mosic_Fall_20_LaptopG_en-us_V2.jpg" class=" w-100 h-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-dark">
+                <p class="display-6">First slide label</p>
+                <p>Some representative placeholder content for the first slide.</p>
+                <p class="text-primary fw-bolder">
+                    Meet our Surface originals
+                    <a href="#" class="text-decoration-none fw-bolder">></a>
+                </p>
+            </div>
+        </div>
+        <div class="col carousel slide">
+            <img src="img/Surface_Home_Mosic_Fall_20_Go_2_en-us_V2.jpg" class=" w-100 h-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-dark">
+                <p class="display-6">First slide label</p>
+                <p>Some representative placeholder content for the first slide.</p>
+                <p class="text-primary fw-bolder">
+                    Meet our Surface originals
+                    <a href="#" class="text-decoration-none fw-bolder">></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="col carousel">
+            <div class="card-img-overlay text-center">
+                <p class="display-6">First slide label</p>
+                <p>Some representative placeholder content for the first slide.</p>
+                <p class="text-primary fw-bolder">
+                    Meet our Surface originals
+                    <a href="#" class="text-decoration-none fw-bolder">></a>
+                </p>
+            </div>
+            <img src="img/Surface_Home_Mosic_Fall_20_Duo_en-us_V2.png" class=" w-100 h-100" alt="...">
+        </div>
+        <div class="col carousel slide">
+            <img src="img/Surface_Home_Mosic_Fall_20_prox_en-us_V2.jpg" class=" w-100 h-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-dark">
+                <p class="display-6">First slide label</p>
+                <p>Some representative placeholder content for the first slide.</p>
+                <p class="text-primary fw-bolder">
+                    Meet our Surface originals
+                    <a href="#" class="text-decoration-none fw-bolder">></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col carousel slide">
+            <img src="img/Surface_Home_Hero_20_mosaic_Book3_SingleTile_V2.jpg " class=" w-100 h-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-dark">
+                <p class="display-6">First slide label</p>
+                <p>Some representative placeholder content for the first slide.</p>
+                <p class="text-primary fw-bolder">
+                    Meet our Surface originals
+                    <a href="#" class="text-decoration-none fw-bolder">></a>
+                </p>
+            </div>
+        </div>
+        <div class="col carousel slide">
+            <img src="img/Surface_Home_Mosic_Fall_20_Studio_2_en-us_V2.jpg" class=" w-100 h-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-dark">
+                <p class="display-6">First slide label</p>
+                <p>Some representative placeholder content for the first slide.</p>
+                <p class="text-primary fw-bolder">
+                    Meet our Surface originals
+                    <a href="#" class="text-decoration-none fw-bolder">></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container text-center my-5">
+    <p class="display-6">Original by design, inspired by you</p>
+    Inspiration can come from anywhere. Originality is where you take it.
+    <p class="text-primary fw-bolder">
+        Meet our Surface originals
+        <a href="#" class="text-decoration-none fw-bolder">></a>
+    </p>
+</div>
+<!--end section img-->
+
+<!--video -->
+<div class="container my-3">
+    <div class="row">
+        <div class="col card">
+            <iframe width="100%" height="600px" src="https://www.youtube.com/embed/4UL5BHTKSg4"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<!--end video-->
+
+<!--img + text -->
+<div class="container-fluid">
+    <div class="carousel">
+        <img src="img/Surface_Home_HMC_HighlightFeature_Spring_21_V2.jpg" class=" w-100 h-100" alt="...">
+        <div class="carousel-caption card bg-dark carousel-control-next offset-7 my-5 px-2" style="width: 300px">
+            <p>
+            <div class="lead">Choose your perfect Surface</div>
+            <br>
+            Just answer a few simple questions about what you're looking for and we'll help you choose. Or compare tech
+            specs of each computer and find the Surface built to unlock your originality.
+            <br>
+            <a href="#" class="text-decoration-none">Help me choose ></a>
+            <br>
+            <a href="#" class="text-decoration-none"> Compare Surface ></a>
+            </p>
+        </div>
+    </div>
+</div>
+<!--end img + +text-->
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col card px-3 mx-2">
+            <img class="card-img-top mt-2" src="img/1920_Panel24_3Up_Footer_Surface.jpg" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Protect your Surface</h5>
+                <a class="text-decoration-none" href="#">See Microsoft Complete protection plans ></a>
+            </div>
+        </div>
+        <div class="col card px-3 mx-2">
+            <img class="card-img-top mt-2" src="img/Surface_Lg_Generic_ContentPlacement_3UP_20_Business_V1.jpg" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Surface for your business</h5>
+                <a class="text-decoration-none" href="#">Shop for Business ></a>
+            </div>
+        </div>
+        <div class="col card px-3 mx-2">
+            <img class="card-img-top mt-2" src="img/Surface_Lg_Generic_ContentPlacement_3UP_20_Acc_V1.jpg" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Accessories</h5>
+                <a class="text-decoration-none" href="#">Shop Surface accessories ></a>
             </div>
         </div>
     </div>
 </div>
 
-<!--end section img-->
+<!--icon footer-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col card">
+            <img class="card-img-top" src="img/icon1.png" alt="">
+        </div>
+    </div>
+</div>
+    
+<!--end icon footer -->
 </body>
 </html>
