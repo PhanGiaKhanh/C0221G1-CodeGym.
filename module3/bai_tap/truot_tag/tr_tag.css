@@ -1,0 +1,21 @@
+
+
+body{
+    background: greenyellow;
+    font-family: Arial;
+    font-size: 15px;
+}
+        /*#region chỉnh sửa slick slider*/
+        .slick-slider .slick-arrow{display: none !important;}
+        .slick-slider .slick-dots {display: none !important;}
+        /*#endregion*/
+
+/*#region chỉnh sửa slick slider*/
+.slick-content {
+    height: 300px;
+    background: lightblue;
+}
+.slick-tab .slick-slide{padding: 5px 15px; text-align: center}
+.slick-tab .slick-current {border-bottom: solid 2px blue}
+/*#endregion end edit slick slider*/
+
