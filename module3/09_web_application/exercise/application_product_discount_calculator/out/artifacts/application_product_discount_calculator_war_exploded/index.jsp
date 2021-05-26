@@ -11,7 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  <form action="/app_product" method="post">
+  <form action="/product" method="post">
     <h4>Product description</h4>
     <input type="text" placeholder="Mô tả sản phẩm" name ="description">
     <h4>List price</h4>
