@@ -12,7 +12,9 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="Bootstrap4/bootstrap.min.css">
-
+    <style>
+        /*dfsf*/
+    </style>
 </head>
 <body class="d-flex justify-content-center">
 <form class="modal-sm border" action="calculation" method="get">

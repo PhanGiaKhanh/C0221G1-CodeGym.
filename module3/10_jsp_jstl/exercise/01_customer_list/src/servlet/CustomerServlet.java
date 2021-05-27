@@ -1,4 +1,4 @@
-package Servlet;
+package servlet;
 
 import customer.Customer;
 
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "Servlet.CustomerServlet", urlPatterns = {""})
+@WebServlet(name = "servlet.CustomerServlet", urlPatterns = {""})
 public class CustomerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
