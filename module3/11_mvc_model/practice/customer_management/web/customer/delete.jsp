@@ -15,15 +15,15 @@
         <table>
             <tr>
                 <td>Name: </td>
-                <td>${requestScope["customer"].getName()}</td>
+                <td>${customer.getName()}</td>
             </tr>
             <tr>
                 <td>Email: </td>
-                <td>${requestScope["customer"].getEmail()}</td>
+                <td>${customer.getEmail()}</td>
             </tr>
             <tr>
                 <td>Address: </td>
-                <td>${requestScope["customer"].getAddress()}</td>
+                <td>${customer.getAddress()}</td>
             </tr>
             <tr>
                 <td><input type="submit" value="Delete customer"></td>
