@@ -37,7 +37,7 @@ public class ProductServlet extends HttpServlet {
                 viewSearch(request, response);
             default:
                 break;
-        }
+          }
 
     }
 
@@ -151,9 +151,9 @@ public class ProductServlet extends HttpServlet {
         String description = request.getParameter("description");
         String manufacturer = request.getParameter("manufacturer");
 
-        Product product = this.productService.findById(id);
-        RequestDispatcher dispatcher;
-        if (product == null) {
+            Product product = this.productService.findById(id);
+            RequestDispatcher dispatcher;
+            if (product == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
             product.setNameP(name);

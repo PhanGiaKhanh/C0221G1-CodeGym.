@@ -15,23 +15,23 @@
         <table>
             <tr>
                 <td>Id: </td>
-                <td>${requestScope["product"].getId()}</td>
+                <td>${product.getId()}</td>
             </tr>
             <tr>
                 <td>Name: </td>
-                <td>${requestScope["product"].getNameP()}</td>
+                <td>${product.getNameP()}</td>
             </tr>
             <tr>
                 <td>Price: </td>
-                <td>${requestScope["product"].getPriceP()}</td>
+                <td>${product.getPriceP()}</td>
             </tr>
             <tr>
                 <td>Description: </td>
-                <td>${requestScope["product"].getDescriptionP()}</td>
+                <td>${product.getDescriptionP()}</td>
             </tr>
             <tr>
                 <td>Manufacturer: </td>
-                <td>${requestScope["product"].getManufacturer()}</td>
+                <td>${product.getManufacturer()}</td>
             </tr>
             <tr>
                 <td><input type="submit" value="Delete product"></td>
