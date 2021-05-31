@@ -106,9 +106,9 @@
             </td>
             <td style="width: 5%">
                 <!-- Button trigger modal DELETE -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+                <a href="/customers?action=delete?customer=${customer}" type="button" class="id-modal btn btn-danger" data-toggle="modal" data-target="#delete">
                     Delete
-                </button>
+                </a>
                 <!-- Modal -->
                 <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
@@ -169,13 +169,21 @@
                 <!--end model-->
             </td>
         </tr>
-    </c:forEach>
+        </c:forEach>
     </tbody>
 </table>
 <!--#endregion-->
 
 <!--#region javascript-->
-
+<script>
+    $(document).on("click", ".id-modal", function () {
+    var myBookId = $(this).data('id');
+    $(".modal-body #bookId").val( myBookId );
+    // As pointed out in comments,
+    // it is unnecessary to have to manually call the modal.
+    // $('#addBookDialog').modal('show');
+    });
+</script>
 <script src="../../bootstrap4/jquery-3.6.0.min.js"></script>
 <script src="../../bootstrap4/popper.min.js"></script>
 <script src="../../bootstrap4/bootstrap.min.js"></script>

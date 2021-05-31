@@ -41,19 +41,6 @@ public class ProductServlet extends HttpServlet {
 
     }
 
-    private void viewSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        List<Product> listProducts = productService.findAll();
-        List<Product> products = new ArrayList<>();
-        for (int i = 0; i < listProducts.size(); i++) {
-            if ((listProducts.get(i).getNameP()).contains(name)) {
-                products.add(listProducts.get(i));
-            }
-        }
-        request.setAttribute("products", products);
-        request.getRequestDispatcher("product/list.jsp").forward(request, response);
-    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -78,6 +65,19 @@ public class ProductServlet extends HttpServlet {
                 break;
         }
 
+    }
+
+    private void viewSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        List<Product> listProducts = productService.findAll();
+        List<Product> products = new ArrayList<>();
+        for (int i = 0; i < listProducts.size(); i++) {
+            if ((listProducts.get(i).getNameP()).contains(name)) {
+                products.add(listProducts.get(i));
+            }
+        }
+        request.setAttribute("products", products);
+        request.getRequestDispatcher("product/list.jsp").forward(request, response);
     }
 
     private void listProducts(HttpServletRequest request, HttpServletResponse response) {
