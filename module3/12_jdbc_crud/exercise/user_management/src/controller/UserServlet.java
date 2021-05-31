@@ -1,8 +1,7 @@
 package controller;
 
 import model.bean.User;
-import model.repository.UserRepository;
-import model.service.IUserDAO;
+import model.service.UserService;
 import model.service.impl.UserImpl;
 
 import javax.servlet.RequestDispatcher;
@@ -17,7 +16,7 @@ import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = {"", "/users"})
 public class UserServlet extends HttpServlet {
-    private IUserDAO userDAO = new UserImpl();
+    private UserService userDAO = new UserImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");

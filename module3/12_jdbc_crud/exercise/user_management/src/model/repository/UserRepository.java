@@ -1,6 +1,5 @@
 package model.repository;
 
-import model.service.IUserDAO;
 import model.bean.User;
 
 import java.sql.*;

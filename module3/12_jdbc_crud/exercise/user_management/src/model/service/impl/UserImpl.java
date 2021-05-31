@@ -2,11 +2,11 @@ package model.service.impl;
 
 import model.bean.User;
 import model.repository.UserRepository;
-import model.service.IUserDAO;
+import model.service.UserService;
 
 import java.util.List;
 
-public class UserImpl implements IUserDAO {
+public class UserImpl implements UserService {
     UserRepository userRepository = new UserRepository();
     @Override
     public List<User> findByAll() {

@@ -5,7 +5,7 @@ import model.bean.User;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IUserDAO {
+public interface UserService {
     List<User> findByAll();
     User findById(int id);
     boolean update(int id, User user);
