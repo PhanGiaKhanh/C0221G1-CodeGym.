@@ -176,13 +176,15 @@
 
 <!--#region javascript-->
 <script>
-    $(document).on("click", ".id-modal", function () {
-    var myBookId = $(this).data('id');
-    $(".modal-body #bookId").val( myBookId );
+    // $(document).on("click", ".id-modal", function () {
+    // var myBookId = $(this).data('id');
+    // $(".modal-body #bookId").val( myBookId );
     // As pointed out in comments,
     // it is unnecessary to have to manually call the modal.
     // $('#addBookDialog').modal('show');
-    });
+    // });
+
+
 </script>
 <script src="../../bootstrap4/jquery-3.6.0.min.js"></script>
 <script src="../../bootstrap4/popper.min.js"></script>
