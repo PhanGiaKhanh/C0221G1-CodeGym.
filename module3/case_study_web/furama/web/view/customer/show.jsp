@@ -70,7 +70,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><a href="/customers" class="btn btn-secondary">Back menu list</a>    </td>
+                        <td class="text-right"><a href="/customers" class="btn btn-secondary">Close</a>    </td>
                     </tr>
                     </tbody>
                 </table>

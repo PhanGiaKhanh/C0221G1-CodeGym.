@@ -40,21 +40,21 @@ insert into loai_khach(ten_loai_khach) values
 ("Silver"),
 ("Member");
 
-insert into khach_hang(id_loai_khach, ho_ten, ngay_sinh, so_cmnd, sdt, email, dia_chi) values 
-(1, "Nguyễn Huyền Trang", "2000-01-01", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội"),
-(1, "Nguyễn Huyền Trang", "1998-01-01", "2231231231", "0905111112", "trang1@gmail.com", "Vinh"),
-(2, "Thái Hoàng Long", "2002-01-01", "1231231232", "0905222222", "long@gmail.com", "Đà Nẵng"),
-(3, "Hoàng Cường", "1999-01-01", "1231231233", "0905333333", "cuong@gmail.com", "HCM"),
-(4, "Tấn Công", "1899-01-01", "1231231234", "0905444444", "cong@gmail.com", "Huế"),
-(5, "Hà Thái Thú", "2006-12-11", "1231231235", "090555555", "thu@gmail.com", "Quảng Trị"),
-(1, "Ngụy Hàn Tuấn", "2004-11-14", "1231231236", "0905666666", "tuan@gmail.com", "Đà Nẵng"),
-(2, "Hùng Vương", "1989-05-01", "1231231237", "0905777777", "vuong@gmail.com", "Huế"),
-(3, "Công Hùng", "1980-04-28", "1231231238", "0905888888", "hung@gmail.com", "Quảng Trị"),
-(1, "Đào Văn Bá", "2008-12-22", "1231231239", "0905999999", "ba@gmail.com", "Đà Nẵng"),
-(2, "Thái Hoàng An", "2001-01-01", "1231231230", "090555554", "an@gmail.com", "Hà Nội"),
-(2, "Thái Hoàng An", "1992-01-01", "2341231230", "090355554", "an1@gmail.com", "Đà Nẵng"),
-(1, "An Bình", "1994-01-01", "3341231230", "090455554", "anbinh@gmail.com", "Quảng Ngãi"),
-(1, "Bỉ Bỉ Đông", "1990-01-01", "4341231230", "090255554", "bibidong@gmail.com", "Vinh");
+insert into khach_hang(id_loai_khach, ho_ten, ngay_sinh, gioi_tinh, so_cmnd, sdt, email, dia_chi) values 
+(1, "Nguyễn Huyền Trang", "2000-01-01", "Nữ", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội"),
+(1, "Nguyễn Huyền Trang", "1998-01-01", "Nữ", "2231231231", "0905111112", "trang1@gmail.com", "Vinh"),
+(2, "Thái Hoàng Long", "2002-01-01", "Nam", "1231231232", "0905222222", "long@gmail.com", "Đà Nẵng"),
+(3, "Hoàng Cường", "1999-01-01", "Nam", "1231231233", "0905333333", "cuong@gmail.com", "HCM"),
+(4, "Tấn Công", "1899-01-01", "Nam", "1231231234", "0905444444", "cong@gmail.com", "Huế"),
+(5, "Hà Thái Thú", "2006-12-11", "Nam", "1231231235", "090555555", "thu@gmail.com", "Quảng Trị"),
+(1, "Ngụy Hàn Tuấn", "2004-11-14", "Nam", "1231231236", "0905666666", "tuan@gmail.com", "Đà Nẵng"),
+(2, "Hùng Vương", "1989-05-01", "Nam", "1231231237", "0905777777", "vuong@gmail.com", "Huế"),
+(3, "Công Hùng", "1980-04-28", "Nam", "1231231238", "0905888888", "hung@gmail.com", "Quảng Trị"),
+(1, "Đào Văn Bá", "2008-12-22", "Nam", "1231231239", "0905999999", "ba@gmail.com", "Đà Nẵng"),
+(2, "Thái Hoàng An", "2001-01-01", "Nam", "1231231230", "090555554", "an@gmail.com", "Hà Nội"),
+(2, "Thái Hoàng An", "1992-01-01", "Nam", "2341231230", "090355554", "an1@gmail.com", "Đà Nẵng"),
+(1, "An Bình", "1994-01-01", "Nữ", "3341231230", "090455554", "anbinh@gmail.com", "Quảng Ngãi"),
+(1, "Bỉ Bỉ Đông", "1990-01-01", "Nữ", "4341231230", "090255554", "bibidong@gmail.com", "Vinh");
 
 insert into kieu_thue(ten_kieu_thue, gia) values
 ("năm", 1000),

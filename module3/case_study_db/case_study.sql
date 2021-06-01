@@ -53,6 +53,7 @@ create table khach_hang(
     on delete cascade,
     ho_ten varchar(45) ,
     ngay_sinh date ,
+    gioi_tinh varchar(45),
     so_cmnd varchar(45),
     sdt varchar(10) ,
     email varchar(45)  ,

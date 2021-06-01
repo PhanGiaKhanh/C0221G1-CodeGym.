@@ -13,4 +13,5 @@ public interface UserService {
     boolean remove(int id);
     List<User> sortName();
     List<User> sortCountry();
+    List<User> searchName(String search);
 }

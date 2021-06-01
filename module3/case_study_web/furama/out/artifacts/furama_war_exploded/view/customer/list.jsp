@@ -15,7 +15,17 @@
     <link rel="stylesheet" href="../../bootstrap4/bootstrap.min.css">
 </head>
 <body class="m-2">
-<h1 class="mt-3 py-3 pl-5 bg-light text-info">Customers list </h1>
+
+<!--#region header-->
+<nav class="navbar navbar-light bg-light border border-info ">
+    <div class="navbar-brand mb-0 h1 d-flex align-items-center">
+        <img class="ml-3 rounded shadow-lg" src="img/logo3.jpg" height="50" width="50"/>
+        <div class="ml-2">Furama</div>
+    </div>
+    <div class="navbar-brand h1 text-info"><h1>Customers list</h1> </div>
+    <div class="navbar-brand mb-0 h1">Nguyễn Văn A</div>
+</nav>
+<!--#endregion-->
 <!--#region menu-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success my-2 px-5 border border-info  sticky-top">
     <a class="navbar-brand mx-5" href="http://localhost:8080">Home</a>
@@ -38,11 +48,15 @@
                 <a class="navbar-brand mr-0" href="#">Contract <span class="sr-only">(current)</span></a>
             </li>
         </ul>
+        <form action="/customers?action=search" method="post" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search name" aria-label="Search" name="search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
 </nav>
 <!--#endregion-->
 <!--#region header-->
-<div class="container my-4">
+<div class="container-fluid">
     <div class="row">
         <div class="col-3">
             <a href="/customers?action=create" class="btn btn-primary"><span
@@ -50,23 +64,23 @@
                 Create new customer
             </a>
         </div>
-        <div class="col-5">
-            <%--            <c:if test="${message != null} ">--%>
-            <%--                <span class="text-success">${message}</span>--%>
-            <%--            </c:if>--%>
+        <div class="col-6">
+                        <c:if test="${message != null} ">
+                            <span class="text-success">${message}</span>
+                        </c:if>
         </div>
-        <div class="col-4 text-right">
-            <form action="/customers?action=search" method="post" class="d-flex">
-                <input type="search" class="form-control" placeholder="Search name" name="search">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </form>
+        <div class="col-3 text-right">
+<%--            <form action="/customers?action=search" method="post" class="d-flex">--%>
+<%--                <input type="search" class="form-control" placeholder="Search name" name="search">--%>
+<%--                <button type="submit" class="btn btn-primary">Search</button>--%>
+<%--            </form>--%>
         </div>
     </div>
 </div>
 <!--#endregion-->
 
 <!--#region table-->
-<table class="table table-hover">
+<table class="table table-hover my-2">
     <thead class="thead-dark">
     <tr>
         <th scope="col">Id</th>

@@ -69,14 +69,8 @@ public class UserServlet extends HttpServlet {
 
     private void searchCountryUser(HttpServletRequest request, HttpServletResponse response) {
         String search = request.getParameter("search");
-        List<User> users = userDAO.findByAll();
-        List<User> usersSearch = new ArrayList<>();
-        for (User user : users){
-            if (user.getCountry().contains(search)){
-                usersSearch.add(user);
-            }
-        }
-        request.setAttribute("users", usersSearch);
+        List<User> users = userDAO.searchName(search);
+        request.setAttribute("users", users);
         try {
             request.getRequestDispatcher("user/list.jsp").forward(request, response);
         } catch (ServletException e) {

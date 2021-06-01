@@ -42,4 +42,9 @@ public class UserImpl implements UserService {
     public List<User> sortCountry() {
         return userRepository.sortCountry();
     }
+
+    @Override
+    public List<User> searchName(String search) {
+        return userRepository.searchName(search);
+    }
 }

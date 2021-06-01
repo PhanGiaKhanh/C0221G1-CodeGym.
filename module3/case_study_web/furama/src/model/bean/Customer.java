@@ -18,6 +18,17 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(String c_name, String c_birthday, String c_gender, int c_id_card, String c_phone, String c_email, String c_type, String c_address) {
+        this.c_name = c_name;
+        this.c_birthday = c_birthday;
+        this.c_gender = c_gender;
+        this.c_id_card = c_id_card;
+        this.c_phone = c_phone;
+        this.c_email = c_email;
+        this.c_type = c_type;
+        this.c_address = c_address;
+    }
+
     public Customer(int id, String c_name, String c_birthday, String c_gender, int c_id_card, String c_phone, String c_email, String c_type, String c_address) {
         this.id = id;
         this.c_name = c_name;

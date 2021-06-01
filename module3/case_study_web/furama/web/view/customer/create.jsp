@@ -83,7 +83,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td class="d-flex justify-content-around"><a href="/customers" class="btn btn-secondary">Back menu</a><input class="btn btn-success" type="submit" value="Create new customer"></td>
+                        <td class="text-right"><a href="/customers" class="btn btn-secondary mr-2">Close</a><input class="btn btn-success" type="submit" value="Create"></td>
                     </tr>
                     </tbody>
                 </table>

@@ -78,7 +78,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td class="d-flex justify-content-around"><a href="/customers" class="btn btn-secondary" >Back menu</a><input type="submit" value="Update customer" class="btn btn-warning"></td>
+                        <td class="text-right"><a href="/customers" class="btn btn-secondary mr-2" >Close</a><input type="submit" value="Edit" class="btn btn-warning"></td>
                     </tr>
                     </tbody>
                 </table>

@@ -17,6 +17,28 @@ public class UserRepository {
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
     private static final String SORT_USERS_NAME = "select * from users order by `name`;";
     private static final String SORT_USERS_COUNTRY = "select * from users order by country;";
+    private static final String SEARCH_USERS_NAME = "select * from users where `name` like ?;";
+
+    public List<User> searchName(String search) {
+        List<User> users = new ArrayList<>();
+        Connection connection = baseRepository.connectDataBase();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_USERS_NAME);
+            preparedStatement.setString(1,"%"+search+"%");
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                User user = new User(id, name, email, country);
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
 
     public List<User> sortCountry() {
         List<User> users = new ArrayList<>();
