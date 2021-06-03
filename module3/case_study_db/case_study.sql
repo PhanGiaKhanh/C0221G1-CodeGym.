@@ -55,7 +55,7 @@ create table khach_hang(
     ngay_sinh date ,
     gioi_tinh varchar(45),
     so_cmnd varchar(45),
-    sdt varchar(10) ,
+    sdt varchar(45) ,
     email varchar(45)  ,
     dia_chi varchar(45) 
 );

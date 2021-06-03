@@ -33,10 +33,8 @@
         <div class="col-3"></div>
         <div class="col-6 fborder border-secondary rounded shadow">
             <h2 class="text-white rounded bg-info px-5 py-2 mt-2">Create new customer</h2>
-            <p>
-                <c:if test="${message != null} ">
-                    <span class="text-success">${message}</span>
-                </c:if>
+            <p class="text-success">
+                  ${message}
             </p>
 
             <form method="post">
@@ -48,16 +46,16 @@
                     </tr>
                     <tr>
                         <td>Birthday</td>
-                        <td><input class="form-control" type="text" value="" name="birthday"></td>
+                        <td><input class="form-control" type="date" value="YYYY/MM/DD" name="birthday"></td>
                     </tr>
                     <tr>
                         <td>Gender</td>
 <%--                        <td><input class="form-control" type="text" value="" name="gender"></td>--%>
                         <td>
                             <select class="form-control" name="gender" id="">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                <option value="Khác">Khác</option>
                             </select>
                         </td>
                     </tr>
@@ -75,7 +73,14 @@
                     </tr>
                     <tr>
                         <td>Type customer</td>
-                        <td><input class="form-control" type="text" value="" name="typeCustomer"></td>
+<%--                        <td><input class="form-control" type="text" value="" name="typeCustomer"></td>--%>
+                        <td>
+                            <select class="form-control" name="type" id="typeCustomer">
+                                <c:forEach items="${list}" var="type">
+                                    <option value="${type[0]}">${type[1]}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Address</td>

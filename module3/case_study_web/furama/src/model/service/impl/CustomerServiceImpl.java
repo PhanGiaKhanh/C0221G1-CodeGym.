@@ -1,47 +1,42 @@
 package model.service.impl;
 
 import model.bean.Customer;
+import model.bean.CustomerType;
 import model.reponsitory.CustomerRepository;
 import model.service.CustomerService;
+import model.service.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerServiceImpl implements CustomerService {
-    CustomerRepository customers = new CustomerRepository();
-
+public class CustomerServiceImpl implements Service<Customer> {
+    CustomerRepository customerRepository = new CustomerRepository();
     @Override
     public List<Customer> findAll() {
-        return customers.findAll();
+        return customerRepository.findAllCustomer();
     }
-
     @Override
-    public void save(Customer customer) {
-        customers.save(customer);
+    public List<String[]> findType(){
+        return customerRepository.findAllNameTypeCustomer();
     }
-
     @Override
-    public Customer findById(int id) {
-        return customers.findById(id);
+    public boolean insertIntoCustomer(Customer customer){
+        return customerRepository.insertIntoCustomer(customer);
     }
-
     @Override
-    public void update(int id, Customer customer) {
-        customers.update(id, customer);
+    public boolean deleteCustomer(int id){
+        return customerRepository.deleteCustomer(id);
     }
-
     @Override
-    public void remove(int id) {
-        customers.remove(id);
+    public Customer findById(int id){
+        return customerRepository.findById(id);
     }
-
     @Override
-    public int getSize() {
-        return customers.getSize();
+    public boolean updateById(int id,Customer customer){
+        return customerRepository.updateCustomerById(id,customer);
     }
-
     @Override
-    public List<Customer> findByName(String name) {
-        return  customers.findByName(name);
+    public List<Customer> searchByName(String name){
+        return customerRepository.searchByName(name);
     }
 }

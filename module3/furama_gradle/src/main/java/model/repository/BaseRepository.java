@@ -1,13 +1,13 @@
-package model.reponsitory;
+package model.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class BaseCustomerRepository {
+public class BaseRepository {
     Connection connectDataBase() {
         // Khai báo URL (port mysql://localhost:3306 + tên database: manager_students(thay đổi)
-        final String URL = "jdbc:mysql://localhost:3306/case_study_db?useSSL=false";
+        final String URL = "jdbc:mysql://localhost:3306/database_furama?useSSL=false";
         // khai báo user: root (mặt định của mysql)
         final String USER = "root";
         // khai báo password (lúc bạn cài đặt mysql server)

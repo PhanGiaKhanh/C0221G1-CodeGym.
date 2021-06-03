@@ -37,44 +37,66 @@
         <div class="col-6 fborder border-secondary rounded">
             <h2 class="text-white rounded bg-info px-5 py-2 mt-2">Edit customer <sup><a href="/customers" class="text-primary">x</a></sup></h2>
             <p>
-                <c:if test="${message != null} ">
                     <span class="text-success">${message}</span>
-                </c:if>
             </p>
             <form method="post">
                 <table class="table table-borderless">
                     <tbody>
                     <tr>
+                        <td>Id</td>
+                        <td><lable>${customer.getId()}</lable></td>
+                    </tr>
+                    <tr>
                         <td>Name</td>
-                        <td><input class="form-control" type="text" value="${customer.getC_name()}" name="name"></td>
+                        <td><input class="form-control" type="text" value="${customer.getName()}" name="name"></td>
                     </tr>
                     <tr>
                         <td>Birthday</td>
-                        <td><input class="form-control" type="text" value="${customer.getC_birthday()}" name="birthday"></td>
+                        <td><input class="form-control" type="text" value="${customer.getBirthday()}" name="birthday"></td>
                     </tr>
                     <tr>
                         <td>Gender</td>
-                        <td><input class="form-control" type="text" value="${customer.getC_gender()}" name="gender"></td>
+                        <td>
+                            <select class="form-control" name="gender" id="">
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                <option value="Khác">Khác</option>
+                            </select>
+                        </td>
+
+<%--                        <td>--%>
+<%--                            <select class="form-control" name="gender" id="">--%>
+<%--                                <option value="Male">Male</option>--%>
+<%--                                <option value="Female">Female</option>--%>
+<%--                                <option value="Other">Other</option>--%>
+<%--                            </select>--%>
+<%--                        </td>--%>
                     </tr>
                     <tr>
                         <td>Id card</td>
-                        <td><input class="form-control" type="number" value="${customer.getC_id_card()}"  name="card"></td>
+                        <td><input class="form-control" type="number" value="${customer.getIdCard()}"  name="card"></td>
                     </tr>
                     <tr>
                         <td>Phone</td>
-                        <td><input class="form-control" type="number" value="${customer.getC_phone()}" name="phone"></td>
+                        <td><input class="form-control" type="number" value="${customer.getPhone()}" name="phone"></td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td><input class="form-control" type="email" value="${customer.getC_email()}" name="email"></td>
+                        <td><input class="form-control" type="email" value="${customer.getEmail()}" name="email"></td>
                     </tr>
                     <tr>
                         <td>Type customer</td>
-                        <td><input class="form-control" type="text" value="${customer.getC_type()} " name="type-customer"></td>
+                        <td>
+                            <select class="form-control" name="type" id="typeCustomer">
+                                <c:forEach items="${list}" var="type">
+                                    <option value="${type[0]}">${type[1]}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td><input class="form-control" type="text" value="${customer.getC_address()}" name="address"></td>
+                        <td><input class="form-control" type="text" value="${customer.getAddress()}" name="address"></td>
                     </tr>
                     <tr>
                         <td></td>

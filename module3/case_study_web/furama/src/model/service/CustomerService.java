@@ -1,21 +1,22 @@
 package model.service;
 
 import model.bean.Customer;
+import model.bean.CustomerType;
 
 import java.util.List;
 
 public interface CustomerService {
     List<Customer> findAll();
 
-    void save(Customer customer);
+    List<String[]> findTypeOfCustomer();
+
+    boolean insertIntoCustomer(Customer customer);
+
+    boolean deleteCustomer(int id);
 
     Customer findById(int id);
 
-    void update(int id, Customer customer);
+    boolean updateCustomerById(int id, Customer customer);
 
-    void remove(int id);
-
-    int getSize();
-
-    List<Customer> findByName(String name);
+    List<Customer> searchByName(String name);
 }

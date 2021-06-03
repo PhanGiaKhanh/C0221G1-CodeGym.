@@ -12,7 +12,10 @@
 <head>
     <meta charset="UTF-8">
     <title>List</title>
+
     <link rel="stylesheet" href="../../bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap4/dataTables.bootstrap.min.css">
+
 </head>
 <body class="m-2">
 
@@ -65,9 +68,9 @@
             </a>
         </div>
         <div class="col-6">
-                        <c:if test="${message != null} ">
+
                             <span class="text-success">${message}</span>
-                        </c:if>
+
         </div>
         <div class="col-3 text-right">
 <%--            <form action="/customers?action=search" method="post" class="d-flex">--%>
@@ -78,9 +81,9 @@
     </div>
 </div>
 <!--#endregion-->
-
+<%--id="tableCustomer" class="table table-striped table-bordered "--%>
 <!--#region table-->
-<table class="table table-hover my-2">
+<table class="table table-hover my-2" id="tableCustomer">
     <thead class="thead-dark">
     <tr>
         <th scope="col">Id</th>
@@ -100,15 +103,15 @@
     <tbody>
     <c:forEach var="customer" items="${customers}">
         <tr>
-            <th>${customer.getId()}</th>
-            <td>${customer.getC_name()}</td>
-            <td>${customer.getC_birthday()}</td>
-            <td>${customer.getC_gender()}</td>
-            <td>${customer.getC_id_card()}</td>
-            <td>${customer.getC_phone()}</td>
-            <td>${customer.getC_email()}</td>
-            <td>${customer.getC_type()}</td>
-            <td>${customer.getC_address()}</td>
+            <th id="id">${customer.getId()}</th>
+            <td id="name">${customer.getName()}</td>
+            <td id="birthday">${customer.getBirthday()}</td>
+            <td id="gender">${customer.getGender()}</td>
+            <td>${customer.getIdCard()}</td>
+            <td>${customer.getPhone()}</td>
+            <td>${customer.getEmail()}</td>
+            <td>${customer.getType()}</td>
+            <td>${customer.getAddress()}</td>
 
             <td style="width: 5%">
                 <a href="/customers?action=show&id=${customer.getId()}" type="button" class="btn btn-info">Show</a>
@@ -120,61 +123,24 @@
             </td>
             <td style="width: 5%">
                 <!-- Button trigger modal DELETE -->
-                <a href="/customers?action=delete?customer=${customer}" type="button" class="id-modal btn btn-danger" data-toggle="modal" data-target="#delete">
+                <button  onclick="myFunction(${customer.getId()})" type="button" class="click-del btn btn-danger" data-toggle="modal" data-target="#delete">
                     Delete
-                </a>
+                </button>
                 <!-- Modal -->
                 <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-body fborder border-secondary rounded">
-                                <table class="table">
-                                    <tbody>
-                                    <tr>
-                                        <td>Id</td>
-                                        <td>${customer.getId()} </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Name</td>
-                                        <td>${customer.getC_name()} </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Birthday</td>
-                                        <td>${customer.getC_birthday()} </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gender</td>
-                                        <td>${customer.getC_gender()} </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Id card</td>
-                                        <td>${customer.getC_id_card()} </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phone</td>
-                                        <td>${customer.getC_phone()} </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td>${customer.getC_email()} </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Type customer</td>
-                                        <td>${customer.getC_type()} </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address</td>
-                                        <td>${customer.getC_address()} </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-
+                            <div class="modal-body fborder border-secondary rounded" class="text">
+<%--                                    ${customer.getId()}--%>
+<%--                                 Bạn có muốn xóa :   ${customer.getC_name()}--%>
+                                 Do you want customer?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <form action="/customers?action=delete&id=${customer.getId()}" method="post">
-                                    <button type="submit    " class="btn btn-danger">Delete</button>
+                                <form action="/customers?action=delete" method="post">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <input type="hidden" id="button-del" name="idDel">
                                 </form>
                             </div>
                         </div>
@@ -189,20 +155,26 @@
 <!--#endregion-->
 
 <!--#region javascript-->
-<script>
-    // $(document).on("click", ".id-modal", function () {
-    // var myBookId = $(this).data('id');
-    // $(".modal-body #bookId").val( myBookId );
-    // As pointed out in comments,
-    // it is unnecessary to have to manually call the modal.
-    // $('#addBookDialog').modal('show');
-    // });
 
-
-</script>
 <script src="../../bootstrap4/jquery-3.6.0.min.js"></script>
 <script src="../../bootstrap4/popper.min.js"></script>
 <script src="../../bootstrap4/bootstrap.min.js"></script>
+<script src="../../bootstrap4/jquery.dataTables.min.js"></script>
+<script src="../../bootstrap4/dataTables.bootstrap4.min.js"></script>
 <!--#endregion-->
+
+<script>
+    $(document).ready(function () {
+        $('#tableCustomer').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5,
+        });
+    });
+
+    function myFunction(id) {
+        document.getElementById("button-del").value = id;
+    }
+</script>
 </body>
 </html>

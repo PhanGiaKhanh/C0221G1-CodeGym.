@@ -38,39 +38,39 @@
                     </tr>
                     <tr>
                         <td>Name </td>
-                        <td>${customer.getC_name()}   </td>
+                        <td>${customer.getName()}   </td>
                     </tr>
                     <tr>
                         <td>Birthday</td>
-                        <td>${customer.getC_birthday()}    </td>
+                        <td>${customer.getBirthday()}    </td>
                     </tr>
                     <tr>
                         <td>Gender</td>
-                        <td>${customer.getC_gender()} </td>
+                        <td>${customer.getGender()} </td>
                     </tr>
                     <tr>
                         <td>Id card</td>
-                        <td>${customer.getC_id_card()}  </td>
+                        <td>${customer.getIdCard()}  </td>
                     </tr>
                     <tr>
                         <td>Phone</td>
-                        <td>${customer.getC_phone()}   </td>
+                        <td>${customer.getPhone()}   </td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td>${customer.getC_email()}   </td>
+                        <td>${customer.getEmail()}   </td>
                     </tr>
                     <tr>
                         <td>Type customer</td>
-                        <td>${customer.getC_type()}    </td>
+                        <td>${customer.getType()}    </td>
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td>${customer.getC_address()}    </td>
+                        <td>${customer.getAddress()}    </td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><a href="/customers" class="btn btn-secondary">Back menu list</a>    </td>
+                        <td class="text-right"><a href="/customers" class="btn btn-secondary">Close</a>    </td>
                     </tr>
                     </tbody>
                 </table>
