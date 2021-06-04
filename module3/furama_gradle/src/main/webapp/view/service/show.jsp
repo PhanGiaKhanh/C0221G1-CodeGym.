@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -33,44 +33,64 @@
                 <table class="table">
                     <tbody>
                     <tr>
-                        <td>STT </td>
-                        <td>${customer.getId()}     </td>
+                        <td>Id</td>
+                        <td>${service.getId()} </td>
                     </tr>
                     <tr>
-                        <td>Name </td>
-                        <td>${customer.getName()}   </td>
+                        <td>Name</td>
+                        <td>${service.getName()} </td>
                     </tr>
                     <tr>
-                        <td>Birthday</td>
-                        <td>${customer.getBirthday()}    </td>
+                        <td>Area</td>
+                        <td>${service.getArea()} </td>
                     </tr>
                     <tr>
-                        <td>Gender</td>
-                        <td>${customer.getGender()} </td>
+                        <td>Cost</td>
+                        <td>${service.getCost()} </td>
                     </tr>
                     <tr>
-                        <td>Id card</td>
-                        <td>${customer.getIdCard()}  </td>
+                        <td>Max People</td>
+                        <td>${service.getMaxPeople()} </td>
                     </tr>
                     <tr>
-                        <td>Phone</td>
-                        <td>${customer.getPhone()}   </td>
+                        <td>Rent Type</td>
+                        <td>
+                            <c:forEach var="rent" items="${rentList}">--%>
+                                <c:if test="${rent.id == service.getRentType()}">
+                                    ${rent.name}
+                                </c:if>
+                            </c:forEach>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Email</td>
-                        <td>${customer.getEmail()}   </td>
+                        <td>Service Type</td>
+                        <td>
+                            <c:forEach var="type" items="${typeList}">
+                                <c:if test="${type.id == service.getServiceType()}">
+                                    ${type.name}
+                                </c:if>
+                            </c:forEach>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Type customer</td>
-                        <td>${customer.getType()}    </td>
+                        <td>Standard Roomn</td>
+                        <td>${service.getStandardRoom()} </td>
                     </tr>
                     <tr>
-                        <td>Address</td>
-                        <td>${customer.getAddress()}    </td>
+                        <td>Description</td>
+                        <td>${service.getDescription()} </td>
+                    </tr>
+                    <tr>
+                        <td>Pool Area</td>
+                        <td>${service.getPoolArea()} </td>
+                    </tr>
+                    <tr>
+                        <td>Number Of Floor</td>
+                        <td>${service.getNumberOfFloor()} </td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td class="text-right"><a href="/customers" class="btn btn-secondary">Close</a>    </td>
+                        <td class="text-right"><a href="/services" class="btn btn-secondary">Close</a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -81,9 +101,9 @@
 </div>
 <!--#region javascript-->
 
-<script src="../../bootstrap4/jquery-3.6.0.min.js" ></script>
-<script src="../../bootstrap4/popper.min.js" ></script>
-<script src="../../bootstrap4/bootstrap.min.js" ></script>
+<script src="../../bootstrap4/jquery-3.6.0.min.js"></script>
+<script src="../../bootstrap4/popper.min.js"></script>
+<script src="../../bootstrap4/bootstrap.min.js"></script>
 <!--#endregion-->
 </body>
 </html>

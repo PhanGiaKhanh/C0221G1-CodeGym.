@@ -99,8 +99,8 @@
                         <td><input class="form-control" type="text" value="${customer.getAddress()}" name="address"></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td class="text-right"><a href="/customers" class="btn btn-secondary mr-2" >Close</a><input type="submit" value="Edit" class="btn btn-warning"></td>
+                        <td ><a href="/customers" class="btn btn-secondary" >Close</a></td>
+                        <td class="text-right"><input type="submit" value="Edit" class="btn btn-warning"></td>
                     </tr>
                     </tbody>
                 </table>

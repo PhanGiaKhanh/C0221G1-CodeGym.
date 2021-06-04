@@ -13,93 +13,148 @@
     <meta charset="UTF-8">
     <title>Create customer</title>
     <link rel="stylesheet" href="../../bootstrap4/bootstrap.min.css">
-      <style>
+    <style>
         td:first-child {
-          width: 24%;
-          line-height: 40px;
+            width: 24%;
+            line-height: 40px;
         }
+
         td {
-            padding: 5px!important;
+            padding: 5px !important;
         }
+
         input {
-          box-shadow: 1px 1px#637fff;
+            box-shadow: 1px 1px #637fff;
         }
-      </style>
+    </style>
 
 </head>
 <body>
 <div class="container">
-    <div class="row mt-4">
+    <div class="row m-3">
         <div class="col-3"></div>
         <div class="col-6 fborder border-secondary rounded shadow">
             <h2 class="text-white rounded bg-info px-5 py-2 mt-2">Create new customer</h2>
             <p class="text-success">
-                  ${message}
+                ${message}
             </p>
 
             <form method="post">
-                <table class="table table-borderless">
-                    <tbody>
-                    <tr>
-                        <td>Name</td>
-                        <td><input class="form-control" type="text" value="" name="name"></td>
-                    </tr>
-                    <tr>
-                        <td>Birthday</td>
-                        <td><input class="form-control" type="text" value="YYYY/MM/DD" name="birthday"></td>
-                    </tr>
-                    <tr>
-                        <td>Gender</td>
-<%--                        <td><input class="form-control" type="text" value="" name="gender"></td>--%>
-                        <td>
-                            <select class="form-control" name="gender" id="">
-                                <option value="Nam">Nam</option>
-                                <option value="Nữ">Nữ</option>
-                                <option value="Khác">Khác</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Id card</td>
-                        <td><input class="form-control" type="number" value=""  name="idCard"></td>
-                    </tr>
-                    <tr>
-                        <td>Phone</td>
-                        <td><input class="form-control" type="number" value="" name="phone"></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><input class="form-control" type="email" value="" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Type customer</td>
-<%--                        <td><input class="form-control" type="text" value="" name="typeCustomer"></td>--%>
-                        <td>
-                            <select class="form-control" name="type" id="typeCustomer">
-                                <c:forEach items="${list}" var="type">
-                                    <option value="${type[0]}">${type[1]}</option>
+                <div class="container-fluid">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Name Service</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Area</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="area">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Cost</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="cost">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Max people</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="maxPeople">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Rent Type</label>
+                        <div class="col-sm-8">
+                            <select name="rent">
+                                <c:forEach var="rent" items="${rentList}">
+                                    <option value="${rent.getId()}">${rent.getName()}</option>
                                 </c:forEach>
                             </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td><input class="form-control" type="text" value="" name="address"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td class="text-right"><a href="/customers" class="btn btn-secondary mr-2">Close</a><input class="btn btn-success" type="submit" value="Create"></td>
-                    </tr>
-                    </tbody>
-                </table>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Service Type</label>
+                        <div class="col-sm-8">
+                            <select name="type" id="typeService" onchange="serviceType()">
+                                <c:forEach var="type" items="${typeList}">
+                                    <option value="${type.getId()}">${type.getName()}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="standard">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Standard Room</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="standard">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="description">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Description</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="description">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pool">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Pool Area</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="pool">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="floor">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Number Of Floor</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="floor">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <a href="/services" class="btn btn-secondary">Close</a>
+                        <input class="btn btn-success" type="submit" value="Create">
+                    </div>
+
+                </div>
             </form>
         </div>
         <div class="col-3"></div>
     </div>
 </div>
-<script src="../../bootstrap4/jquery-3.6.0.min.js" ></script>
-<script src="../../bootstrap4/popper.min.js" ></script>
-<script src="../../bootstrap4/bootstrap.min.css" ></script>
 
+
+<script src="../../bootstrap4/jquery-3.6.0.min.js"></script>
+<script src="../../bootstrap4/popper.min.js"></script>
+<script src="../../bootstrap4/bootstrap.min.css"></script>
+<script>
+    function serviceType() {
+        let id = document.getElementById("typeService").value;
+        if (id == 1) {
+            document.getElementById("standard").style.display = "block";
+            document.getElementById("description").style.display = "block";
+            document.getElementById("pool").style.display = "block";
+            document.getElementById("floor").style.display = "block";
+        } else if (id == 2) {
+            document.getElementById("standard").style.display = "block";
+            document.getElementById("description").style.display = "block";
+            document.getElementById("floor").style.display = "block";
+            document.getElementById("pool").style.display = "none";
+        } else if (id == 3) {
+            document.getElementById("standard").style.display = "none";
+            document.getElementById("description").style.display = "none";
+            document.getElementById("pool").style.display = "none";
+            document.getElementById("floor").style.display = "none";
+        }
+
+    }
+</script>
 </body>
 </html>

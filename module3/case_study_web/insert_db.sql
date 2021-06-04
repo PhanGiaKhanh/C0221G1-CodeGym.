@@ -48,7 +48,35 @@ insert into division (division_name) values
 ("Hành chính"),
 ("Phục vụ"),
 ("Quản lý");
+insert into `user` (username, `password`) values
+("Admin", "12345678"),
+("User", "user12345678"),
+("ALong", "12345678"),
+("AAnh", "12345678"),
+("AHieu", "12345678"),
+("AHoang", "12345678"),
+("ThiHieu", "12345678"),
+("Toan", "12345678"),
+("ThiLoan", "12345678"),
+("KimAnh", "12345678"),
+("KieuNga", "12345678"),
+("NgoaMai", "12345678"),
+("AThu", "12345678");
 
+-- ho_ten, id_vi_tri, id_trinh_do, id_bo_phan, ngay_sinh, so_cmnd, luong, sdt, email, dia_chi
+insert into employee (employee_name, position_id, education_degree_id, division_id, employee_birthday, employee_id_card, employee_salary,
+employee_phone, employee_email, employee_address, username) values 
+("Nông Văn A", 1, 1, 2, "2000-01-01", "2012312312", "5000000", "0905123123", "vanA@gmail.com", "Đà Nẵng", "ALong"),
+("Hoàng Văn Anh", 4, 2, 2, "2001-12-11", "2112312312", "8000000", "0905123234", "anh@gmail.com", "Đà Nẵng", "AAnh"),
+("Lê Văn Hiếu", 1, 1,2, "1999-11-11", "2212312312", "5000000", "0905123345", "hieu@gmail.com", "Huế", "AHieu"),
+("Thái Văn Hoàng",5, 4 , 1, "1998-08-24", "2312312312", "15000000", "0905567563", "hoang@gmail.com", "HCM", "AHoang"),
+("Phan Thị Hiếu", 3, 4, 2, "1988-08-23", "2412312312", "12000000", "0905343563", "thihieu@gmail.com", "Đà Nẵng", "ThiHieu"),
+("Nguyễn Văn Toản", 4, 3, 2, "1998-04-17", "2512312312", "7000000", "0905555563", "toan@gmail.com", "Hà Nội", "Toan"),
+("Trần Thị Loan", 2, 1, 3,"1996-08-07", "2612312312", "5000000", "0905080563", "loan@gmail.com", "Đà Nẵng", "ThiLoan"),
+("Nguyễn Kim Anh", 6, 4, 4,"1993-05-28", "2712312312", "18000000", "0905570563", "anh@gmail.com", "HCM", "KimAnh"),
+("Anh Thư", 6, 4, 4,"1994-05-28", "1712312312", "7000000", "0915570563", "anhthu@gmail.com", "Vinh", "AThu"),
+("Kiều Nga", 6, 4, 4,"1995-05-28", "2313312312", "6000000", "0925570563", "kieunga@gmail.com", "Quãng Ngãi", "KieuNga"),
+("Ngọc Mai", 6, 4, 4,"1997-05-28", "2912312312", "4000000", "0935570563", "ngocmai@gmail.com", "Lào", "NgoaMai");
 
 insert into rent_type (rent_type_name, rent_type_cost) values
 ("Năm", 100000000),
@@ -56,10 +84,18 @@ insert into rent_type (rent_type_name, rent_type_cost) values
 ("Ngày", 2000000),
 ("Giờ", 500000);
 
-insert into service_type (service_type_name) values
-("Villa"),
-("House"),
-("Room");
+-- ten_dich_vu, dien_tich, so_tang, so_nguoi_toi_da, chi_phi_thue, id_kieu_thue, id_loai_dich_vu, trang_thai
+insert into service (service_name, service_area, number_of_floor, service_max_people, service_cost, 
+rent_type_id, service_type_id, standard_room, description_other_convenience
+-- , pool_area, number_of_floor
+) values
 
-
--- insert into employee (employee_name, employee_birthday, employee_id_card, employee_salary, employee_phone, employee_email, employee_address) values
+("Villa1", 300, 2, 10, 5000000, 3, 1, "1 sao", "hoạt động"),
+("House1", 100, 2, 5, 3000000, 3, 2, "1 sao", "hoạt động"),
+("Room1", 80, 2, 3, 1000000, 2, 3, "1 sao", "hoạt động"),
+("House2", 100, 2, 6, 3000000, 3, 2, "1 sao", "hoạt động"),
+("Villa2", 500, 2, 8, 7000000, 1, 1, "1 sao", "hoạt động"),
+("Villa3", 600, 3, 10, 8000000, 2, 1, "1 sao", "hoạt động"),	
+("House3", 100, 3, 8, 3000000, 2, 1, "1 sao", "hoạt động"),
+("Room2", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động"),
+("Room3", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động");

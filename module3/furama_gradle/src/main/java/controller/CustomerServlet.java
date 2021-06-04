@@ -1,7 +1,8 @@
 package controller;
 
 import model.bean.Customer;
-import model.service.Service;
+import model.bean.service.Service;
+import model.service.CustomerService;
 import model.service.impl.CustomerServiceImpl;
 
 import javax.servlet.ServletException;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @WebServlet(name = "CustomerServlet", urlPatterns = {"/customers"})
 public class CustomerServlet extends HttpServlet {
-    Service customerService = new CustomerServiceImpl();
+    CustomerService customerService = new CustomerServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");

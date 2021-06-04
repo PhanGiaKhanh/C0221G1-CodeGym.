@@ -30,7 +30,7 @@
 </nav>
 <!--#endregion-->
 <!--#region menu-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success my-2 px-5 border border-info  sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success my-2 pl-5 border border-info  sticky-top">
     <a class="navbar-brand mx-5" href="http://localhost:8080">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
 <!--#region header-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3">
+        <div class="col-3 p-0">
             <a href="/customers?action=create" class="btn btn-primary"><span
                     style="font-size: larger; font-weight: bolder">+</span>
                 Create new customer

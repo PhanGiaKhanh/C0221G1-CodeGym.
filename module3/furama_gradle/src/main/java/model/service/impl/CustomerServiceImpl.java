@@ -2,11 +2,11 @@ package model.service.impl;
 
 import model.bean.Customer;
 import model.repository.CustomerRepository;
-import model.service.Service;
+import model.service.CustomerService;
 
 import java.util.List;
 
-public class CustomerServiceImpl implements Service<Customer> {
+public class CustomerServiceImpl implements CustomerService {
     CustomerRepository customerRepository = new CustomerRepository();
     @Override
     public List<Customer> findAll() {

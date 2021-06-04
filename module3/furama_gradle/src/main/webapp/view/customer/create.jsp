@@ -87,8 +87,8 @@
                         <td><input class="form-control" type="text" value="" name="address"></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td class="text-right"><a href="/customers" class="btn btn-secondary mr-2">Close</a><input class="btn btn-success" type="submit" value="Create"></td>
+                        <td class="text-left"><a href="/customers" class="btn btn-secondary">Close</a></td>
+                        <td class="text-right"><input class="btn btn-success" type="submit" value="Create"></td>
                     </tr>
                     </tbody>
                 </table>

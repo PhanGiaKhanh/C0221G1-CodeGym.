@@ -7,7 +7,7 @@ import java.util.List;
 public interface CustomerService {
     List<Customer> findAll();
 
-    List<String[]> findTypeOfCustomer();
+    List<String[]> findType();
 
     boolean insertIntoCustomer(Customer customer);
 
@@ -15,7 +15,7 @@ public interface CustomerService {
 
     Customer findById(int id);
 
-    boolean updateCustomerById(int id, Customer customer);
+    boolean updateById(int id, Customer customer);
 
     List<Customer> searchByName(String name);
 }

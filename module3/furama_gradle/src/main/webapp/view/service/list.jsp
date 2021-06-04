@@ -30,15 +30,15 @@
 </nav>
 <!--#endregion-->
 <!--#region menu-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success my-2 px-5 border border-info  sticky-top">
-    <a class="navbar-brand mx-5" href="http://localhost:8080">Home</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success my-2 pl-5 border border-info  sticky-top">
+    <a class="navbar-brand ml-5" href="http://localhost:8080">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item mr-5">
+            <li class="nav-item mx-5">
                 <a class="navbar-brand mr-0" href="#">Employee <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item  mr-5">
@@ -61,8 +61,8 @@
 <!--#region header-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3">
-            <a href="/customers?action=create" class="btn btn-primary"><span
+        <div class="col-3 p-0">
+            <a href="/services?action=create" class="btn btn-primary"><span
                     style="font-size: larger; font-weight: bolder">+</span>
                 Create new customer
             </a>
@@ -108,8 +108,20 @@
             <td>${service.getArea()}</td>
             <td>${service.getCost()}</td>
             <td>${service.getMaxPeople()}</td>
-            <td>${service.getRentType()}</td>
-            <td>${service.getServiceType()}</td>
+            <td>
+                <c:forEach var="rent" items="${rentList}">
+                    <c:if test="${rent.id == service.getRentType()}">
+                        ${rent.name}
+                    </c:if>
+                </c:forEach>
+            </td>
+            <td>
+                <c:forEach var="type" items="${typeList}">
+                    <c:if test="${type.id == service.getServiceType()}">
+                        ${type.name}
+                    </c:if>
+                </c:forEach>
+            </td>
             <td>${service.getStandardRoom()}</td>
             <td>${service.getDescription()}</td>
             <td>${service.getPoolArea()}</td>
