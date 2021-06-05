@@ -1,7 +1,7 @@
 package controller;
 
-import model.bean.Customer;
-import model.bean.service.Service;
+import model.bean.customer.Customer;
+import model.bean.customer.CustomerType;
 import model.service.CustomerService;
 import model.service.impl.CustomerServiceImpl;
 
@@ -136,7 +136,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) {
-        List<String[]> stringList = customerService.findType();
+        List<CustomerType> stringList = customerService.findType();
         request.setAttribute("list", stringList);
         try {
             request.getRequestDispatcher("/view/customer/create.jsp").forward(request, response);
@@ -151,7 +151,7 @@ public class CustomerServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Customer customer = customerService.findById(id);
         request.setAttribute("customer", customer);
-        List<String[]> stringList = customerService.findType();
+        List<CustomerType> stringList = customerService.findType();
         request.setAttribute("list", stringList);
         try {
             request.getRequestDispatcher("/view/customer/edit.jsp").forward(request, response);

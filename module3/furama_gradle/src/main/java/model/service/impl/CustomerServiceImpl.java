@@ -1,6 +1,7 @@
 package model.service.impl;
 
-import model.bean.Customer;
+import model.bean.customer.Customer;
+import model.bean.customer.CustomerType;
 import model.repository.CustomerRepository;
 import model.service.CustomerService;
 
@@ -13,8 +14,8 @@ public class CustomerServiceImpl implements CustomerService {
         return customerRepository.findAllCustomer();
     }
     @Override
-    public List<String[]> findType(){
-        return customerRepository.findAllNameTypeCustomer();
+    public List<CustomerType> findType(){
+        return customerRepository.findType();
     }
     @Override
     public boolean insertIntoCustomer(Customer customer){

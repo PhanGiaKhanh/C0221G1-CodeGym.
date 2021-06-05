@@ -1,13 +1,12 @@
 package model.service;
 
-import model.bean.Customer;
+import model.bean.customer.Customer;
+import model.bean.customer.CustomerType;
 
 import java.util.List;
 
 public interface CustomerService {
     List<Customer> findAll();
-
-    List<String[]> findType();
 
     boolean insertIntoCustomer(Customer customer);
 
@@ -18,4 +17,5 @@ public interface CustomerService {
     boolean updateById(int id, Customer customer);
 
     List<Customer> searchByName(String name);
+    List<CustomerType> findType();
 }

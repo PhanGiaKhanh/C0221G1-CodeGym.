@@ -1,6 +1,7 @@
 package model.repository;
 
-import model.bean.Customer;
+import model.bean.customer.Customer;
+import model.bean.customer.CustomerType;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,7 +30,42 @@ public class CustomerRepository {
             "customer_address = ?\n" +
             "where customer_id = ?;";
     private static final String SEARCH_BY_NAME = "select * from customer where customer_name like ?;";
+    private static final String SELECT_CUSTOMER_USE_SERVICE = "select * from customer_use_service;";
+    private static final String SELECT_CUSTOMER_TYPE = "select * from customer_type;";
+    public List<CustomerType> findType(){
+        List<CustomerType> list = new ArrayList<>();
+        Connection connection = baseRepository.connectDataBase();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_TYPE);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("customer_type_id");
+                String name = rs.getString("customer_type_name");
+                CustomerType customerType = new CustomerType(id, name);
+                list.add(customerType);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        return list;
+    }
+    public List<String[]> getCustomerUseService(){
+        List<String[]> list = new ArrayList<>();
+        Connection connection = baseRepository.connectDataBase();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_USE_SERVICE);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
 
     public List<Customer> searchByName(String name) {
         List<Customer> customerList = new ArrayList<>();

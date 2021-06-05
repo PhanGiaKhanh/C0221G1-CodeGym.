@@ -77,6 +77,13 @@ employee_phone, employee_email, employee_address, username) values
 ("Anh Thư", 6, 4, 4,"1994-05-28", "1712312312", "7000000", "0915570563", "anhthu@gmail.com", "Vinh", "AThu"),
 ("Kiều Nga", 6, 4, 4,"1995-05-28", "2313312312", "6000000", "0925570563", "kieunga@gmail.com", "Quãng Ngãi", "KieuNga"),
 ("Ngọc Mai", 6, 4, 4,"1997-05-28", "2912312312", "4000000", "0935570563", "ngocmai@gmail.com", "Lào", "NgoaMai");
+-- update employee 
+-- set employee_name="A",employee_birthday="2000-01-01", employee_id_card = "2012312312", employee_salary= "6000000",
+-- employee_phone = "0905123123", employee_email ="vanA@gmail.com", employee_address = "Huế", position_id ="1",
+-- education_degree_id ="2", division_id ="1"
+-- where employee_id = 1;
+-- delete from employee where employee_id =15;
+-- select * from employee;
 
 insert into rent_type (rent_type_name, rent_type_cost) values
 ("Năm", 100000000),
@@ -99,3 +106,55 @@ rent_type_id, service_type_id, standard_room, description_other_convenience
 ("House3", 100, 3, 8, 3000000, 2, 1, "1 sao", "hoạt động"),
 ("Room2", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động"),
 ("Room3", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động");
+
+-- id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc
+insert into contract (employee_id, customer_id, service_id, contract_start_date, contract_end_date, contract_deposit) values
+(1, 1, 1, "2019-01-22", "2020-03-10", 0),
+(2, 2, 1, "2019-06-22", "2021-05-10", 0),
+(3, 3, 2, "2019-02-22", "2020-10-18", 0),
+(3, 3, 2, "2018-02-22", "2020-10-18", 0),
+(4, 1, 3, "2019-11-22", "2019-02-11", 0),
+(5, 2, 2, "2019-04-22", "2021-10-01", 0),
+(6, 2, 5, "2018-06-22", "2020-07-15", 0),
+(7, 1, 4, "2019-12-22", "2020-10-19", 0),
+(1, 2, 4, "2019-10-22", "2020-10-19", 0),
+(1, 3, 8, "2019-02-22", "2020-10-19", 0),
+(7, 3, 3, "2019-06-04", "2020-10-19", 0),
+(7, 13, 5, "2018-09-22", "2020-10-19", 0),
+(7, 14, 4, "2018-09-22", "2020-10-19", 0),
+(8, 6, 2, "2020-01-01", "2021-04-16", 0),
+(8, 6, 2, "2017-01-01", "2021-04-16", 0),
+(8, 6, 2, "2015-01-01", "2021-04-16", 0),
+(8, 12, 2, "2016-01-01", "2021-04-16", 0),
+(8, 6, 2, "2019-01-01", "2021-04-16", 0)
+;
+insert into contract (contract_start_date, contract_end_date, contract_deposit, contract_total_money, employee_id, customer_id, service_id) values
+("2021-01-01", "2021-04-16", 2000000, 10000000, 2, 2, 3 );
+
+insert into attach_service (attach_service_name, attach_service_cost, attach_service_unit, attach_service_status) 
+values ("massage",100, 1000, "mở"),
+("karaoke",120, 1000, "mở"),
+("thức ăn",50, 1000, "mở"),
+("nước uống",10, 1000, "mở"),
+("thuê xe",100, 1000, "mở");
+
+-- (id_hop_dong, id_dich_vu_di_kem, so_luong)
+insert into contract_detail (contract_id, attach_service_id, quantity) values
+(1, 1, 2),
+(1, 2, 4),
+(11, 3, 1),
+(11, 1, 5),
+(2, 4, 4),
+(2, 1, 4),
+(6, 2, 5),
+(6, 1, 5),
+(12, 4, 4),	
+(12, 2, 4),	
+(5, 3, 6),
+(4, 3, 2),
+(4, 4, 2),
+(7, 3, 4),
+(8, 3, 5),
+(9, 3, 6),
+(3, 5, 1)
+;

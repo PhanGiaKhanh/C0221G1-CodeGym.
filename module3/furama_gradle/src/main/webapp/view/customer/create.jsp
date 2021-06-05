@@ -76,8 +76,8 @@
 <%--                        <td><input class="form-control" type="text" value="" name="typeCustomer"></td>--%>
                         <td>
                             <select class="form-control" name="type" id="typeCustomer">
-                                <c:forEach items="${list}" var="type">
-                                    <option value="${type[0]}">${type[1]}</option>
+                                <c:forEach items="${list}" var="customerType">
+                                    <option value="${customerType.getId()}">${customerType.getName()}</option>
                                 </c:forEach>
                             </select>
                         </td>

@@ -15,7 +15,7 @@ import java.util.List;
 
 @javax.servlet.annotation.WebServlet(name = "ServiceServlet", urlPatterns = "/services")
 public class ServiceServlet extends javax.servlet.http.HttpServlet {
-    private ServiceService serviceService = new ServiceImpl();
+        private ServiceService serviceService = new ServiceImpl();
 
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String action = request.getParameter("action");

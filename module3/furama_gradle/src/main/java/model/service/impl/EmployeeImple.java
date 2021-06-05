@@ -1,6 +1,5 @@
 package model.service.impl;
 
-import model.bean.Customer;
 import model.bean.employee.*;
 import model.repository.EmployeeRepository;
 import model.service.EmployeeService;

@@ -22,7 +22,7 @@ username varchar(225) primary key,
 `password` varchar(225)
 );
 create table user_role(
-role_id int ,foreign key (role_id) references `role`(role_id) on delete cascade,
+role_id int, foreign key (role_id) references `role`(role_id) on delete cascade,
 username varchar(225) ,foreign key (username) references `user`(username) on delete cascade
 );
 create table employee(
@@ -88,7 +88,7 @@ contract_id int auto_increment primary key,
 contract_start_date date,
 contract_end_date date,
 contract_deposit double,
-contract_totle_money double,
+contract_total_money double,
 employee_id int,foreign key (employee_id) references employee(employee_id) on delete cascade,
 customer_id int,foreign key (customer_id) references customer(customer_id) on delete cascade,
 service_id int,foreign key (service_id) references service(service_id) on delete cascade

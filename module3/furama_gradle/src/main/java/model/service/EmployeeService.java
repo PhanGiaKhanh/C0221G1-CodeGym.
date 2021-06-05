@@ -1,6 +1,5 @@
 package model.service;
 
-import model.bean.Customer;
 import model.bean.employee.*;
 
 import java.util.List;
