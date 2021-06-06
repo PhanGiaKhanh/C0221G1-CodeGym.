@@ -42,16 +42,11 @@ DELIMITER ;
 -- (sử dụng bảng customer, contract, contract_detail, attach_service)
 drop view customer_use_service;
 create view customer_use_service as
-	select c.contract_id, cus.customer_name, cus.customer_gender, cus.customer_phone,
-    ats.attach_service_id, ats.attach_service_name, ats.attach_service_cost, ats.attach_service_unit, ats.attach_service_status,
-    cd.quantity,
-    s.service_id, s.service_name, s.service_area, s.service_cost, s.service_max_people, s.rent_type_id,
-    s.service_type_id, s.standard_room, s.description_other_convenience, s.pool_area, s.number_of_floor
+	select c.contract_id, cus.customer_id, s.service_id,
+    c.contract_start_date, c.contract_end_date,cus.customer_name, cus.customer_phone,s.service_name, s.service_cost
     from contract c 
-    left join service s on s.service_id = c.service_id
-    left join customer cus on cus.customer_id = c.customer_id
-    left join contract_detail cd on cd.contract_id = c.contract_id
-    left join attach_service ats on ats.attach_service_id = cd.attach_service_id
+    join service s on s.service_id = c.service_id
+    join customer cus on cus.customer_id = c.customer_id
+    where current_date() between c.contract_start_date and c.contract_end_date
     group by c.contract_id;
-
-select * from customer_use_service;
+select * from customer_type;

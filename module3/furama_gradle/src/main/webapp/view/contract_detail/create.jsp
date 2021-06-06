@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
-                        <a href="/contractDetail" class="btn btn-secondary">Close</a>
+                        <a href="/index.jsp" class="btn btn-secondary">Close</a>
                         <input class="btn btn-success" type="submit" value="Create">
                     </div>
 

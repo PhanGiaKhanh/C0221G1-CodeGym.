@@ -15,7 +15,11 @@
 
     <link rel="stylesheet" href="../../bootstrap4/bootstrap.min.css">
     <link rel="stylesheet" href="../../bootstrap4/dataTables.bootstrap.min.css">
-
+    <style>
+        .btnDisplay {
+            /*display: block;*/
+        }
+    </style>
 </head>
 <body class="m-2">
 
@@ -25,14 +29,13 @@
         <img class="ml-3 rounded shadow-lg" src="img/logo3.jpg" height="50" width="50"/>
         <div class="ml-2">Furama</div>
     </div>
-    <div class="navbar-brand h1 text-info"><h1>Customers list</h1> </div>
+    <div class="navbar-brand h1 text-info"><h1>Customers list</h1></div>
     <div class="navbar-brand mb-0 h1">Nguyễn Văn A</div>
 </nav>
 <!--#endregion-->
 <jsp:include page="../../common/hearder.jsp"/>
-<button onclick="hideButton()">Hide </button>
-<button class="he1">hello</button>
-<button class="he1">hi</button>
+
+
 <!--#region header-->
 <div class="container-fluid">
     <div class="row">
@@ -44,20 +47,25 @@
         </div>
         <div class="col-6">
 
-                            <span class="text-success">${message}</span>
+            <span class="text-success">${message}</span>
 
         </div>
-        <div class="col-3 text-right">
+        <div class="col-3 p-0 text-right">
 
-    <form action="/customers?action=search" method="post" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search name" aria-label="Search" name="search">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+            <form action="/customers?action=search" method="post" class="d-flex justify-content-end">
+                <input class="form-control mr-sm-0" type="search" placeholder="Search name" aria-label="Search"
+                       name="search">
+                <button class="btn btn-primary my-sm-0" type="submit">Search</button>
+            </form>
         </div>
     </div>
 </div>
 <!--#endregion-->
-<%--id="tableCustomer" class="table table-striped table-bordered "--%>
+
+
+<a href="/customer-using"  class="btn btn-info mt-2">Customer using service</a>
+
+
 <!--#region table-->
 <table class="table table-hover my-2" id="tableCustomer">
     <thead class="thead-dark">
@@ -71,9 +79,8 @@
         <th scope="col">Email</th>
         <th scope="col">Type</th>
         <th scope="col">Address</th>
-        <th scope="col">Show</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
+        <th scope="col">Action</th>
+
     </tr>
     </thead>
     <tbody>
@@ -89,17 +96,30 @@
             <td>${customer.getType()}</td>
             <td>${customer.getAddress()}</td>
 
-            <td style="width: 5%">
+            <td class="d-flex">
                 <a href="/customers?action=show&id=${customer.getId()}" type="button" class="btn btn-info">Show</a>
-            </td>
-            <td style="width: 5%">
-                <a href="/customers?action=edit&id=${customer.getId()}" type="button" class="btn btn-warning">
+                <a href="/customers?action=edit&id=${customer.getId()}" type="button"
+                   class="btn btn-warning mx-1 btnDisplay" style="width: 50px">
                     Edit
                 </a>
-            </td>
-            <td style="width: 5%">
+                <a class="dropdown-toggle btn btn-warning btnNone mx-1 " style="display: none" data-toggle="dropdown"
+                   href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Service</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item btn btn-outline-warning" href="#">Edit service</a>
+                    <a class="dropdown-item btn btn-outline-danger" href="#">Delete service</a>
+                </div>
+                <a class="dropdown-toggle btn btn-success btnNone mx-1" style="display: none" data-toggle="dropdown"
+                   href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Attach</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item " href="#">attach 1</a>
+                    <a class="dropdown-item " href="#">attach 2</a>
+                </div>
                 <!-- Button trigger modal DELETE -->
-                <button  onclick="myFunction(${customer.getId()})" type="button" class="click-del btn btn-danger" data-toggle="modal" data-target="#delete">
+                <button onclick="myFunction(${customer.getId()})" type="button"
+                        class="click-del btn btn-danger btnDisplay"
+                        data-toggle="modal" data-target="#delete">
                     Delete
                 </button>
                 <!-- Modal -->
@@ -108,9 +128,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body fborder border-secondary rounded" class="text">
-<%--                                    ${customer.getId()}--%>
-<%--                                 Bạn có muốn xóa :   ${customer.getC_name()}--%>
-                                 Do you want customer?
+                                Do you want customer?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -123,9 +141,10 @@
                     </div>
                 </div>
                 <!--end model-->
+
             </td>
         </tr>
-        </c:forEach>
+    </c:forEach>
     </tbody>
 </table>
 <!--#endregion-->
@@ -151,8 +170,25 @@
     function myFunction(id) {
         document.getElementById("button-del").value = id;
     }
+
     function hideButton() {
-        document.getElementsByClassName("he1").style.display = "none";
+        // document.getElementsByClassName("btnDis").classList.toggle("btnDisplay");
+        let x = document.getElementsByClassName("btnDisplay");
+        for (let i = 0; i < x.length; i++) {
+            if (x.item(i).style.display === "none") {
+                x.item(i).style.display = "block";
+            } else {
+                x.item(i).style.display = "none";
+            }
+        }
+        let y = document.getElementsByClassName("btnNone");
+        for (let i = 0; i < y.length; i++) {
+            if (y.item(i).style.display === "none") {
+                y.item(i).style.display = "block";
+            } else {
+                y.item(i).style.display = "none";
+            }
+        }
     }
 </script>
 </body>

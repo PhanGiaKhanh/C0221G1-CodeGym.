@@ -35,8 +35,8 @@ public class ContractServlet extends HttpServlet {
         }
         switch (action) {
             case "create": createContract(request, response);break;
-//            case "edit": editContract(request, response);break;/
-//            case "delete": deleteContract(request, response);break;
+            case "edit": editContract(request, response);break;
+            case "delete": deleteContract(request, response);break;
 //            case "search": searchContract(request, response);break;
             default: break;
         }
@@ -51,8 +51,66 @@ public class ContractServlet extends HttpServlet {
         switch (action) {
             case "create": showCreate(request, response);break;
 //            case "show": showEmployee(request, response);break;
-//            case "edit": showEdit(request, response);break;
+            case "edit": showEdit(request, response);break;
 //            default: showListEmployee(request, response);break;
+        }
+    }
+
+
+    private void deleteContract(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("idDel"));
+        contractService.delete(id);
+        try {
+            response.sendRedirect("/customer-using");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void editContract(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String startDate = request.getParameter("start");
+        String endDate = request.getParameter("end");
+        double deposit = Double.parseDouble(request.getParameter("deposit"));
+        double total = Double.parseDouble(request.getParameter("total"));
+        int employeeId = Integer.parseInt(request.getParameter("eId"));
+        int customerId = Integer.parseInt(request.getParameter("cId"));
+        int serviceId = Integer.parseInt(request.getParameter("sId"));
+        Contract contract = new Contract(id, startDate, endDate, deposit, total, employeeId, customerId, serviceId);
+        boolean isUpdate = contractService.update(contract);
+        if(isUpdate) {
+            request.setAttribute("message", "Succession");
+            request.setAttribute("contract", contract);
+        }else {
+            request.setAttribute("message", "Fail");
+            request.setAttribute("contract", contractService.finById(id));
+        }
+        try {
+            request.getRequestDispatcher("view/contract/edit.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showEdit(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Contract contract = contractService.finById(id);
+        request.setAttribute("contract", contract);
+
+        List<Employee> employees = employeeService.findAllEmployee();
+        List<Customer> customers = customerService.findAll();
+        List<Service> services = serviceService.findAll();
+        request.setAttribute("employees", employees);
+        request.setAttribute("customers", customers);
+        request.setAttribute("services", services);
+        try {
+            request.getRequestDispatcher("view/contract/edit.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -64,6 +122,7 @@ public class ContractServlet extends HttpServlet {
         int employeeId = Integer.parseInt(request.getParameter("employeeId"));
         int customerId = Integer.parseInt(request.getParameter("customerId"));
         int serviceId = Integer.parseInt(request.getParameter("serviceId"));
+
 
         Contract contract = new Contract(startDate, endDate, deposit, total, employeeId, customerId, serviceId);
         boolean check = contractService.insert(contract);
@@ -78,6 +137,8 @@ public class ContractServlet extends HttpServlet {
         request.setAttribute("employees", employees);
         request.setAttribute("customers", customers);
         request.setAttribute("services", services);
+
+
         try {
             request.getRequestDispatcher("view/contract/create.jsp").forward(request, response);
         } catch (ServletException e) {

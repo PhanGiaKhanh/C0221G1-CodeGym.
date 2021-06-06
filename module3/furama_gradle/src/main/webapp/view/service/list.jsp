@@ -42,8 +42,8 @@
         <div class="col-6">
               <span class="text-success">${message}</span>
         </div>
-        <div class="col-3 text-right">
-            <form action="/customers?action=search" method="post" class="d-flex">
+        <div class="col-3 p-0">
+            <form action="/customers?action=search" method="post" class="d-flex justify-content-end">
                 <input type="search" class="form-control" placeholder="Search name" name="search">
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>

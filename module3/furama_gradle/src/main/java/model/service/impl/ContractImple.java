@@ -18,4 +18,19 @@ public class ContractImple implements ContractService {
     public List<Contract> findAll() {
         return contractRepository.findAll();
     }
+
+    @Override
+    public Contract finById(int id) {
+        return contractRepository.findById(id);
+    }
+
+    @Override
+    public boolean update(Contract contract) {
+        return contractRepository.update(contract);
+    }
+
+    @Override
+    public boolean delete(int id) {
+        return contractRepository.delete(id);
+    }
 }

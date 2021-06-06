@@ -97,7 +97,8 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
-                        <a href="/contracts" class="btn btn-secondary">Close</a>
+
+                        <a  class="btn btn-secondary" ${checkCustomerUsing == '' ? 'href="/index.jsp"':'href="/customer-using"'}>Close</a>
                         <input class="btn btn-success" type="submit" value="Create">
                     </div>
 

@@ -106,21 +106,21 @@ rent_type_id, service_type_id, standard_room, description_other_convenience
 ("House3", 100, 3, 8, 3000000, 2, 1, "1 sao", "hoạt động"),
 ("Room2", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động"),
 ("Room3", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động");
-
+-- select * from customer_use_service;contract_detaileducation_degreecustomer_typecustomer_type
 -- id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc
 insert into contract (employee_id, customer_id, service_id, contract_start_date, contract_end_date, contract_deposit) values
-(1, 1, 1, "2019-01-22", "2020-03-10", 0),
-(2, 2, 1, "2019-06-22", "2021-05-10", 0),
-(3, 3, 2, "2019-02-22", "2020-10-18", 0),
-(3, 3, 2, "2018-02-22", "2020-10-18", 0),
-(4, 1, 3, "2019-11-22", "2019-02-11", 0),
+(1, 1, 1, "2021-01-22", "2021-03-10", 0),
+(2, 2, 1, "2021-06-22", "2021-10-10", 0),
+(3, 3, 2, "2021-02-22", "2021-12-18", 0),
+(3, 3, 2, "2019-04-22", "2021-09-18", 0),
+(4, 1, 3, "2020-11-22", "2021-07-11", 0),
 (5, 2, 2, "2019-04-22", "2021-10-01", 0),
 (6, 2, 5, "2018-06-22", "2020-07-15", 0),
 (7, 1, 4, "2019-12-22", "2020-10-19", 0),
 (1, 2, 4, "2019-10-22", "2020-10-19", 0),
 (1, 3, 8, "2019-02-22", "2020-10-19", 0),
 (7, 3, 3, "2019-06-04", "2020-10-19", 0),
-(7, 13, 5, "2018-09-22", "2020-10-19", 0),
+(7, 13, 5, "2021-01-22", "2021-10-19", 0),
 (7, 14, 4, "2018-09-22", "2020-10-19", 0),
 (8, 6, 2, "2020-01-01", "2021-04-16", 0),
 (8, 6, 2, "2017-01-01", "2021-04-16", 0),
@@ -130,7 +130,10 @@ insert into contract (employee_id, customer_id, service_id, contract_start_date,
 ;
 insert into contract (contract_start_date, contract_end_date, contract_deposit, contract_total_money, employee_id, customer_id, service_id) values
 ("2021-01-01", "2021-04-16", 2000000, 10000000, 2, 2, 3 );
-
+select*from contract;
+-- update contract
+-- set contract_start_date = "2021-01-22", contract_end_date ="2021-04-10", contract_deposit = 1000000, contract_total_money = 1, employee_id = "2", customer_id = "1", service_id = "1"
+-- where contract_id = 1;-- 
 insert into attach_service (attach_service_name, attach_service_cost, attach_service_unit, attach_service_status) 
 values ("massage",100, 1000, "mở"),
 ("karaoke",120, 1000, "mở"),
@@ -138,6 +141,8 @@ values ("massage",100, 1000, "mở"),
 ("nước uống",10, 1000, "mở"),
 ("thuê xe",100, 1000, "mở");
 
+-- delete from contract
+-- where contract_id = 1;
 -- (id_hop_dong, id_dich_vu_di_kem, so_luong)
 insert into contract_detail (contract_id, attach_service_id, quantity) values
 (1, 1, 2),

@@ -43,11 +43,11 @@
         <div class="col-6">
             <span class="text-success">${message}</span>
         </div>
-        <div class="col-3 text-right">
-            <form action="/employees?action=search" method="post" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search name" aria-label="Search"
+        <div class="col-3 p-0">
+            <form action="/employees?action=search" method="post" class="d-flex justify-content-end">
+                <input class="form-control" type="search" placeholder="Search name" aria-label="Search"
                        name="search">
-                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-primary  my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </div>

@@ -37,9 +37,6 @@
                 <a class="navbar-brand mr-0" href="/contractDetail?action=create">Contract Detail <span class="sr-only">(current)</span></a>
             </li>
 
-            <li class="nav-item mr-5 ">
-                <a class="navbar-brand mr-0" href="/contracts">List <span class="sr-only">(current)</span></a>
-            </li>
         </ul>
     </div>
 </nav>
