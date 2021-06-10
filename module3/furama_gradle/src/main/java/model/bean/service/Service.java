@@ -12,11 +12,11 @@ public class Service {
     private String description = null;
     private String poolArea = null;
     private String numberOfFloor = null;
-
+private String code = "";
     public Service() {
     }
 
-    public Service(String name, int area, double cost, int maxPeople, int rentType, int serviceType, String standardRoom, String description, String poolArea, String numberOfFloor) {
+    public Service(String name, int area, double cost, int maxPeople, int rentType, int serviceType, String standardRoom, String description, String poolArea, String numberOfFloor, String code) {
         this.name = name;
         this.area = area;
         this.cost = cost;
@@ -27,9 +27,10 @@ public class Service {
         this.description = description;
         this.poolArea = poolArea;
         this.numberOfFloor = numberOfFloor;
+        this.code = code;
     }
 
-    public Service(int id, String name, int area, double cost, int maxPeople, int rentType, int serviceType, String standardRoom, String description, String poolArea, String numberOfFloor) {
+    public Service(int id, String name, int area, double cost, int maxPeople, int rentType, int serviceType, String standardRoom, String description, String poolArea, String numberOfFloor, String code) {
         this.id = id;
         this.name = name;
         this.area = area;
@@ -41,8 +42,8 @@ public class Service {
         this.description = description;
         this.poolArea = poolArea;
         this.numberOfFloor = numberOfFloor;
+        this.code = code;
     }
-
 
     public int getId() {
         return id;
@@ -130,5 +131,13 @@ public class Service {
 
     public void setNumberOfFloor(String numberOfFloor) {
         this.numberOfFloor = numberOfFloor;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

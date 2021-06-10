@@ -15,7 +15,7 @@ import java.util.List;
 
 @javax.servlet.annotation.WebServlet(name = "ServiceServlet", urlPatterns = "/services")
 public class ServiceServlet extends javax.servlet.http.HttpServlet {
-        private ServiceService serviceService = new ServiceImpl();
+    private ServiceService serviceService = new ServiceImpl();
 
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String action = request.getParameter("action");
@@ -69,24 +69,25 @@ public class ServiceServlet extends javax.servlet.http.HttpServlet {
         double cost = Double.parseDouble(request.getParameter("cost"));
         int maxPeople = Integer.parseInt(request.getParameter("maxPeople"));
         int rentType = Integer.parseInt(request.getParameter("rent"));
-        int serviceType  = Integer.parseInt(request.getParameter("type"));
+        int serviceType = Integer.parseInt(request.getParameter("type"));
         String standardRoom = request.getParameter("standard");
         String description = request.getParameter("description");
         String poolArea = request.getParameter("pool");
         String numberOfFloor = request.getParameter("floor");
-        if (standardRoom == ""){
+        if (standardRoom == "") {
             standardRoom = null;
         }
-        if (description == ""){
+        if (description == "") {
             description = null;
         }
         if (poolArea == "") {
             poolArea = null;
         }
-        if (numberOfFloor == ""){
+        if (numberOfFloor == "") {
             numberOfFloor = null;
         }
-        Service service = new Service(name, area, cost, maxPeople, rentType, serviceType, standardRoom, description, poolArea, numberOfFloor);
+        String code = "";
+        Service service = new Service(name, area, cost, maxPeople, rentType, serviceType, standardRoom, description, poolArea, numberOfFloor, code);
         boolean isCreate = serviceService.insertService(service);
 
         List<Service> serviceList = serviceService.findAll();
@@ -102,7 +103,7 @@ public class ServiceServlet extends javax.servlet.http.HttpServlet {
             request.setAttribute("message", "New service was  not create");
         }
         try {
-            request.getRequestDispatcher("view/service/list.jsp").forward(request , response);
+            request.getRequestDispatcher("view/service/list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

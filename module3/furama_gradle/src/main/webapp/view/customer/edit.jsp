@@ -100,6 +100,11 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>Customer code</td>
+                        <td><input class="form-control" type="text" value="${customer.getCode()}" name="code">
+                        </td>
+                    </tr>
+                    <tr>
                         <td><a href="/customers" class="btn btn-secondary">Close</a></td>
                         <td class="text-right"><input type="submit" value="Edit" class="btn btn-warning"></td>
                     </tr>

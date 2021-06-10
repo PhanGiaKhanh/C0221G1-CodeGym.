@@ -29,6 +29,7 @@ public class Employee {
         this.idDegree = idDegree;
         this.idDivision = idDivision;
         this.userName = userName;
+
     }
 
     public Employee(int id, String name, String birthday, String idCard, double salary, String phone, String email, String address, int idPosition, int idDegree, int idDivision, String userName) {
@@ -44,6 +45,7 @@ public class Employee {
         this.idDegree = idDegree;
         this.idDivision = idDivision;
         this.userName = userName;
+
     }
 
     public int getId() {
@@ -141,4 +143,6 @@ public class Employee {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+
 }

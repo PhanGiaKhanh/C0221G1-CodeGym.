@@ -63,7 +63,8 @@ public class ServiceRepository {
                 String description = rs.getString("description_other_convenience");
                 String pool = String.valueOf(rs.getDouble("pool_area"));
                 String floor = String.valueOf(rs.getInt("number_of_floor"));
-                service = new Service(id, name, area, cost, maxPeople, rentType, serviceType, standardRoom, description, pool, floor);
+                String code = String.valueOf(rs.getInt("service_code"));
+                service = new Service(id, name, area, cost, maxPeople, rentType, serviceType, standardRoom, description, pool, floor,code);
             }
 
         } catch (SQLException e) {
@@ -131,7 +132,9 @@ public class ServiceRepository {
                 String description = rs.getString("description_other_convenience");
                 String pool = String.valueOf(rs.getDouble("pool_area"));
                 String floor = String.valueOf(rs.getInt("number_of_floor"));
-                Service service = new Service(id, name, area, cost, maxPeople, rentType, serviceType, standardRoom, description, pool, floor);
+                String code = String.valueOf(rs.getInt("service_code"));
+
+                Service service = new Service(id, name, area, cost, maxPeople, rentType, serviceType, standardRoom, description, pool, floor, code);
                 services.add(service);
             }
             statement.close();

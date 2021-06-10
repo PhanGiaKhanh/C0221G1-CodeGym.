@@ -2,6 +2,7 @@ package controller;
 
 import model.bean.customer.Customer;
 import model.bean.customer.CustomerType;
+import model.common.Validate;
 import model.service.CustomerService;
 import model.service.impl.CustomerServiceImpl;
 
@@ -64,7 +65,6 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
-        boolean check = false;
         String name = request.getParameter("name");
         String typeCustomer = request.getParameter("type");
         String birthday = request.getParameter("birthday");
@@ -73,11 +73,22 @@ public class CustomerServlet extends HttpServlet {
         String idCard = request.getParameter("idCard");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        Customer customer = new Customer(name, birthday, gender, idCard, phone, email, typeCustomer, address);
-        check = customerService.insertIntoCustomer(customer);
-        if (check) {
-            request.setAttribute("message", "Create success");
+        String code = request.getParameter("code");
+
+        Customer customer = new Customer(name, birthday, gender, idCard, phone, email, typeCustomer, address, code);
+        List<String> errList = customerService.insertIntoCustomer(customer);
+        boolean checkErr = errList.size() == 7;
+        String message = "";
+        if (checkErr) {
+            message = "Create Fail";
+            request.setAttribute("customer", customer);
+            request.setAttribute("errList", errList);
+        } else {
+           message = "Create Success";
         }
+        request.setAttribute("message", message);
+        List<CustomerType> listType = customerService.findType();
+        request.setAttribute("listType", listType);
         try {
             request.getRequestDispatcher("/view/customer/create.jsp").forward(request, response);
         } catch (ServletException e) {
@@ -85,7 +96,6 @@ public class CustomerServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
@@ -109,7 +119,8 @@ public class CustomerServlet extends HttpServlet {
         String idCard = request.getParameter("card");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        Customer customer = new Customer(name, birthday, gender, idCard, phone, email, typeCustomer, address);
+        String code = request.getParameter("code");
+        Customer customer = new Customer(name, birthday, gender, idCard, phone, email, typeCustomer, address, code);
         check = customerService.updateById(id, customer);
         if (check) {
             request.setAttribute("message", "Edit success");
@@ -127,7 +138,7 @@ public class CustomerServlet extends HttpServlet {
         List<Customer> customerList = customerService.findAll();
         request.setAttribute("customers", customerList);
         try {
-                request.getRequestDispatcher("/view/customer/list.jsp").forward(request, response);
+            request.getRequestDispatcher("/view/customer/list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

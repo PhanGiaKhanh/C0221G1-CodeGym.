@@ -69,16 +69,16 @@
                     </tr>
                     <tr>
                         <td>Total Money</td>
-                        <td><input class="form-control" type="number" value="${contract.getTotalMoney()}" name="total">
                         </td>
                     </tr>
                     <tr>
                         <td>Employee id</td>
                         <td>
+
                             <select name="eId" id="">
                                 <c:forEach items="${employees}" var="employee">
-                                    <option value="${employee.id} ${employee.id == contract.employeeId ? "selected":""} ">
-                                            ${employee.getName()}
+                                    <option value="${employee.getId()}" ${employee.getId() == contract.getEmployeeId() ? "selected":""} ">
+                                            ${employee.getName()} 
                                     </option>
                                 </c:forEach>
                             </select>
@@ -89,7 +89,7 @@
                         <td>
                             <select name="cId">
                                 <c:forEach items="${customers}" var="customer">
-                                    <option value="${customer.id} ${customer.id == contract.customerId ? "selected":""} ">
+                                    <option value="${customer.getId()}" ${customer.getId() == contract.getCustomerId() ? "selected":""} ">
                                             ${customer.getName()}
                                     </option>
                                 </c:forEach>
@@ -101,7 +101,7 @@
                         <td>
                             <select name="sId">
                                 <c:forEach items="${services}" var="service">
-                                    <option value="${service.id} ${service.id == contract.customerId ? "selected":""} ">
+                                    <option value="${service.getId()}" ${service.getId() == contract.getServiceId() ? "selected":""} ">
                                             ${service.getName()}
                                     </option>
                                 </c:forEach>

@@ -8,7 +8,7 @@ import java.util.List;
 public interface CustomerService {
     List<Customer> findAll();
 
-    boolean insertIntoCustomer(Customer customer);
+    List<String> insertIntoCustomer(Customer customer);
 
     boolean deleteCustomer(int id);
 
@@ -18,4 +18,5 @@ public interface CustomerService {
 
     List<Customer> searchByName(String name);
     List<CustomerType> findType();
+    Customer findByCode(String code);
 }

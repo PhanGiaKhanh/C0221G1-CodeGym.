@@ -52,7 +52,8 @@ customer_gender varchar(20),
 customer_id_card varchar(45),
 customer_phone varchar(45),
 customer_email varchar(45),
-customer_address varchar(45)
+customer_address varchar(45),
+customer_code varchar(45)  -- unique giá trị duy nhất
 );
 create table service_type(
 service_type_id int auto_increment primary key,
@@ -74,7 +75,8 @@ service_type_id int,foreign key (service_type_id) references service_type(servic
 standard_room varchar(45),
 description_other_convenience varchar(45),
 pool_area double,
-number_of_floor int
+number_of_floor int,
+service_code varchar(45)
 );
 create table attach_service(
 attach_service_id int auto_increment primary key,

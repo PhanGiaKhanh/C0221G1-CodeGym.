@@ -7,23 +7,23 @@ insert into customer_type(customer_type_name) values
 ("Silver"),
 ("Member");
 	
-insert into customer(customer_type_id, customer_name, customer_birthday, customer_gender, customer_id_card, customer_phone, customer_email, customer_address) values 
-(1, "Hoàng Huyền Trang", "2000-01-01", "Nữ", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội"),
-(1, "Nguyễn Huyền Trang", "1998-01-01", "Nữ", "2231231231", "0905111112", "trang1@gmail.com", "Vinh"),
-(2, "Thái Hoàng Long", "2002-01-01", "Nam", "1231231232", "0905222222", "long@gmail.com", "Đà Nẵng"),
-(3, "Hoàng Cường", "1999-01-01", "Nam", "1231231233", "0905333333", "cuong@gmail.com", "HCM"),
-(4, "Tấn Công", "1899-01-01", "Nam", "1231231234", "0905444444", "cong@gmail.com", "Huế"),
-(5, "Hà Thái Thú", "2006-12-11", "Nam", "1231231235", "090555555", "thu@gmail.com", "Quảng Trị"),
-(1, "Ngụy Hàn Tuấn", "2004-11-14", "Nam", "1231231236", "0905666666", "tuan@gmail.com", "Đà Nẵng"),
-(2, "Hùng Vương", "1989-05-01", "Nam", "1231231237", "0905777777", "vuong@gmail.com", "Huế"),
-(3, "Công Hùng", "1980-04-28", "Nam", "1231231238", "0905888888", "hung@gmail.com", "Quảng Trị"),
-(1, "Đào Văn Bá", "2008-12-22", "Nam", "1231231239", "0905999999", "ba@gmail.com", "Đà Nẵng"),
-(2, "Thái Hoàng An", "2001-01-01", "Nam", "1231231230", "090555554", "an@gmail.com", "Hà Nội"),
-(2, "Thái Hoàng An", "1992-01-01", "Nam", "2341231230", "090355554", "an1@gmail.com", "Đà Nẵng"),
-(1, "An Bình", "1994-01-01", "Nữ", "3341231230", "090455554", "anbinh@gmail.com", "Quảng Ngãi"),
-(1, "Bỉ Bỉ Đông", "1990-01-01", "Nữ", "4341231230", "090255554", "bibidong@gmail.com", "Vinh");
-insert into customer(customer_type_id, customer_name, customer_birthday, customer_gender, customer_id_card, customer_phone, customer_email, customer_address) values 
-(1, "Hoàng Việt Trang", "2000-01-01", "Nữ", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội");
+insert into customer(customer_code, customer_type_id, customer_name, customer_birthday, customer_gender, customer_id_card, customer_phone, customer_email, customer_address) values 
+("KH-0001", 1, "Hoàng Huyền Trang", "2000-01-01", "Nữ", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội"),
+("KH-0002", 1, "Nguyễn Huyền Trang", "1998-01-01", "Nữ", "2231231231", "0905111112", "trang1@gmail.com", "Vinh"),
+("KH-0003", 2, "Thái Hoàng Long", "2002-01-01", "Nam", "1231231232", "0905222222", "long@gmail.com", "Đà Nẵng"),
+("KH-0004", 3, "Hoàng Cường", "1999-01-01", "Nam", "1231231233", "0905333333", "cuong@gmail.com", "HCM"),
+("KH-0005", 4, "Tấn Công", "1899-01-01", "Nam", "1231231234", "0905444444", "cong@gmail.com", "Huế"),
+("KH-0006", 5, "Hà Thái Thú", "2006-12-11", "Nam", "1231231235", "090555555", "thu@gmail.com", "Quảng Trị"),
+("KH-0007", 1, "Ngụy Hàn Tuấn", "2004-11-14", "Nam", "1231231236", "0905666666", "tuan@gmail.com", "Đà Nẵng"),
+("KH-0008", 2, "Hùng Vương", "1989-05-01", "Nam", "1231231237", "0905777777", "vuong@gmail.com", "Huế"),
+("KH-0009", 3, "Công Hùng", "1980-04-28", "Nam", "1231231238", "0905888888", "hung@gmail.com", "Quảng Trị"),
+("KH-0010", 1, "Đào Văn Bá", "2008-12-22", "Nam", "1231231239", "0905999999", "ba@gmail.com", "Đà Nẵng"),
+("KH-0011", 2, "Thái Hoàng An", "2001-01-01", "Nam", "1231231230", "090555554", "an@gmail.com", "Hà Nội"),
+("KH-0012", 2, "Thái Hoàng An", "1992-01-01", "Nam", "2341231230", "090355554", "an1@gmail.com", "Đà Nẵng"),
+("KH-0013", 1, "An Bình", "1994-01-01", "Nữ", "3341231230", "090455554", "anbinh@gmail.com", "Quảng Ngãi"),
+("KH-0014", 1, "Bỉ Bỉ Đông", "1990-01-01", "Nữ", "4341231230", "090255554", "bibidong@gmail.com", "Vinh");
+insert into customer(customer_code, customer_type_id, customer_name, customer_birthday, customer_gender, customer_id_card, customer_phone, customer_email, customer_address) values 
+("KH-0015", 1, "Hoàng Việt Trang", "2000-01-01", "Nữ", "1231231231", "0905111111", "trang@gmail.com", "Hà Nội");
 insert into service_type (service_type_name) values
 ("Villa"),
 ("House"),
@@ -92,20 +92,19 @@ insert into rent_type (rent_type_name, rent_type_cost) values
 ("Giờ", 500000);
 
 -- ten_dich_vu, dien_tich, so_tang, so_nguoi_toi_da, chi_phi_thue, id_kieu_thue, id_loai_dich_vu, trang_thai
-insert into service (service_name, service_area, number_of_floor, service_max_people, service_cost, 
+insert into service (service_code, service_name, service_area, number_of_floor, service_max_people, service_cost, 
 rent_type_id, service_type_id, standard_room, description_other_convenience
 -- , pool_area, number_of_floor
 ) values
-
-("Villa1", 300, 2, 10, 5000000, 3, 1, "1 sao", "hoạt động"),
-("House1", 100, 2, 5, 3000000, 3, 2, "1 sao", "hoạt động"),
-("Room1", 80, 2, 3, 1000000, 2, 3, "1 sao", "hoạt động"),
-("House2", 100, 2, 6, 3000000, 3, 2, "1 sao", "hoạt động"),
-("Villa2", 500, 2, 8, 7000000, 1, 1, "1 sao", "hoạt động"),
-("Villa3", 600, 3, 10, 8000000, 2, 1, "1 sao", "hoạt động"),	
-("House3", 100, 3, 8, 3000000, 2, 1, "1 sao", "hoạt động"),
-("Room2", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động"),
-("Room3", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động");
+('DV-0001',"Villa1", 300, 2, 10, 5000000, 3, 1, "1 sao", "hoạt động"),
+('DV-0002',"House1", 100, 2, 5, 3000000, 3, 2, "1 sao", "hoạt động"),
+('DV-0003',"Room1", 80, 2, 3, 1000000, 2, 3, "1 sao", "hoạt động"),
+('DV-0004',"House2", 100, 2, 6, 3000000, 3, 2, "1 sao", "hoạt động"),
+('DV-0005',"Villa2", 500, 2, 8, 7000000, 1, 1, "1 sao", "hoạt động"),
+('DV-0006',"Villa3", 600, 3, 10, 8000000, 2, 1, "1 sao", "hoạt động"),	
+('DV-0007',"House3", 100, 3, 8, 3000000, 2, 1, "1 sao", "hoạt động"),
+('DV-0008',"Room2", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động"),
+('DV-0009',"Room3", 100, 3, 6, 1500000, 2, 1, "1 sao", "hoạt động");
 -- select * from customer_use_service;contract_detaileducation_degreecustomer_typecustomer_type
 -- id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc
 insert into contract (employee_id, customer_id, service_id, contract_start_date, contract_end_date, contract_deposit) values
@@ -130,7 +129,7 @@ insert into contract (employee_id, customer_id, service_id, contract_start_date,
 ;
 insert into contract (contract_start_date, contract_end_date, contract_deposit, contract_total_money, employee_id, customer_id, service_id) values
 ("2021-01-01", "2021-04-16", 2000000, 10000000, 2, 2, 3 );
-select*from contract;
+-- select*from contract;
 -- update contract
 -- set contract_start_date = "2021-01-22", contract_end_date ="2021-04-10", contract_deposit = 1000000, contract_total_money = 1, employee_id = "2", customer_id = "1", service_id = "1"
 -- where contract_id = 1;-- 
@@ -142,7 +141,7 @@ values ("massage",100, 1000, "mở"),
 ("thuê xe",100, 1000, "mở");
 
 -- delete from contract
--- where contract_id = 1;
+-- where contract_id = 1;customer_use_service
 -- (id_hop_dong, id_dich_vu_di_kem, so_luong)
 insert into contract_detail (contract_id, attach_service_id, quantity) values
 (1, 1, 2),

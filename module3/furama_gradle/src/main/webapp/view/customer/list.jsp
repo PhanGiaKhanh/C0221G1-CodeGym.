@@ -70,6 +70,7 @@
 <table class="table table-hover my-2" id="tableCustomer">
     <thead class="thead-dark">
     <tr>
+        <th scope="col">#</th>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Birthday</th>
@@ -79,13 +80,15 @@
         <th scope="col">Email</th>
         <th scope="col">Type</th>
         <th scope="col">Address</th>
+        <th scope="col">Customer code</th>
         <th scope="col">Action</th>
 
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="customer" items="${customers}">
+    <c:forEach var="customer" items="${customers}" varStatus="loop">
         <tr>
+            <th> ${loop.count} </th>
             <th id="id">${customer.getId()}</th>
             <td id="name">${customer.getName()}</td>
             <td id="birthday">${customer.getBirthday()}</td>
@@ -95,6 +98,7 @@
             <td>${customer.getEmail()}</td>
             <td>${customer.getType()}</td>
             <td>${customer.getAddress()}</td>
+            <td>${customer.getCode()}</td>
 
             <td class="d-flex">
                 <a href="/customers?action=show&id=${customer.getId()}" type="button" class="btn btn-info">Show</a>

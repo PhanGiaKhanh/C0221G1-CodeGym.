@@ -10,11 +10,11 @@ public class Customer {
     private String email;
     private String type;
     private String address;
-
+    private String code = "";
     public Customer() {
     }
 
-    public Customer(String name, String birthday, String gender, String idCard, String phone, String email, String type, String address) {
+    public Customer(String name, String birthday, String gender, String idCard, String phone, String email, String type, String address, String code) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
@@ -23,9 +23,10 @@ public class Customer {
         this.email = email;
         this.type = type;
         this.address = address;
+        this.code = code;
     }
 
-    public Customer(int id, String name, String birthday, String gender, String idCard, String phone, String email, String type, String address) {
+    public Customer(int id, String name, String birthday, String gender, String idCard, String phone, String email, String type, String address, String code) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -35,6 +36,7 @@ public class Customer {
         this.email = email;
         this.type = type;
         this.address = address;
+        this.code = code;
     }
 
     public int getId() {
@@ -107,5 +109,13 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

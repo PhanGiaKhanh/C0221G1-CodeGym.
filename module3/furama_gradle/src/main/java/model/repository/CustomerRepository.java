@@ -32,6 +32,39 @@ public class CustomerRepository {
     private static final String SEARCH_BY_NAME = "select * from customer where customer_name like ?;";
     private static final String SELECT_CUSTOMER_USE_SERVICE = "select * from customer_use_service;";
     private static final String SELECT_CUSTOMER_TYPE = "select * from customer_type;";
+    private static final String SELECT_CUSTOMER_CODE = "select * from customer where customer_code like ?;";
+
+    public Customer findByCode(String code) {
+        Customer customer = null;
+        List<String[]> stringList = findAllNameTypeCustomer();
+        Connection connection = baseRepository.connectDataBase();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_CODE);
+            preparedStatement.setString(1, code);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                String name_type_customer = null;
+                int id_customer = rs.getInt("customer_id");
+                int id_type_customer = rs.getInt("customer_type_id");
+                String name = rs.getString("customer_name");
+                String date = rs.getString("customer_birthday");
+                String gender = rs.getString("customer_gender");
+                String idCard = rs.getString("customer_id_card");
+                String phone = rs.getString("customer_phone");
+                String email = rs.getString("customer_email");
+                String address = rs.getString("customer_address");
+                for (int i = 0; i < stringList.size(); i++) {
+                    if (i == (id_type_customer - 1)) {
+                        name_type_customer = stringList.get(i)[1];
+                    }
+                }
+                customer = new Customer(id_customer, name, date, gender, idCard, phone, email, name_type_customer, address,code);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customer;
+    }
     public List<CustomerType> findType(){
         List<CustomerType> list = new ArrayList<>();
         Connection connection = baseRepository.connectDataBase();
@@ -86,12 +119,13 @@ public class CustomerRepository {
                 String phone = resultSet.getString("customer_phone");
                 String email = resultSet.getString("customer_email");
                 String address = resultSet.getString("customer_address");
+                String code = resultSet.getString("customer_code");
                 for (int i = 0; i < stringList.size(); i++) {
                     if (i == (id_type_customer - 1)) {
                         name_type_customer = stringList.get(i)[1];
                     }
                 }
-                Customer customer = new Customer(id_customer, customerName, date, gender, idCard, phone, email, name_type_customer, address);
+                Customer customer = new Customer(id_customer, customerName, date, gender, idCard, phone, email, name_type_customer, address, code);
                 customerList.add(customer);
             }
             preparedStatement.close();
@@ -177,13 +211,14 @@ public class CustomerRepository {
                 String idCard = resultSet.getString("customer_id_card");
                 String phone = resultSet.getString("customer_phone");
                 String email = resultSet.getString("customer_email");
+                String code = resultSet.getString("customer_code");
                 String address = resultSet.getString("customer_address");
                 for (int i = 0; i < stringList.size(); i++) {
                     if (i == (id_type_customer - 1)) {
                         name_type_customer = stringList.get(i)[1];
                     }
                 }
-                Customer customer = new Customer(id_customer, name, date, gender, idCard, phone, email, name_type_customer, address);
+                Customer customer = new Customer(id_customer, name, date, gender, idCard, phone, email, name_type_customer, address,code);
                 customerList.add(customer);
             }
             preparedStatement.close();
@@ -235,12 +270,13 @@ public class CustomerRepository {
                 String phone = resultSet.getString("customer_phone");
                 String email = resultSet.getString("customer_email");
                 String address = resultSet.getString("customer_address");
+                String code = resultSet.getString("customer_code");
                 for (int i = 0; i < stringList.size(); i++) {
                     if (i == (id_type_customer - 1)) {
                         name_type_customer = stringList.get(i)[1];
                     }
                 }
-                customer = new Customer(id_customer, name, date, gender, idCard, phone, email, name_type_customer, address);
+                customer = new Customer(id_customer, name, date, gender, idCard, phone, email, name_type_customer, address,code);
 
             }
             preparedStatement.close();

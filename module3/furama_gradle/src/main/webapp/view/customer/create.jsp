@@ -13,18 +13,20 @@
     <meta charset="UTF-8">
     <title>Create customer</title>
     <link rel="stylesheet" href="../../bootstrap4/bootstrap.min.css">
-      <style>
+    <style>
         td:first-child {
-          width: 24%;
-          line-height: 40px;
+            width: 24%;
+            line-height: 40px;
         }
+
         td {
-            padding: 5px!important;
+            padding: 5px !important;
         }
+
         input {
-          box-shadow: 1px 1px#637fff;
+            box-shadow: 1px 1px #637fff;
         }
-      </style>
+    </style>
 
 </head>
 <body>
@@ -33,24 +35,35 @@
         <div class="col-3"></div>
         <div class="col-6 fborder border-secondary rounded shadow">
             <h2 class="text-white rounded bg-info px-5 py-2 mt-2">Create new customer</h2>
-            <p class="text-success">
-                  ${message}
-            </p>
+
+            <b class="${message == 'Create Fail'? 'text-danger' : 'text-success'}"> ${message}</b>
 
             <form method="post">
                 <table class="table table-borderless">
                     <tbody>
+
+                    <tr>
+                        <td>Customer code</td>
+                        <td>
+                            <div class="text-danger">${errList.get(0)}</div>
+                            <input class="form-control" type="text" value="${customer.getCode()}" name="code">
+                        </td>
+                    </tr>
                     <tr>
                         <td>Name</td>
-                        <td><input class="form-control" type="text" value="" name="name"></td>
+                        <td>
+                            <div class="text-danger">${errList.get(1)}</div>
+                            <input class="form-control" type="text" value="${customer.getName()}" name="name"></td>
                     </tr>
                     <tr>
                         <td>Birthday</td>
-                        <td><input class="form-control" type="date" value="YYYY/MM/DD" name="birthday"></td>
+                        <td>
+                            <div class="text-danger">${errList.get(6)}
+                            <input class="form-control" type="date" value="${customer.getBirthday()}" name="birthday">
+                        </td>
                     </tr>
                     <tr>
                         <td>Gender</td>
-<%--                        <td><input class="form-control" type="text" value="" name="gender"></td>--%>
                         <td>
                             <select class="form-control" name="gender" id="">
                                 <option value="Nam">Nam</option>
@@ -61,30 +74,42 @@
                     </tr>
                     <tr>
                         <td>Id card</td>
-                        <td><input class="form-control" type="number" value=""  name="idCard"></td>
+                        <td>
+                            <div class="text-danger">${errList.get(3)}</div>
+                            <input class="form-control" type="number" value="${customer.getIdCard()}" name="idCard">
+                        </td>
                     </tr>
                     <tr>
                         <td>Phone</td>
-                        <td><input class="form-control" type="number" value="" name="phone"></td>
+                        <td>
+                            <div class="text-danger">${errList.get(2)}</div>
+                            <input class="form-control" type="number" value="${customer.getPhone()}" name="phone"></td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td><input class="form-control" type="email" value="" name="email"></td>
+                        <td>
+                            <div class="text-danger">${errList.get(5)}
+                            <input class="form-control" type="email" value="${customer.getEmail()}" name="email"></td>
                     </tr>
                     <tr>
                         <td>Type customer</td>
-<%--                        <td><input class="form-control" type="text" value="" name="typeCustomer"></td>--%>
                         <td>
+
                             <select class="form-control" name="type" id="typeCustomer">
-                                <c:forEach items="${list}" var="customerType">
-                                    <option value="${customerType.getId()}">${customerType.getName()}</option>
+                                <c:forEach items="${listType}" var="customerType">
+                                    <option value="${customerType.id}" ${customerType.id == customer.type ? "selected" : ""}>
+                                            ${customerType.name} - ${customerType.id} - ${customer.type}
+                                    </option>
                                 </c:forEach>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td><input class="form-control" type="text" value="" name="address"></td>
+                        <td>
+                            <div class="text-danger">${errList.get(4)}</div>
+                            <input class="form-control" type="text" value="${customer.getAddress()}" name="address">
+                        </td>
                     </tr>
                     <tr>
                         <td class="text-left"><a href="/customers" class="btn btn-secondary">Close</a></td>
@@ -97,9 +122,9 @@
         <div class="col-3"></div>
     </div>
 </div>
-<script src="../../bootstrap4/jquery-3.6.0.min.js" ></script>
-<script src="../../bootstrap4/popper.min.js" ></script>
-<script src="../../bootstrap4/bootstrap.min.css" ></script>
+<script src="../../bootstrap4/jquery-3.6.0.min.js"></script>
+<script src="../../bootstrap4/popper.min.js"></script>
+<script src="../../bootstrap4/bootstrap.min.css"></script>
 
 </body>
 </html>
