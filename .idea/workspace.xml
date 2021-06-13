@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d2fd35-b1a8-4435-96b8-0bbf983c4590" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Module2/src/bai_tap_them/b3_manage_transport/controllers/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Module2/src/bai_tap_them/b3_manage_transport/models/Motobike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Module2/src/bai_tap_them/b3_manage_transport/models/Oto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Module2/src/bai_tap_them/b3_manage_transport/models/Truck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Module2/src/bai_tap_them/b3_manage_transport/models/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +23,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/module2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../customer-management" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="SvnConfiguration">
@@ -40,6 +37,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617154886068</updated>
       <workItem from="1619596262615" duration="14000" />
+      <workItem from="1623593962463" duration="5000" />
     </task>
     <servers />
   </component>
@@ -47,9 +45,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1619596274783">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1623593965723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1619596274783" />
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1623593965723" />
   </component>
 </project>
