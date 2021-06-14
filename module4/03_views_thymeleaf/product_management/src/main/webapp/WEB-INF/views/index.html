@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+</head>
+
+<body>
+<p>
+    <a th:href="@{/product/create}">
+        Add new customer
+    </a>
+</p>
+<table class="" border="1">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Manufacturer</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <!--    <tr th:each="row,rowStat : ${customers}">-->
+
+    <tbody>
+    <tr th:each="row,rowStat : ${products}">
+        <td th:text="${rowStat.count}"></td>
+        <td th:text="${row.getId()}"></td>
+        <td th:text="${row.getName()}"></td>
+        <td th:text="${row.getPrice()}"></td>
+        <td th:text="${row.getDescription()}"></td>
+        <td th:text="${row.getManufacturer()}"></td>
+        <td>
+            <a  th:href="@{/product/{id}/show(id=${row.getId()})}">Show</a>
+            <a  th:href="@{/product/{id}/edit(id=${row.getId()})}">Edit</a>
+            <a   th:href="@{/product/{id}/delete(id=${row.getId()})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>
