@@ -9,9 +9,10 @@
 <html>
 <head>
     <title>Calculator</title>
-    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" href="@{/resources/bootstrap.min.css}">
 </head>
 <body>
+<a href="#" class="btn btn-secondary">Hello</a>
 <h1>Calculator</h1>
 <form method="post">
     <input type="number" placeholder="number one" name="num1">

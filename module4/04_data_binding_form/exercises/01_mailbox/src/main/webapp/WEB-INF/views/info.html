@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" href="../../../resources/bootstrap.min.css">
+</head>
+<body>
+<h1>Hello</h1>
+<fieldset>
+    <legend>Settings</legend>
+    <table>
+        <tr>
+            <td>Languages: </td>
+            <td th:each="language : ${languageList}"
+                th:if="${language.getId() == mailbox.getLang_id()}"
+                th:text="${language.getName()}">
+
+            </td>
+        </tr>
+        <tr>
+            <td>Page Size:</td>
+            <td
+                th:each="size : ${sizeList}"
+                th:if="${size.getId() == mailbox.getSize_id()}"
+                th:text="${size.getSize()}">
+            </td>
+        </tr>
+        <tr>
+            <td>Spams filter:</td>
+
+            <td th:text="${mailbox.isSpamsFilter()}">
+
+            </td>
+        </tr>
+        <tr>
+            <td>Signature:</td>
+            <td th:text="${mailbox.getSignature()}">
+
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary" >update</button>
+                <a href="/" class="btn btn-secondary">Cancel</a>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+</body>
+</html>
