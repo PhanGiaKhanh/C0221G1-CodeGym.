@@ -15,6 +15,11 @@ public class ProductImpl implements IProductService {
     }
 
     @Override
+    public List<Product> findByName(String name) {
+        return productRepository.findByName(name);
+    }
+
+    @Override
     public void save(Product product) {
         productRepository.save(product);
     }

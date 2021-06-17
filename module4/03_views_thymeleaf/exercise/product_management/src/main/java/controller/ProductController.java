@@ -72,4 +72,9 @@ public class ProductController {
         iProductService.remove(product.getId());
         return "redirect:/";
     }
+    @GetMapping(value = "/search")
+    public String findProduct(@RequestParam String name,Model model){
+        model.addAttribute("products",iProductService.findByName(name));
+        return "/product/index";
+    }
 }

@@ -44,4 +44,6 @@ public class MailboxController {
         model.addAttribute("sizeList", iSizeservice.findAll());
         return "info";
     }
+
+
 }

@@ -3,10 +3,7 @@ package model.repository;
 import com.sun.javafx.collections.MappingChange;
 import model.bean.Product;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ProductRepository {
     static Map<Integer, Product> map = new HashMap<>();
@@ -41,5 +38,16 @@ public class ProductRepository {
 
     public void remove(int id){
         map.remove(id);
+    }
+
+    public List<Product> findByName(String name) {
+        List<Product> productList = new ArrayList<>();
+        Set<Integer> setKey = map.keySet();
+        for(int key : setKey){
+            if(map.get(key).getName().contains(name)){
+                productList.add(map.get(key));
+            }
+        }
+        return productList;
     }
 }
