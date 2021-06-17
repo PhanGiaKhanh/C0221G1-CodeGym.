@@ -15,7 +15,7 @@ import java.util.List;
 public class ProductController {
     IProductService iProductService = new ProductImpl();
 
-    @GetMapping("")
+    @GetMapping(value = "")
     public ModelAndView home(){
         List<Product> list = iProductService.findAll();
         ModelAndView modelAndView = new ModelAndView("index");
@@ -29,7 +29,7 @@ public class ProductController {
 //        return "index";
 //    }
 
-    @GetMapping("/create")
+    @GetMapping(value = "/create")
     public String create(){
         return "create";
     }
@@ -43,31 +43,31 @@ public class ProductController {
         return "redirect:/";
     }
 
-    @GetMapping("/{id}/show")
+    @GetMapping(value = "/{id}/show")
     public String showProduct(@PathVariable int id, Model model){
         Product product = iProductService.findById(id);
         model.addAttribute("product", product);
         return "show";
     }
-    @GetMapping("/{id}/edit")
+    @GetMapping(value = "/{id}/edit")
     public String editProduct(@PathVariable int id, Model model){
         Product findProduct = iProductService.findById(id);
         model.addAttribute("product", findProduct);
         return "edit";
     }
-    @PostMapping("update")
+    @PostMapping(value = "update")
     public String updateProduct(Product product, Model model){
         iProductService.update(product);
         model.addAttribute("product", product);
         return "edit";
     }
-    @GetMapping("/{id}/delete")
+    @GetMapping(value = "/{id}/delete")
     public String showDelete(@PathVariable int id, Model model){
         Product product = iProductService.findById(id);
         model.addAttribute("product", product);
         return "delete";
     }
-    @PostMapping("/delete")
+    @PostMapping(value = "/delete")
     public String remove(Product product){
         iProductService.remove(product.getId());
         return "redirect:/";

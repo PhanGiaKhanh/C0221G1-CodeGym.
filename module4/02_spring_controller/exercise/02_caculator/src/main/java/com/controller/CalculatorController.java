@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CalculatorController {
     @Autowired
     private CalculatorService calculatorService;
-    @GetMapping
+    @GetMapping(value = "")
     public String home(){ return "/home";}
 
-    @PostMapping
+    @PostMapping(value = "")
     public String calculator(@RequestParam Double num1, Double num2, String calculation, Model model){
         Double result = calculatorService.calculator(num1, num2, calculation);
         model.addAttribute("result", result);

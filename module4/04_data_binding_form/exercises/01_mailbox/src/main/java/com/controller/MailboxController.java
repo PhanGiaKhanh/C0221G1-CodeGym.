@@ -25,7 +25,7 @@ public class MailboxController {
 
 
 
-    @GetMapping
+    @GetMapping(value = "")
     public String home(ModelMap model) {
         List<Language> list = iLanguageService.findAll();
         model.addAttribute("languageList", list);
@@ -33,7 +33,7 @@ public class MailboxController {
         return "home";
     }
 
-    @PostMapping("save")
+    @PostMapping(value = "save")
     public String update(int lang_id, int size_id, String spamsFilter, String signature, Model model){
         Mailbox mailbox = new Mailbox((iMailboxService.size()+ 1), lang_id, size_id, spamsFilter, signature);
         iMailboxService.save(mailbox);

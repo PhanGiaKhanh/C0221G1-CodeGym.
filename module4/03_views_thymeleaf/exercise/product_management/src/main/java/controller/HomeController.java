@@ -13,7 +13,7 @@ import java.util.List;
 public class HomeController {
     IProductService iProductService = new ProductImpl();
 
-    @GetMapping("")
+    @GetMapping(value = "")
     public ModelAndView home(){
         List<Product> list = iProductService.findAll();
         ModelAndView modelAndView = new ModelAndView("index");

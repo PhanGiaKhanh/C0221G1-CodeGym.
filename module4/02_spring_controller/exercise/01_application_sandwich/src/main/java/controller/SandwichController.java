@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SandwichController {
-    @GetMapping
+    @GetMapping (value = "")
     public String home(){
         return "/home";
     }
 
-    @RequestMapping("/save")
+    @RequestMapping(value = "/save")
     public String save(@RequestParam("condiment") String[] condiment, Model model) {
         String result = "";
         for (int i = 0; i < condiment.length; i++) {

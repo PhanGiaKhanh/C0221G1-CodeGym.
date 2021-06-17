@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,7 +7,8 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
-<form action="a">
+<!---->
+<form action="save" method="post">
     <div class="card" style="width: 18rem;">
         <img id="img-of-the-day" class="figure-img img-fluid rounded">
         <div class="card-body">
@@ -23,19 +24,20 @@
             <label for="colFormLabel" class="h4">Author</label>
             <br>
             <div>
-                <input name="name" type="email" class="form-control" id="colFormLabel" placeholder="Your name">
+                <input name="nameAuthor" type="text" class="form-control" id="colFormLabel" placeholder="Your name">
             </div>
 
             <label for="validationTextarea" class="h2">Feedback</label>
             <textarea name="text" class="form-control is-invalid" id="validationTextarea" placeholder="Your comment"
                       required></textarea>
             <div class="invalid-feedback">
-                <a href="#" class="btn btn-primary">Comment</a>
+                <input type="submit" class="btn btn-primary" value="Comment"/>
             </div>
         </div>
     </div>
 
 </form>
+
 <script>
     let query = 'https://api.nasa.gov/planetary/apod?api_key=Jw9vGpEPv3Kck51a7Y3Z2a1cH3qWmrPT2k9lgCMw';
     let request = new XMLHttpRequest();
