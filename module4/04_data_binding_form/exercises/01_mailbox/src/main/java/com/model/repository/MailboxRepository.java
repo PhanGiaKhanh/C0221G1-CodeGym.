@@ -16,6 +16,7 @@ public class MailboxRepository {
     public Mailbox findId(int id) {
         return map.get(id);
     }
+
     public int size(){
         return map.size();
     }

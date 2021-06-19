@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -34,8 +35,7 @@ public class MailboxController {
     }
 
     @PostMapping(value = "save")
-    public String update(int lang_id, int size_id, String spamsFilter, String signature, Model model){
-        Mailbox mailbox = new Mailbox((iMailboxService.size()+ 1), lang_id, size_id, spamsFilter, signature);
+    public String update(@ModelAttribute Mailbox mailbox, Model model){
         iMailboxService.save(mailbox);
 
         model.addAttribute("mailbox", mailbox);

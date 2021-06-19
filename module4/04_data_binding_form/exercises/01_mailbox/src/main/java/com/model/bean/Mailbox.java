@@ -11,6 +11,7 @@ public class Mailbox {
     }
 
     public Mailbox(int lang_id, int size_id, String spamsFilter, String signature) {
+        this.id = this.id +1;
         this.lang_id = lang_id;
         this.size_id = size_id;
         this.spamsFilter = spamsFilter;

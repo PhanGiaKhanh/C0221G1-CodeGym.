@@ -16,7 +16,7 @@ public class ProductController {
     IProductService iProductService = new ProductImpl();
 
     @GetMapping(value = "")
-    public ModelAndView home(){
+    public ModelAndView showListForm(){
         List<Product> list = iProductService.findAll();
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("products", list);
@@ -30,7 +30,7 @@ public class ProductController {
 //    }
 
     @GetMapping(value = "/create")
-    public String create(){
+    public String showCreateForm(){
         return "create";
     }
     @PostMapping("createProduct")
@@ -50,7 +50,7 @@ public class ProductController {
         return "show";
     }
     @GetMapping(value = "/{id}/edit")
-    public String editProduct(@PathVariable int id, Model model){
+    public String showEditForm(@PathVariable int id, Model model){
         Product findProduct = iProductService.findById(id);
         model.addAttribute("product", findProduct);
         return "edit";
@@ -62,7 +62,7 @@ public class ProductController {
         return "edit";
     }
     @GetMapping(value = "/{id}/delete")
-    public String showDelete(@PathVariable int id, Model model){
+    public String showDeleteForm(@PathVariable int id, Model model){
         Product product = iProductService.findById(id);
         model.addAttribute("product", product);
         return "delete";
