@@ -75,6 +75,6 @@ public class ProductController {
     @GetMapping(value = "/search")
     public String findProduct(@RequestParam String name,Model model){
         model.addAttribute("products",iProductService.findByName(name));
-        return "/product/index";
+        return "/index";
     }
 }
