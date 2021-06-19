@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import java.util.Optional;
 
 @Controller
@@ -17,8 +16,6 @@ public class CustomerController {
 
     @Autowired
     private ICustomerService customerService;
-
-
     @Autowired
     private IProvinceService provinceService;
 
@@ -26,7 +23,6 @@ public class CustomerController {
     public Iterable<Province> provinces(){
         return provinceService.findAll();
     }
-
     @GetMapping("/create-customer")
     public ModelAndView showCreateForm() {
         ModelAndView modelAndView = new ModelAndView("/customer/create");

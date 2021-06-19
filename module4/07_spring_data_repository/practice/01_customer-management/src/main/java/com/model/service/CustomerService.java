@@ -2,6 +2,8 @@ package com.model.service;
 
 
 import com.model.bean.Customer;
+import com.model.bean.Province;
+import com.model.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,11 @@ import java.util.*;
 public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository customerRepository;
+
+    @Override
+    public Iterable<Customer> findAllByProvince(Province province) {
+        return customerRepository.findAllByProvince(province);
+    }
 
     @Override
     public Iterable<Customer> findAll() {
