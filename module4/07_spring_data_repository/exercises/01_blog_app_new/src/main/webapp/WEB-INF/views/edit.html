@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<th:block th:if="${message}">
+    <p th:text="${message}" class="text-primary"></p>
+</th:block>
+
+<form action="/editBlog" th:object="${blog}" method="post"  novalidate="novalidate">
+    <table>
+        <tr>
+            <td>Author</td>
+            <td><input type="text" th:field="*{author}" value=""></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td><input type="text" th:field="*{title}"></td>
+        </tr>
+        <tr>
+            <td>Comment</td>
+            <td><textarea cols="30" rows="10" th:field="*{comment}"></textarea></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>
+                <input type="hidden" th:field="*{date}"  id="date">
+            </td>
+        </tr>
+        <tr>
+            <td><a href="/blogs" class="btn btn-secondary">Back list</a></td>
+            <td class="text-right">
+
+                <input type="submit" value="Update" class="btn btn-primary" onclick="btn()">
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+</body>
+</html>

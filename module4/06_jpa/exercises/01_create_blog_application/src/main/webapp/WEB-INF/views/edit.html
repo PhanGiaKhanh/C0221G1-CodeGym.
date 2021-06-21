@@ -5,7 +5,7 @@
     <title>Edit</title>
 </head>
 <body>
-<form action="createBlog" th:object="${blog}" method="post"  novalidate="novalidate">
+<form action="/editBlog" th:object="${blog}" method="post"  novalidate="novalidate">
     <table>
         <tr>
             <td>Author</td>
@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td>Comment</td>
-            <td><textarea cols="30" rows="10" th:field="*{comment}"/></td>
+            <td><textarea cols="30" rows="10" th:field="*{comment}"></textarea></td>
         </tr>
         <tr>
             <td> </td>
@@ -29,7 +29,7 @@
             <td><a href="/" class="btn btn-secondary">Back list</a></td>
             <td class="text-right">
 
-                <input type="submit" value="Create" class="btn btn-primary" onclick="btn()">
+                <input type="submit" value="Update" class="btn btn-primary" onclick="btn()">
             </td>
         </tr>
     </table>

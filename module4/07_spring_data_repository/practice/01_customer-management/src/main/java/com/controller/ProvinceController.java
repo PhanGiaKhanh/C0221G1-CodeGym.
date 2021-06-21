@@ -92,19 +92,19 @@ public class ProvinceController {
         provinceService.remove(province.getId());
         return "redirect:provinces";
     }
-    @GetMapping("/view-province/{id}")
-    public ModelAndView viewProvince(@PathVariable("id") Long id){
-        Optional<Province> provinceOptional = provinceService.findById(id);
-        if(!provinceOptional.isPresent()){
-            return new ModelAndView("/error.404");
-        }
-
-        Iterable<Customer> customers = customerService.findAllByProvince(provinceOptional.get());
-
-        ModelAndView modelAndView = new ModelAndView("/province/view");
-        modelAndView.addObject("province", provinceOptional.get());
-        modelAndView.addObject("customers", customers);
-        return modelAndView;
-    }
+//    @GetMapping("/view-province/{id}")
+//    public ModelAndView viewProvince(@PathVariable("id") Long id){
+//        Optional<Province> provinceOptional = provinceService.findById(id);
+//        if(!provinceOptional.isPresent()){
+//            return new ModelAndView("/error.404");
+//        }
+//
+//        Iterable<Customer> customers = customerService.findAllByProvince(provinceOptional.get());
+//
+//        ModelAndView modelAndView = new ModelAndView("/province/view");
+//        modelAndView.addObject("province", provinceOptional.get());
+//        modelAndView.addObject("customers", customers);
+//        return modelAndView;
+//    }
 
 }

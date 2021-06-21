@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.model.bean.Comment;
+import com.model.entity.Comment;
 import com.model.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
