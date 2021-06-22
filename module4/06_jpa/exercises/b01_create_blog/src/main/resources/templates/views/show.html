@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+<body>
+<a href="/" class="btn btn-primary">back to list</a>
+<table>
+    <tr>
+        <td>Id</td>
+        <th th:text="${blog.id}"></th>
+    </tr>
+    <tr>
+        <td>Author</td>
+        <th th:text="${blog.author}"></th>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <th th:text="${blog.title}"></th>
+    </tr>
+    <tr>
+        <td>Comment</td>
+        <th th:text="${blog.comment}"></th>
+    </tr>
+    <tr>
+        <td>Count like</td>
+        <th th:text="${blog.countLike}"></th>
+    </tr>
+</table>
+</body>
+</html>
