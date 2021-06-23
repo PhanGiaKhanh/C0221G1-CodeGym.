@@ -1,13 +1,14 @@
-package service.impl;
+package com.example.b02_use_exeptionhandle_springboot.service.impl;
 
-
-import model.Customer;
+import cg.wbd.grandemonstration.model.Customer;
+import cg.wbd.grandemonstration.repository.CustomerRepository;
+import cg.wbd.grandemonstration.service.CustomerService;
+import cg.wbd.grandemonstration.service.DuplicateEmailException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import repository.CustomerRepository;
-import service.CustomerService;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,10 +22,7 @@ public class CustomerServiceImplWithSpringData implements CustomerService {
     private CustomerRepository customerRepository;
 
     @Override
-    public List<Customer> findAll() throws Exception {
-
-        if (true) throw new Exception("a dummy exception");
-
+    public List<Customer> findAll() {
         return streamAll().collect(Collectors.toList());
     }
 
@@ -47,18 +45,17 @@ public class CustomerServiceImplWithSpringData implements CustomerService {
     }
 
     @Override
-    public Optional<Customer> findOne(Long id) throws Exception {
-        Optional<Customer> customerOptional = customerRepository.findById(id);
-        if (!customerOptional.isPresent()) {
-            throw new Exception("customer not found!");
-        }
-
-        return customerOptional;
+    public Optional<Customer> findOne(Long id) {
+        return customerRepository.findById(id);
     }
 
     @Override
-    public Customer save(Customer customer) {
-        return customerRepository.save(customer);
+    public Customer save(Customer customer) throws DuplicateEmailException {
+        try {
+            return customerRepository.save(customer);
+        } catch (DataIntegrityViolationException e) {
+            throw new DuplicateEmailException();
+        }
     }
 
     @Override
