@@ -14,7 +14,9 @@ public class Blog {
     private String comment;
     @CollectionTable
     private int countLike;
-
+    @ManyToOne
+    @JoinColumn( referencedColumnName = "id")
+    private Category category;
     public Blog() {
     }
 
@@ -25,13 +27,22 @@ public class Blog {
         this.comment = comment;
     }
 
-    public Blog(Long id, String author, String title, String date, String comment, int countLike) {
+    public Blog(Long id, String author, String title, String date, String comment, int countLike,Category category) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.date = date;
         this.comment = comment;
         this.countLike = countLike;
+         this.category = category;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Long getId() {

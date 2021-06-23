@@ -3,6 +3,7 @@ package com.example.b01_blog_app_springboot.controller;
 import com.example.b01_blog_app_springboot.model.entity.Blog;
 import com.example.b01_blog_app_springboot.model.service.IBlogService;
 
+import com.example.b01_blog_app_springboot.model.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,11 +22,12 @@ import java.util.Optional;
 public class BlogController {
     @Autowired
     private IBlogService blogService;
-
+    @Autowired
+    private ICategoryService categoryService;
     @GetMapping(value = "/blogs")
     public ModelAndView listCustomers(@RequestParam("search") Optional<String> search,@PageableDefault(value = 5)Pageable pageable){
         Page<Blog> blogList;
-        ModelAndView modelAndView = new ModelAndView("/list");
+        ModelAndView modelAndView = new ModelAndView("blog/list");
         if(search.isPresent()){
             blogList = blogService.findAllByTitleContaining(search.get(), pageable);
             modelAndView.addObject("search", search.get());
@@ -39,25 +41,32 @@ public class BlogController {
     @GetMapping(value = "create")
     public String showCreateForm(Model model){
         model.addAttribute("blog", new Blog());
-        return "/create";
+        model.addAttribute("categoryList", categoryService.findAllList());
+        return "blog/create";
     }
 
     @PostMapping(value = "saveBlog")
     public String saveBlogForm(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes){
         blogService.save(blog);
         redirectAttributes.addFlashAttribute("message", "Create success");
-        return "/list";
+        return "blog/list";
     }
 
     @GetMapping(value = "/{id}/show")
     public String showBlogForm(@PathVariable Long id, Model model){
         model.addAttribute("blog", blogService.findById(id).get());
-        return "/show";
+        return "blog/show";
     }
     @GetMapping(value = "/{id}/edit")
     public String showEditForm(@PathVariable Long id, Model model){
-        model.addAttribute("blog", blogService.findById(id).get());
-        return "/edit";
+        Blog blog = blogService.findById(id).get();
+        if (blog != null) {
+            model.addAttribute("blog", blog);
+            model.addAttribute("categoryList", categoryService.findAllList());
+            return "blog/edit";
+        }else {
+            return "error.404";
+        }
     }
 
     @PostMapping(value = "editBlog")
@@ -65,14 +74,14 @@ public class BlogController {
         blogService.save(blog);
         model.addAttribute("blog", blog);
         model.addAttribute("message", "succession");
-        return "/edit";
+        return "blog/edit";
     }
 
     @GetMapping(value = "/{id}/delete")
     public ModelAndView showDeleteForm(@PathVariable Long id) {
         Optional<Blog> blog = blogService.findById(id);
         if (blog.isPresent()) {
-            ModelAndView modelAndView = new ModelAndView("/delete");
+            ModelAndView modelAndView = new ModelAndView("blog/delete");
             modelAndView.addObject("blog", blog.get());
             return modelAndView;
 
