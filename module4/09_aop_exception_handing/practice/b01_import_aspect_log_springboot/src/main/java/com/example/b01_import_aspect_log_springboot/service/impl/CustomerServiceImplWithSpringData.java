@@ -1,11 +1,10 @@
-package com.example.b02_use_exeptionhandle_springboot.service.impl;
+package com.example.b01_import_aspect_log_springboot.service.impl;
 
-import com.example.b02_use_exeptionhandle_springboot.model.Customer;
-import com.example.b02_use_exeptionhandle_springboot.repository.CustomerRepository;
-import com.example.b02_use_exeptionhandle_springboot.service.CustomerService;
-import com.example.b02_use_exeptionhandle_springboot.service.DuplicateEmailException;
+
+import com.example.b01_import_aspect_log_springboot.model.Customer;
+import com.example.b01_import_aspect_log_springboot.repository.CustomerRepository;
+import com.example.b01_import_aspect_log_springboot.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -50,12 +49,8 @@ public class CustomerServiceImplWithSpringData implements CustomerService {
     }
 
     @Override
-    public Customer save(Customer customer) throws DuplicateEmailException {
-        try {
-            return customerRepository.save(customer);
-        } catch (DataIntegrityViolationException e) {
-            throw new DuplicateEmailException();
-        }
+    public Customer save(Customer customer) {
+        return customerRepository.save(customer);
     }
 
     @Override

@@ -1,16 +1,15 @@
-package com.example.b02_use_exeptionhandle_springboot.model;
+package com.example.b01_import_aspect_log_springboot.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "customer")
 public class Customer implements Cloneable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-    @Column(unique = true)
     private String email;
     private String address;
 

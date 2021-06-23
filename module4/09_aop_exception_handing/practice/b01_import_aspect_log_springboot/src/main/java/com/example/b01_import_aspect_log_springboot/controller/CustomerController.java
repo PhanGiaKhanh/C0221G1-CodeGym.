@@ -1,10 +1,10 @@
-package com.example.b02_use_exeptionhandle_springboot.controller;
+package com.example.b01_import_aspect_log_springboot.controller;
 
-import com.example.b02_use_exeptionhandle_springboot.model.Customer;
-import com.example.b02_use_exeptionhandle_springboot.model.Province;
-import com.example.b02_use_exeptionhandle_springboot.service.CustomerService;
-import com.example.b02_use_exeptionhandle_springboot.service.DuplicateEmailException;
-import com.example.b02_use_exeptionhandle_springboot.service.ProvinceService;
+
+import com.example.b01_import_aspect_log_springboot.model.Customer;
+import com.example.b01_import_aspect_log_springboot.model.Province;
+import com.example.b01_import_aspect_log_springboot.service.CustomerService;
+import com.example.b01_import_aspect_log_springboot.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,7 +30,7 @@ public class CustomerController {
 
     @GetMapping
     public ModelAndView showList(Optional<String> s, Pageable pageInfo) {
-        ModelAndView modelAndView = new ModelAndView("/customers/list");
+        ModelAndView modelAndView = new ModelAndView("/list");
         Page<Customer> customers = s.isPresent() ? search(s, pageInfo) : getPage(pageInfo);
         modelAndView.addObject("keyword", s.orElse(null));
         modelAndView.addObject("customers", customers);
@@ -39,21 +39,18 @@ public class CustomerController {
 
     @GetMapping("/{id}")
     public ModelAndView showInformation(@PathVariable Long id) {
-        ModelAndView modelAndView = new ModelAndView("/customers/info");
+        ModelAndView modelAndView = new ModelAndView("/info");
         Optional<Customer> customerOptional = customerService.findOne(id);
         modelAndView.addObject("customer", customerOptional.get());
         return modelAndView;
     }
 
     @PostMapping
-    public ModelAndView updateCustomer(Customer customer) throws DuplicateEmailException {
+    public ModelAndView updateCustomer(Customer customer) {
         customerService.save(customer);
         return new ModelAndView("redirect:/customers");
     }
-    @ExceptionHandler(DuplicateEmailException.class)
-    public ModelAndView showInputNotAcceptable() {
-        return new ModelAndView("/customers/inputs-not-acceptable");
-    }
+
     private Page<Customer> getPage(Pageable pageInfo) {
         return customerService.findAll(pageInfo);
     }

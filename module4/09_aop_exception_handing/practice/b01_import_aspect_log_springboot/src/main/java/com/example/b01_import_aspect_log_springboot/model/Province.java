@@ -1,9 +1,9 @@
-package com.example.b02_use_exeptionhandle_springboot.model;
+package com.example.b01_import_aspect_log_springboot.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "provinces")
+@Table(name = "Provinces")
 public class Province {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

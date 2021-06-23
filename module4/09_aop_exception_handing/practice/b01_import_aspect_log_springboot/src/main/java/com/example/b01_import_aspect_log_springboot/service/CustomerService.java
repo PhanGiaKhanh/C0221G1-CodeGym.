@@ -1,7 +1,7 @@
-package com.example.b02_use_exeptionhandle_springboot.service;
+package com.example.b01_import_aspect_log_springboot.service;
 
 
-import com.example.b02_use_exeptionhandle_springboot.model.Customer;
+import com.example.b01_import_aspect_log_springboot.model.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -19,7 +19,7 @@ public interface CustomerService {
 
     Optional<Customer> findOne(Long id);
 
-    Customer save(Customer customer) throws DuplicateEmailException;
+    Customer save(Customer customer);
 
     List<Customer> save(List<Customer> customers);
 
