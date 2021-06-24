@@ -1,13 +1,13 @@
-package com.example.b01_import_aspect_log_springboot.service.impl;
+package service.impl;
 
 
-import com.example.b01_import_aspect_log_springboot.model.Customer;
-import com.example.b01_import_aspect_log_springboot.repository.CustomerRepository;
-import com.example.b01_import_aspect_log_springboot.service.CustomerService;
+import model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import repository.CustomerRepository;
+import service.CustomerService;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,13 +21,15 @@ public class CustomerServiceImplWithSpringData implements CustomerService {
     private CustomerRepository customerRepository;
 
     @Override
-    public List<Customer> findAll() {
+    public List<Customer> findAll() throws Exception {
+
+        if (true) throw new Exception("a dummy exception");
+
         return streamAll().collect(Collectors.toList());
     }
 
     @Override
-    public Page<Customer> findAll(Pageable pageInfo) throws Exception {
-        if (true) throw new Exception("a dummy exception");
+    public Page<Customer> findAll(Pageable pageInfo) {
         return customerRepository.findAll(pageInfo);
     }
 
@@ -50,6 +52,7 @@ public class CustomerServiceImplWithSpringData implements CustomerService {
         if (!customerOptional.isPresent()) {
             throw new Exception("customer not found!");
         }
+
         return customerOptional;
     }
 

@@ -1,35 +1,34 @@
-package com.example.b01_import_aspect_log_springboot.controller;
+package controller;
 
-
-import com.example.b01_import_aspect_log_springboot.model.Customer;
-import com.example.b01_import_aspect_log_springboot.model.Province;
-import com.example.b01_import_aspect_log_springboot.service.CustomerService;
-import com.example.b01_import_aspect_log_springboot.service.ProvinceService;
+import model.Customer;
+//import model.Province;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import service.CustomerService;
+//import service.ProvinceService;
 
 import java.util.Optional;
 
 @Controller
-@RequestMapping("customers")
+@RequestMapping(value = {"","/customers"})
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @Autowired
-    private ProvinceService provinceService;
+//    @Autowired
+//    private ProvinceService provinceService;
 
-    @ModelAttribute("provinces")
-    public Iterable<Province> allProvinces() {
-        return provinceService.findAll();
-    }
+//    @ModelAttribute("provinces")
+//    public Iterable<Province> allProvinces() {
+//        return provinceService.findAll();
+//    }
 
-    @GetMapping
-    public ModelAndView showList(Optional<String> s, Pageable pageInfo) throws Exception {
+    @GetMapping(value = "")
+    public ModelAndView showList(Optional<String> s, Pageable pageInfo) {
         ModelAndView modelAndView = new ModelAndView("/list");
         Page<Customer> customers = s.isPresent() ? search(s, pageInfo) : getPage(pageInfo);
         modelAndView.addObject("keyword", s.orElse(null));
@@ -55,7 +54,7 @@ public class CustomerController {
         return new ModelAndView("redirect:/customers");
     }
 
-    private Page<Customer> getPage(Pageable pageInfo) throws Exception {
+    private Page<Customer> getPage(Pageable pageInfo) {
         return customerService.findAll(pageInfo);
     }
 

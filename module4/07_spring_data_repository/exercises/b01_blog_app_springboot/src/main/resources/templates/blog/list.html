@@ -53,5 +53,11 @@
     <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
     <a th:href="@{'/blogs'(page=${blogList.number + 1}, search=${search})}" th:if="${blogList.hasNext()}">Next</a>
 </div>
+
+<p>
+    <span th:each="pageNo : ${#numbers.sequence(0, blogList.totalPages -1)}" >
+        <a th:href="@{/blogs(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+</p>
 </body>
 </html>

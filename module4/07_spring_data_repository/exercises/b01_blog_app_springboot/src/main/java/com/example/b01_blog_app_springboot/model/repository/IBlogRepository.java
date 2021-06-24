@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IBlogRepository extends PagingAndSortingRepository<Blog, Long> {
     Page<Blog> findAllByTitleContaining(String title, Pageable pageable);
-    Page<Blog>  findAllByOrderByDateDesc(Pageable pageable);
+
+    Page<Blog> findAllByOrderByDateDesc(Pageable pageable);
 
 }

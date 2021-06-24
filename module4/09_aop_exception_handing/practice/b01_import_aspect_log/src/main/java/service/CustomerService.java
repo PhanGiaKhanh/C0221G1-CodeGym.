@@ -1,7 +1,7 @@
-package com.example.b01_import_aspect_log_springboot.service;
+package service;
 
 
-import com.example.b01_import_aspect_log_springboot.model.Customer;
+import model.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CustomerService {
-    List<Customer> findAll();
+    List<Customer> findAll() throws Exception;
 
-    Page<Customer> findAll(Pageable pageInfo) throws Exception;
+    Page<Customer> findAll(Pageable pageInfo);
 
     List<Customer> search(String keyword);
 
