@@ -51,6 +51,7 @@ public class UserController {
         if (bindingResult.hasErrors()){
             return "/create";
         }
+
         User user = new User();
         BeanUtils.copyProperties(userDto, user);
         userService.save(user);

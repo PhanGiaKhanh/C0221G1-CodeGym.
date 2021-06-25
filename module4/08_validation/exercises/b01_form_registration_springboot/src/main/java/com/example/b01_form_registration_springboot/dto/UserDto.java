@@ -38,9 +38,9 @@ public class UserDto implements Validator {
         if (checkLastName) {
             errors.rejectValue("lastName", "lastName.invalidFormat");
         }
-        if (!userDto.phone.matches("^[0][0-9]{9,11}$")){
-            errors.rejectValue("phone", "phone.format");
-        }
+            if (!userDto.phone.matches("^[0][0-9]{9,11}$")){
+                errors.rejectValue("phone", "phone.format");
+            }
         if (!(userDto.age >= 18)) {
             errors.rejectValue("age", "age.enoughAge");
         }
