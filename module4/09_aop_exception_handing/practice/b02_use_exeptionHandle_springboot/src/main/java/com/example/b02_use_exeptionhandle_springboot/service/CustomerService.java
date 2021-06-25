@@ -2,6 +2,7 @@ package com.example.b02_use_exeptionhandle_springboot.service;
 
 
 import com.example.b02_use_exeptionhandle_springboot.model.Customer;
+import com.example.b02_use_exeptionhandle_springboot.service.impl.DuplicateEmailException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

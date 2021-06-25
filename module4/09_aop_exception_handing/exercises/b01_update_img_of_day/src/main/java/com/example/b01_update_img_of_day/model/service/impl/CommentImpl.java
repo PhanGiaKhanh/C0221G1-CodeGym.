@@ -33,12 +33,17 @@ public class CommentImpl implements ICommentService {
     }
 
     @Override
-    public Optional<Comment> findById(Long id) {
-        return commentRepository.findById(id);
+    public Optional<Comment> findById(Long id) throws Exception {
+        Optional<Comment> customerOptional = commentRepository.findById(id);
+        if (!customerOptional.isPresent()) {
+            throw new Exception("customer not found!");
+        }
+        return customerOptional;
     }
 
     @Override
     public void save(Comment comment) {
+
         commentRepository.save(comment);
     }
 
@@ -49,9 +54,7 @@ public class CommentImpl implements ICommentService {
 
     @Override
     public void like(Long id) {
-        Comment comment = findById(id).get();
-        comment.setCountLike(comment.getCountLike()+1);
-        save(comment);
+         commentRepository.like(id);
     }
 
 

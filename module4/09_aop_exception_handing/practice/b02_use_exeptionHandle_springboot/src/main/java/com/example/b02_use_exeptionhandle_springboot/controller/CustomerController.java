@@ -3,7 +3,7 @@ package com.example.b02_use_exeptionhandle_springboot.controller;
 import com.example.b02_use_exeptionhandle_springboot.model.Customer;
 import com.example.b02_use_exeptionhandle_springboot.model.Province;
 import com.example.b02_use_exeptionhandle_springboot.service.CustomerService;
-import com.example.b02_use_exeptionhandle_springboot.service.DuplicateEmailException;
+import com.example.b02_use_exeptionhandle_springboot.service.impl.DuplicateEmailException;
 import com.example.b02_use_exeptionhandle_springboot.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
