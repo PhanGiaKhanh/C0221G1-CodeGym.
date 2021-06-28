@@ -6,9 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
-@Entity
+
+//@Entity
 public class BookCard {
     @Id
     private Long card_id;
@@ -17,10 +16,11 @@ public class BookCard {
     @JoinColumn(name = "book_id")
     private Book book;
 
-    public BookCard(Long code,  Book book) {
+    public BookCard(Long card_id, Book book) {
+        this.card_id = card_id;
+        this.book = book;
     }
 
     public BookCard() {
-
     }
 }
