@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+<th:block th:each="product, loop : ${products}">
+<div class="card rounded"  style="width: 18rem;">
+
+        <div class="card">
+            <img th:src="${product.image}" class="card-img-top" alt="..." width="100%">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${product.productName}"></h5>
+                <p class="card-text" th:text="${product.description}"></p>
+            </div>
+            <div class="card-footer">
+                <p th:text="${product.price}"></p>
+                <small class="text-muted" th:text="${product.date}"></small>
+            </div>
+        </div>
+
+</div>
+</th:block>
+
+<!--region Phân trang giới hạn 3-->
+<div>
+    <a th:href="@{'/list'(page=${products.number - 1},keyWord=${search})}"
+       th:if="${products.hasPrevious()}">Previous</a>
+    <span th:each="p : ${#numbers.sequence(0,products.totalPages - 1) }"
+          th:if="${products.hasContent()}">
+          <a th:href="@{'/list'(page=${p},keyWord=${search})}"
+             th:text="${p+1}"
+             th:if="${(p>(products.number)-1)&&(p<(products.number+3))}"
+          ></a>
+    </span>
+    <a th:href="@{'/list'(page=${products.number + 1},keyWord=${search})}"
+       th:if="${products.hasNext()}">Next</a>
+</div>
+<!--endregion-->
+</body>
+</html>
