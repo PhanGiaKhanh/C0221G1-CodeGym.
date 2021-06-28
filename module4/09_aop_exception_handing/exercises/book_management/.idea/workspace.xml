@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd4c6ca1-466d-47e3-93be-1a9e76857f4f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../01_spring_mvc_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../01_spring_mvc_overview/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../02_spring_controller/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../04_data_binding_form/practice/b03_uploadfile/src/main/java/com/example/b03_uploadfile/model/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../04_data_binding_form/practice/b03_uploadfile/src/main/java/com/example/b03_uploadfile/model/repository/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../05_csdl_orm/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../05_csdl_orm/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/book_management.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/b01_import_aspect_log_grable/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice/b01_import_aspect_log_grable/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/b02_use_exceptionHandle_grable/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice/b02_use_exceptionHandle_grable/customer-management" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1uQ0eWCiwVhkq7Zm5weCP00gtA9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd4c6ca1-466d-47e3-93be-1a9e76857f4f" name="Default Changelist" comment="" />
+      <created>1624582602112</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624582602112</updated>
+      <workItem from="1624582604388" duration="149000" />
+      <workItem from="1624851219326" duration="238000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

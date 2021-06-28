@@ -29,7 +29,8 @@ public class ProductController {
     IProductService iProductService;
 
     @GetMapping(value = "")
-    public ModelAndView showListForm(@RequestParam("search") Optional<String> search, @PageableDefault(size = 2) Pageable pageable) {
+    public ModelAndView showListForm(@RequestParam("search") Optional<String> search,
+                                     @PageableDefault(size = 2) Pageable pageable) {
         ModelAndView modelAndView = new ModelAndView("/index");
         Page<Product> products = iProductService.searchNameAndDate(search.orElse(""), pageable);
         modelAndView.addObject("search", search.orElse(""));
@@ -74,7 +75,6 @@ public class ProductController {
         return "edit";
     }
 
-    @PostMapping(value = "update")
     public String updateProduct(Product product, Model model) {
         iProductService.save(product);
         model.addAttribute("product", product);

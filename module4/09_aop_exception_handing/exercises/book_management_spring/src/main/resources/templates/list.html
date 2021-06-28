@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ListBook</title>
+</head>
+<body>
+<a href="create-book">Add new book</a>
+<form action="pay-book" method="get">
+    <input type="text" name="code">
+</form>
+
+<form action="#">
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+        <th:block th:each="book, loop : ${books}">
+            <tr>
+                <td th:text="${loop.count}"></td>
+                <td th:text="${book.bookCode}"></td>
+                <td th:text="${book.bookName}"></td>
+                <td th:text="${book.amount}"></td>
+                <td>
+                    <a th:href="@{books/{id}/borrow-book(id=${book.id})}">Mượn sách</a>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+</form>
+</body>
+</html>
