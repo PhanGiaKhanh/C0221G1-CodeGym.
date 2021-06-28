@@ -54,8 +54,7 @@ public class BookController {
         book.reducedAmount();
         bookService.save(book);
         Long code = Math.round(Math.random()*89999 + 10000);
-        String date = (new Date()).toString();
-        BookCard bookCard = new BookCard(code, date ,book);
+        BookCard bookCard = new BookCard(code ,book);
         bookCardService.save(bookCard);
         return "redirect:/books";
     }

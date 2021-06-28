@@ -11,14 +11,13 @@ import javax.persistence.*;
 @Entity
 public class BookCard {
     @Id
-    private Integer card_id;
-    private String date;
+    private Long card_id;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
 
-    public BookCard(Long code, String date, Book book) {
+    public BookCard(Long code,  Book book) {
     }
 
     public BookCard() {
