@@ -10,9 +10,7 @@ import java.util.List;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column(name = "book_code")
-    private String bookCode;
+    private Long id;
     @Column(name = "book_name")
     private String bookName;
     private Integer amount;

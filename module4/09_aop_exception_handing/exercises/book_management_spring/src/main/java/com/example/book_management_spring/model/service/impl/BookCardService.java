@@ -4,7 +4,6 @@ import com.example.book_management_spring.model.entity.BookCard;
 import com.example.book_management_spring.model.repository.IBookCardRepository;
 import com.example.book_management_spring.model.service.IBookCardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -20,7 +19,7 @@ public class BookCardService implements IBookCardService {
     }
 
     @Override
-    public Optional<BookCard> findById(Integer id) {
+    public Optional<BookCard> findById(Long id) {
         return bookCardRepository.findById(id);
     }
 
@@ -30,7 +29,7 @@ public class BookCardService implements IBookCardService {
     }
 
     @Override
-    public void remove(Integer id) {
+    public void remove(Long id) {
         bookCardRepository.deleteById(id);
     }
 

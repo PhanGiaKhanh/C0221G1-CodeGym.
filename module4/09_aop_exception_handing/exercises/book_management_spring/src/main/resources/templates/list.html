@@ -8,13 +8,13 @@
 <a href="create-book">Add new book</a>
 <form action="pay-book" method="get">
     <input type="text" name="code">
+    <input type="submit" value="pay">
 </form>
 
 <form action="#">
     <table border="1">
         <tr>
             <th>#</th>
-            <th>Id</th>
             <th>Name</th>
             <th>Amount</th>
             <th>Action</th>
@@ -22,7 +22,6 @@
         <th:block th:each="book, loop : ${books}">
             <tr>
                 <td th:text="${loop.count}"></td>
-                <td th:text="${book.bookCode}"></td>
                 <td th:text="${book.bookName}"></td>
                 <td th:text="${book.amount}"></td>
                 <td>

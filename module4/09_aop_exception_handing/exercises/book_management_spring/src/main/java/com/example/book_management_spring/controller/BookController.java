@@ -46,7 +46,7 @@ public class BookController {
         return "/create";
     }
     @GetMapping(value = "books/{id}/borrow-book")
-    public String borrowBook(@PathVariable Integer id) throws Exception {
+    public String borrowBook(@PathVariable Long id) throws Exception {
         Book book = bookService.findById(id).orElse(null);
         if (book.getAmount()== 0){
             throw new BookException();
@@ -60,12 +60,12 @@ public class BookController {
     }
 
     @GetMapping(value = "pay-book")
-    public String payBook(@RequestParam Integer code) throws Exception {
+    public String payBook(@RequestParam Long code) throws Exception {
         BookCard bookCard = bookCardService.findById(code).orElse(null);
         if (bookCard == null){
             throw new NotFoundCodeException();
         }
-        Integer id = bookCard.getBook().getId();
+        Long id = bookCard.getBook().getId();
         Book book = bookService.findById(id).orElse(null);
         book.increaseAmount();
         bookService.save(book);

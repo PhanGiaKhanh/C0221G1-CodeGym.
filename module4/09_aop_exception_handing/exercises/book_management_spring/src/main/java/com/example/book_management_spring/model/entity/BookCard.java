@@ -6,8 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-
-//@Entity
+@Setter
+@Getter
+@Entity
 public class BookCard {
     @Id
     private Long card_id;
