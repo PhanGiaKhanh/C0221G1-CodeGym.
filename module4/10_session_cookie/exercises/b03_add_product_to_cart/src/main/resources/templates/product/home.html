@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:rel="stylesheet" th:href="bootstrap.css">
+<!--    <link th:rel="stylesheet" th:href="@{bootstrap.css}">-->
+
+    <link rel="stylesheet" href="/bootstrap.css">
     <style>
         .card {
             border: 1px solid darkblue;
@@ -35,7 +37,9 @@
             <td>
                 <div class="card">
                     <a th:href="@{product/{id}/show-product(id=${product.id})}" class="dropdown-item">
-                        <img th:src="'img/'+ ${product.image}" class="card-img-top" alt="..."
+<!--                        <img th:src="'img/'+ ${product.image}" class="card-img-top" alt="..."-->
+<!--                             style="width: 100%; height: 333px"> -->
+                        <img th:src="@{img/__${product.image}__}"  class="card-img-top" alt="..."
                              style="width: 100%; height: 333px">
                         <div class="card-body">
                             <h4 class="card-title text-primary" th:text="${product.name}"></h4>
