@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <link rel="stylesheet" href="bootstrap.css">-->
     <link th:rel="stylesheet" th:href="bootstrap.css">
     <style>
         .card {
@@ -27,7 +26,7 @@
 </head>
 <body>
 <h1><a href="/list" class="btn btn-primary">show list</a></h1>
-<a href=""></a>
+<a href="/shopping-cart" class="btn btn-primary">Cart</a>
 <h4 th:text="${msg}"></h4>
 
 <table>
@@ -39,9 +38,10 @@
                         <img th:src="'img/'+ ${product.image}" class="card-img-top" alt="..."
                              style="width: 100%; height: 333px">
                         <div class="card-body">
-                            <h4 class="card-title text-primary" th:text="${product.productName}"></h4>
+                            <h4 class="card-title text-primary" th:text="${product.name}"></h4>
                             <h5 class="card-title text-danger" th:text="${product.price}"></h5>
                             <a th:href="@{product/product-buy/{id}(id=${product.id})}" class="btn btn-warning">Mua ngay</a>
+<!--                            <a th:href="@{/add/__${product.id}__(action='+')}" class="btn btn-warning">Mua ngay</a>-->
                         </div>
                     </a>
                 </div>
@@ -50,8 +50,5 @@
     </tr>
 </table>
 
-<!--region Phân trang giới hạn 3-->
-
-<!--endregion-->
 </body>
 </html>

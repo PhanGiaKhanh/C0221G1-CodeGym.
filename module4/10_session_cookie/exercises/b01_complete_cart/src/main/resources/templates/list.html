@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head">
+    <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
 <h3>Product Management</h3>
+<h4><a href="/">back to home</a></h4>
 <p>
     <a th:href="@{/create}">
         Add new product
@@ -30,7 +32,7 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.amount}"></td>
             <td th:text="${product.date}"></td>
-            <td><img width="100" height="100" th:src="${product.image}" alt=""></td>
+            <td><img width="100" height="100" th:src="'img/'+${product.image}" alt=""></td>
         </tr>
     </th:block>
     </tbody>

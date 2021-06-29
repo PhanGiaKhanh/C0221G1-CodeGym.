@@ -3,7 +3,6 @@ package com.example.b01_complete_cart.dto;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.Column;
 
 
 @Data
