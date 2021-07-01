@@ -1,0 +1,15 @@
+package com.example.b01_phone_manage.model.service;
+
+import com.example.b01_phone_manage.model.entity.SmartPhone;
+
+import java.util.Optional;
+
+public interface ISmartPhoneService {
+    Iterable<SmartPhone> findAll();
+
+    Optional<SmartPhone> findById(Long id);
+
+    SmartPhone save(SmartPhone smartPhone);
+
+    void remove(Long id);
+}

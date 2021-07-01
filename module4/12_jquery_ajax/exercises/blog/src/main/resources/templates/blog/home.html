@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#showMore').click(function () {
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "Get",
+                    //tên API
+                    url: `/api/blogs`,
+                    //xử lý khi thành công
+                    success: function (data) {
+                        // hien thi danh sach o day
+                        let content = ' <tr>\n' +
+                            '        <td>#</td>\n' +
+                            '        <td>Name</td>\n' +
+                            '        <td>Content</td>\n' +
+                            '        <td>Category</td>\n' +
+                            '        <td>Edit</td>\n' +
+                            '        <td>Show</td>\n' +
+                            '        <td>Delete</td>\n' +
+                            '    </tr>';
+                        for (let i = 0; i < data.length; i++) {
+                            content += showObj(data[i], (i + 1));
+                        }
+                        // document.getElementById('blogList').innerHTML = content;
+                        $('#blogList').html(content);
+                        console.log("succession");
+                    },
+                    error: function (data) {
+                        console.log("Fail");
+                    }
+                });
+            })
+            $('#submitSearch').click(function () {
+                let name = $('#searchName').val();
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "Get",
+
+                    //tên API
+                    url: `/api/blogs/search/${name}`,
+                    //xử lý khi thành công
+                    success: function (data) {
+                        // hien thi danh sach o day
+                        let content = ' <tr>\n' +
+                            '        <td>#</td>\n' +
+                            '        <td>Name</td>\n' +
+                            '        <td>Content</td>\n' +
+                            '        <td>Category</td>\n' +
+                            '        <td>Edit</td>\n' +
+                            '        <td>Show</td>\n' +
+                            '        <td>Delete</td>\n' +
+                            '    </tr>';
+                        for (let i = 0; i < data.length; i++) {
+                            content += showObj(data[i], (i + 1));
+                        }
+                        // document.getElementById('blogList').innerHTML = content;
+                        $('#blogList').html(content);
+                        console.log("succession2");
+                    },
+                    error: function (data) {
+                        console.log("Faillllllllllllllllllll2");
+                    }
+
+                });
+            })
+
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "Get",
+
+                //tên API
+                url: `/api/blogs`,
+                //xử lý khi thành công
+                success: function (data) {
+                    // hien thi danh sach o day
+                    let content = ' <tr>\n' +
+                        '        <td>#</td>\n' +
+                        '        <td>Name</td>\n' +
+                        '        <td>Content</td>\n' +
+                        '        <td>Category</td>\n' +
+                        '    </tr>';
+                    for (let i = 0; i < data.length; i++) {
+                        if (i < 4) {
+                            content += showObj(data[i], (i + 1));
+                        }
+                    }
+                    // document.getElementById('blogList').innerHTML = content;
+                    $('#blogList').html(content);
+                    console.log("More succession");
+
+                },
+                error: function (data) {
+                    console.log("Faillllllllllllllllllll");
+                }
+            });
+        })
+
+        function showObj(blog, loop) {
+            return `<tr>
+                        <td >${loop}</td>
+                        <td >${blog.name}</td>
+                        <td >${blog.content}</td>
+                        <td >${blog.category.name}</td>
+                    </tr>`;
+        }
+
+    </script>
+</head>
+<body>
+
+<a href="/blog/create">Create Blog</a>
+
+
+<input id="searchName" type="text" name="search" placeholder="Search by name">
+<input type="submit" value="Search" id="submitSearch">
+
+
+<button id="showMore">Show all</button>
+<table id="blogList" border="1">
+
+
+</table>
+</body>
+</html>
