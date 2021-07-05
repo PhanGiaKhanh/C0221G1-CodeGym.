@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create customer</title>
+  <link rel="stylesheet" href="/bootstrap4/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-6">
+      <form action="/customers/create" method="post" th:object="${customer}" >
+        <table>
+          <tr>
+            <td>Customer type:</td>
+            <td><input type="text" th:field="*{customerType}">
+              <select  class="form-control" th:field="*{customerType}">
+                <th:block th:each="customerType, loop : ${customerTypeList}">
+                  <option th:value="${customerType.id}"  th:text="${customerType.customerTypeName}"></option>
+                </th:block>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Customer type:</td>
+            <td><input type="text" class="form-control" th:field="*{customerType}"></td>
+          </tr>
+          <tr>
+            <td>Name:</td>
+            <td><input type="text" class="form-control" th:field="*{customerName}"></td>
+          </tr>
+          <tr>
+            <td>Birthday:</td>
+            <td><input type="text" class="form-control" th:field="*{customerBirthday}"></td>
+          </tr>
+          <tr>
+            <td>Gender:</td>
+            <td><input type="text" class="form-control" th:field="*{customerGender}"></td>
+          </tr>
+          <tr>
+            <td>Id Card:</td>
+            <td><input type="text" class="form-control" th:field="*{customerIdCard}"></td>
+          </tr>
+          <tr>
+            <td>Phone:</td>
+            <td><input type="number" class="form-control" th:field="*{customerPhone}"></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="email" class="form-control" th:field="*{customerEmail}"></td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td><input type="email" class="form-control" th:field="*{getCustomerAddress()}"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" class="form-control"></td>
+          </tr>
+        </table>
+      </form>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
