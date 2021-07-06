@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -18,6 +19,7 @@ public class Customer {
     @ManyToOne
     @JoinColumn(referencedColumnName = "id", nullable = false)
     private CustomerType customerType;
+    private String customerCode;
     @Column(nullable=false)
     private String customerName;
     @Column(nullable=false)
@@ -38,9 +40,10 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer id, CustomerType customerType, String customerName, String customerBirthday, String customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress, List<Contract> contractList, Boolean customerFlag) {
+    public Customer(Integer id, CustomerType customerType, String customerCode, String customerName, String customerBirthday, String customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress, List<Contract> contractList, Boolean customerFlag) {
         this.id = id;
         this.customerType = customerType;
+        this.customerCode = customerCode;
         this.customerName = customerName;
         this.customerBirthday = customerBirthday;
         this.customerGender = customerGender;
@@ -51,5 +54,16 @@ public class Customer {
         this.contractList = contractList;
         this.customerFlag = customerFlag;
     }
-
+    public Customer(Integer id, CustomerType customerType, String customerCode, String customerName, String customerBirthday, String customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress) {
+        this.id = id;
+        this.customerType = customerType;
+        this.customerCode = customerCode;
+        this.customerName = customerName;
+        this.customerBirthday = customerBirthday;
+        this.customerGender = customerGender;
+        this.customerIdCard = customerIdCard;
+        this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
+        this.customerAddress = customerAddress;
+    }
 }

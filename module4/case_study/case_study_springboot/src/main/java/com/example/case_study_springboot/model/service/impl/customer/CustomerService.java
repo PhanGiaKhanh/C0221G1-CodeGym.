@@ -5,18 +5,20 @@ import com.example.case_study_springboot.model.repository.customer.ICustomerRepo
 import com.example.case_study_springboot.model.service.customer.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
 @Service
 public class CustomerService implements ICustomerService {
     @Autowired
     ICustomerRepository customerRepository;
-//    @Override
-//    public Page<Customer> findAllCustomer() {
-//        return customerRepository.findAllCustomer();
-//    }
 
+    @Override
+    public Page<Customer> findAllCustomer(String keySearch, Pageable pageable) {
+        return customerRepository.findAllCustomer("%"+ keySearch +"%", pageable);
+    }
     @Override
     public Iterable<Customer> findAll() {
         return customerRepository.findAll();
@@ -36,4 +38,6 @@ public class CustomerService implements ICustomerService {
     public void delete(Integer id) {
         customerRepository.deleteById(id);
     }
+
+
 }

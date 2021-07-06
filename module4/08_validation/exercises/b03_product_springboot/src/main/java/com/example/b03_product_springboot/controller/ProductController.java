@@ -45,7 +45,7 @@ public class ProductController {
         return "create";
     }
 
-    @PostMapping("createProduct")
+        @PostMapping("createProduct")
     public String saveProduct(@ModelAttribute("productDto") @Valid ProductDto productDto,
                               BindingResult bindingResult,
                               RedirectAttributes redirectAttributes) {

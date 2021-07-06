@@ -3,8 +3,6 @@ package com.example.b03_product_springboot.dto;
 import lombok.Data;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-
-import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
