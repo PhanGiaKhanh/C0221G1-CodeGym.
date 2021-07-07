@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 public class CustomerDto implements Validator {
-    public final String PHONE_NUMBER="^(84|0[3|5|7|8|9])+([0-9]{8})$";
+    public final String PHONE_NUMBER="^(090|091|(\\(84\\)\\+90)|(\\(84\\)\\+91))[0-9]{7}$";
     public final String NAME="^[\\p{L} .'-]+$";
     public final String DATE="^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)$"
             + "|^(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))$"

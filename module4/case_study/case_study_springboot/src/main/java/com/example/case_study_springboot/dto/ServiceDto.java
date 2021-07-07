@@ -8,10 +8,6 @@ import lombok.Setter;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -20,6 +16,7 @@ import java.util.List;
 @Setter
 public class ServiceDto implements Validator {
     private Integer id;
+
     private String serviceName;
     @Pattern(regexp = "^DV-[0-9]{4}")
     private String serviceCode;
@@ -29,9 +26,7 @@ public class ServiceDto implements Validator {
     private Double serviceCost;
     @Min(1)
     private Integer serviceMaxPeople;
-    @NotBlank
     private RentType rentType;
-    @NotBlank
     private ServiceType serviceType;
     private String standardRoom;
     private String descriptionOtherConvenience;
@@ -52,6 +47,12 @@ public class ServiceDto implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-
+        ServiceDto serviceDto = (ServiceDto) target;
+        if (serviceDto.serviceName == ""){
+            errors.rejectValue("serviceName", "serviceName.notNull");
+        }
+        if (serviceDto.serviceCost == null){
+            errors.rejectValue("serviceCost", "serviceCost.notNull");
+        }
     }
 }

@@ -1,10 +1,8 @@
 package com.example.case_study_springboot.model.entity.customer;
 
-
 import com.example.case_study_springboot.model.entity.contract.Contract;
 import lombok.Getter;
 import lombok.Setter;
-
 
 import javax.persistence.*;
 import java.util.List;
@@ -36,34 +34,7 @@ public class Customer {
     private List<Contract> contractList;
     private Boolean customerFlag;
 
-
     public Customer() {
     }
 
-    public Customer(Integer id, CustomerType customerType, String customerCode, String customerName, String customerBirthday, String customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress, List<Contract> contractList, Boolean customerFlag) {
-        this.id = id;
-        this.customerType = customerType;
-        this.customerCode = customerCode;
-        this.customerName = customerName;
-        this.customerBirthday = customerBirthday;
-        this.customerGender = customerGender;
-        this.customerIdCard = customerIdCard;
-        this.customerPhone = customerPhone;
-        this.customerEmail = customerEmail;
-        this.customerAddress = customerAddress;
-        this.contractList = contractList;
-        this.customerFlag = customerFlag;
-    }
-    public Customer(Integer id, CustomerType customerType, String customerCode, String customerName, String customerBirthday, String customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress) {
-        this.id = id;
-        this.customerType = customerType;
-        this.customerCode = customerCode;
-        this.customerName = customerName;
-        this.customerBirthday = customerBirthday;
-        this.customerGender = customerGender;
-        this.customerIdCard = customerIdCard;
-        this.customerPhone = customerPhone;
-        this.customerEmail = customerEmail;
-        this.customerAddress = customerAddress;
-    }
 }

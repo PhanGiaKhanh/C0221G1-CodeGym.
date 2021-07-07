@@ -1,7 +1,5 @@
 package com.example.case_study_springboot.model.entity.customer;
 
-
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,9 +20,4 @@ public class CustomerType {
     public CustomerType() {
     }
 
-    public CustomerType(Integer id, String customerTypeName, List<Customer> customerList) {
-        this.id = id;
-        this.customerTypeName = customerTypeName;
-        this.customerList = customerList;
-    }
 }

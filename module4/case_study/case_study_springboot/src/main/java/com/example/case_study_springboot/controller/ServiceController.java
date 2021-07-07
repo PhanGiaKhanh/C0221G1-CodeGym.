@@ -8,6 +8,7 @@ import com.example.case_study_springboot.model.entity.service.ServiceType;
 import com.example.case_study_springboot.model.service.service.IRentTypeService;
 import com.example.case_study_springboot.model.service.service.IServiceService;
 import com.example.case_study_springboot.model.service.service.IServiceTypeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -46,11 +47,13 @@ public class ServiceController {
     @PostMapping("create")
     public ModelAndView createService(@ModelAttribute("serviceDto") @Valid ServiceDto serviceDto,
                                       BindingResult bindingResult){
-        new CustomerDto().validate(serviceDto, bindingResult);
+        new ServiceDto().validate(serviceDto, bindingResult);
         if (bindingResult.hasErrors()){
-            return new
+            return new ModelAndView("service/create");
         }
-
-
+        Service service = new Service();
+        BeanUtils.copyProperties(serviceDto, service);
+        serviceService.save(service);
+        return new ModelAndView("service/create", "msg", "create new service successfully");
     }
 }

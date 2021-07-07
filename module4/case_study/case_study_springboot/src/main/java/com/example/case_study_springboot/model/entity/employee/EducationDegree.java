@@ -1,11 +1,14 @@
 package com.example.case_study_springboot.model.entity.employee;
 
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
-
+@Getter
+@Setter
 @Entity
 public class EducationDegree {
     @Id
@@ -18,33 +21,4 @@ public class EducationDegree {
     public EducationDegree() {
     }
 
-    public EducationDegree(Integer id, String degreeName, List<Employee> employees) {
-        this.id = id;
-        this.degreeName = degreeName;
-        this.employees = employees;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getDegreeName() {
-        return degreeName;
-    }
-
-    public void setDegreeName(String degreeName) {
-        this.degreeName = degreeName;
-    }
-
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
-    }
 }

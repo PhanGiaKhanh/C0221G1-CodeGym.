@@ -1,57 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
 
-<div th:fragment="xoaModal(andressController)">
-  <div class="modal fade" id="xoa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="xoaLabel">Confirm xoá</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Bạn có muốn xoá <input type="text" readonly id="test" size="3"/> này không?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" th:onclick="'submitFormDelete()'">DELETE</button>
-        </div>
-      </div>
+
+<div th:fragment="nav">
+  <!--#region menu-->
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-success my-2 pl-5 border border-info  sticky-top">
+    <a class="navbar-brand mx-5" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item mr-5">
+          <a class="navbar-brand mr-0" href="/employees">Employee <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item  mr-5">
+          <a class="navbar-brand mr-0" href="/customers">Customer <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mr-5 ">
+          <a class="navbar-brand mr-0" href="/services">Service <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mr-5 ">
+          <a class="navbar-brand mr-0" href="/contracts?action=create">Contract <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item mr-5 ">
+          <a class="navbar-brand mr-0" href="/contractDetail?action=create">Contract Detail <span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
     </div>
-  </div>
-  <form th:action="@{${andressController}}" id="formDelete" th:method="post">
-    <input type="hidden" name="idDelete" id="idDelete"/>
-  </form>
-  <script>
+  </nav>
+  <!--#endregion-->
+</div>
 
-
-    function setIdDeleteToForm(id) {
-      document.getElementById("idDelete").value = id;
-      document.getElementById("test").value = id;
-      console.log(id)
-
-    }
-
-    function submitFormDelete() {
-      document.getElementById("formDelete").submit();
-
-    }
-
-    function rollback() {
-      document.getElementById("default").submit();
-    }
-
-
-
-  </script>
+<div >
 
 </div>
-</body>
 </html>

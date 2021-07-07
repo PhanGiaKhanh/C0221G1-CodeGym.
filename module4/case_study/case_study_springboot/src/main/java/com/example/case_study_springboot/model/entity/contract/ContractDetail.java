@@ -1,10 +1,13 @@
 package com.example.case_study_springboot.model.entity.contract;
 
 import com.example.case_study_springboot.model.entity.employee.Employee;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
+@Getter
+@Setter
 @Entity
 public class ContractDetail {
     @Id
@@ -22,23 +25,4 @@ public class ContractDetail {
     public ContractDetail() {
     }
 
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 }
