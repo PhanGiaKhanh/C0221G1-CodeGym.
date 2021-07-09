@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+
+    <link rel="stylesheet" href="/bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap4/dataTables.bootstrap.min.css">
+    <style>
+        .table td, .table th {
+            vertical-align: center;
+        }
+    </style>
+</head>
+<body class="m-2">
+
+<!--#region header-->
+<nav class="navbar navbar-light bg-light border border-info ">
+    <div class="navbar-brand mb-0 h1 d-flex align-items-center">
+        <img class="ml-3 rounded shadow-lg" src="/img/logo3.jpg" height="50" width="50"/>
+        <div class="ml-2">Furama</div>
+    </div>
+    <div class="navbar-brand h1 text-info"><h1>Customer using list</h1></div>
+    <div class="navbar-brand mb-0 h1">Nguyễn Văn A</div>
+</nav>
+<!--#endregion-->
+<div th:replace="layout :: nav"></div>
+
+<!--#region header-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 p-0">
+        </div>
+        <div class="col-6">
+            <span class="text-success" th:text="${msg}"></span>
+        </div>
+        <div class="col-3 p-0">
+            <form class="d-flex justify-content-end">
+                <input class="form-control" type="search" placeholder="Search name" aria-label="Search"
+                       name="search">
+                <button class="btn btn-primary  my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+
+<!--#region table-->
+<table class="table table-hover my-2" id="tableCustomer">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Contract id</th>
+        <th scope="col">Start date</th>
+        <th scope="col">End date</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Service</th>
+        <th scope="col">Attach service</th>
+        <th scope="col">Total</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c, loop : ${contractList}">
+        <th th:text="${loop.count}"></th>
+        <th th:text="${c.id}"></th>
+        <td th:text="${c.startDate}"></td>
+        <td th:text="${c.endDate}"></td>
+        <td th:text="${c.customer.customerName}"></td>
+        <td th:text="${c.customer.customerPhone}"></td>
+        <td th:text="${c.service.serviceName}"></td>
+        <td>
+            <ul class="nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">
+                        <span th:each="con : ${contractDetailList}"
+                              th:text="${con.contract.id == c.id ? con.attachService.attachServiceName + ' - ' : ''}">
+                        </span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <span class="dropdown-item" th:each="con : ${contractDetailList}"
+                              th:text="${con.contract.id == c.id ?
+                              (con.attachService.attachServiceName + ' - Số lượng: ' + con.quantity) : ''}">
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </td>
+        <td th:text="${c.contractTotalMoney}"></td>
+        <td style="width: 5%" class="d-flex">
+            <a th:href="@{/contracts/edit(id=${c.id})}" class="btn btn-warning mr-1">Edit</a>
+            <!-- Button trigger modal DELETE -->
+            <!--        <button th:onclick="'myFunction(\''+${c.id}+'\')'" type="button"-->
+            <button th:data-parameter1="${c.id}"
+                    th:data-parameter2="${'Mã hợp đồng: '+c.id+' - '+c.customer.customerName}"
+                    onclick="myFunction(this.getAttribute('data-parameter1'),this.getAttribute('data-parameter2'))"
+                    type="button"
+                    class="click-del btn btn-danger btnDisplay"
+                    data-toggle="modal" data-target="#delete">
+                Delete
+            </button>
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<!--#endregion-->
+
+<!--#region Modal -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body fborder border-secondary rounded">
+                Do you want customer?
+                <h3 th:class="text-danger" th:id="displayName"></h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <form action="/customerUsing/delete" method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <input type="hidden" id="button-del" name="idDel">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#endregion end model-->
+
+
+<div>
+    <a class="btn btn-outline-success" th:href="@{'/customerUsing'(page=${contractList.number - 1},keyWord=${search})}"
+       th:if="${contractList.hasPrevious()}">Previous</a>
+    <span th:each="p : ${#numbers.sequence(0,contractList.totalPages - 1) }" th:if="${contractList.hasContent()}">
+          <a class="btn btn-outline-success" th:href="@{'/customerUsing'(page=${p},keyWord=${search})}"
+             th:text="${p+1}"
+             th:if="${(p>(contractList.number)-1)&&(p<(contractList.number+3))}"
+          ></a>
+    </span>
+    <a class="btn btn-outline-success" th:href="@{'/customerUsing'(page=${contractList.number + 1},keyWord=${search})}"
+       th:if="${contractList.hasNext()}">Next</a>
+</div>
+<!--#region javascript-->
+
+<script src="/bootstrap4/jquery-3.6.0.min.js"></script>
+<script src="/bootstrap4/popper.min.js"></script>
+<script src="/bootstrap4/bootstrap.min.js"></script>
+<script src="/bootstrap4/jquery.dataTables.min.js"></script>
+<script src="/bootstrap4/dataTables.bootstrap4.min.js"></script>
+<!--#endregion-->
+
+<script>
+    function myFunction(id, name) {
+        document.getElementById("button-del").value = id;
+        document.getElementById("displayName").innerText = name;
+    }
+</script>
+</body>
+</html>

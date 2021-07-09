@@ -4,16 +4,13 @@ import com.example.case_study_springboot.model.entity.contract.Contract;
 import com.example.case_study_springboot.model.entity.employee.Division;
 import com.example.case_study_springboot.model.entity.employee.EducationDegree;
 import com.example.case_study_springboot.model.entity.employee.Position;
-import com.example.case_study_springboot.model.entity.user.User;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Getter

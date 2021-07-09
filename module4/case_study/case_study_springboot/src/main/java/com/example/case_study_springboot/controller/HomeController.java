@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
-    @GetMapping
+    @GetMapping({"", "home"})
     public ModelAndView goHome(){
         return new ModelAndView("home");
     }

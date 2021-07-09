@@ -8,4 +8,5 @@ import org.springframework.data.repository.query.Param;
 
 public interface ICustomerService extends IGenericService<Customer> {
     Page<Customer> findAllCustomer(@Param("keySearch") String keySearch, Pageable pageable);
+    Page<Customer> findAllCustomerUsing(String keySearch, Pageable pageable);
 }

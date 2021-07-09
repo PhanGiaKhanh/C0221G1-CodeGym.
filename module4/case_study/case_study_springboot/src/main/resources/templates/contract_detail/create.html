@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Create customer</title>
@@ -26,36 +26,36 @@
     <div class="col-3"></div>
     <div class="col-6 fborder border-secondary rounded shadow">
       <h2 class="text-white rounded bg-info px-5 py-2 mt-2">Create new contract detail</h2>
-      <p class="text-success">
-        ${message}
+      <p th:class="${msg} == 'Fail'? 'text-danger':'text-success'" th:text="${msg}">
       </p>
 
-      <form method="post">
+      <form method="post" th:object="${contractDetailDto}">
         <div class="container-fluid">
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Contract id</label>
+            <label class="col-sm-4 col-form-label">Contract</label>
             <div class="col-sm-8">
-              <select name="cId" >
-
+              <select class="form-control" th:field="*{contract}" >
+                <option th:each="c:${contractList}" th:value="${c.id}" th:text="${'Mã hợp đồng: ' + c.id + ' - ' +c.customer.customerName}"></option>
               </select>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Attach Service</label>
             <div class="col-sm-8">
-              <select name="aId" >
-
+              <select class="form-control" th:field="*{attachService}" >
+                <option th:each="a:${attachServiceList}" th:value="${a.id}" th:text="${a.attachServiceName}"></option>
               </select>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Quantity</label>
             <div class="col-sm-8">
-              <input type="number" class="form-control" name="quantity">
+              <p class="text-danger" th:errors="*{quantity}"></p>
+              <input type="number" class="form-control" th:field="*{quantity}">
             </div>
           </div>
           <div class="d-flex justify-content-between mb-2">
-            <a href="/index.jsp" class="btn btn-secondary">Close</a>
+            <a href="/contractDetails" class="btn btn-secondary">Close</a>
             <input class="btn btn-success" type="submit" value="Create">
           </div>
 

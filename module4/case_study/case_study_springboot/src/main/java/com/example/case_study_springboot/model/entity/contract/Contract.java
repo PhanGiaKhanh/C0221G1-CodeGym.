@@ -36,7 +36,7 @@ public class Contract {
     @JoinColumn(referencedColumnName = "id", nullable = false)
     private Service service;
 
-    private Boolean customerFlag = true;
+    private Boolean contractFlag;
 
     public Contract() {
     }

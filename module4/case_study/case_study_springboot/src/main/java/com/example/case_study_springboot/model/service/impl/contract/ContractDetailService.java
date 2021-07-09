@@ -6,6 +6,7 @@ import com.example.case_study_springboot.model.service.contract.IContractDetailS
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 @Service
 public class ContractDetailService implements IContractDetailService {
@@ -30,5 +31,10 @@ public class ContractDetailService implements IContractDetailService {
     @Override
     public void delete(Integer id) {
         contractDetailRepository.deleteById(id);
+    }
+
+    @Override
+    public List<ContractDetail> findAllByContractDetailByAttachService() {
+        return contractDetailRepository.findAllByContractDetailByAttachService();
     }
 }

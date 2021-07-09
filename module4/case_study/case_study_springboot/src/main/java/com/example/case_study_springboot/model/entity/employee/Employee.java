@@ -2,7 +2,6 @@ package com.example.case_study_springboot.model.entity.employee;
 
 import com.example.case_study_springboot.model.entity.contract.Contract;
 
-import com.example.case_study_springboot.model.entity.user.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,9 +37,6 @@ public class Employee {
     @OneToMany(mappedBy = "employee")
     private List<Contract> contractList;
     private Boolean flag;
-    @ManyToOne
-    @JoinColumn(referencedColumnName = "id")
-    private User user;
 
     public Employee() {
     }

@@ -18,7 +18,7 @@ public class AttachService {
     @Column(nullable = false)
     private Double attachServiceCost;
     @Column(nullable = false)
-    private Integer attachServiceUnit;
+    private String attachServiceUnit;
     private String attachServiceStatus;
     @OneToMany(mappedBy = "attachService")
     private List<ContractDetail> contractDetail;

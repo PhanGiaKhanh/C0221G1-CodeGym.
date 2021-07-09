@@ -19,7 +19,7 @@ public class ContractDetail {
     @ManyToOne
     @JoinColumn(referencedColumnName = "id", nullable = false)
     private Contract contract;
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "integer default 0")
     private Integer quantity;
 
     public ContractDetail() {

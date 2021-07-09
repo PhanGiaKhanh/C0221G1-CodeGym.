@@ -19,6 +19,12 @@ public class CustomerService implements ICustomerService {
     public Page<Customer> findAllCustomer(String keySearch, Pageable pageable) {
         return customerRepository.findAllCustomer("%"+ keySearch +"%", pageable);
     }
+
+    @Override
+    public Page<Customer> findAllCustomerUsing(String keySearch, Pageable pageable) {
+        return customerRepository.findAllCustomerUsing(keySearch, pageable);
+    }
+
     @Override
     public Iterable<Customer> findAll() {
         return customerRepository.findAll();
