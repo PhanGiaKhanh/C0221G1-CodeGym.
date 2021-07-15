@@ -24,9 +24,9 @@ public class ContractDto implements Validator {
 //    @Pattern(regexp = "^[0-9]{2}[/]([0][1-9])|([1][0-2])[/][0-9]{4}$", message = "This is not day")
 //    @Pattern(regexp = "^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$", message = "This is not day")
     private String startDate;
-//    @Pattern(regexp = "^[0-9]{2}/([0][1-9])|([1][0-2])/[0-9]{4}$", message = "This is not day")
+//   
     private String endDate;
-    @Min(0)
+//    @Min(@Pattern(regexp = "^[0-9]{2}/([0][1-9])|([1][0-2])/[0-9]{4}$", message = "This is not day"))
     private Double contractDeposit;
     @Min(0)
     private Double contractTotalMoney;

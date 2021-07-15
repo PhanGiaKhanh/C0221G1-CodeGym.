@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create customer</title>
+    <link rel="stylesheet" href="/bootstrap4/bootstrap.min.css">
+    <style>
+        tr td:last-child{
+            width: 405.36px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-6">
+            <h3>Create customer</h3>
+            <p th:text="${msg}" class="text-success"></p>
+            <form action="/customers/create" method="post" th:object="${customerDto}">
+                <input type="hidden" th:field="*{id}">
+                <table>
+                    <tr>
+                        <td>Customer type:</td>
+                        <td>
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerType')}"
+                                  th:errors="*{customerType}"></sub>
+                            <select class="form-control" th:field="*{customerType}">
+                                <option th:each="customerType, loop : ${customerTypeList}"
+                                        th:value="${customerType.id}"
+                                        th:text="${customerType.customerTypeName}"></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerName')}"
+                                  th:errors="*{customerName}"></sub>
+                            <input type="text" class="form-control" th:field="*{customerName}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Code:</td>
+                        <td>
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerCode')}"
+                                  th:errors="*{customerCode}"></sub>
+                            <input type="text" class="form-control" th:field="*{customerCode}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Birthday:</td>
+                        <td>
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerBirthday')}"
+                                  th:errors="*{customerBirthday}"></sub>
+                            <input type="date" class="form-control" th:field="*{customerBirthday}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerGender')}"
+                                  th:errors="*{customerGender}"></sub>
+                            <select class="form-control" th:field="*{customerGender}">
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Id Card:</td>
+                        <td>
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerIdCard')}"
+                                  th:errors="*{customerIdCard}"></sub>
+                            <input type="text" class="form-control" th:field="*{customerIdCard}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerPhone')}"
+                                  th:errors="*{customerPhone}"></sub>
+                            <input type="number" class="form-control" th:field="*{customerPhone}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerEmail')}"
+                                  th:errors="*{customerEmail}"></sub>
+                            <input type="email" class="form-control" th:field="*{customerEmail}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td><input type="text" class="form-control" th:field="*{customerAddress}">
+                            <sub class="text-danger" th:if="${#fields.hasErrors('customerAddress')}"
+                                  th:errors="*{customerAddress}"></sub>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/customers" class="btn btn-secondary">Back to list</a></td>
+                        <td class="text-right">
+                            <button type="submit" class="btn btn-primary" >Create</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

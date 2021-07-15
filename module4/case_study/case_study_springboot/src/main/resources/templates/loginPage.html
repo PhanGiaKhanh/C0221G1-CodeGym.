@@ -2,49 +2,125 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="/bootstrap4/bootstrap.min.css">
+    <script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #EF629F, #EECDA3);
+        }
+
+        .container {
+            width: 450px;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container .input-form {
+            height: 40px;
+            width: 100%;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .container .input-form input {
+            height: 100%;
+            width: 100%;
+            border: none;
+            font-size: 17px;
+            border-bottom: 2px solid silver;
+        }
+
+        .input-form input:focus ~ label,
+        .input-form input:valid ~ label {
+            transform: translateY(-30px);
+            font-size: 15px;
+            color: #4158d0;
+        }
+
+        .container .input-form label {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            color: grey;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+
+        .input-form .underline {
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .input-form .underline:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: #4158d0;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .input-form input:focus ~ .underline:before,
+        .input-form input:valid ~ .underline:before {
+            transform: scaleX(1);
+        }
+    </style>
 </head>
 <body>
-
-
-<h1>Login</h1>
-
-
-<div th:if="${#request.getParameter('error') == 'true'}"
-     style="color:red;margin:10px 0px;">
-    Login Failed!!!<br />
-    Reason :
-    <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
-          th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+<div class="container animated zoomIn rounded">
+    <h1 class="text-center text-secondary">Login</h1>
+    <div th:if="${#request.getParameter('error') == 'true'}"
+         style="color:red;margin:10px 0px;">
+        Login Failed!!!<br/>
+        Reason :
+        <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+              th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
                 Static summary
          </span>
+    </div>
+    <h4 class="text-center text-secondary">Enter user name and password</h4>
+    <form name='f' th:action="@{/home}" method='POST' class="animated bounceInLeft">
+        <div class="input-form">
+            <input type="text" name='username' required>
+            <div class="underline"></div>
+            <label>Your name</label>
+        </div>
+        <div class="input-form animated bounceInLeft">
+            <input type="password" name='password' required>
+            <div class="underline"></div>
+            <label>Password</label>
+        </div>
+        <div class="mt-2">
+            Remember Me?<input type="checkbox" name="remember-me"/><br>
+            <input name="submit" type="submit" value="submit" class="btn btn-primary"/>
+        </div>
+    </form>
+    <br>
+    Username/pass:
+    <ul>
+        <li>dbuser1/123</li>
+        <li>dbadmin1/123</li>
+    </ul>
 </div>
 
-<h3>Enter user name and password:</h3>
-<form name='f' th:action="@{/home}" method='POST'>
-    <table>
-        <tr>
-            <td>User:</td>
-            <td><input type='text' name='username' value=''></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type='password' name='password' /></td>
-        </tr>
-        <tr>
-            <td>Remember Me?</td>
-            <td><input type="checkbox" name="remember-me" /></td>
-        </tr>
-        <tr>
-            <td><input name="submit" type="submit" value="submit" /></td>
-        </tr>
-    </table>
-</form>
 
-<br>
-Username/pass:
-<ul>
-    <li>dbuser1/123</li>
-    <li>dbadmin1/123</li>
-</ul>
 </body>
 </html>

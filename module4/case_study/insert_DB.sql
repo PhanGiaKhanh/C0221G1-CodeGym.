@@ -1,12 +1,4 @@
 
-insert into vi_tri(ten_vi_tri) values
-("Lễ tân"),
-("Phục vụ"),
-("Chuyên viên"),
-("Giám sát"),
-("Quản lý"),
-("Giám đốc");
-
 insert into customer_type(customer_type_name) values
 ("Diamond"),
 ("Platinium"),

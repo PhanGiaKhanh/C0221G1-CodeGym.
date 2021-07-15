@@ -35,11 +35,18 @@ public class CustomerController {
     }
 
     @GetMapping("")
-    public String showList(@RequestParam("search") Optional<String> search,
+    public String showList(@RequestParam("keyName") Optional<String> keyName,
+                           @RequestParam("keyGender") Optional<String> keyGender,
+                           @RequestParam("keyBirthday") Optional<String> keyBirthday,
                            @PageableDefault(size = 2) Pageable pageable,
                            Model model) {
-        Page<Customer> customerPage = customerService.findAllCustomer(search.orElse(""), pageable);
-        model.addAttribute("search", search.orElse(""));
+        Page<Customer> customerPage =
+                customerService.findAllNameGenderBirthday(keyName.orElse(""),
+                        keyGender.orElse(""),
+                        keyBirthday.orElse(""),pageable);
+        model.addAttribute("keyName", keyName.orElse(""));
+        model.addAttribute("keyGender", keyGender.orElse(""));
+        model.addAttribute("keyBirthday", keyBirthday.orElse(""));
         model.addAttribute("customerList", customerPage);
         return "/customer/list";
     }
@@ -66,15 +73,6 @@ public class CustomerController {
         return "redirect:create";
     }
 
-    @PostMapping("delete")
-    private String removeCustomer(@RequestParam("idDel") Integer idDel, RedirectAttributes redirectAttributes) {
-        Customer customer = customerService.findById(idDel).orElse(null);
-        customer.setCustomerFlag(false);
-        customerService.save(customer);
-        redirectAttributes.addFlashAttribute("msg", "successful delete");
-        return "redirect:/customers";
-    }
-
     @GetMapping("/update")
     public String showUpdate(@RequestParam Integer id, Model model) {
         Customer customer = customerService.findById(id).orElse(null);
@@ -95,5 +93,31 @@ public class CustomerController {
         BeanUtils.copyProperties(customerDto, customer);
         customerService.save(customer);
         return new ModelAndView("customer/edit", "msg", "Edit successfully");
+    }
+
+
+//    @PostMapping("delete")
+//    private String removeCustomer(@RequestParam("idDel") Integer idDel, RedirectAttributes redirectAttributes) {
+//        Customer customer = customerService.findById(idDel).orElse(null);
+//        customer.setCustomerFlag(false);
+//        customerService.save(customer);
+//        redirectAttributes.addFlashAttribute("msg", "successful delete");
+//        return "redirect:/customers";
+//    }
+    @PostMapping("delete2")
+    private String removeCustomer(@RequestParam("listId") Optional<List<Integer>> listId, RedirectAttributes redirectAttributes) {
+        if (listId.isPresent()){
+            for (Integer id : listId.get()){
+                Customer customer = customerService.findById(id).orElse(null);
+                if (customer == null){
+                    return "/error-404";
+                }
+                customer.setCustomerFlag(false);
+                customerService.save(customer);
+            }
+            redirectAttributes.addFlashAttribute("msg", "successful delete");
+            return "redirect:/customers";
+        }
+        return "redirect:/customers";
     }
 }

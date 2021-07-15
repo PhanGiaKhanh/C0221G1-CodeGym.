@@ -26,6 +26,11 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
+    public Page<Customer> findAllNameGenderBirthday(String keyName, String keyGender, String keyBirthday, Pageable pageable) {
+        return customerRepository.findAllNameGenderBirthday(keyName, keyGender, keyBirthday, pageable);
+    }
+
+    @Override
     public Iterable<Customer> findAll() {
         return customerRepository.findAll();
     }
