@@ -1,0 +1,14 @@
+<h1>Bài tập 1</h1>
+<label>Chọn màu </label>
+<select [(ngModel)]="color">
+  <option value="blue">Primary</option>
+  <option value="red">Danger</option>
+  <option value="green">Success</option>
+</select>
+
+<br>
+<label>Nhập kích thước</label>
+<input type="number" [(ngModel)]="size">
+
+
+<div [ngStyle]="{height: size +'px', with: size +'px', background: color}" >Hello</div>
