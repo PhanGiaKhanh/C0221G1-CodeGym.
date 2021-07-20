@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+
+    <link rel="stylesheet" href="/bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap4/dataTables.bootstrap.min.css">
+    <style>
+        .btnDisplay {
+            /*display: block;*/
+        }
+    </style>
+</head>
+<body class="m-2">
+<!--#region header-->
+<nav class="navbar navbar-light bg-light border border-info ">
+    <div class="navbar-brand mb-0 h1 d-flex align-items-center">
+        <div class="ml-2">Module 4</div>
+    </div>
+    <div class="navbar-brand h1 text-info"><h1>Question list</h1></div>
+    <div class="navbar-brand mb-0 h1">Phan Gia Khánh</div>
+</nav>
+<!--#endregion-->
+
+<div th:replace="layout :: nav"></div>
+
+<!--#region header content-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 p-0">
+            <a href="/questions/create" class="btn btn-primary"><span
+                    style="font-size: larger; font-weight: bolder">+</span>
+                Create new question
+            </a>
+        </div>
+        <div class="col-3">
+
+            <span class="text-success" th:text="${msg}"></span>
+
+        </div>
+        <div class="col-6 p-0 text-right">
+
+            <form class="d-flex justify-content-end">
+                <input class="form-control mr-sm-0" type="search" placeholder="Search title"
+                       name="keyTitle">
+                <select name="keyQuestionTypeId" class="form-control mr-sm-0">
+                    <option value="">Chọn loại câu hỏi</option>
+                    <option th:each="questionType : ${questionTypes}"
+                            th:value="${questionType.id}"
+                            th:text="${questionType.name}"></option>
+                </select>
+                <button class="btn btn-primary my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+<!--<a href="/customer-using"  class="btn btn-info mt-2">Customer using service</a>-->
+
+<!--#region table-->
+<table class="table table-hover my-2" id="tableCustomer">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Tiêu đề</th>
+        <th scope="col">Loại câu hỏi</th>
+        <th scope="col">Ngày đăng</th>
+        <th scope="col">Tình trạng</th>
+        <th scope="col">Tính năng</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="q, loop : ${questions}">
+        <td th:text="${loop.count + questions.number * questions.size }"></td>
+        <td th:text="${q.title}"></td>
+        <td th:text="${q.questionType.name}"></td>
+        <td th:text="${q.dateCreate}"></td>
+        <td th:text="${q.status}"></td>
+
+        <td class="d-flex">
+            <a th:href="@{/questions/show(id=${q.id})}" type="button"
+               class="btn btn-warning mx-1 btnDisplay" >
+                Show
+            </a>
+
+            <button th:data-parameter1="${q.id}"
+                    onclick="myFunction(this.getAttribute('data-parameter1'))"
+                    type="button"
+                    class="click-del btn btn-danger btnDisplay"
+                    data-toggle="modal" data-target="#delete">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--#endregion-->
+<div>
+    <a class="btn btn-outline-success"
+       th:href="@{'/questions'(page=${questions.number - 1}, keyTitle=${keyTitle}, keyQuestionTypeId=${keyQuestionTypeId})}"
+       th:if="${questions.hasPrevious()}">Previous</a>
+    <span th:each="p : ${#numbers.sequence(0,questions.totalPages - 1) }" th:if="${questions.hasContent()}">
+          <a class="btn btn-outline-success"
+             th:href="@{'/questions'(page=${p}, keyTitle=${keyTitle}, keyQuestionTypeId=${keyQuestionTypeId})}"
+             th:text="${p+1}"
+             th:if="${(p>(questions.number)-1)&&(p<(questions.number+3))}"
+          ></a>
+    </span>
+    <a class="btn btn-outline-success"
+       th:href="@{'/questions'(page=${questions.number + 1},keyTitle=${keyTitle}, keyQuestionTypeId=${keyQuestionTypeId})}"
+       th:if="${questions.hasNext()}">Next</a>
+</div>
+
+<!--#region Modal -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body fborder border-secondary rounded">
+                Do you want customer?
+                <br>
+                <h3>Name:<span id="delCustomerName"></span></h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <form action="/questions/delete" method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <input type="hidden" id="button-del" name="idDel">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#endregion model-->
+
+<!--#region javascript-->
+<!--<div th:replace="layout::xoaModal('/customers/delete')"></div>-->
+<script src="/bootstrap4/jquery-3.6.0.min.js"></script>
+<script src="/bootstrap4/popper.min.js"></script>
+<script src="/bootstrap4/bootstrap.min.js"></script>
+<script src="/bootstrap4/jquery.dataTables.min.js"></script>
+<script src="/bootstrap4/dataTables.bootstrap4.min.js"></script>
+<!--#endregion-->
+<script>
+    function myFunction(id) {
+        document.getElementById("button-del").value = id;
+    }
+
+</script>
+
+</body>
+</html>

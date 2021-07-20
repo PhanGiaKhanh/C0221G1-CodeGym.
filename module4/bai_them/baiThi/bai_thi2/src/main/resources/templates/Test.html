@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -172,17 +172,20 @@
     <li><a href="#" target="_blank">Linkedin</a></li>
   </ul>
 </div>
-<!--<div id='center' class="main center">-->
-<!--  <div class="mainInner">-->
-<!--    <div>PURE CSS SIDEBAR TOGGLE MENU</div>-->
-<!--  </div>-->
-<!--  <div class="mainInner">-->
-<!--    <div>PURE CSS SIDEBAR TOGGLE MENU</div>-->
-<!--  </div>-->
-<!--  <div class="mainInner">-->
-<!--    <div>PURE CSS SIDEBAR TOGGLE MENU</div>-->
-<!--  </div>-->
-<!--</div>-->
+<div id='center' class="main center">
+  <div th:replace="layout :: nav"></div>
+
+  <div class="mainInner">
+    <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+  </div>
+  <div class="mainInner">
+    <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+  </div>
+  <div class="mainInner">
+    <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+  </div>
+</div>
+
 
 <script src="../static/bootstrap4/jquery-3.6.0.min.js"></script>
 <script src="../static/bootstrap4/bootstrap.min.js"></script>

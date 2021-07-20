@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create customer</title>
+    <link rel="stylesheet" href="/bootstrap4/bootstrap.min.css">
+    <style>
+        tr td:last-child{
+            width: 405.36px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-6">
+            <h3>Create customer</h3>
+            <p th:text="${msg}" class="text-success"></p>
+            <form action="/questions/create" method="post" th:object="${questionDto}">
+                <input type="hidden" th:field="*{id}">
+                <table>
+                    <tr>
+                        <td>Tiêu đề:</td>
+                        <td>
+                            <sub class="text-danger" th:errors="*{title}"></sub>
+                            <input type="text" class="form-control" th:field="*{title}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nội dung:</td>
+                        <td>
+                            <sub class="text-danger" th:errors="*{question}"></sub>
+
+                            <textarea  class="form-control" cols="20" rows="10" th:field="*{question}"></textarea>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Customer type:</td>
+                        <td>
+                            <sub class="text-danger" th:errors="*{questionType}"></sub>
+                            <select class="form-control" th:field="*{questionType}">
+                                <option th:each="q : ${questionTypes}"
+                                        th:value="${q.id}"
+                                        th:text="${q.name}"></option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <a href="/questions" class="btn btn-secondary">Back to list</a>
+                            <button type="submit" class="btn btn-primary" >Create</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
