@@ -13,3 +13,11 @@
 
 
 <div [ngStyle]="{height: size +'px', width: size +'px', background: color, borderRadius: size/2 + 'px'}" ></div>
+
+<h3>book works! 123</h3>
+<input type="range" min="0" max="255" [(ngModel)]="red">
+<input type="range" min="0" max="255" [(ngModel)]="blue">
+<input type="range" min="0" max="255" [(ngModel)]="green">
+
+<div style="width: 200px; height: 200px" [style]="{backgroundColor: 'rgb('+red +','+ blue+','+ green +')' }"></div>
+<div style="width: 200px; height: 200px; background: rgb({{red}}, {{blue}}, {{green}})"></div>
