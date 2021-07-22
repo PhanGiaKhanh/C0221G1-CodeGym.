@@ -1,2 +1,15 @@
-<h1>Rating Bar</h1>
+<h1><span style="color: red">Thực hành 1:</span> Rating Bar</h1>
+
+<h1>{{ choose - 1 }}</h1>
+<div style="display: flex">
+  <div style="width:100px; height: 100px; border-radius: 50px; text-align: center"
+       *ngFor="let num of arrNumber10"
+       (mouseover)="getChoose(num)"
+       [style]="{background: choose <= num ? 'lightblue':'hotpink'}"><h1>{{num}}</h1>
+  </div>
+</div>
+
+  <div class="hinh_ngoi_sao">
+  </div>
+
 

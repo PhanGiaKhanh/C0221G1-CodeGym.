@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RatingBarComponentComponent } from './rating-bar-component/rating-bar-component.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RatingBarComponentComponent
+    RatingBarComponentComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,

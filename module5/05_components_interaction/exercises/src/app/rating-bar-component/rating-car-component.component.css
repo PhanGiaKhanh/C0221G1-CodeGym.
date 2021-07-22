@@ -1,0 +1,115 @@
+.hinh_ngoi_sao{
+  width: 0;
+  height: 0;
+  margin: 50px 0;
+  position: relative;
+  display: block;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid #1E90FF;
+  border-left: 100px solid transparent;
+  transform: rotate(35deg);
+}
+.hinh_ngoi_sao:before {
+  height: 0;
+  width: 0;
+  position: absolute;
+  display: block;
+  top: -45px;
+  left: -65px;
+  border-bottom: 80px solid #1E90FF;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  content: '';
+  transform: rotate(-35deg);
+}
+.hinh_ngoi_sao:after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  display: block;
+  top: 3px;
+  left: -105px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid #1E90FF;
+  border-left: 100px solid transparent;
+  transform: rotate(-70deg);
+}
+
+
+.heart {
+  position: relative;
+}
+
+.heart:before,#heart:after {
+  content: "";
+  width: 70px;
+  height: 115px;
+  position: absolute;
+  background: red;
+  left: 70px;
+  top: 0;
+  -webkit-border-radius: 50px 50px 0 0;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+
+.infinity {
+  width: 220px;
+  height: 100px;
+  position: relative;
+}
+
+.infinity:before,#infinity:after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 20px solid #06c999;
+  -moz-border-radius: 50px 50px 0;
+  border-radius: 50px 50px 0 50px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.infinity:after {
+  left: auto;
+  right: 0;
+  -moz-border-radius: 50px 50px 50px 0;
+  border-radius: 50px 50px 50px 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
