@@ -1,0 +1,57 @@
+<h1>Danh sách danh mục sản phẩm</h1>
+<!--<a routerLink="/customer/create">Tạo mới danh mục</a>-->
+<!--<form [formGroup]="searchForm" (ngSubmit)="search()">-->
+<!--  <div style="float: right">-->
+<!--    <input type="text" formControlName="name" placeholder="Search name" class="form-control">-->
+<!--    <input type="text" formControlName="email" placeholder="Search email" class="form-control">-->
+<!--    <input type="submit" class="btn btn-primary" value="Search">-->
+<!--  </div>-->
+<!--</form>-->
+
+<div class="row">
+  <a class="btn btn-primary" routerLink="/customer/create">Add new product</a>
+  <div style="float: right">
+    <input type="text" id="searchName" [(ngModel)]="nameSearch" placeholder="Search name">
+    <input type="text" id="searchEmail" [(ngModel)]="emailSearch" placeholder="Search email">
+    <button class="btn btn-primary" (click)="search()">Search</button>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th>STT</th>
+    <th>Loại</th>
+    <th (click)="sort('code')">Mã
+      <span class="glyphicon sort-icon" *ngIf="key =='code    '" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+    </th>
+    <th (click)="sort('name')">Name
+      <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+    </th>
+    <th>Giới tính</th>
+    <th>Ngày sinh</th>
+    <th>CMND</th>
+    <th>SDT</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th colspan="2">Hành động</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let c of customers|  orderBy: key : reverse | paginate: { itemsPerPage: 5, currentPage: page}  ; index as i">
+    <td>{{i + page * 5 - 4}}</td>
+    <td>{{c.customerType.name}}</td>
+    <td>{{c.code}}</td>
+    <td>{{c.name}}</td>
+    <td>{{c.gender}}</td>
+    <td>{{c.birthday}}</td>
+    <td>{{c.idCard}}</td>
+    <td>{{c.phone}}</td>
+    <td>{{c.email}}</td>
+    <td>{{c.address}}</td>
+    <td><a [routerLink]="['/customer/edit',c.id]">Edit</a></td>
+    <td><a [routerLink]="['/customer/delete',c.id]">Delete</a></td>
+  </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="page=$event" nextLabel="next" previousLabel="previous"></pagination-controls>
+
