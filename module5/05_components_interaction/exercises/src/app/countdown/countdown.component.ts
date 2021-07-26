@@ -10,9 +10,9 @@ export class CountdownComponent implements OnInit, OnDestroy {
   message = '';
   remainingTime: number;
   @Input()
-  seconds = 10;
+  seconds: string;
   @Output()
-  finish = new EventEmitter<boolean>();
+  finish = new EventEmitter<string[]>();
   private intervalId = 0;
   constructor() {
   }
@@ -30,9 +30,9 @@ export class CountdownComponent implements OnInit, OnDestroy {
 
   start() {
     this.countDown();
-    // if (this.remainingTime <= 0) {
-    //   this.remainingTime = this.seconds;
-    // }
+    if (this.remainingTime <= 0) {
+      this.remainingTime = Number(this.seconds);
+    }
   }
 
   stop() {
@@ -42,12 +42,14 @@ export class CountdownComponent implements OnInit, OnDestroy {
 
   reset() {
     this.clearTimer();
-    this.remainingTime = this.seconds;
+    this.remainingTime = Number(this.seconds);
     this.message = `Click start button to start the Countdown`;
+    this.finish.emit([this.remainingTime + '', this.message ]);
   }
   private countDown() {
     this.clearTimer();
     this.intervalId = setInterval(() => {
+      this.finish.emit([this.remainingTime + '', this.message ]);
       this.remainingTime--;
       this.message = `Time: ${this.remainingTime} seconds and counting`;
     }, 400);}

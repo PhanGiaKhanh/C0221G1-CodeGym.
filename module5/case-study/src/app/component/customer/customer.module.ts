@@ -8,6 +8,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {CustomerCreateComponent} from './customer-create/customer-create.component';
 import {CustomerEditComponent} from './customer-edit/customer-edit.component';
 import {Ng2OrderModule} from 'ng2-order-pipe';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {Ng2OrderModule} from 'ng2-order-pipe';
         FormsModule,
         NgxPaginationModule,
         Ng2OrderModule,
+        Ng2SearchPipeModule
 
     ]
 })

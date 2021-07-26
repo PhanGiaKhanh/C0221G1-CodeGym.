@@ -18,7 +18,7 @@ export class CustomerService {
     return this.http.get<Customer[]>(API_URL + '/customers');
   }
 
-  saveCategory(customer): Observable<Customer> {
+  save(customer): Observable<Customer> {
     return this.http.post<Customer>(API_URL + '/customers', customer);
   }
 
@@ -30,12 +30,12 @@ export class CustomerService {
     return this.http.put<Customer>(`${API_URL}/customers/${id}`, customer);
   }
 
-  deleteCategory(id: number): Observable<Customer> {
+  delete(id: number): Observable<Customer> {
     return this.http.delete<Customer>(`${API_URL}/customers/${id}`);
   }
 
   search(name: string, email: string): Observable<Customer[]> {
-    return this.http.get<Customer[]>(API_URL + '/customer?name_like=' + name + '&email_like=' + email);
+    return this.http.get<Customer[]>(API_URL + '/customers?name_like=' + name + '&email_like=' + email);
   }
   // customers: Customer[] = [
   //   {

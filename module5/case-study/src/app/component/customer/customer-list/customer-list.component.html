@@ -9,11 +9,21 @@
 <!--</form>-->
 
 <div class="row">
-  <a class="btn btn-primary" routerLink="/customer/create">Add new product</a>
-  <div style="float: right">
-    <input type="text" id="searchName" [(ngModel)]="nameSearch" placeholder="Search name">
-    <input type="text" id="searchEmail" [(ngModel)]="emailSearch" placeholder="Search email">
-    <button class="btn btn-primary" (click)="search()">Search</button>
+  <div class="col-3">
+    <a class="btn btn-primary" routerLink="/customer/create">Add new product</a>
+  </div>
+  <div class="col-4">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="Search">
+  </div>
+  <div class="col-5">
+    <div class="row">
+      <div class="col">
+        <input type="text" id="searchName" [(ngModel)]="nameSearch" placeholder="Search name" class="form-control" ></div>
+      <div class="col">
+        <input type="text" id="searchEmail" [(ngModel)]="emailSearch" placeholder="Search email" class="form-control"></div>
+      <div class="col">
+        <button class="btn btn-primary" (click)="search()">Search</button></div>
+    </div>
   </div>
 </div>
 <table class="table table-hover">
@@ -22,10 +32,12 @@
     <th>STT</th>
     <th>Loại</th>
     <th (click)="sort('code')">Mã
-      <span class="glyphicon sort-icon" *ngIf="key =='code    '" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      <span class="glyphicon sort-icon" *ngIf="key =='code'"
+            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
     </th>
     <th (click)="sort('name')">Name
-      <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      <span class="glyphicon sort-icon" *ngIf="key =='name'"
+            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
     </th>
     <th>Giới tính</th>
     <th>Ngày sinh</th>
@@ -37,7 +49,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let c of customers|  orderBy: key : reverse | paginate: { itemsPerPage: 5, currentPage: page}  ; index as i">
+  <tr
+    *ngFor="let c of customers | orderBy: key : reverse | filter: filter | paginate: { itemsPerPage: 5, currentPage: page} ; index as i">
     <td>{{i + page * 5 - 4}}</td>
     <td>{{c.customerType.name}}</td>
     <td>{{c.code}}</td>
@@ -49,9 +62,36 @@
     <td>{{c.email}}</td>
     <td>{{c.address}}</td>
     <td><a [routerLink]="['/customer/edit',c.id]">Edit</a></td>
-    <td><a [routerLink]="['/customer/delete',c.id]">Delete</a></td>
+    <td><!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+              (click)="sendIdDelete(c.id)">
+        Delete
+      </button>
+    </td>
   </tr>
   </tbody>
 </table>
 <pagination-controls (pageChange)="page=$event" nextLabel="next" previousLabel="previous"></pagination-controls>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span>{{nameDelete}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="deleteCustomer()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
