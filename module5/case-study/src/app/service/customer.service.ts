@@ -17,7 +17,9 @@ export class CustomerService {
   getAll(): Observable<Customer[]> {
     return this.http.get<Customer[]>(API_URL + '/customers');
   }
-
+  getCustomerTypes(): Observable<CustomerType[]> {
+    return this.http.get<CustomerType[]>(API_URL + '/customerType');
+  }
   save(customer): Observable<Customer> {
     return this.http.post<Customer>(API_URL + '/customers', customer);
   }

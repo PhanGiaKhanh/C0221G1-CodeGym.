@@ -173,36 +173,6 @@
       "address": "Huế"
     },
     {
-      "id": 7,
-      "customerType": {
-        "id": 4,
-        "name": "Silver"
-      },
-      "code": "KH-0007",
-      "name": "Nam",
-      "gender": "Female",
-      "birthday": "2003-01-05",
-      "idCard": "123456787",
-      "phone": "0907777777",
-      "email": "Nam7@Gmail.com",
-      "address": "Hà Nội"
-    },
-    {
-      "id": 8,
-      "customerType": {
-        "id": 4,
-        "name": "Silver"
-      },
-      "code": "KH-0008",
-      "name": "Xinh Xắn Nam",
-      "gender": "Male",
-      "birthday": "2005-10-28",
-      "idCard": "123456788",
-      "phone": "0908888888",
-      "email": "Nam8@Gmail.com",
-      "address": "Hà Nội"
-    },
-    {
       "id": 9,
       "customerType": {
         "id": 5,
@@ -216,6 +186,17 @@
       "phone": "0909999999",
       "email": "Nam9@Gmail.com",
       "address": "Đà Nẵng"
+    },
+    {
+      "code": "",
+      "typeCustomer": "",
+      "name": "",
+      "birthday": "",
+      "idCard": "",
+      "phone": "",
+      "email": "",
+      "address": "",
+      "id": 10
     }
   ]
 }
