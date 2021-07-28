@@ -23,19 +23,19 @@
   ],
   "customers": [
     {
-      "id": 1,
+      "code": "KH-0001",
+      "name": "Phương Nam1",
+      "gender": "Male",
+      "idCard": "123456781",
+      "phone": "0901111111",
       "customerType": {
         "id": 1,
         "name": "Diamond"
       },
-      "code": "KH-0001",
-      "name": "Phương Nam",
-      "gender": "Male",
       "birthday": "2001-01-22",
-      "idCard": "123456781",
-      "phone": "0901111111",
       "email": "Nam1@Gmail.com",
-      "address": "Đà Nẵng"
+      "address": "Đà Nẵng",
+      "id": 1
     }
   ]
 }
