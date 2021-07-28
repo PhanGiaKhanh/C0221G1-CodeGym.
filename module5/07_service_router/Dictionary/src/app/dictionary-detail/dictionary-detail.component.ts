@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DictionaryService, IWord} from '../dictionary.service';
+import {Subscription} from 'rxjs';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-dictionary-detail',
@@ -7,13 +9,26 @@ import {DictionaryService, IWord} from '../dictionary.service';
   styleUrls: ['./dictionary-detail.component.css']
 })
 export class DictionaryDetailComponent implements OnInit {
-  listWord: IWord[] = [];
+  word: IWord;
+  sub: Subscription;
   constructor(
+    private activatedRoute: ActivatedRoute,
     private dictionaryService: DictionaryService
   ) { }
 
   ngOnInit() {
-    this.listWord = this.dictionaryService.getAll();
+
+    this.sub = this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      const key = paramMap.get('key');
+      const meaning = this.dictionaryService.search(key);
+      this.word = {
+        key,
+        meaning
+      };
+    });
+  }
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
 }

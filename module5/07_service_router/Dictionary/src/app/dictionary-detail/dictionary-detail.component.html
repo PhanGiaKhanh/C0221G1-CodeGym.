@@ -1,12 +1,3 @@
-<h2>
-  Dictionary page
-</h2>
-
-<ul>
-  <li *ngFor="let word of listWord">
-    <a [routerLink]="['/dictionary', word.key]">{{ word.key }}</a>
-  </li>
-</ul>
-
-
-<router-outlet></router-outlet>
+<h2>Dictionary detail</h2>
+<p>Từ: {{word.key}}</p>
+<p>Nghĩa của từ: {{word.meaning}}</p>

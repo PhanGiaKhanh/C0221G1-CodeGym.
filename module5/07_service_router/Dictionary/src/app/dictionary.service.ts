@@ -12,17 +12,17 @@ export class DictionaryService {
       key: 'Hello',
       meaning: 'Chào Bạn'
     }, {
-      key: 'What is your name',
-      meaning: 'Bạn tên gì ?'
+      key: 'Where are you',
+      meaning: 'Bạn ở đâu ?'
     }, {
-      key: 'Thanks you',
-      meaning: 'Cám ơnnnn'
+      key: 'Thank you',
+      meaning: 'Cảm ơn'
     }, {
-      key: 'Good luck',
-      meaning: 'Chúc bạn may mắn !'
+      key: 'Good night',
+      meaning: 'Chúc ngủ ngon'
     }, {
-      key: 'bye bye',
-      meaning: 'Tạm Biệt !'
+      key: 'Exercises',
+      meaning: 'Bài tập'
     }
   ];
   constructor() { }
