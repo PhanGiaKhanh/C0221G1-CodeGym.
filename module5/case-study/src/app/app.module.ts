@@ -7,20 +7,26 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { FooterComponent } from './component/layout/footer/footer.component';
 import {HeaderComponent} from './component/layout/header/header.component';
-import {Ng2OrderModule} from 'ng2-order-pipe';
-import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import { DeleteModalComponent } from './delete-modal/delete-modal/delete-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    DeleteModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

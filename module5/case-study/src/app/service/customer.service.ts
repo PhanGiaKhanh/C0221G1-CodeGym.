@@ -28,12 +28,12 @@ export class CustomerService {
     return this.http.get<Customer>(`${API_URL}/customers/${id}`);
   }
 
-  updateCategory(id: number, customer: Customer): Observable<CustomerType> {
-    return this.http.put<Customer>(`${API_URL}/customers/${id}`, customer);
+  update(index: number, customer: Customer): Observable<CustomerType> {
+    return this.http.put<Customer>(`${API_URL}/customers/${index}`, customer);
   }
 
-  delete(id: number): Observable<Customer> {
-    return this.http.delete<Customer>(`${API_URL}/customers/${id}`);
+  delete(index: number): Observable<Customer> {
+    return this.http.delete<Customer>(`${API_URL}/customers/${index}`);
   }
 
   search(name: string, email: string): Observable<Customer[]> {

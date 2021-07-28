@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../../model/customer/customer';
 import {CustomerService} from '../../../service/customer.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {DeleteModalComponent} from '../../../delete-modal/delete-modal/delete-modal.component';
+import {MatDialog} from '@angular/material/dialog';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -19,12 +21,14 @@ export class CustomerListComponent implements OnInit {
   nameDelete: string;
   idDelete: number;
   public customer!: Customer;
+  index: number;
   sort(key) {
     this.key = key;
     this.reverse = !this.reverse;
   }
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService,
+              private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -58,6 +62,22 @@ export class CustomerListComponent implements OnInit {
     console.log(this.idDelete);
     this.customerService.delete(this.idDelete).subscribe(() => {
       this.getAll();
+    });
+  }
+
+  removeDialog(customerObj: Customer) {
+    const deleteModal = this.dialog.open(DeleteModalComponent, {
+      data: {
+        title: 'Hello Nam',
+        message: 'Are you sure, you want to remove an customer: ' + customerObj.name
+      }
+    });
+    deleteModal.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.customerService.delete(customerObj.id).subscribe(() => {
+          this.getAll();
+        });
+      }
     });
   }
 }

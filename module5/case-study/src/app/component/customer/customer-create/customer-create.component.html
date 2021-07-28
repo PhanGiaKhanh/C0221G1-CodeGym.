@@ -1,170 +1,125 @@
-<!--<div class="container">-->
-<!--  <div class="row mt-4">-->
-<!--    <div class="col-3"></div>-->
-<!--    <div class="col-6 fborder border-secondary rounded shadow animated zoomInDown">-->
-<!--      <h2 class="text-white text-center bg-info px-5 py-2 mt-2 rounded">Create new customer</h2>-->
-<!--      <form class="animated bounceInLeft " [formGroup]="createForm" (ngSubmit)="submit()">-->
-<!--        <table class="table table-borderless">-->
-<!--          <tbody>-->
-<!--          <tr>-->
-<!--            <td>Name</td>-->
-<!--            <td colspan="3">-->
-<!--              <input class="form-control" type="text" value="" name="name"  formControlName="name"-->
-<!--                                   placeholder="Customer Name"  required>-->
-<!--              <p class="col text-danger" role="alert"-->
-<!--                 *ngIf="createForm.controls.name.hasError('required') && createForm.controls.name.touched">-->
-<!--                Can not be empty!-->
-<!--              </p>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>Birthday</td>-->
-<!--            <td><input class="form-control" type="date" value="" name="birthday"  formControlName="birthday"></td>-->
-<!--            <td>Gender</td>-->
-<!--            <td>-->
-<!--              <select class="form-control" formControlName="gender" name="gender">-->
-<!--                <option value="" selected>Select</option>-->
-<!--                <option value="Male">Male</option>-->
-<!--                <option value="Female">Female</option>-->
-<!--                <option value="Other">Other</option>-->
-<!--              </select>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>Email</td>-->
-<!--            <td colspan="3"><input class="form-control" type="email" value="" name="email" formControlName="email"-->
-<!--                                   placeholder="abc@gmail.com"></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>Code</td>-->
-<!--            <td style="width: 5px"><input id="code" class="form-control" type="text" name="code"  formControlName="codex`" placeholder="KH-XXXX">-->
-<!--              <p class="col alert alert-danger" role="alert"-->
-<!--                 *ngIf="createForm.controls.code.hasError('required') && createForm.controls.code.touched">-->
-<!--                Can not be empty...!!!-->
-<!--              </p>-->
-<!--              <p class="col alert alert-danger" *ngIf="!createForm.controls.code.valid && createForm.controls.code.touched ">-->
-<!--                Invalid format....(Ex: KH-1234)</p>-->
-<!--            </td>-->
-<!--            <td>Type</td>-->
-<!--            <td>-->
-<!--              <select class="form-control" name="customerType" formControlName="customerType">-->
-<!--                <option value="" selected>Select</option>-->
-<!--                <option *ngFor="let ct of customerTypes" [value]="ct" >{{ ct.name }}</option>-->
-<!--              </select>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>Address</td>-->
-<!--            <td colspan="3"><input class="form-control" type="text" name="address" formControlName="address" placeholder="Customer Address"></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>Id card</td>-->
-<!--            <td><input class="form-control" type="text" name="idCard" formControlName="idCard" placeholder="Your id card"></td>-->
-<!--            <td>Phone</td>-->
-<!--            <td><input class="form-control" type="number" name="phone" formControlName="phone" placeholder="Phone number"></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td><input class="btn btn-secondary" type="button" value="Back"></td>-->
-<!--            <td colspan="3" class="text-right"><input class="btn btn-primary" type="submit" value="Create"></td>-->
-<!--          </tr>-->
-<!--          </tbody>-->
-<!--        </table>-->
-<!--      </form>-->
-<!--    </div>-->
-<!--    <div class="col-3"></div>-->
-<!--  </div>-->
-<!--</div>-->
-
-<div class="container" style="margin-top: 120px">
-
-  <h2 class="text-center">Create Customer</h2>
+<div class="container card bg-white">
   <form [formGroup]="createForm" (ngSubmit)="submit()">
 
-    <div class="form-group">
-      <label for="code">Code</label>
-      <input type="text" class="form-control" id="code" formControlName="code">
-      <div
-        *ngIf="!createForm.controls.customerCode?.valid && (createForm.controls.code?.dirty || createForm.controls.customerCode?.touched)">
-        <div [hidden]="!createForm.controls.customerCode.errors.required">
-          <small style="color: red"> Not empty</small>
-        </div>
-        <div [hidden]="!createForm.controls.customerCode.errors.pattern">
-          <small style="color: red"> pattern (KH - XXX)</small>
-        </div>
+
+    <div class="row">
+      <div class="col-8"><mat-form-field class="example-full-width">
+        <mat-label style="font-size: 20px" class="mb-3">
+          Name
+          <span class="text-danger" *ngFor="let valid of validateMsg.name">
+          <small *ngIf="getValidate('name', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+        <input name="name" formControlName="name" matInput placeholder="Your name" class="form-control"
+               style="margin-top: 10px">
+      </mat-form-field>
+      </div>
+      <div class="col-4">
+        <mat-form-field class="example-full-width mt-3">
+          <mat-label style="font-size: 20px" class="mb-5">
+            Gender
+            <span class="text-danger" *ngFor="let valid of validateMsg.gender">
+          <small *ngIf="getValidate('gender', valid)">------  {{valid.msg1}}</small>
+        </span>
+          </mat-label>
+          <select matNativeControl name="gender" formControlName="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </mat-form-field>
       </div>
     </div>
-    <div class="form-group">
-      <label for="typeCustomer">TypeCustomer</label>
-      <select name="typeCustomer" id="typeCustomer" class="form-control" formControlName="typeCustomer">
-        <option value="null">-----</option>
-        <option *ngFor="let tc of customerTypes" [ngValue]="tc">{{tc.name}}</option>
-      </select>
-      <div
-        *ngIf="!createForm.controls.typeCustomer?.valid && (createForm.controls.typeCustomer?.dirty || createForm.controls.typeCustomer?.touched)">
-        <small style="color: red"> select type customer</small>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Code
+            <span class="text-danger" *ngFor="let valid of validateMsg.code">
+          <small *ngIf="getValidate('code', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="code" formControlName="code" matInput placeholder="KH-XXXX" class="form-control"
+                 style="margin-top: 10px">
+        </mat-form-field>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" formControlName="name">
-      <div *ngIf="!createForm.controls.name?.valid && (createForm.controls.name?.dirty || createForm.controls.name?.touched)">
-        <small style="color: red">  character > 0 </small>
+      <div class="col-6">
+        <mat-form-field class="example-full-width mt-3">
+          <mat-label style="font-size: 20px" class="mb-5">
+            Type
+            <span class="text-danger" *ngFor="let valid of validateMsg.customerType">
+          <small *ngIf="getValidate('customerType', valid)">------  {{valid.msg1}}</small>
+        </span>
+          </mat-label>
+          <select matNativeControl name="typeCustomer" formControlName="customerType">
+            <option *ngFor="let tc of customerTypes" [ngValue]="tc">{{tc.name}}</option>
+          </select>
+        </mat-form-field>
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="birthday">Birthday</label>
-      <input type="date" class="form-control" id="birthday" formControlName="birthday">
-      <div *ngIf="!createForm.controls.birthday?.valid && (createForm.controls.birthday?.dirty || createForm.controls.birthday?.touched)">
-        <small  style="color: red"> select birthday</small>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Birthday
+            <span class="text-danger" *ngFor="let valid of validateMsg.birthday">
+          <small *ngIf="getValidate('birthday', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="birthday" formControlName="birthday" matInput placeholder="Your birthday" class="form-control"
+                 style="margin-top: 10px" type="date">
+        </mat-form-field>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="idCard">ID Card</label>
-      <input type="text" class="form-control" id="idCard" formControlName="idCard">
-      <div *ngIf="!createForm.controls.idCard?.valid && (createForm.controls.idCard?.dirty || createForm.controls.idCard?.touched)">
-        <small [hidden]="!createForm.controls.idCard.errors.required" style="color: red"> not empty</small>
-        <small [hidden]="!createForm.controls.idCard.errors.pattern" style="color: red"> pattern (XXX - XXX - XXX) </small>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="phoneNumber">Phone Number</label>
-      <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
-      <div *ngIf="!createForm.controls.phoneNumber?.valid && (createForm.controls.phoneNumber?.dirty || createForm.controls.phoneNumber?.touched)">
-        <!--        <small [hidden]="!createFrom.controls.phoneNumber.errors.required" style="color: red"> insert phoneNumber</small>-->
-        <small [hidden]="!createForm.controls.phoneNumber.errors.pattern" style="color: red"> pattern ( 090 X -XXX-XXX)</small>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" formControlName="email">
-      <div *ngIf="!createForm.controls.email?.valid && (createForm.controls.email?.dirty || createForm.controls.email?.touched)">
-        <small [hidden]="!createForm.controls.email.errors.required" style="color: red"> Not empty</small>
-        <small [hidden]="!createForm.controls.email.errors.email" style="color: red"> pattern  email</small>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <input type="text" class="form-control" id="address" formControlName="address">
-      <div *ngIf="!createForm.controls.address?.valid && (createForm.controls.address?.dirty || createForm.controls.address?.touched)">
-        <small [hidden]="!createForm.controls.address.errors.required" style="color: red"> not empty </small>
-        <small [hidden]="!createForm.controls.address.errors.minlength" style="color: red"> character >5  </small>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Id card
+            <span class="text-danger" *ngFor="let valid of validateMsg.idCard">
+          <small *ngIf="getValidate('idCard', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="idCard" formControlName="idCard" matInput placeholder="Include 10 digits" class="form-control"
+                 style="margin-top: 10px">
+        </mat-form-field>
       </div>
     </div>
 
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Address
+            <span class="text-danger" *ngFor="let valid of validateMsg.address">
+          <small *ngIf="getValidate('address', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="address" formControlName="address" matInput placeholder="Ex: Đà Nẵng" class="form-control"
+                 style="margin-top: 10px">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Phone
+            <span class="text-danger" *ngFor="let valid of validateMsg.phone">
+          <small *ngIf="getValidate('phone', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="phone" formControlName="phone" matInput placeholder="(090|091|84+90|84+91)XXXXXX"
+                 class="form-control" style="margin-top: 10px">
+        </mat-form-field>
       </div>
     </div>
-    <div style="float: right">
-      <button type="submit" class="btn btn-primary">Create</button>
-      <button routerLink="/customer/list" class="btn btn-primary">Cancel</button>
-    </div>
 
-  </form>
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-size: 20px" class="mb-3">
+        Email
+        <span class="text-danger" *ngFor="let valid of validateMsg.email">
+          <small *ngIf="getValidate('email', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+      <input name="email" formControlName="email" matInput placeholder="Ex: abd@gmai.com" class="form-control"
+             style="margin-top: 10px">
+    </mat-form-field>
+    <div class="text-right">
+      <button routerLink="/customer" class="btn btn-secondary">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!createForm.valid">Create</button></div>
 
+</form>
 </div>
+<hr>
