@@ -11,15 +11,16 @@
     </mat-form-field>
 
     <div class="row">
-      <div class="col-7"><mat-form-field class="example-full-width">
-        <mat-label style="font-size: 20px" class="mb-3">
-          Name
-          <span class="text-danger" *ngFor="let valid of validateMsg.name">
+      <div class="col-7">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Name
+            <span class="text-danger" *ngFor="let valid of validateMsg.name">
           <small *ngIf="getValidate('name', valid)"> ------  {{valid.msg1}}</small>
         </span></mat-label>
-        <input name="name" formControlName="name" matInput placeholder="Your name" class="form-control"
-               style="margin-top: 10px">
-      </mat-form-field>
+          <input name="name" formControlName="name" matInput placeholder="Your name" class="form-control"
+                 style="margin-top: 10px">
+        </mat-form-field>
       </div>
       <div class="col-5">
         <mat-form-field class="example-full-width mt-3">
@@ -31,9 +32,9 @@
           </mat-label>
           <select matNativeControl name="gender" formControlName="gender">
             <option [value]="customer.gender" selected>{{customer.gender}}</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
+            <option value="Male" *ngIf="!(customer.gender == 'Male')">Male</option>
+            <option value="Female" *ngIf="!(customer.gender == 'Female')">Female</option>
+            <option value="Other" *ngIf="!(customer.gender == 'Other')">Other</option>
           </select>
         </mat-form-field>
       </div>
@@ -52,15 +53,14 @@
       </div>
       <div class="col-6">
         <mat-form-field class="example-full-width mt-3">
-          <mat-label style="font-size: 20px" class="mb-5">
+          <mat-label style="font-size: 20px; margin-bottom: 20px!important;" class="mb-5">
             Type
-            <span class="text-danger" *ngFor="let valid of validateMsg.customerType">
+            <span class="text-danger" *ngFor="let valid of validateMsg.customerType" style="font-size: 20px; margin-bottom: 20px!important;">
           <small *ngIf="getValidate('customerType', valid)">------  {{valid.msg1}}</small>
         </span>
           </mat-label>
-          <select matNativeControl name="typeCustomer" formControlName="customerType" *ngFor="let tc of customerTypes">
-            <option [ngValue]="tc" [selected]="tc.id == customer.customerType.id? 'selected': ''" >{{tc.name}}</option>
-            <option [ngValue]="tc" >{{tc.name}}</option>
+          <select matNativeControl name="typeCustomer" formControlName="customerType" [compareWith]="compareFn">
+            <option *ngFor="let type of customerTypes" [ngValue]="type">{{type.name}}</option>
           </select>
         </mat-form-field>
       </div>
@@ -128,7 +128,8 @@
     </mat-form-field>
     <div class="text-right">
       <button routerLink="/customer" class="btn btn-secondary">Cancel</button>
-      <button type="submit" class="btn btn-primary" [disabled]="!editForm.valid">Create</button></div>
+      <button type="submit" class="btn btn-primary" [disabled]="!editForm.valid">Create</button>
+    </div>
 
   </form>
 </div>

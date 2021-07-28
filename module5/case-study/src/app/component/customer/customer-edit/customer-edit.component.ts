@@ -95,7 +95,9 @@ export class CustomerEditComponent implements OnInit {
       (this.editForm.get(attribute)?.touched ||
         this.editForm.get(attribute)?.dirty);
   }
-
+  compareFn(c1: any, c2: any): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
+  }
   update(index: number) {
     const customer = this.editForm.value;
     this.cs.update(index, customer).subscribe(() => {

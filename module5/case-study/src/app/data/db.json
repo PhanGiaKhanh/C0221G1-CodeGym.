@@ -36,6 +36,21 @@
       "email": "Nam1@Gmail.com",
       "address": "Đà Nẵng",
       "id": 1
+    },
+    {
+      "code": "KH-0002",
+      "name": "Oppo A2",
+      "gender": "Female",
+      "idCard": "123123123112",
+      "phone": "0901231232",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "birthday": "2021-07-03",
+      "email": "john1@codegym.vn",
+      "address": "Hà Nội1",
+      "id": 2
     }
   ]
 }

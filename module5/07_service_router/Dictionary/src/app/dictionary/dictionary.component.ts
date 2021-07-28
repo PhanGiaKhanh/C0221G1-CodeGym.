@@ -4,7 +4,7 @@ import {DictionaryService, IWord} from '../dictionary.service';
 @Component({
   selector: 'app-dictionary',
   templateUrl: './dictionary.component.html',
-  styleUrls: ['./dictionary.component.css']
+  styleUrls: []
 })
 export class DictionaryComponent implements OnInit {
   word: IWord;

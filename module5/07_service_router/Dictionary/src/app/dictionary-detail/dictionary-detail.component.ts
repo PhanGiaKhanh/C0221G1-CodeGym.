@@ -6,7 +6,7 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 @Component({
   selector: 'app-dictionary-detail',
   templateUrl: './dictionary-detail.component.html',
-  styleUrls: ['./dictionary-detail.component.css']
+  styleUrls: []
 })
 export class DictionaryDetailComponent implements OnInit {
   word: IWord;

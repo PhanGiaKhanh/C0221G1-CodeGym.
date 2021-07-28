@@ -1,12 +1,7 @@
-<h2>
-  Dictionary page
-</h2>
-
+<h1>Dictionary page</h1>
 <ul>
   <li *ngFor="let word of listWord">
     <a [routerLink]="['/dictionary', word.key]">{{ word.key }}</a>
   </li>
 </ul>
-
-
 <router-outlet></router-outlet>
