@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create customer</title>
+  <link rel="stylesheet" href="../bootstrap4/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <style>
+    td:first-child, td:nth-child(3) {
+      line-height: 40px;
+    }
+
+    input, select {
+      box-shadow: 1px 1px #637fff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-3"></div>
+    <!--        <div class="col-6 fborder border-secondary rounded shadow animated bounce">-->
+    <!--            <div class="col-6 fborder border-secondary rounded shadow animated bounceOut">-->
+    <!--        <div class="col-6 fborder border-secondary rounded shadow animated flipInY">-->
+    <!--        <div class="col-6 fborder border-secondary rounded shadow animated headShake">-->
+    <!--        <div class="col-6 fborder border-secondary rounded shadow animated hinge">-->
+    <!--        <div class="col-6 fborder border-secondary rounded shadow animated jello">-->
+    <!--        <div class="col-6 fborder border-secondary rounded shadow animated lightSpeedIn">-->
+    <!--        <div class="col-6 fborder border-secondary rounded shadow animated pulse">-->
+    <div class="col-6 fborder border-secondary rounded shadow animated zoomInDown">
+      <!--        <div class="col-6 fborder border-secondary rounded shadow">-->
+      <h2 class="text-white text-center bg-info px-5 py-2 mt-2 rounded">Create new customer</h2>
+      <form class="animated bounceInLeft ">
+        <table class="table table-borderless">
+          <tbody>
+          <tr id="userName">
+            <td>Name</td>
+            <td colspan="3"><input class="form-control" type="text" value="" name="name"
+                                   placeholder="Customer Name"></td>
+          </tr>
+          <tr>
+            <td>Birthday</td>
+            <td><input class="form-control" type="date" value="" name="name"></td>
+            <td>Gender</td>
+            <td>
+              <select class="form-control">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td colspan="3"><input class="form-control" type="email" value="" name="email"
+                                   placeholder="abc@gmail.com"></td>
+          </tr>
+          <tr>
+            <td>Id card</td>
+            <td style="width: 5px"><input class="form-control" type="text" name="card" placeholder="KH-XXXX"></td>
+            <td>Type</td>
+            <td>
+              <select class="form-control">
+                <option value="Diamond">Diamond</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td colspan="3"><input class="form-control" type="text" name="address" placeholder="Customer Address"></td>
+          </tr>
+          <tr>
+            <td><input class="btn btn-secondary" type="submit" value="Back"></td>
+            <td colspan="3" class="text-right"><input class="btn btn-primary" type="submit" value="Create"></td>
+          </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+<!--<input type="button" value="click" onclick="myFunction()" id="fun1">-->
+<!--<input type="button" value="click" onclick="myFunction1()" id="fun2" style="display: none">-->
+<script src="../bootstrap4/bootstrap.min.js"></script>
+<script src="../bootstrap4/jquery-3.6.0.min.js"></script>
+<script>
+  function myFunction() {
+    document.getElementById("userName").style.display = "none";
+    document.getElementById("fun1").style.display = "none";
+    document.getElementById("fun2").style.display = "block";
+  }
+
+  function myFunction1() {
+    document.getElementById("userName").style.display = "table-row";
+    document.getElementById("fun1").style.display = "block";
+    document.getElementById("fun2").style.display = "none";
+  }
+</script>
+</body>
+</html>

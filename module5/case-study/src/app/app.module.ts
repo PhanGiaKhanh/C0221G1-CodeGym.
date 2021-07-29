@@ -11,6 +11,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import { DeleteModalComponent } from './delete-modal/delete-modal/delete-modal.component';
+import { EmployeeListComponent } from './component/employee/employee-list/employee-list.component';
+import {Ng2OrderModule} from 'ng2-order-pipe';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,7 @@ import { DeleteModalComponent } from './delete-modal/delete-modal/delete-modal.c
     HeaderComponent,
     FooterComponent,
     DeleteModalComponent,
+    EmployeeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +32,9 @@ import { DeleteModalComponent } from './delete-modal/delete-modal/delete-modal.c
     BrowserAnimationsModule,
     MatDialogModule,
     MatIconModule,
+    Ng2OrderModule,
+    Ng2SearchPipeModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

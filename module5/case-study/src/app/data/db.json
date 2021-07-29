@@ -52,5 +52,113 @@
       "address": "Hà Nội1",
       "id": 2
     }
+  ],
+  "educationDegrees": [
+    {
+      "id": 1,
+      "name": "Lễ tân"
+    },
+    {
+      "id": 2,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 3,
+      "name": "Chuyên viên"
+    },
+    {
+      "id": 4,
+      "name": "Giám sát"
+    },
+    {
+      "id": 5,
+      "name": "Quản lý"
+    },
+    {
+      "id": 6,
+      "name": "Giám đốc"
+    }
+  ],
+  "divisions": [
+    {
+      "id": 1,
+      "name": "Sale marketing"
+    },
+    {
+      "id": 2,
+      "name": "Hành chính"
+    },
+    {
+      "id": 3,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 4,
+      "name": "Quản lý"
+    }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "name": "Trung cấp"
+    },
+    {
+      "id": 2,
+      "name": "Cao đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Đại học"
+    },
+    {
+      "id": 4,
+      "name": "Sau đại học"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Nam bụng bự",
+      "position": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale marketing"
+      },
+      "educationDegree": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "email": "john1@codegym.vn",
+      "birthday": "2021-06-30",
+      "phone": "0901234567",
+      "address": "Hà Nội",
+      "idCard": "123123123",
+      "salary": "7000000"
+    },
+    {
+      "id": 2,
+      "name": "Tèo Teo",
+      "position": {
+        "id": 2,
+        "name": "Cao đẳng"
+      },
+      "division": {
+        "id": 3,
+        "name": "Phục vụ"
+      },
+      "educationDegree": {
+        "id": 5,
+        "name": "Quản lý"
+      },
+      "email": "john1@codegym.vn",
+      "birthday": "2021-06-30",
+      "phone": "0901234567",
+      "address": "Đà Nẵng",
+      "idCard": "234234234",
+      "salary": "6000000"
+    }
   ]
 }

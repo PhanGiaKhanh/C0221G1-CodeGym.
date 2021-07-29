@@ -1,0 +1,136 @@
+<div class="container card bg-white">
+  <form [formGroup]="editForm" (ngSubmit)="update(id)">
+    <mat-form-field class="example-full-width" hidden>
+      <mat-label style="font-size: 20px" class="mb-3">
+        Name
+        <span class="text-danger" *ngFor="let valid of validateMsg.name">
+          <small *ngIf="getValidate('name', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+      <input name="name" formControlName="name" matInput placeholder="KH-XXXX" class="form-control"
+             style="margin-top: 10px">
+    </mat-form-field>
+
+    <div class="row">
+      <div class="col-7">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Name
+            <span class="text-danger" *ngFor="let valid of validateMsg.name">
+          <small *ngIf="getValidate('name', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="name" formControlName="name" matInput placeholder="Your name" class="form-control"
+                 style="margin-top: 10px">
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field class="example-full-width mt-3">
+          <mat-label style="font-size: 20px" class="mb-5">
+            Gender
+            <span class="text-danger" *ngFor="let valid of validateMsg.gender">
+          <small *ngIf="getValidate('gender', valid)">- {{valid.msg1}}</small>
+        </span>
+          </mat-label>
+          <select matNativeControl name="gender" formControlName="gender">
+            <option [value]="customer.gender" selected>{{customer.gender}}</option>
+            <option value="Male" *ngIf="!(customer.gender == 'Male')">Male</option>
+            <option value="Female" *ngIf="!(customer.gender == 'Female')">Female</option>
+            <option value="Other" *ngIf="!(customer.gender == 'Other')">Other</option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Code
+            <span class="text-danger" *ngFor="let valid of validateMsg.code">
+          <small *ngIf="getValidate('code', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="code" formControlName="code" matInput placeholder="KH-XXXX" class="form-control"
+                 style="margin-top: 10px">
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="example-full-width mt-3">
+          <mat-label style="font-size: 20px; margin-bottom: 20px!important;" class="mb-5">
+            Type
+            <span class="text-danger" *ngFor="let valid of validateMsg.customerType" style="font-size: 20px; margin-bottom: 20px!important;">
+          <small *ngIf="getValidate('customerType', valid)">------  {{valid.msg1}}</small>
+        </span>
+          </mat-label>
+          <select matNativeControl name="typeCustomer" formControlName="customerType" [compareWith]="compareFn">
+            <option *ngFor="let type of customerTypes" [ngValue]="type">{{type.name}}</option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Birthday
+            <span class="text-danger" *ngFor="let valid of validateMsg.birthday">
+          <small *ngIf="getValidate('birthday', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="birthday" formControlName="birthday" matInput placeholder="Your birthday" class="form-control"
+                 style="margin-top: 10px" type="date">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Id card
+            <span class="text-danger" *ngFor="let valid of validateMsg.idCard">
+          <small *ngIf="getValidate('idCard', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="idCard" formControlName="idCard" matInput placeholder="Include 10 digits" class="form-control"
+                 style="margin-top: 10px">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Address
+            <span class="text-danger" *ngFor="let valid of validateMsg.address">
+          <small *ngIf="getValidate('address', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="address" formControlName="address" matInput placeholder="Ex: Đà Nẵng" class="form-control"
+                 style="margin-top: 10px">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label style="font-size: 20px" class="mb-3">
+            Phone
+            <span class="text-danger" *ngFor="let valid of validateMsg.phone">
+          <small *ngIf="getValidate('phone', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+          <input name="phone" formControlName="phone" matInput placeholder="(090|091|84+90|84+91)XXXXXX"
+                 class="form-control" style="margin-top: 10px">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-size: 20px" class="mb-3">
+        Email
+        <span class="text-danger" *ngFor="let valid of validateMsg.email">
+          <small *ngIf="getValidate('email', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+      <input name="email" formControlName="email" matInput placeholder="Ex: abd@gmai.com" class="form-control"
+             style="margin-top: 10px">
+    </mat-form-field>
+    <div class="text-right">
+      <button routerLink="/customer" class="btn btn-secondary">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!editForm.valid">Create</button>
+    </div>
+
+  </form>
+</div>
+<hr>

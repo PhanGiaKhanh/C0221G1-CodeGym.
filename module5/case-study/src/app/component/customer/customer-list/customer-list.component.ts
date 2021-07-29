@@ -3,7 +3,6 @@ import {Customer} from '../../../model/customer/customer';
 import {CustomerService} from '../../../service/customer.service';
 import {DeleteModalComponent} from '../../../delete-modal/delete-modal/delete-modal.component';
 import {MatDialog} from '@angular/material/dialog';
-import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',

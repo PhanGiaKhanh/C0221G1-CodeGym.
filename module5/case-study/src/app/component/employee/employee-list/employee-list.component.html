@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-3">
+    <a class="btn btn-primary" routerLink="/customer/create">Add new product</a>
+  </div>
+  <div class="col-4">
+<!--    <input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="Search">-->
+  </div>
+  <div class="col-5">
+    <div class="row">
+      <div class="col">
+        <input type="text" id="searchName" [(ngModel)]="nameSearch" placeholder="Search name" class="form-control">
+      </div>
+      <div class="col">
+        <input type="text" id="searchEmail" [(ngModel)]="emailSearch" placeholder="Search email" class="form-control">
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th>STT</th>
+    <th (click)="sort('id')">Id
+      <span class="glyphicon sort-icon" *ngIf="key =='id'"
+            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+    </th>
+    <th (click)="sort('name')">Name
+      <span class="glyphicon sort-icon" *ngIf="key =='name'"
+            [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+    </th>
+    <th>Bộ Phận</th>
+    <th>Bằng Cấp</th>
+    <th>Chức Vụ</th>
+    <th>Ngày Sinh</th>
+    <th>CMND</th>
+    <th>Email</th>
+    <th>Lương</th>
+    <th>SĐT</th>
+    <th>Address</th>
+    <th colspan="2">Hành động</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let e of employees | orderBy: key : reverse | filter: filter | paginate: {itemsPerPage: 5, currentPage: page}; index as i">
+<!--    <tr  *ngFor="let e of employees; index as i">-->
+  <td>{{i + page * 5 - 4}}</td>
+  <td>{{e.id}}</td>
+  <td>{{e.name}}</td>
+  <td>{{e.division.name}}</td>
+  <td>{{e.position.name}}</td>
+  <td>{{e.educationDegree.name}}</td>
+  <td>{{e.birthday}}</td>
+  <td>{{e.idCard}}</td>
+  <td>{{e.email}}</td>
+  <td>{{e.salary}}</td>
+  <td>{{e.phone}}</td>
+  <td>{{e.address}}</td>
+  <td><a class="btn btn-warning" [routerLink]="['/customer/edit',e.id]">Edit</a></td>
+  <td><!-- Button trigger modal -->
+    <button type="button" class="btn btn-danger" (click)="removeDialog(e)">
+      Delete
+    </button>
+  </td>
+  </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="page=$event" nextLabel="next" previousLabel="previous"></pagination-controls>
