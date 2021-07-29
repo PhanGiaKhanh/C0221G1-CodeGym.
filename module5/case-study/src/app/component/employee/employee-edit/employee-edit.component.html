@@ -1,9 +1,9 @@
 <div class="container card bg-white">
-  <form [formGroup]="editForm" (ngSubmit)="update(id)">
+  <form [formGroup]="editForm" (ngSubmit)="update()">
     <mat-form-field class="example-full-width" hidden>
       <mat-label style="font-size: 20px" class="mb-3">
         Name
-        <span class="text-danger" *ngFor="let valid of validateMsg.name">
+        <span class="text-danger" *ngFor="let valid of validateEmployee.name">
           <small *ngIf="getValidate('name', valid)"> ------  {{valid.msg1}}</small>
         </span></mat-label>
       <input name="name" formControlName="name" matInput placeholder="KH-XXXX" class="form-control"
