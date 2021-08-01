@@ -3,15 +3,16 @@
 
 
     <div class="row">
-      <div class="col-8"><mat-form-field class="example-full-width">
+      <div class="col-8">
+        <mat-form-field class="example-full-width">
         <mat-label style="font-size: 20px" class="mb-3">
-          Name
-          <span class="text-danger" *ngFor="let valid of validateMsg.name">
+        Name
+        <span class="text-danger" *ngFor="let valid of validateMsg.name">
           <small *ngIf="getValidate('name', valid)"> ------  {{valid.msg1}}</small>
         </span></mat-label>
         <input name="name" formControlName="name" matInput placeholder="Your name" class="form-control"
                style="margin-top: 10px">
-      </mat-form-field>
+        </mat-form-field>
       </div>
       <div class="col-4">
         <mat-form-field class="example-full-width mt-3">

@@ -2,18 +2,18 @@
   "todos": [
     {
       "id": 1,
-      "content": "Hello",
-      "complete": "False"
+      "content": "Hello111",
+      "complete": false
     },
     {
       "id": 2,
-      "content": "Hello2",
-      "complete": "True"
+      "content": "Hello21",
+      "complete": true
     },
     {
       "id": 3,
       "content": "Hello3",
-      "complete": "False"
+      "complete": true
     }
   ]
 }

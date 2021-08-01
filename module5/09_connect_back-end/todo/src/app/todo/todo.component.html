@@ -5,11 +5,40 @@
   <input type="text" class="form-control" [formControl]="content" (change)="change()">
   <ul>
     <li
-        [class.complete]="todo.complete"
-        *ngFor="let todo of todos; index as i">
+      [class.complete]="todo.complete"
+      *ngFor="let todo of todos; index as i">
       Id : {{todo.id}}<br>
       {{todo.content}}<br>
-      <button (click)="toggleTodo(i)">Delete</button>
+      <button (click)="toggleTodo(i)" class="btn btn-danger">Delete</button>
+      |
+      <button (click)="edit(todo.id)" type="button" class="btn btn-primary" data-toggle="modal"
+              data-target="#exampleModal">
+        Edit
+      </button>
     </li>
   </ul>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="editForm" (ngSubmit)="editTodo()" *ngIf="editForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="exitModal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label>Content</label>
+          <input type="text" formControlName="content" >
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" >Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

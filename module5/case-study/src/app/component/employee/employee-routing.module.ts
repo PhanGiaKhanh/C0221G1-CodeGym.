@@ -17,10 +17,10 @@ const routes: Routes = [
     path: 'create',
     component: EmployeeCreateComponent
   },
-  {
-    path: 'edit/:id',
-    component: EmployeeEditComponent
-  },
+  // {
+  //   path: 'edit/:id',
+  //   component: EmployeeEditComponent
+  // },
 
 ];
 

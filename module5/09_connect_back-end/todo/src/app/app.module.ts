@@ -6,6 +6,8 @@ import { TodoComponent } from './todo/todo.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
+import {AppRoutingModule} from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
