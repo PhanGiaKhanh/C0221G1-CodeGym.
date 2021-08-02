@@ -1,19 +1,36 @@
-
 <h1 class="text-center text-info"> List products</h1>
-<div class="row mb-2">
-  <div class="col-3">
+<div class="row mb-2 mx-0">
+  <div class="col-2  mt-3">
     <a class="btn btn-primary" routerLink="/product/create">Add new product</a>
   </div>
-  <div class="col-4">
-    <!--    <input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="Search">-->
-  </div>
-  <div class="col-5 px-0">
+  <div class="col-5">
     <div class="row">
-      <div class="col-5 px-0">
+      <div class="col-5">
+        <label>Start date</label>
+        <input class="form-control" type="date" [(ngModel)]="date1" placeholder="Search"></div>
+      <div class="col-5">
+        <label>End date</label>
+        <input class="form-control" type="date" [(ngModel)]="date2" placeholder="Search"></div>
+      <div class="col-2 mt-3">
+        <button class="btn btn-primary" (click)="resetDate()">Reset</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-5">
+    <div class="row text-right mt-3">
+      <div class="col-1"></div>
+      <div class="col-3 px-0">
         <input type="text" id="searchName" [(ngModel)]="searchName" placeholder="Search name" class="form-control">
       </div>
-      <div class="col-5 px-0">
+      <div class="col-3 px-0">
         <input type="text" id="searchDate" [(ngModel)]="searchDate" placeholder="Search date" class="form-control">
+      </div>
+      <div class="col-3 px-0">
+        <!--        <input type="text" id="searchProductType" [(ngModel)]="searchProductType" placeholder="Search date" class="form-control">-->
+        <select id="searchProductType" [(ngModel)]="searchProductType" placeholder="Search date" class="form-control">
+          <option *ngFor="let pt of productTypes" [value]="pt.name"> {{pt.name}}</option>
+          <option value="" [selected]="1">Select type</option>
+        </select>
       </div>
       <div class="col-2 px-0">
         <button class="btn btn-primary" (click)="search()">Search</button>
@@ -40,15 +57,15 @@
   </tr>
   </thead>
   <tbody>
-<!--  <tr *ngFor="let p of products; index as i">-->
-        <tr  *ngFor="let p of products | orderBy: key : reverse | paginate: {itemsPerPage: 3, currentPage: page}; index as i">
+  <!--  <tr *ngFor="let p of products; index as i">-->
+  <tr *ngFor="let p of products | orderBy: key : reverse | paginate: {itemsPerPage: 3, currentPage: page}; index as i">
     <td>{{i + page * 3 - 2}}</td>
     <td>{{p.id}}</td>
     <td>{{p.name}}</td>
     <td>{{p.date}}</td>
     <td>{{p.price}}</td>
     <td>{{p.productType.name}}</td>
-    <td><a class="btn btn-warning" [routerLink]="['/customer/edit',p.id]">Edit</a></td>
+    <td><a class="btn btn-warning" [routerLink]="['/product/edit',p.id]">Edit</a></td>
     <td><!-- Button trigger modal -->
       <button type="button" class="btn btn-danger" (click)="removeDialog(p)">
         Delete
