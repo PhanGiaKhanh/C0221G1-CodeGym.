@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './component/layout/home/home.component';
+import {BenhNhanListComponent} from './component/benhNhan/benh-nhan-list/benh-nhan-list.component';
+import {BenhNhanEditComponent} from './component/benhNhan/benh-nhan-edit/benh-nhan-edit.component';
 
 
 const routes: Routes = [
   {
-    path: 'product',
-    loadChildren: () => import('./component/product/product.module').then(module => module.ProductModule)
+    path: 'benhNhan',
+    component: BenhNhanListComponent
+  },
+  {
+    path: 'benhNhan/edit/:id',
+    component: BenhNhanEditComponent
   },
   {
     path: '',

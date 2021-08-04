@@ -1,0 +1,96 @@
+<div class="container card bg-white" >
+  <form [formGroup]="editForm" (ngSubmit)="submit()">
+
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-size: 20px" class="mb-3">
+        Mã bệnh án
+      </mat-label>
+      <input name="maBenhAn" formControlName="maBenhAn" matInput placeholder="This is your name" class="form-control"
+             style="margin-top: 10px" type="text"  readonly>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-size: 20px" class="mb-3">
+        Mã bệnh nhân
+      </mat-label>
+      <input name="maBenhNhan" formControlName="maBenhNhan" matInput placeholder="This is your name" class="form-control"
+             style="margin-top: 10px" type="text"  readonly>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-size: 20px" class="mb-3">
+        Tên bệnh nhân
+        <span class="text-danger" *ngFor="let valid of validateMsg.ten">
+          <small *ngIf="getValidate('ten', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+      <input name="ten" formControlName="ten" matInput placeholder="This is your name" class="form-control"
+             style="margin-top: 10px" type="text">
+    </mat-form-field>
+
+
+    <small style="color: red" *ngIf="editForm.hasError('validDate') && editForm.get('ngayNhapVien')?.touched">
+      Ngày nhập viện phải trước ngày xuất viện
+    </small>
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-size: 20px" class="mb-3">
+        Ngày nhập viện
+        <span class="text-danger" *ngFor="let valid of validateMsg.ngayNhapVien">
+          <small *ngIf="getValidate('ngayNhapVien', valid)"> ------  {{valid.msg1}}</small>
+        </span>
+        
+      </mat-label>
+      <input name="ngayNhapVien" formControlName="ngayNhapVien" matInput placeholder="Start date" class="form-control"
+             style="margin-top: 10px" type="date">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-size: 20px" class="mb-3">
+        Ngày ra viện
+        <span class="text-danger" *ngFor="let valid of validateMsg.ngayRaVien">
+          <small *ngIf="getValidate('ngayRaVien', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+      <input name="ngayRaVien" formControlName="ngayRaVien" matInput placeholder="Start date" class="form-control"
+             style="margin-top: 10px" type="date">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-size: 20px" class="mb-3">
+        Lý do ra viện
+        <span class="text-danger" *ngFor="let valid of validateMsg.lyDoRaVien">
+          <small *ngIf="getValidate('ten', valid)"> ------  {{valid.msg1}}</small>
+        </span></mat-label>
+      <input name="lyDoRaVien" formControlName="lyDoRaVien" matInput placeholder="This is your name" class="form-control"
+             style="margin-top: 10px" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width mt-3">
+      <mat-label style="font-size: 20px" class="mb-5">
+        Bệnh án
+        <span class="text-danger" *ngFor="let valid of validateMsg.benhAn">
+          <small *ngIf="getValidate('benhAn', valid)">------  {{valid.msg1}}</small>
+        </span>
+      </mat-label>
+      <select matNativeControl name="benhAn" formControlName="benhAn" [compareWith]="compareFn">
+        <option *ngFor="let ba of benhAnList" [ngValue]="ba">{{ba.ten}}</option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width mt-3">
+      <mat-label style="font-size: 20px" class="mb-5">
+        Bác sĩ
+        <span class="text-danger" *ngFor="let valid of validateMsg.bacSi">
+          <small *ngIf="getValidate('bacSi', valid)">------  {{valid.msg1}}</small>
+        </span>
+      </mat-label>
+      <select matNativeControl name="bacSi" formControlName="bacSi" [compareWith]="compareFn">
+        <option *ngFor="let pt of bacSiList" [ngValue]="pt">{{pt.ten}}</option>
+      </select>
+    </mat-form-field>
+
+
+    <div class="text-right">
+      <button routerLink="/benhNhan" class="btn btn-secondary">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!editForm.valid">Edit</button>
+    </div>
+  </form>
+</div>

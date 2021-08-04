@@ -1,0 +1,62 @@
+{
+  "bacSis": [
+    {
+      "id": 1,
+      "ten": "Bac si A"
+    },
+    {
+      "id": 2,
+      "ten": "Bac si B"
+    }
+  ],
+  "benhAns": [
+    {
+      "id": 1,
+      "ten": "Mổ"
+    },
+    {
+      "id": 2,
+      "ten": "Chạy thận"
+    },
+    {
+      "id": 3,
+      "ten": "Xạ trị"
+    }
+  ],
+  "benhNhans": [
+    {
+      "id": 2,
+      "maBenhAn": "BA-0001",
+      "maBenhNhan": "BN-435",
+      "ten": "Nguyễn Vă",
+      "ngayNhapVien": "2016-08-18",
+      "ngayRaVien": "2016-09-03",
+      "lyDoRaVien": "Ung thư ",
+      "benhAn": {
+        "id": 3,
+        "ten": "Xạ trị"
+      },
+      "bacSi": {
+        "id": 1,
+        "ten": "Bac si A"
+      }
+    },
+    {
+      "id": 4,
+      "maBenhAn": "BA-0002",
+      "maBenhNhan": "BN-435",
+      "ten": "Thái Anh",
+      "ngayNhapVien": "2016-08-07",
+      "ngayRaVien": "2016-08-10",
+      "lyDoRaVien": "Ung thư giai đoạn cuối",
+      "benhAn": {
+        "id": 2,
+        "ten": "Chạy thận"
+      },
+      "bacSi": {
+        "id": 2,
+        "ten": "Bac si B"
+      }
+    }
+  ]
+}
