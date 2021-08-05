@@ -60,7 +60,7 @@
   </thead>
   <tbody>
 <!--  <tr *ngFor="let p of products; index as i">-->
-        <tr  *ngFor="let p of products | orderBy: key : reverse | paginate: {itemsPerPage: 3, currentPage: page}; index as i">
+        <tr  *ngFor="let p of products | paginate: {itemsPerPage: 3, currentPage: page}; index as i">
     <td>{{i + page * 3 - 2}}</td>
     <td>{{p.id}}</td>
     <td>{{p.name}}</td>

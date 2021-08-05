@@ -16,30 +16,31 @@ export class ProductService {
   }
 
   getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(API_URL + '/products');
+    return this.http.get<Product[]>(API_URL + '/product');
   }
 
   getProductType(): Observable<ProductType[]> {
-    return this.http.get<ProductType[]>(API_URL + '/productTypes');
+    return this.http.get<ProductType[]>(API_URL + '/productType');
   }
 
   save(product): Observable<Product> {
-    return this.http.post<Product>(API_URL + '/products', product);
+    return this.http.post<Product>(API_URL + '/product/save', product);
   }
 
   findById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${API_URL}/products/${id}`);
+    return this.http.get<Product>(`${API_URL}/product/${id}`);
   }
 
   update(product: Product): Observable<Product> {
-    return this.http.put<Product>(`${API_URL}/products/${product.id}`, product);
+    return this.http.put<Product>(`${API_URL}/product/update/${product.id}`, product);
   }
 
   delete(id: number): Observable<Product> {
-    return this.http.delete<Product>(`${API_URL}/products/${id}`);
+    return this.http.delete<Product>(`${API_URL}/product/delete/${id}`);
   }
 
   search(name: string, date: string, productTypeName: string, date1: string, date2: string): Observable<Product[]> {
-    return this.http.get<Product[]>(API_URL + '/products?name_like=' + name + '&date_like=' + date + '&productType.name_like=' + productTypeName + '&date_gte=' + date1 + '&date_lte=' + date2);
+    return this.http.get<Product[]>(API_URL + '/product?name_like=' + name + '&date_like=' + date +
+      '&productType.name_like=' + productTypeName + '&date_gte=' + date1 + '&date_lte=' + date2);
   }
 }

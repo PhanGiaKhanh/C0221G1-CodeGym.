@@ -40,8 +40,9 @@ export class ProductListComponent implements OnInit {
   }
 
   getAll() {
-    this.ps.getAll().subscribe(products => {
+    this.ps.getAll().subscribe((products) => {
       this.products = products;
+      console.log(products);
     });
   }
 
