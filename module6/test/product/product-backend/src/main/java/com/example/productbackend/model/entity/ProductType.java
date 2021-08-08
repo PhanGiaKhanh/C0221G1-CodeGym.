@@ -6,21 +6,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
-public class Product {
+public class ProductType {
     @Id
-    @Column(name = "product_id")
+    @Column(name = "productType_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String date;
-    private String price;
-    @ManyToOne
-    @JoinColumn(name = "productType_id", nullable = false)
-    @JsonManagedReference
-    // @JsonIgnore
-    private ProductType productType;
+
+    @OneToMany(mappedBy = "productType", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Product> products;
 }

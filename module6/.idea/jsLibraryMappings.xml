@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/test/product/product-crud" libraries="{module6/test/product/product-crud/node_modules}" />
+    <file url="file://$PROJECT_DIR$/test/product/product-crud" libraries="{module6/test/product/product-crud/node_modules}" />
+  </component>
+</project>

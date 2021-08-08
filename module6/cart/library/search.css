@@ -1,0 +1,95 @@
+* {
+    font-size: 14px;
+}
+.container fieldset form .btn{
+    height: 29px;
+}
+.container fieldset form .label-text {
+    min-width: 100px;
+}
+
+#content {
+    margin-top: 20px;
+    box-shadow: 3px 3px 3px 3px #5f6062;
+}
+
+#content fieldset table .thead {
+    color: white;
+    background-color: #567FEA;
+}
+
+#content fieldset form input {
+    padding-left: 10px;
+    border-radius: 4px;
+    outline: none;
+    padding-bottom: 3px;
+}
+
+#content fieldset form {
+    display: flex;
+    justify-content: left;
+}
+
+#content fieldset form .mb-3:first-child{
+    margin-top: 4px;
+}
+#content fieldset form .mb-3:last-child{
+    padding-left: 20px;
+}
+@media only screen and (max-width: 993px) {
+    /*@media only screen and (max-width: 663px) {*/
+
+    #content fieldset form {
+        display: grid !important;
+        justify-content: normal;
+    }
+    #content fieldset form .mb-3:last-child{
+        padding-left: 0px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .container fieldset form .label-text {
+        min-width: 80px;
+    }
+}
+
+
+/*region edit error fieldset*/
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width: inherit; /* Or auto */
+    padding: 0 10px; /* To give a bit of padding on the left and right */
+    border-bottom: none;
+}
+
+/*endregion*/
+
+/*#region table scroll*/
+.outer {
+    overflow-y: auto;
+    height: 300px;
+}
+
+.outer {
+    width: 100%;
+    -layout: fixed;
+}
+
+.outer th {
+    text-align: left;
+    top: 0;
+    position: sticky;
+    background-color: white;
+}
+/*#endregion*/

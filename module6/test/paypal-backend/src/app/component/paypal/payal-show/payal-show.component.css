@@ -1,0 +1,29 @@
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+h2 {
+  color: blue;
+  font-weight: normal;
+}
+
+td {
+  padding: 6px;
+}
+
+td:nth-child(5) {
+  width: 100px;
+}
+#main {
+  display: flex;
+}
+#left {
+  width: 60%;
+  padding: 30px;
+}
+#right {
+  width: 40%;
+  padding: 30px;
+  border-left: 1px solid darkgray;
+}

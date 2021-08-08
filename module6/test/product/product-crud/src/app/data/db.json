@@ -1,0 +1,68 @@
+{
+  "productTypes": [
+    {
+      "id": 1,
+      "name": "Samsung"
+    },
+    {
+      "id": 2,
+      "name": "Iphone"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone 9",
+      "date": "2021-07-31",
+      "price": 9000000,
+      "productType": {
+        "id": 2,
+        "name": "Iphone"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Iphone 10",
+      "date": "2021-10-05",
+      "price": 12000000,
+      "productType": {
+        "id": 2,
+        "name": "Iphone"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Note 20",
+      "date": "2021-03-11",
+      "price": 15000000,
+      "productType": {
+        "id": 1,
+        "name": "Samsung"
+      }
+    },
+    {
+      "id": 4,
+      "name": "LG S20",
+      "price": 9000000,
+      "date": "2021-07-31",
+      "productType": {
+        "id": 3,
+        "name": "LG"
+      }
+    },
+    {
+      "name": "Oppo A2",
+      "price": "100",
+      "date": "2021-08-08",
+      "productType": {
+        "id": 1,
+        "name": "Samsung"
+      },
+      "id": 5
+    }
+  ]
+}
