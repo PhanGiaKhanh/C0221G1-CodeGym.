@@ -1,0 +1,113 @@
+/*#region PLANE-TICKET*/
+.search-ticket {
+    width: 380px;
+    height: 520px;
+    padding-top: 30px;
+    background: rgba(255, 56, 53, 0.81);
+    border-radius: 10px;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2);
+    z-index: 600;
+}
+
+/*Edit input*/
+.search-ticket .plane-ticket input {
+    margin: 10px 0 0 18px;
+    width: 90%;
+    height: 48px;
+    font-weight: 500;
+    font-size: 15px;
+    background: white;
+}
+
+.search-ticket .plane-ticket .ticket-input-left,
+.search-ticket .plane-ticket .ticket-input-right {
+    position: relative;
+}
+
+.search-ticket .plane-ticket .ticket-input-left .ticket-icon {
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.search-ticket .plane-ticket .ticket-title {
+    color: #7C848B;
+    font-size: 12px;
+    position: absolute;
+    top: 12px;
+    left: 55px;
+}
+
+.search-ticket .plane-ticket .ticket-normal {
+    padding-top: 15px;
+}
+
+.search-ticket .plane-ticket input.ticket-normal {
+    border-radius: 5px;
+}
+
+.search-ticket .plane-ticket .ticket-input-left input {
+    width: 100%;
+    padding-left: 32px;
+    border-radius: unset;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-ticket .plane-ticket .ticket-input-right input {
+    width: 80%;
+    border-radius: unset;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.search-ticket .plane-ticket .ticket-radio input {
+    margin-top: 20px;
+    width: 17px;
+    height: 17px;
+}
+
+/*CHOOSE Passenger*/
+.search-ticket .plane-ticket .ticket-element {
+    position: relative;
+}
+
+.search-ticket .plane-ticket .showHidden {
+    width: 350px;
+    height: 270px;
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.search-ticket .plane-ticket .col:last-child {
+    font-size: 25px;
+    padding-right: 50px;
+    text-align: end;
+}
+
+.search-ticket .plane-ticket table td a {
+    color: black;
+}
+
+.search-ticket .plane-ticket table td:first-child {
+    padding-left: 30px;
+}
+
+.search-ticket .plane-ticket table td:last-child {
+    font-weight: bold;
+}
+
+/*button Tìm chuyến bay*/
+.search-ticket .plane-ticket .findPlan {
+    position: absolute;
+    bottom: 25px;
+    left: 135px;
+    z-index: 100;
+}
+
+/*#endregion*/

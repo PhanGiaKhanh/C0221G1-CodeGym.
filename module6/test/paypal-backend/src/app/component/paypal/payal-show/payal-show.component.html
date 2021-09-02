@@ -1,5 +1,5 @@
 <div class="container">
-  <h2><a href="#">Giỏ hàng</a> > <a href="#">Thanh Toán</a> > Hoàn Tất</h2>
+  <h3><span>GIỎ HÀNG</span> > <a href="#">THANH TOÁN</a> > HOÀN TẤT</h3>
   <div id="main">
     <div id="left">
       <table class="table">
@@ -12,64 +12,31 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr *ngFor="let medicine of medicines, index as i">
           <td class="d-flex">
-            <a href="#"><img src="https://img.icons8.com/small/32/000000/cancel--v1.png" height="32" class="mt-3"/></a>
-              <img src="https://image.pharmacity.vn/live/uploads/2021/07/P20426_1_l-300x300.jpg" alt="" width="70px"
-                   height="70px">
-
+            <a (click)="delMedicine(i)"><i class="fa fa-times bi" aria-hidden="true"></i></a>
+            <img [src]="medicine.img" alt=""
+                 width="70px"
+                 height="70px">
             <div>
-              Tăm bông kháng khuẩn đầu xoán Sakura(Lọ 200 que giấy)
+              <a href="#">{{medicine.info}}</a>
             </div>
           </td>
-          <td>44000 vnd</td>
-          <td width="100px">
-            <input type="button" value="-">
-            <input type="button" value="20">
-            <input type="button" value="+">
+          <td>{{medicine.unit | currency: 'VND' : true : '1.0-0' : 'fr'}}</td>
+          <td>
+            <div>
+              <input type="button" value="-" (click)="medicineSub(i)">
+              <input type="text" [value]="medicine.amount">
+              <input type="button" value="+" (click)="medicineAdd(i)">
+            </div>
           </td>
-          <td>88000</td>
+          <td>{{medicine.price | currency: 'VND' : true : '1.0-0' : 'fr'}} </td>
         </tr>
         <tr>
-          <td>
-            <img src="https://img.icons8.com/small/32/000000/cancel--v1.png"/>
-            <img src="https://image.pharmacity.vn/live/uploads/2021/07/P20426_1_l-300x300.jpg" alt="" width="70px"
-                 height="70px">
-            <span>Tăm bông kháng khuẩn đầu xoán Sakura(Lọ 200 que giấy)</span>
+          <td colspan="4">
+            <a href="#" class="btn btn-outline-primary">TIẾP TỤC XEM SẢN PHẨM</a>
+            <a class="btn btn-primary" (click)="update()">CẬP NHẬT GIỎ HÀNG</a>
           </td>
-          <td>44000 vnd</td>
-          <td>
-            <input type="button" value="-">
-            <input type="button" value="20">
-            <input type="button" value="+">
-          </td>
-          <td>88000</td>
-        </tr>
-        <tr>
-          <td>
-            <img src="https://img.icons8.com/small/32/000000/cancel--v1.png"/>
-            <img src="https://image.pharmacity.vn/live/uploads/2021/07/P20426_1_l-300x300.jpg" alt="" width="70px"
-                 height="70px">
-            <span>Tăm bông kháng khuẩn đầu xoán Sakura(Lọ 200 que giấy)</span>
-          </td>
-          <td>44000 vnd</td>
-          <td>
-            <input type="button" value="-">
-            <input type="button" value="20">
-            <input type="button" value="+">
-          </td>
-          <td>88000</td>
-        </tr>
-        <tr>
-          <td>
-            <img src="https://img.icons8.com/small/32/000000/cancel--v1.png"/>
-            <img src="https://image.pharmacity.vn/live/uploads/2021/07/P20426_1_l-300x300.jpg" alt="" width="70px"
-                 height="70px">
-            <span>Tăm bông kháng khuẩn đầu xoán Sakura(Lọ 200 que giấy)</span>
-          </td>
-          <td>44000 vnd</td>
-          <td>02</td>
-          <td>88000</td>
         </tr>
         </tbody>
       </table>
@@ -79,26 +46,61 @@
       <table class="table">
         <thead>
         <tr>
-          <th>Tổng số lượng</th>
+          <th>
+            <div>Tổng số lượng</div>
+            <div>{{medicineTotal}}</div>
+          </th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td>Tạm tính <span>1500000</span></td>
+          <td>
+            <div>Tạm tính</div>
+            <div>{{moneyTotal | currency: 'VND' : true : '1.0-0' : 'fr'}}</div>
+          </td>
         </tr>
         <tr>
-          <td>Tổng tiền <span>150000</span></td>
+          <td>
+            <div>Phí vận chuyển</div>
+            <div>{{30000 | currency: 'VND' : false : '1.0-0' : 'fr'}}</div>
+          </td>
         </tr>
         <tr>
-          <td>Tạm tính <span>150o000</span></td>
+          <td>
+            <div>Tổng tiền</div>
+            <div>{{moneyTotal + 30000 | currency: 'VND' : true : '1.0-0': 'fr'}}</div>
+          </td>
         </tr>
         <tr>
-          <td>Tạm tính <span>150o000</span></td>
-        </tr>
+          <td>
+            <div>Tỷ giá USD ({{currencyDateNow | date :'dd/MM/yyy' }}) </div>
+            <div>{{currencyMoney | currency: 'VND' : '' : '1.0-0' : 'fr' }}</div>
+          </td>
         <tr>
-          <td>Tạm tính <span>150o000</span></td>
+          <td>
+            <div>Tổng tiền Paypal</div>
+            <div>{{moneyPayPal |  currency : "USD" :'$': '1.0-2': 'fr'}}</div>
+          </td>
         </tr>
         </tbody>
       </table>
+      <div  class="text-center" id="myPaypalButton">
+      </div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th><i class="bi bi-tag"></i> Phiếu ưu đãi</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><input type="text" placeholder="Mã ưu đãi" class="form-control"></td>
+        </tr>
+        <tr>
+          <td><a href="#" class="btn btn-primary rounded-pill">Áp dụng</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

@@ -2,13 +2,14 @@
     text-decoration: none;
     color: #000;
 }
-
+.container h3{
+    padding-left: 40px;
+}
 .container h3, .container h3 a {
-    margin-top: 35px;
+    margin-top: 10px;
     color: #BDBFBE;
     font-weight: normal;
     text-decoration: none;
-    text-align: center;
 }
 
 .container h3 span{
@@ -105,8 +106,12 @@
     }
     #main #left, #main #right {
         width: 100%;
+        padding: 10px!important;
     }
     #main #right {
         border-left: none;
+    }
+    .container h3 {
+        font-size: 20px!important;
     }
 }

@@ -1,0 +1,13 @@
+<div style="display: flex; justify-content: center" class="text-center">
+<div>
+
+  <input type="number" [(ngModel)]="finalAccount">
+  <div id="myPaypalButton" ></div>
+</div>
+</div>
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" style="border: 1px solid saddlebrown">
+  <input type="text" placeholder="Name" name="name" ngModel required #name="ngModel"><br>
+  <input type="text" placeholder="Email" email name="email" ngModel required #email="ngModel"><br>
+  <textarea placeholder="Messages" name="messages" ngModel required #messages="ngModel"></textarea><br>
+  <input type="submit" value="Send">
+</form>

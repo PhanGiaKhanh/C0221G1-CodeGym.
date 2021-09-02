@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="library/bootstrap4/bootstrap.min.css">
+    <script src="library/jquery-3.6.0.min.js"></script>
+    <script src="library/popper.min.js"></script>
+    <script src="library/bootstrap4/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="searchTicket.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+</head>
+<body>
+
+
+<!-- ---------------------------------- Top 10 chuyến bay rẽ nhất ------------------------------------- -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4 mt-3">
+            <div class=" search-ticket">
+                <div class="search-ticket-top">
+                <div class="text-white ml-3"><h4>Sắp xếp</h4></div>
+                <div class="text-white mx-3 pl-3" style="border: 1px solid white; border-radius: 5px" >
+                    <input type="radio" name="search-type" checked>Đề xuất <br>
+                    <input type="radio" name="search-type">Giá (Thấp đến cao) <br>
+                    <input type="radio" name="search-type">Thời gian khởi hành <br>
+                    <input type="radio" name="search-type">Hãng hàng không
+                </div>
+                </div>
+                <div class="plane-ticket">
+                    <h4 class="text-center text-white mt-3">Đặt vé máy bay</h4>
+                    <div class="text-white list-inline ticket-radio">
+                        <input type="radio" name="choose-ticket" onclick="chooseTicket(1)" checked> Khứ hồi
+                        <input type="radio" name="choose-ticket" onclick="chooseTicket(0)"> Một chiều
+                    </div>
+                    <div class="ticket-element d-flex ">
+                        <div class="ticket-input-left">
+                            <input type="text" class="form-control person" onclick="clickHidden(0)"
+                                   placeholder="Điểm khởi hành"
+                                   readonly>
+                            <div class="ticket-icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="ticket-input-right">
+                            <input type="text" class="form-control ticket-normal" onclick="clickHidden(1)"
+                                   placeholder="27/08/2021"
+                                   readonly>
+                            <div class="ticket-title" style="left: 30px">Ngày đi</div>
+                        </div>
+
+                        <!-- ------------------------------------------ ĐIỂM KHỞI HÀNH / ĐIỂM ĐẾN -------------------------------------------- -->
+                        <div class="bg-light showHidden" style="z-index: 690; height: 300px;">
+                            <div class="row pt-1">
+                                <div class="col pl-2 pr-1">
+                                    <input type="text" class="form-control" placeholder="Điểm khởi hành" readonly>
+                                </div>
+                                <div class="col pr-2 pl-1">
+                                    <input type="text" class="form-control ml-0" placeholder="Điểm đến" readonly>
+                                </div>
+                            </div>
+                            <div class="scroll outer mt-3">
+                                <table class="w-100">
+                                    <tr>
+                                        <td><a href="#">Tp.Hồ Chí Minh</a></td>
+                                        <td><a href="#">SGN</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Hà Nội</a></td>
+                                        <td><a href="#">HAN</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Đà Lạt</a></td>
+                                        <td><a href="#">DLI</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Đà Nẵng</a></td>
+                                        <td><a href="#">DAD</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nha Trang</a></td>
+                                        <td><a href="#">CXR</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Phú Quốc</a></td>
+                                        <td><a href="#">PQC</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Phú Quốc</a></td>
+                                        <td><a href="#">PQC</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Phú Quốc</a></td>
+                                        <td><a href="#">PQC</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Phú Quốc</a></td>
+                                        <td><a href="#">PQC</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Phú Quốc</a></td>
+                                        <td><a href="#">PQC</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Phú Quốc</a></td>
+                                        <td><a href="#">PQC</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr>
+                            <div class="row" style="margin-top: -14px">
+                                <div class="col">
+                                    <a href="#" class="btn btn-warning person" onclick="clickHidden(0)">Đi tiếp</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ------------------------------------------ NGÀY ĐI / NGÀY VỀ ---------------------------------------------------- -->
+                        <div class="bg-light showHidden" style="z-index: 690; height: 250px;">
+                            <div class="row pt-1">
+                                <div class="col-12 mx-3">
+                                    Ngày đi:
+                                    <input type="date" class="form-control mx-0">
+                                </div>
+                                <div class="col-12 mx-3">
+                                    Ngày về:
+                                    <input type="date" class="form-control mx-0">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row" style="margin-top: -10px">
+                                <div class="col">
+                                    <a href="#" class="btn btn-warning person" onclick="clickHidden(1)">Đi tiếp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="two-way" style="display: block">
+                        <div class="ticket-element d-flex">
+                            <div class="ticket-input-left">
+                                <input type="text" class="form-control person" onclick="clickHidden(0)"
+                                       placeholder="Điểm đến"
+                                       readonly>
+                                <div class="ticket-icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+                            </div>
+                            <div class="ticket-input-right">
+                                <input type="text" class="form-control" onclick="clickHidden(1)" placeholder="Ngày về"
+                                       readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="one-way" style="display: none">
+                        <div class="ticket-element d-flex w-100">
+                            <div class="ticket-input-left" style="width: 90%;height: 58px">
+                                <input type="text" class="form-control person" onclick="clickHidden(0)"
+                                       style="border-radius: 5px" placeholder="Điểm đến" readonly>
+                                <div class="ticket-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-element d-flex w-100">
+                        <div class="ticket-input-left" style="width: 90%;height: 58px">
+                            <input type="text" class="form-control person ticket-normal" onclick="clickHidden(2)"
+                                   style="border-radius: 5px" placeholder="1 người lớn" readonly>
+                            <div class="ticket-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                            <div class="ticket-title">Hành khách</div>
+                        </div>
+
+                        <!-- ------------------------------------------ HÀNH KHÁCH   ---------------------------------------------------- -->
+
+                        <div class="bg-light showHidden" style="z-index: 1200">
+                            <div class="row" style="padding-top: 20px">
+                                <div class="col">
+                                    <img src="./img/nguoiLon.svg" alt="#" style="padding-left: 29px"><span
+                                        style="padding-left: 20px">Người lớn</span>
+                                    <div class="info-person" style=" position: absolute;top: 25px;left: 72px;">
+                                        <small>12 tuổi trở lên</small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a>
+                                    <span class="text-danger px-3"> 0 </span>
+                                    <a href="#"><i class="fa fa-plus" aria-hid den="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top: 20px">
+                                <div class="col">
+                                    <img src="./img/baby.svg" alt="#" style="padding-left: 23px"><span
+                                        style="padding-left: 16px!important;">Trẻ em</span>
+                                    <div class="info-person" style=" position: absolute;top: 20px;left: 75px;">
+                                        <small>2-11 tuổi</small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a>
+                                    <span class="text-danger px-3"> 0 </span>
+                                    <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top: 25px">
+                                <div class="col">
+                                    <img src="./img/babySmall.svg" alt="#" style="padding-left: 25px"><span
+                                        style="padding-left: 17px!important;">Em bé</span>
+                                    <div class="info-person" style=" position: absolute;top: 20px;left: 75px;">
+                                        <small>Dưới 2 tuổi</small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a>
+                                    <span class="text-danger px-3"> 0 </span>
+                                    <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row" style="margin-top: -8px">
+                                <div class="col">
+                                    <a href="#" class="btn btn-warning person" onclick="clickHidden(2)">Đi tiếp</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-warning findPlan" data-toggle="modal" data-target="#exampleModal">Tìm chuyến
+                        bay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<!--MODAL BOOTSTRAP-->
+<!-- Modal -->
+
+<script>
+    //Hidden ticket
+    let person = true;
+    let ticketShow;
+
+    function clickHidden(i) {
+        ticketShow = document.getElementsByClassName("showHidden");
+        if (person) {
+            ticketShow[i].style.display = "block";
+        } else {
+            ticketShow[i].style.display = "none";
+        }
+        person = !person;
+    }
+
+    //Choose Ticket Type
+    let twoWay;
+    let oneWay;
+
+    function chooseTicket(choose) {
+        twoWay = document.getElementById("two-way");
+        oneWay = document.getElementById("one-way");
+        if (choose) {
+            twoWay.style.display = "block";
+            oneWay.style.display = "none";
+        } else {
+            twoWay.style.display = "none";
+            oneWay.style.display = "block";
+        }
+    }
+
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop()) {
+                $('header').addClass('sticky')
+            } else {
+                $('header').removeClass('sticky')
+            }
+        })
+    })
+</script>
+</body>
+</html>

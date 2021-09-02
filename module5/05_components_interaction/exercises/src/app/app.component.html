@@ -1,6 +1,6 @@
 <!--<app-countdown></app-countdown>-->
 <input type="number" [(ngModel)]="time">
-<app-countdown (finish)="display($event)"  [seconds]="time"> </app-countdown>
+  <app-countdown (finish)="display($event)"  [seconds]="time"> </app-countdown>
 <div class="timer"><span class="timer-text">{{ count }}</span></div> <p>{{ msg }}</p>
 
 

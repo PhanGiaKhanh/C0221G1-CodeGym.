@@ -33,7 +33,7 @@ export class BenhNhanService {
   }
 
   update(benhNhan: BenhNhan): Observable<BenhNhan> {
-    return this.http.put<BenhNhan>(`${API_URL}/benhNhans/${benhNhan.id}`, benhNhan);
+      return this.http.put<BenhNhan>(`${API_URL}/benhNhans/${benhNhan.id}`, benhNhan);
   }
 
   delete(id: number): Observable<BenhNhan> {

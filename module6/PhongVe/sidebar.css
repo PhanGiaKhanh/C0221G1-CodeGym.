@@ -1,0 +1,35 @@
+.side-bar {
+    height: 700px;
+    color: white;
+    background: #f05e23;
+}
+.side-bar a,
+.side-bar a:hover{
+    color: white;
+    text-decoration: none;
+}
+.side-bar ul, .side-bar li {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.side-bar ul li {
+    padding: 10px;
+}
+.side-bar ul li:hover {
+    background: #bfbfbf;
+}
+
+.side-bar .menu-item-child{
+    background: #f05e23;
+}
+.side-bar .menu-item{
+    width: 100%;
+}
+.side-bar .active {
+    display: none;
+    border-bottom: none;
+}
+/*#region Test*/
+
+/*#endregion*/

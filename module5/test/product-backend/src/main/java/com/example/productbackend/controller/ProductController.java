@@ -32,12 +32,12 @@ public class ProductController {
         if (products.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(products,HttpStatus.OK);
+        return new ResponseEntity<>(products, HttpStatus.OK);
     }
-
+    
     @GetMapping("/product/{id}")
     public ResponseEntity<Product> findById(@PathVariable Long id) {
-        Product product= productService.findById(id).get();
+        Product product = productService.findById(id).get();
         if (product == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -72,10 +72,10 @@ public class ProductController {
 
     @GetMapping("/productType")
     public ResponseEntity<Iterable<ProductType>> customerTypes() {
-        List<ProductType> productTypes =  (List<ProductType>) productTypeService.findAll();
+        List<ProductType> productTypes = (List<ProductType>) productTypeService.findAll();
         if (productTypes.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(productTypes,HttpStatus.OK);
+        return new ResponseEntity<>(productTypes, HttpStatus.OK);
     }
 }

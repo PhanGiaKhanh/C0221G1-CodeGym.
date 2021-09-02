@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="library/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="library/style.css">
+    <link rel="stylesheet" href="library/cart.css">
+    <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<!--#region Header-->
+<header class="position-sticky fixed-top pb-2">
+    <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span><img
+                    src="image/logopharma.png" height="100" width="140"/></span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-toggle"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse navbar-toggle collapse w-100" id="collapsingNavbar3">
+                <ul class="navbar-nav w-100 ml-lg-5 justify-content-center">
+                    <div class="w-100">
+                        <div class="search w-100 ml-lg-5">
+                            <input type="text" class="searchTerm" placeholder="Tìm kiếm ...">
+                            <button type="submit" class="searchButton">
+                                <i class="fa fa-search text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </ul>
+                <ul class="nav navbar-nav w-100 justify-content-end mr-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span>GIỎ HÀNG<i class="fa fa-shopping-cart fa-2x"
+                                                                      style="color: #000000"></i></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <button class="btn login-button">ĐĂNG NHẬP</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark header-colored">
+        <div class="container">
+            <a class="navbar-brand nav-link" href=""><span>TRANG CHỦ</span></a>
+            <div class="collapse navbar-collapse navbar-toggle" id="navbarNavAltMarkup2">
+                <div class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active px-lg-4" href="#" id="navbarDropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            SẢN PHẨM
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">TẤT CẢ SẢN PHẨM</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">THỰC PHẨM CHỨC NĂNG</a>
+                            <a class="dropdown-item" href="#">THUỐC GIẢM ĐAU</a>
+                            <a class="dropdown-item" href="#">THUỐC HÔ HẤP</a>
+                        </div>
+                    </li>
+                    <a class="nav-item nav-link px-lg-4 pl-sm-3 active " href="#">SỐNG KHỎE</a>
+                    <a class="nav-item nav-link px-lg-4 pl-sm-3 active" href="#"><span class="fa fa-bolt"
+                                                                                       style="color: #2FC1A6"></span>️
+                        DEAL HOT THÁNG 8</a>
+                    <a class="nav-item nav-link pl-lg-4 pl-sm-3 border-right-nav-item active" href="#"><span
+                            class="pl-lg-5"><span class="pl-lg-5"><span
+                            class="pl-lg-3"><span
+                            class="mr-lg-2 mr-2 mr-sm-2">HỆ THỐNG NHÀ THUỐC</span></span></span></span></a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdownMenuLink1"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            HOTLINE
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">18002001 CSKH</a>
+                            <a class="dropdown-item" href="#">18006821 ĐẶT HÀNG</a>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--#endregion-->
+
+<div class="container">
+    <h3>
+        <span>Giỏ hàng</span> > <a href="#">Thanh toán</a> > Hoàn tất
+    </h3>
+        <small class="pl-5 text-primary text-sm-center">Thanh toán thành công</small>
+        <small class="text-danger text-sm-center">(Mã phiếu ưu đãi không tồn tại)</small>
+    <div id="main">
+        <div id="left">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Sản phẩm</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Tổng tiền</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="d-flex">
+                        <a href="#"><i class="fa fa-times bi" aria-hidden="true"></i></a>
+                        <img src="https://image.pharmacity.vn/live/uploads/2021/07/P20426_1_l-300x300.jpg" alt=""
+                             width="70px"
+                             height="70px">
+
+                        <div>
+                            <a href="#">Tăm bông kháng khuẩn đầu xoán Sakura(Lọ 200 que giấy)</a>
+                        </div>
+                    </td>
+                    <td>44000</td>
+                    <td>
+                        <div>
+                            <input type="button" value="-">
+                            <input type="text" value="20">
+                            <input type="button" value="+">
+                        </div>
+                    </td>
+                    <td>880000</td>
+                </tr>
+                <tr>
+                    <td class="d-flex">
+                        <a href="#"><i class="fa fa-times bi" aria-hidden="true"></i></a>
+                        <img src="https://image.pharmacity.vn/live/uploads/2019/04/P00066_1_l-300x300.jpg" alt=""
+                             width="70px"
+                             height="70px">
+
+                        <div>
+                            <a href="#">Dầu gió xanh Thiên Thảo (Chai12ml)</a>
+                        </div>
+                    </td>
+                    <td>19500</td>
+                    <td>
+                        <div>
+                            <input type="button" value="-">
+                            <input type="text" value="10">
+                            <input type="button" value="+">
+                        </div>
+                    </td>
+                    <td>195000</td>
+                </tr>
+                <tr>
+                    <td class="d-flex">
+                        <a href="#"><i class="fa fa-times bi" aria-hidden="true"></i></a>
+                        <img src="https://image.pharmacity.vn/live/uploads/2019/04/P00779_1_l.jpg" alt="" width="70px"
+                             height="70px">
+
+                        <div>
+                            <a href="#">Fugacar Mebendazole (500mg)</a>
+                        </div>
+                    </td>
+                    <td>19000</td>
+                    <td>
+                        <div>
+                            <input type="button" value="-">
+                            <input type="text" value="5">
+                            <input type="button" value="+">
+                        </div>
+                    </td>
+                    <td>95000</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <a href="#" class="btn btn-outline-primary">TIẾP TỤC XEM SẢN PHẨM</a>
+                        <a href="#" class="btn btn-primary">CẬP NHẬT GIỎ HÀNG</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="right">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        <div>Tổng số lượng</div>
+                        <div>35</div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div>Tạm tính</div>
+                        <div>1170000</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Tổng tiền</div>
+                        <div>1170000</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#" class="btn btn-warning">Tiến hành thanh toán</a>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><i class="bi bi-tag"></i> Phiếu ưu đãi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Mã ưu đãi" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="btn btn-secondary">Áp dụng</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--#region FOOTER-->
+<footer>
+    <div class="container py-5">
+        <div class="row py-3">
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold text-light mb-4">C0221G1 PHARMA</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-light ">KẾT NỐI</a></li>
+                    <hr style="margin-top: -10px">
+                    <li style="margin-top: -15px" class="mb-2"><a href="#" class="text-light"><span
+                            class="fa fa-facebook-square fa-2x mr-1" style="color: #ffffff"></span></a><a><span
+                            class="fa fa-google-plus-square fa-2x" style="color: #ffffff"></span> </a></li>
+                    <li class="mb-2"><a href="#" class="text-light ">HOT LINE MIỄN PHÍ</a></li>
+                    <hr style="margin-top: -10px">
+                    <li style="margin-top: -15px" class="mb-2"><a href="#" class="text-light ">Đặt hàng: 18006821</a>
+                    </li>
+                    <li style="margin-top: -10px" class="mb-2"><a href="#" class="text-light ">Hỗ trợ: 18002001</a></li>
+                    <span class="text-white font-weight-lighter">Thông tin, hình ảnh của sản phẩm trong website chỉ mang tính chất tham khảo. Sản phẩm thực tế có thể thay đổi/chênh lệch theo từng Lô sản xuất.</span>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase text-light font-weight-bold mb-4">Liên kết hữu ích</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-light ">TẤT CẢ SẢN PHẨM</a></li>
+                    <li class="mb-2"><a href="#" class="text-light ">SỐNG KHỎE</a></li>
+                    <li class="mb-2"><a href="#" class="text-light ">DEAL HOT</a></li>
+                    <li class="mb-2"><a href="#" class="text-light ">TÌM NHÀ THUỐC GẦN BẠN</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase text-light font-weight-bold mb-4">DANH MỤC</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-light ">THỰC PHẨM CHỨC NĂNG</a></li>
+                    <li class="mb-2"><a href="#" class="text-light ">THUỐC GIẢM ĐAU</a></li>
+                    <li class="mb-2"><a href="#" class="text-light ">THUỐC HÔ HẤP</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-lg-0">
+                <h6 class="text-uppercase text-light font-weight-bold mb-4">ĐĂNG KÝ THÀNH VIÊN</h6>
+                <p class="text-light mb-4">Hãy đăng ký thành viên để nhận được khuyến mãi hoặc ưu đãi mới nhất từ
+                    C0221G1 PHARMA</p>
+                <input style="margin-top: -15px" type="button" class="btn login-button" value="Đăng Ký">
+                <hr>
+                <img src="image/bocongthuong.png" height="40" width="100"/>
+                <img src="image/gmo.png" height="40" width="108"/>
+            </div>
+        </div>
+    </div>
+    <hr class="p-0 m-0 b-0">
+    <div class="bg-light py-2">
+        <div class="container text-center">
+            <p class="text-muted mb-0 py-2">© 2021 C0221G1 PHARMA - All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<!--#endregion-->
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../PhongVe/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lickdroup.css">
+</head>
+<body>
+<header>
+    <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkBtn">
+        <input type="text" readonly>
+    </label>
+    <ul>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Tin khuyến mãi</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Quy định hành lý</a></li>
+    </ul>
+    </nav>
+</header>
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop()) {
+                $('nav').addClass('sticky')
+            } else {
+                $('nav').removeClass('sticky')
+            }
+        })
+    })
+</script>
+</body>
+</html>

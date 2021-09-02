@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kiếm khách hàng</title>
+    <link rel="stylesheet" href="library/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="library/search.css">
+    <link rel="stylesheet" href="library/font-awesome-4.7.0/themify-icons.css">
+    <link rel="stylesheet" href="library/main.css">
+</head>
+<body>
+<div id="header" class="d-flex justify-content-between">
+    <div id="list">
+        <a href="#"><i class="ti-menu"></i></a>
+    </div>
+    <ul id="nav">
+        <li>
+            <a href="https://github.com/">Home</a>
+        </li>
+        <li>
+            <a href="">
+                Quản lý bán hàng
+                <i class="icon1 ti-angle-down"></i>
+            </a>
+            <ul class="subnav">
+                <li><a href="">Bán lẻ</a></li>
+                <li><a href="">Bán hàng</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">
+                Quản lý kho bãi
+                <i class="icon1 ti-angle-down"></i>
+            </a>
+            <ul class="subnav">
+                <li><a href="">Quản lý nhập kho</a></li>
+                <li><a href="">Quản lý xuất kho</a></li>
+                <li><a href="">Danh sách thuốc</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">
+                Quản lý thông tin
+                <i class="icon1 ti-angle-down"></i>
+            </a>
+            <ul class="subnav">
+                <li><a href="">Khách hàng</a></li>
+                <li><a href="">Nhà cung cấp</a></li>
+                <li><a href="">Nhân viên</a></li>
+                <li><a href="">Toa thuốc</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">
+                Tra cứu
+            </a>
+
+        </li>
+        <li>
+            <a href="" id="bao-cao">
+                Báo cáo
+                <i class="icon1 ti-angle-down"></i>
+            </a>
+            <ul class="subnav">
+                <li><a href="">Báo cáo</a></li>
+                <li><a href="">Biểu đồ Thống kê</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="d-flex">
+        <p id="user-name">Admin</p>
+        <img id="user-image" src="./image/user-image.jpg" alt="">
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="row">
+        <div id="sidebar" class="col-2">
+            <div class="d-flex justify-content-center mt-2 mb-2">
+                <h5>Chọn nhanh</h5>
+            </div>
+            <div>
+                <ul class="subnav-item">
+                    <li class="border-top">
+                        <i class="icon-sidebar ti-receipt"></i>
+                        <a href="">Báo cáo</a>
+                    </li>
+                    <li>
+                        <i class="icon-sidebar ti-server"></i>
+                        <a href="#">Nhập kho</a>
+                    </li>
+                    <li>
+                        <i class="icon-sidebar ti-arrow-left"></i>
+                        <a href="#">Xuất hoàn trả</a>
+                    </li>
+                    <li>
+                        <i class="icon-sidebar ti-close"></i>
+                        <a href="#">Xuất hủy</a>
+                    </li>
+                    <li class="mt-3 border-top">
+                        <i class="icon-sidebar ti-search"></i>
+                        <a href="">Tra cứu nhanh</a>
+                    </li>
+                    <li>
+                        <i class="icon-sidebar ti-archive"></i>
+                        <a href="#">Hệ thống kho bãi</a>
+                    </li>
+                    <li class="mt-3 border-top">
+                        <i class="icon-sidebar ti-wallet"></i>
+                        <a href="#">Nhật ký bán hàng</a>
+                    </li>
+                    <li class="mt-3 border-top">
+                        <i class="icon-sidebar ti-signalicon-sidebar "></i>
+                        <a href="#">Đăng xuất</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 right-content ">
+            <div class="row white-block"></div>
+
+            <!--        nơi đổ dữ liệu router-outlet              -->
+            <div id="content" class="container">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Thông tin tra cứu</legend>
+                    <form class="border p-3">
+                        <div class="mb-3 d-flex">
+                            <label class="label-text">Tra cứu theo</label>
+                            <select name="" id="" class="form-control">
+                                <option value="">Thông tin khách hàng</option>
+                                <option value="">Nhà cung cấp</option>
+                                <option value="">Thuốc</option>
+                                <option value="">Toa thuốc</option>
+                                <option value="">Nhân viên</option>
+                                <option value="">Hóa đơn</option>
+                            </select>
+                            <!--                        <p style="color: red; font-size: 12px">số phiếu không dc để trống</p>-->
+
+                            <select name="" class="form-control ml-2">
+                                <option value="">Mã khách hàng</option>
+                                <option value="">Nhóm khách hàng</option>
+                                <option value="">Tên khách hàng</option>
+                                <option value="">Địa chỉ</option>
+                                <option value="">Điện thoại</option>
+                            </select>
+                            <!--                        <p style="color: red; font-size: 12px">khách hàng  không dc để trống</p>-->
+                        </div>
+                        <div class="mb-3 d-flex ">
+                            <div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <button class="btn-search btn ml-2">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                Tra cứu
+                            </button>
+                            <button class="btn-return btn ml-1">
+                                <i class="fa fa-undo" aria-hidden="true"></i>
+                                Trở về
+                            </button>
+                        </div>
+                    </form>
+
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Kết quả</legend>
+                        <div class="scroll outer">
+                            <table class="table table-bordered table-striped">
+                                <thead class="thead">
+                                <tr>
+                                    <th>Mã khách hàng</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Tuổi</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Nhóm khách hàng</th>
+                                    <th>Ghi chú</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>KLE</td>
+                                    <td>Khách hàng lẽ</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Nhóm khách hàng</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KSI0001</td>
+                                    <td>Trần A</td>
+                                    <td>21</td>
+                                    <td>193 Nguyễn Lương Bằng</td>
+                                    <td>0905123123</td>
+                                    <td>Khách sỉ</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KTD0001</td>
+                                    <td>Trần Văn Bê</td>
+                                    <td>18</td>
+                                    <td></td>
+                                    <td>0905111222</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KLE</td>
+                                    <td>Khách hàng lẽ</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Nhóm khách hàng</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KSI0001</td>
+                                    <td>Trần A</td>
+                                    <td>21</td>
+                                    <td>193 Nguyễn Lương Bằng</td>
+                                    <td>0905123123</td>
+                                    <td>Khách sỉ</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KTD0001</td>
+                                    <td>Trần Văn Bê</td>
+                                    <td>18</td>
+                                    <td></td>
+                                    <td>0905111222</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KLE</td>
+                                    <td>Khách hàng lẽ</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Nhóm khách hàng</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KSI0001</td>
+                                    <td>Trần A</td>
+                                    <td>21</td>
+                                    <td>193 Nguyễn Lương Bằng</td>
+                                    <td>0905123123</td>
+                                    <td>Khách sỉ</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KTD0001</td>
+                                    <td>Trần Văn Bê</td>
+                                    <td>18</td>
+                                    <td></td>
+                                    <td>0905111222</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KLE</td>
+                                    <td>Khách hàng lẽ</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Nhóm khách hàng</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KSI0001</td>
+                                    <td>Trần A</td>
+                                    <td>21</td>
+                                    <td>193 Nguyễn Lương Bằng</td>
+                                    <td>0905123123</td>
+                                    <td>Khách sỉ</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>KTD0001</td>
+                                    <td>Trần Văn Bê</td>
+                                    <td>18</td>
+                                    <td></td>
+                                    <td>0905111222</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </fieldset>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div id="footer">
+    <div class="social-list">
+        <a href=""><i class="icon-footer ti-facebook"></i></a>
+        <a href=""><i class="icon-footer ti-google"></i></a>
+        <a href=""><i class="icon-footer ti-microsoft-alt"></i></a>
+        <a href=""><i class="icon-footer ti-twitter-alt"></i></a>
+        <a href=""><i class="icon-footer ti-linkedin"></i></a>
+    </div>
+</div>
+</body>
+</html>

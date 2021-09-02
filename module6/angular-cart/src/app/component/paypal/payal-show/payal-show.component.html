@@ -1,0 +1,94 @@
+<div class="container">
+  <h3><span>GIỎ HÀNG</span> > <a href="#">THANH TOÁN</a> > HOÀN TẤT</h3>
+  <div id="main">
+    <div id="left">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Sản phẩm</th>
+          <th scope="col">Giá</th>
+          <th scope="col">Số lượng</th>
+          <th scope="col">Tổng tiền</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let medicine of medicines, index as i">
+          <td class="d-flex">
+            <a (click)="delMedicine(i)"><i class="fa fa-times bi" aria-hidden="true"></i></a>
+            <img [src]="medicine.img" alt=""
+                 width="70px"
+                 height="70px">
+
+            <div>
+              <a href="#">{{medicine.info}}</a>
+            </div>
+          </td>
+          <td>{{medicine.unit}}</td>
+          <td>
+            <div>
+              <input type="button" value="-" (click)="medicineSub(i)">
+              <input type="text" [value]="medicine.amount">
+              <input type="button" value="+" (click)="medicineAdd(i)">
+            </div>
+          </td>
+          <td>{{medicine.price}} VND</td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <a href="#" class="btn btn-outline-primary">TIẾP TỤC XEM SẢN PHẨM</a>
+            <a  class="btn btn-primary" (click)="update()">CẬP NHẬT GIỎ HÀNG</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="right">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>
+            <div>Tổng số lượng</div>
+            <div>{{medicineTotal}}</div>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <div>Tạm tính</div>
+            <div>{{moneyTotal}} VND</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>Tỷ giá</div>
+            <div>23000 VND/1 Dola</div>
+          </td>
+        <tr>
+          <td>
+            <div>Tổng tiền Paypal</div>
+            <div>{{moneyPayPal | currency}}</div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <a href="#" class="btn btn-warning">Tiến hành thanh toán</a>
+      <table class="table">
+        <thead>
+        <tr>
+          <th><i class="bi bi-tag"></i> Phiếu ưu đãi</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><input type="text" placeholder="Mã ưu đãi" class="form-control"></td>
+        </tr>
+        <tr>
+          <td><a href="#" class="btn btn-secondary">Áp dụng</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

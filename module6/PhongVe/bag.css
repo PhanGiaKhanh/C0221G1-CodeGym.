@@ -1,0 +1,36 @@
+body {
+    background: url("./img/half-opacity-pink.png");
+    background-size: cover;
+}
+
+.luggage {
+    background: white;
+}
+
+.luggage .signed-luggage-1,
+.luggage .signed-luggage-2,
+.luggage .signed-luggage-3
+{
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.luggage .signed-luggage-1:hover,
+.luggage .signed-luggage-2:hover,
+.luggage .signed-luggage-3:hover {
+    background: blue;
+    color: white;
+}
+
+.luggage .signed-luggage-1-content {
+    width: 80%;
+    border: 1px solid yellow;
+    text-align: center;
+    display: none;
+}
+
+.luggage .signed-luggage-1:active ~ .signed-luggage-1-content {
+    display: block;
+}
+

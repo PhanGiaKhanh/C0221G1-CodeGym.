@@ -4,13 +4,16 @@ import { CommonModule } from '@angular/common';
 import { PaypalRoutingModule } from './paypal-routing.module';
 import { PayalShowComponent } from './payal-show/payal-show.component';
 import {AppComponent} from '../../app.component';
+import {PaypalShowComponent} from './paypal-show/paypal-show.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [PayalShowComponent],
+  declarations: [PayalShowComponent, PaypalShowComponent],
   imports: [
     CommonModule,
-    PaypalRoutingModule
+    PaypalRoutingModule,
+    FormsModule
   ],
   bootstrap: [PayalShowComponent]
 })

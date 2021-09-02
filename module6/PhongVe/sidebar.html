@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="library/bootstrap4/bootstrap.min.css">
+    <script src="library/jquery-3.6.0.min.js"></script>
+    <script src="library/popper.min.js"></script>
+    <script src="library/bootstrap4/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div class="side-bar">
+                <ul>
+                    <li class="menu-item p-0">
+                        <ul class="menu-item-child">
+                            <li class="item"><a class="pl-2">Link 1</a></li>
+                            <div class="menu-item-child active">
+                                <li><a href="" class="pl-4">Số 1</a></li>
+                                <li><a href="" class="pl-4">Số 2</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="menu-item p-0">
+                        <ul class="menu-item-child">
+                            <li class="item"><a class="pl-2">Link 2</a></li>
+                            <div class="menu-item-child active">
+                                <li><a href="" class="pl-4">Số 1</a></li>
+                                <li><a href="" class="pl-4">Số 2</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="menu-item p-0">
+                        <ul class="menu-item-child">
+                            <li class="item"><a class="pl-2">Link 3</a></li>
+                            <div class="menu-item-child active">
+                                <li><a href="" class="pl-4">Số 1</a></li>
+                                <li><a href="" class="pl-4">Số 2</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="menu-item p-0">
+                        <ul class="menu-item-child">
+                            <li class="item"><a class="pl-2">Link 4</a></li>
+                            <div class="menu-item-child active">
+                                <li><a href="" class="pl-4">Số 1</a></li>
+                                <li><a href="" class="pl-4">Số 2</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-9"></div>
+    </div>
+</div>
+<script>
+    const menuItems = document.querySelectorAll(".item");
+    menuItems.forEach(item => item.addEventListener("click", function () {
+        if (this.nextElementSibling.className === "menu-item-child") {
+            this.nextElementSibling.classList.add("active");
+        } else {
+            this.nextElementSibling.classList.remove("active");
+        }
+    }))
+</script>
+</body>
+</html>

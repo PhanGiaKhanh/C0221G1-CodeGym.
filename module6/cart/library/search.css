@@ -1,8 +1,24 @@
+:root {
+    --thead-color:#567FEA;
+    --btn-back-color: #567FEA ;
+    --btn-seach-color: #2fc1a6;
+}
+
 * {
     font-size: 14px;
 }
-.container fieldset form .btn{
-    height: 29px;
+
+.btn-return{
+    background-color: var(--btn-back-color);
+    color: white;
+}
+
+.btn-search{
+    background-color: var(--btn-seach-color);
+    color: white;
+}
+.btn-return:hover, .btn-search:hover{
+    color: white;
 }
 .container fieldset form .label-text {
     min-width: 100px;
@@ -15,7 +31,7 @@
 
 #content fieldset table .thead {
     color: white;
-    background-color: #567FEA;
+    background-color: var(--thead-color);
 }
 
 #content fieldset form input {
@@ -30,26 +46,42 @@
     justify-content: left;
 }
 
-#content fieldset form .mb-3:first-child{
-    margin-top: 4px;
-}
-#content fieldset form .mb-3:last-child{
+
+#content fieldset form .mb-3:last-child {
     padding-left: 20px;
 }
-@media only screen and (max-width: 993px) {
-    /*@media only screen and (max-width: 663px) {*/
 
+@media only screen and (max-width:1229px) {
+    /*@media only screen and (max-width: 663px) {*/
     #content fieldset form {
         display: grid !important;
         justify-content: normal;
     }
-    #content fieldset form .mb-3:last-child{
+
+    #content fieldset form .mb-3:first-child {
+        width: 70%;
+    }
+
+    #content fieldset form .mb-3:last-child {
         padding-left: 0px;
     }
+
+    #content fieldset form .mb-3:last-child div{
+        width: 30%;
+    }
 }
-@media only screen and (max-width: 550px) {
+
+@media only screen and (max-width: 768px) {
     .container fieldset form .label-text {
         min-width: 80px;
+    }
+
+    #content fieldset form .mb-3:first-child {
+        width: 100%;
+    }
+
+    #content fieldset form .mb-3:last-child div{
+        width: 50%;
     }
 }
 
@@ -76,20 +108,38 @@ legend.scheduler-border {
 /*endregion*/
 
 /*#region table scroll*/
+.scroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: white;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #567FEA;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+.scroll {
+    height: 300px;
+    overflow: auto;
+
+}
+
 .outer {
     overflow-y: auto;
     height: 300px;
-}
-
-.outer {
     width: 100%;
-    -layout: fixed;
+
 }
 
-.outer th {
+
+.outer th{
     text-align: left;
     top: 0;
     position: sticky;
-    background-color: white;
+    background-color: #567FEA;
 }
 /*#endregion*/

@@ -1,0 +1,117 @@
+body, nav, nav ul,nav li{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+nav ul li a {
+    text-decoration: none;
+}
+
+nav {
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+nav ul li a.active,nav ul li a:hover {
+    background: #1b9bff;
+}
+
+nav .checkBtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+nav #check {
+    display: none;
+}
+
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    nav .checkBtn, nav ul .checkBtn {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 70%;
+        height: 75%;
+        margin-left: 30%;
+        background:rgba(44,62,80,0.8);
+        box-shadow: 0 5px 20px #888888;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        top: 80px;
+        left: 100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav li a:hover, nav li a.active{
+        background: none;
+        color: #0082e6;
+    }
+
+    nav #check:checked ~ul {
+        left: 0;
+    }
+}
+
+section {
+    background: url("./img/imgHone.jpg") no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+}
