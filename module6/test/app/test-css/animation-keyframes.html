@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    https://www.youtube.com/watch?v=9xqNz2Ul0U0&t=381s-->
+<!--    https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation4-->
+<!--    https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation5-->
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            background: red;
+            border-radius: 100%;
+            animation:
+                    pulse1 3s ease infinite alternate,
+                    nudge1 3s linear infinite alternate;
+        }
+
+        @keyframes pulse1 {
+            0%, 100% {
+                background: red;
+            }
+            50% {
+                background: orange;
+            }
+        }
+
+        @keyframes nudge1 {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-200px, 0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+</body>
+</html>

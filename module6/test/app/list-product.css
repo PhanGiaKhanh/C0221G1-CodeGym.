@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<< hàng ngang + xuống dòng */
+.contain ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contain ul li {
+    margin-bottom: 10px;
+    flex-basis: 25%;
+    list-style: none;
+    box-sizing: border-box;
+}
+.contain ul li .product {
+    margin: 0 10px;
+    border: 1px solid #999;
+    border-radius: 10px;
+}
+.contain ul li .product .product-img {
+    position: relative;
+    overflow: hidden;
+}
+.contain ul li:hover .product .product-img .buy-now {
+    display: block;
+    bottom: 0;
+}
+.contain ul li:hover .product .product-img img {
+    filter: opacity(80%);
+}
+
+.contain ul li .product .product-img .buy-now {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    background-color: #446084;
+    color: white;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: -40px;
+    transition: all .3s ease-in-out;
+    opacity: .7;
+}
+
+    /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<< canh giữa ảnh */
+.contain ul li img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin:  10px auto;
+}
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<< xuống dòng các thẻ a */
+.contain ul li .product-info a {
+    padding-left: 25px;
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.contain ul li .product-info a:nth-child(1) {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #9e9e9e;
+    padding: 10px 25px  ;
+}
+.contain ul li .product-info a:nth-child(2) {
+    color: #334862;
+    padding: 3px 25px;
+}
+.contain ul li .product-info a:nth-child(3) {
+    color: #111;
+    padding: 3px 25px;
+    font-weight: 600;
+}
+
