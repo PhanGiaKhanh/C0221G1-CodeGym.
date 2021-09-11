@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="date" id="dayNow">
+<script>
+    const dateObj = new Date();
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const year = dateObj.getFullYear();
+    const dayNow = year + '-' + month + '-' + day;
+    const dayNow10 = year + '-' + month + '-' + (parseInt(day) + 10);
+    document.getElementById('dayNow').min = dayNow;
+    document.getElementById('dayNow').max = dayNow10;
+</script>
+</body>
+</html>

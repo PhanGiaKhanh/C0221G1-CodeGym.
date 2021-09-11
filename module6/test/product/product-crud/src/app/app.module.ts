@@ -11,7 +11,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { LoginComponent } from './component/security/login/login.component';
 
 @NgModule({
   declarations: [

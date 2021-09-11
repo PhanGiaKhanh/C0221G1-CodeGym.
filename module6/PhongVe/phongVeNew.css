@@ -119,7 +119,7 @@ header #check {
     display: none;
 }
 
-@media (max-width: 1090px) {
+@media only screen and (max-width: 1090px) {
     label.logo1 {
         width: 200px;
         padding-left: 0;
@@ -131,7 +131,8 @@ header #check {
         display: none;
     }
 }
-@media (max-width: 915px) {
+
+@media only screen and (max-width: 915px) {
     header {
         padding: 0 30px;
     }
@@ -254,13 +255,13 @@ header #check {
 /*#endregion*/
 
 /*#region PLANE-TICKET*/
-.carousel .plane-ticket {
+ .plane-ticket {
     width: 380px;
     height: 400px;
     padding-top: 30px;
     background: rgba(255, 56, 53, 0.81);
     position: absolute;
-    top: -165%;
+    top: 110px;
     right: 10%;
     border-radius: 10px;
     box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2);
@@ -268,7 +269,7 @@ header #check {
 }
 
 /*Edit input*/
-.carousel .plane-ticket input {
+ .plane-ticket input {
     margin: 10px 0 0 18px;
     width: 90%;
     height: 48px;
@@ -277,19 +278,19 @@ header #check {
     background: white;
 }
 
-.carousel .plane-ticket .ticket-input-left,
-.carousel .plane-ticket .ticket-input-right {
+ .plane-ticket .ticket-input-left,
+ .plane-ticket .ticket-input-right {
     position: relative;
 }
 
-.carousel .plane-ticket .ticket-input-left .ticket-icon {
+ .plane-ticket .ticket-input-left .ticket-icon {
     font-size: 20px;
     position: absolute;
     top: 20px;
     left: 30px;
 }
 
-.carousel .plane-ticket .ticket-title {
+ .plane-ticket .ticket-title {
     color: #7C848B;
     font-size: 12px;
     position: absolute;
@@ -297,15 +298,15 @@ header #check {
     left: 55px;
 }
 
-.carousel .plane-ticket .ticket-normal {
+ .plane-ticket .ticket-normal {
     padding-top: 15px;
 }
 
-.carousel .plane-ticket input.ticket-normal {
+ .plane-ticket input.ticket-normal {
     border-radius: 5px;
 }
 
-.carousel .plane-ticket .ticket-input-left input {
+.plane-ticket .ticket-input-left input {
     width: 100%;
     padding-left: 32px;
     border-radius: unset;
@@ -313,25 +314,25 @@ header #check {
     border-bottom-left-radius: 5px;
 }
 
-.carousel .plane-ticket .ticket-input-right input {
+ .plane-ticket .ticket-input-right input {
     width: 80%;
     border-radius: unset;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-.carousel .plane-ticket .ticket-radio input {
+.plane-ticket .ticket-radio input {
     margin-top: 20px;
     width: 17px;
     height: 17px;
 }
 
 /*CHOOSE Passenger*/
-.carousel .plane-ticket .ticket-element {
+.plane-ticket .ticket-element {
     position: relative;
 }
 
-.carousel .plane-ticket .showHidden {
+.plane-ticket .showHidden {
     width: 350px;
     height: 270px;
     border-radius: 5px;
@@ -342,26 +343,26 @@ header #check {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-.carousel .plane-ticket .col:last-child {
+ .plane-ticket .col:last-child {
     font-size: 25px;
     padding-right: 50px;
     text-align: end;
 }
 
-.carousel .plane-ticket table td a {
+ .plane-ticket table td a {
     color: black;
 }
 
-.carousel .plane-ticket table td:first-child {
+.plane-ticket table td:first-child {
     padding-left: 30px;
 }
 
-.carousel .plane-ticket table td:last-child {
+ .plane-ticket table td:last-child {
     font-weight: bold;
 }
 
 /*button Tìm chuyến bay*/
-.carousel .plane-ticket .findPlan {
+.plane-ticket .findPlan {
     position: absolute;
     bottom: 45px;
     left: 120px;
@@ -373,16 +374,17 @@ header #check {
 /*#region Top 10 cheapest flights*/
 .flights-10 {
     margin-top: -5px;
-    height: 300px;
+    height: 420px;
     background: url("./img/flight-10.png") no-repeat;
     background-size: cover;
     z-index: 300;
 }
 
 .flights-10 .flight {
-    margin: 0 1%;
-    width: 150px;
+    margin: 0;
+    width: 20%;
     height: 170px;
+    text-align: center;
     display: inline-block;
 }
 
@@ -394,7 +396,7 @@ header #check {
     font-weight: 500;
     position: absolute;
     top: 10px;
-    left: 45px;
+    left: 85px;
 }
 
 /*#endregion*/
@@ -437,9 +439,8 @@ header #check {
 /*#endregion*/
 
 @media (max-width: 930px) {
-    .carousel {
+    home-content {
         position: relative;
-        height: 100%;
     }
 
     .carousel-indicators {
@@ -448,9 +449,9 @@ header #check {
         left: 0;
     }
 
-    .carousel .plane-ticket {
+     .plane-ticket {
         width: 100%;
-        padding: 0 20%;
+        padding: 0 10%;
         padding-top: 30px;
         position: unset;
         float: left;
@@ -458,13 +459,13 @@ header #check {
         z-index: 200;
     }
 
-    .carousel .plane-ticket .showHidden {
+     .plane-ticket .showHidden {
         margin-left: 18px;
         bottom: 0px;
         left: 0px;
     }
 
-    .carousel .plane-ticket .findPlan {
+    .plane-ticket .findPlan {
         position: relative;
         top: 25px;
         left: 30%;

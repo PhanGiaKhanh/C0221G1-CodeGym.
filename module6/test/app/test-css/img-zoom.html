@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Img Zoom</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+        }
+        a {
+            overflow: hidden;
+            position: relative;
+        }
+        a:hover {
+            color: black!important;
+        }
+        a img {
+            display: block;
+            transition: all 0.5s ease-in-out;
+        }
+        a:hover img {
+            transform: scale(1.05);
+            opacity: 0.5;
+        }
+        .title {
+            font-weight: bold;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s;
+            opacity: 0;
+        }
+        a:hover .title {
+            bottom: 40%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<a >
+    <img src="../../../PhongVe/img/imgHone.jpg" height="200" width="300"/>
+    <h1 class="title">Ảnh 1</h1>
+</a>
+<a>
+    <img src="../../../PhongVe/img/imgHome3.jpg" height="200" width="300"/>
+    <h1 class="title">Ảnh 2</h1>
+</a>
+</body>
+</html>

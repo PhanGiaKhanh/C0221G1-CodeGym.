@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CurrentColor</title>
+    <link rel="stylesheet" href="../../../PhongVe/font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        .boxed {
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            margin: 100px;
+            color: red;
+            border: 1px solid currentColor;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .boxed:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: inherit;
+            background: currentColor;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxed"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+</body>
+</html>

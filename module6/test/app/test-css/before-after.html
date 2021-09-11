@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h2 {
+            display: block;
+            margin: 50px;
+            padding: 10px;
+            color: black;
+            font-weight: bold;
+            position: relative;
+        }
+        h2:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #e74c3c;
+            transition: .25s;
+            z-index: -1;
+        }
+        h2:hover:before {
+            width: 100%;
+        }
+        h2:hover {
+            color: white;
+        }
+        h2:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #6c757d;
+            width: 10%;
+            height: 100%;
+            transition: .9s;
+            z-index: -1;
+        }
+        h2:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h2>Animation background</h2>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input text</title>
+    <style>
+        body {
+            padding: 40px;
+        }
+        .form-field {
+            margin-top: 20px;
+            position: relative;
+        }
+        .form-input {
+            /*border-color: red;*/
+            border: none;
+            border-bottom: 2px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            transition: .3s;
+        }
+        .form-input:focus {
+            outline: 0;
+            /*background: white;*/
+            border-bottom: 2px solid red;
+        }
+        /* Change the white to any color */
+        input:-webkit-autofill
+        {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+        }
+        /*Change text in autofill textbox*/
+        /*input:-webkit-autofill*/
+        /*{*/
+        /*    -webkit-text-fill-color: yellow !important;*/
+        /*}*/
+        .form-label {
+            position: absolute;
+            top: 0;
+            left: 12px;
+            transform: translateY(47%);
+            user-select: none;
+            pointer-events: none;
+            color: #999;
+            transition: .3s;
+        }
+        .form-input:not(:placeholder-shown) + .form-label,
+        .form-input:focus + .form-label {
+            top: -70%;
+            left: 5px;
+        }
+        .form-input:not(:placeholder-shown) {
+            border-bottom: 2px solid blue;
+            background: white;
+        }
+        .has-content.form-input {
+
+        }
+    </style>
+</head>
+<body>
+<div class="form-field">
+    <input type="text" id="name" class="form-input" placeholder=" ">
+    <label for="name" class="form-label">Name</label>
+</div>
+<div class="form-field">
+    <input type="text" id="name" class="form-input" placeholder=" ">
+    <label for="name" class="form-label">Name</label>
+</div>
+<!--ul>li*10>a{media 2.$}-->
+</body>
+</html>
