@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        html, body {
+            width: auto;
+            height: 100%;
+        }
+        body {
+            padding: 0 100px;
+            border: 1px solid black;
+        }
+        .my-cards ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .my-cards ul .my-card {
+            width: 25%;
+            box-sizing: border-box;
+        }
+
+        .my-cards ul li .card-item {
+            margin: 10px;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 10px 20px #999;
+            transition: .3s ease;
+        }
+        .my-cards ul li a:hover .card-item {
+            transform: scale(1.1);
+            box-shadow: 0 50px 100px #727272;
+            z-index: 1;
+        }
+
+        .my-cards ul li a img {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+        .card-item-text {
+            width: 100%;
+            height: 60px;
+            padding-left: 10px;
+            color: white;
+            font-weight: bold;
+            background: rgba(41, 182, 246, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            border-bottom-right-radius: inherit;
+            border-bottom-left-radius: inherit;
+        }
+    </style>
+</head>
+<body>
+<div class="my-cards">
+    <ul>
+        <li class="my-card">
+            <a href="#">
+                <div class="card-item">
+                    <img class="card-item-img"
+                         src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/5%20%C4%90%E1%BB%8ANH%20D%E1%BA%A0NG%20FILE.png"
+                         alt="">
+                    <div class="card-item-text">
+                        Tất tần tật về 5 định dạng file thường gặp ...
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="my-card">
+            <a href="">
+                <div class="card-item">
+                    <img class="card-item-img"
+                         src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/google%20extension.png"
+                         alt="">
+                    <div class="card-item-text">
+                        Tất tần tật về 5 định dạng file thường gặp ...
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="my-card">
+            <a href="">
+                <div class="card-item">
+                    <img class="card-item-img"
+                         src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/Wacom%20hay%20Ipad.png"
+                         alt="">
+                    <div class="card-item-text">
+                        Tất tần tật về 5 định dạng file thường gặp ...
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="my-card">
+            <a href="">
+                <div class="card-item">
+                    <img class="card-item-img"
+                         src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/procreate.png"
+                         alt="">
+                    <div class="card-item-text">
+                        Tất tần tật về 5 định dạng file thường gặp ...
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="my-card">
+            <a href="#">
+                <div class="card-item">
+                    <img class="card-item-img"
+                         src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/5%20%C4%90%E1%BB%8ANH%20D%E1%BA%A0NG%20FILE.png"
+                         alt="">
+                    <div class="card-item-text">
+                        Tất tần tật về 5 định dạng file thường gặp ...
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="my-card">
+            <a href="">
+                <div class="card-item">
+                    <img class="card-item-img"
+                         src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/google%20extension.png"
+                         alt="">
+                    <div class="card-item-text">
+                        Tất tần tật về 5 định dạng file thường gặp ...
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="my-card">
+            <a href="">
+                <div class="card-item">
+                    <img class="card-item-img"
+                         src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/Wacom%20hay%20Ipad.png"
+                         alt="">
+                    <div class="card-item-text">
+                        Tất tần tật về 5 định dạng file thường gặp ...
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="my-card">
+            <a href="">
+                <div class="card-item">
+                    <img class="card-item-img"
+                         src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/procreate.png"
+                         alt="">
+                    <div class="card-item-text">
+                        Tất tần tật về 5 định dạng file thường gặp ...
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
