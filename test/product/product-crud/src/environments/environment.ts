@@ -4,7 +4,17 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/'
+  apiUrl: 'http://localhost:8080/',
+  firebaseConfig: {
+    apiKey: 'AIzaSyA1NU81ncGrHvwxASomNg1zPKf-OAeiyGo',
+    authDomain: 'product-shoes.firebaseapp.com',
+    databaseURL: 'https://product-shoes-default-rtdb.firebaseio.com',
+    projectId: 'product-shoes',
+    storageBucket: 'product-shoes.appspot.com',
+    messagingSenderId: '625443629365',
+    appId: '1:625443629365:web:b75601927fae8983a4047c',
+    measurementId: 'G-NE1QEXNQX1'
+  }
 };
 
 /*

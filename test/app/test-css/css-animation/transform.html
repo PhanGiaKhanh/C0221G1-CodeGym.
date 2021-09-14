@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: auto;
+            height: 100%;
+        }
+        body {
+            /*display: flex;*/
+            /*flex-wrap: wrap;*/
+            justify-content: center;
+            align-items: center;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 100%;
+            background: #0fd821;
+            color: red;
+            transition: 2s linear;
+        }
+        .circle:hover {
+            /*transform: scale(1.5);*/
+            transform: rotate(360deg);
+            background: slategray;
+            color: black;
+        }
+        .btn1 {
+            transition: 0.5s!important;
+        }
+        .btn1:hover {
+            transform: rotate(360deg)!important;
+        }
+        .btn2 {
+            transition: 1s!important;
+        }
+        .btn2:hover {
+            transform: rotateX(360deg)!important;
+        }
+        .btn3 {
+            transition: 1s!important;
+        }
+        .btn3:hover {
+            transform: rotateY(360deg)!important;
+        }
+        .btn4 {
+            transition: .1s!important;
+        }
+        .btn4:hover {
+            transform: skew(50deg, 0deg)!important;
+        }
+        .btn5 {
+            transition: .2s!important;
+        }
+        .btn5:hover {
+            transform: translateY(-10px)!important;
+        }
+        .btn6 {
+            transition: .2s!important;
+        }
+        .btn6:hover {
+            transform: translateY(10px)!important;
+        }
+        .btn7 {
+            transition: .2s!important;
+        }
+        .btn7:hover {
+            transform: translateY(10px)!important;
+            background: yellowgreen!important;
+        }
+    </style>
+    <link rel="stylesheet" href="../../../bootstrap4/bootstrap.min.css">
+</head>
+<body>
+<div class="circle">Hello guy</div>
+<div class="circle">Hello guy</div>
+<div>
+    <button type="button" class="btn btn-outline-primary btn1">Primary</button>
+    <button type="button" class="btn btn-outline-secondary btn2">Secondary</button>
+    <button type="button" class="btn btn-outline-success btn3">Success</button>
+    <button type="button" class="btn btn-outline-danger btn4">Danger</button>
+    <button type="button" class="btn btn-outline-warning btn5">Warning</button>
+    <button type="button" class="btn btn-outline-info btn6">Info</button>
+    <button type="button" class="btn btn-outline-light btn7">Light</button>
+    <button type="button" class="btn btn-outline-dark btn8">Dark</button>
+</div>
+</body>
+</html>
