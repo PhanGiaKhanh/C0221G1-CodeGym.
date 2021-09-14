@@ -2,9 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d2fd35-b1a8-4435-96b8-0bbf983c4590" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/app/test-css/css-animation/transform.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/bootstrap4/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/bootstrap4/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/app/test-css/card/card-dep.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/app/test-css/nav/create-menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/library/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" afterDir="false" />
@@ -15,218 +51,9 @@
       <change beforePath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/test/test-khoa-pham" beforeDir="false" afterPath="$PROJECT_DIR$/module5/test/test-khoa-pham" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/scroll/thanh-cuon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/Test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/list-product.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/list-product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/test-css/animation-keyframes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/test-css/before-after.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/test-css/currentColor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/test-css/img-zoom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/test-css/input-text.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/app/test-css/scroll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/carouse.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/carouse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/clickDropdown.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/input.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/input.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/inputDate.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/lickdroup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/lickdroup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/navbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/navbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/e2e/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/.idea/src.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/bootstrap/load-css.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/component/paypal/payal-show/payal-show.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/component/paypal/payal-show/payal-show.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/component/paypal/payal-show/payal-show.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/component/paypal/paypal-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/component/paypal/paypal-show/paypal-show.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/component/paypal/paypal-show/paypal-show.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/component/paypal/paypal-show/paypal-show.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/component/paypal/paypal.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/format/format-cart.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/model/currency.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/model/medicine-cart.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/app/service/cart.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal-backend/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/.idea/paypal.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/node_modules/creditcardpayments/creditCardPayments.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/node_modules/creditcardpayments/creditCardPayments.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/node_modules/creditcardpayments/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/java/com/example/demo1/Demo1Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/java/com/example/demo1/config/PaypalConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/java/com/example/demo1/config/PaypalPaymentIntent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/java/com/example/demo1/config/PaypalPaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/java/com/example/demo1/controller/PaymentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/java/com/example/demo1/model/Voucher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/java/com/example/demo1/model/service/PaypalService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/java/com/example/demo1/util/Utils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/resources/templates/cancel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/main/resources/templates/success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/paypal/demo1/src/test/java/com/example/demo1/Demo1ApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/ProductBackendApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/controller/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/controller/SecurityController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/jwt/JwtFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/jwt/JwtUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/ProductType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/AccountRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/reponse/JwtResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/reponse/MessageResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/request/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/request/ResetPassRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/request/SignupRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/entity/security/request/VerifyRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/repository/IAccountRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/repository/IProductRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/repository/IProductTypeRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/repository/IRoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/IAccountService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/IGeneralService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/IProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/IProductTypeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/IRoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/imple/ProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/imple/ProductTypeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/imple/security/AccountDetailServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/imple/security/AccountDetailsImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/imple/security/AccountServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/java/com/example/productbackend/model/service/imple/security/RoleServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-backend/src/test/java/com/example/productbackend/ProductBackendApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/e2e/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/bootstrap/load-css.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/layout/header/header.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/layout/header/header.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/layout/header/header.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/layout/home/home.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/layout/home/home.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/layout/home/home.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-create/product-create.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-create/product-create.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-create/product-create.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-edit/product-edit.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-edit/product-edit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-edit/product-edit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-list/product-list.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-list/product-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-list/product-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/component/product/product.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/data/db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/model/product-type.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/model/product.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/service/product.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/service/security/auth.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/service/security/share.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/app/service/security/token-storage.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/angular.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/angular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/angular9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/angular9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/bootstrap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/css.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/html.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/iconKiemtra.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/java.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/java.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/js.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/nodejs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/spring.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/web1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/web2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/assets/img/web3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/test/product/product-crud/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/bootstrap4/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/test/library/bootstrap4/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/bootstrap4/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/library/bootstrap4/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +71,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1qVBTiR9tMp33wBs6bowuu0ReBi" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -254,15 +84,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project-Module/Spring2/airline_tickket/gitNew/FrontEnd/airline-tickets-agency-management" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\library" />
       <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\app\test-css\css-animation" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\library" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -280,7 +112,8 @@
       <workItem from="1627251004918" duration="22000" />
       <workItem from="1627251027914" duration="791000" />
       <workItem from="1631572083614" duration="4465000" />
-      <workItem from="1631581007209" duration="608000" />
+      <workItem from="1631581007209" duration="10798000" />
+      <workItem from="1631600160036" duration="11234000" />
     </task>
     <servers />
   </component>
@@ -288,9 +121,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1627251971606">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1631614467906">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1627251971606" />
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1631614467906" />
   </component>
 </project>
