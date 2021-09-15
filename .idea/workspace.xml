@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d2fd35-b1a8-4435-96b8-0bbf983c4590" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/app/test-css/img-introduce/img-1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" afterDir="false" />
@@ -13,6 +12,22 @@
       <change beforePath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/test/test-khoa-pham" beforeDir="false" afterPath="$PROJECT_DIR$/module5/test/test-khoa-pham" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app/test-css/card/card-dep-text.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app/test-css/css-animation/transform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app/test-css/img-introduce/img-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app/test-css/img-zoom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/carouse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/carouse.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/clickDropdown.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/input.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/input.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/inputDate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lickdroup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lickdroup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/scroll/thanh-cuon.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +62,16 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\library" />
-      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\app\test-css\css-animation" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\library" />
       <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\module6" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\app\test-css" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\app\test-css\input" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\app\test-css\nav" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\library" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -77,7 +95,8 @@
       <workItem from="1631658945648" duration="5157000" />
       <workItem from="1631667418100" duration="7734000" />
       <workItem from="1631686603932" duration="12421000" />
-      <workItem from="1631715094677" duration="4899000" />
+      <workItem from="1631715094677" duration="5555000" />
+      <workItem from="1631742942221" duration="644000" />
     </task>
     <servers />
   </component>
