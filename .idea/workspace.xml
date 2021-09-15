@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d2fd35-b1a8-4435-96b8-0bbf983c4590" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/app/test-css/card/card-zoom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/app/test-css/img-introduce/img-1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" afterDir="false" />
@@ -76,7 +76,8 @@
       <workItem from="1631625705884" duration="6306000" />
       <workItem from="1631658945648" duration="5157000" />
       <workItem from="1631667418100" duration="7734000" />
-      <workItem from="1631686603932" duration="9561000" />
+      <workItem from="1631686603932" duration="12421000" />
+      <workItem from="1631715094677" duration="4899000" />
     </task>
     <servers />
   </component>
