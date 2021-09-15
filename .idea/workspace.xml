@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d2fd35-b1a8-4435-96b8-0bbf983c4590" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/app/test-css/card/card-dep-text.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/app/test-css/card/card-zoom.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" afterDir="false" />
@@ -13,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/test/test-khoa-pham" beforeDir="false" afterPath="$PROJECT_DIR$/module5/test/test-khoa-pham" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/test-css/card/card-dep.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/test-css/card/card-dep.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project-Module/Spring2/airline_tickket/gitNew/FrontEnd/airline-tickets-agency-management" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project-Module/Spring2/airline_tickket/GitTong/FrontEnd/airline-tickets-agency-management" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
@@ -74,7 +73,10 @@
       <workItem from="1631572083614" duration="4465000" />
       <workItem from="1631581007209" duration="10798000" />
       <workItem from="1631600160036" duration="12583000" />
-      <workItem from="1631625705884" duration="2615000" />
+      <workItem from="1631625705884" duration="6306000" />
+      <workItem from="1631658945648" duration="5157000" />
+      <workItem from="1631667418100" duration="7734000" />
+      <workItem from="1631686603932" duration="9561000" />
     </task>
     <servers />
   </component>
@@ -82,9 +84,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1631614467906">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1631690138050">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1631614467906" />
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1631690138050" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1631663836626">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1631663836626" />
   </component>
 </project>

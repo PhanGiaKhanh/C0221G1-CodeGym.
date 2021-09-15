@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card-zoom</title>
+    <link rel="stylesheet" href="../../../library/bootstrap4/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        html, body {
+            width: auto;
+            height: 100%;
+        }
+
+        a {
+            color: black;
+        }
+
+        .container {
+            padding: 120px;
+        }
+        .cards-zoom {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col-zoom {
+            width: 25%;
+            height: auto;
+            border-radius: 20px;
+            border: 10px solid white;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .card-zoom {
+            overflow: hidden;
+            border-radius: inherit;
+            box-shadow: 0 5px 10px #999;
+        }
+        .col-zoom .card-img {
+            border-radius: 20px;
+            transition: .3s linear;
+        }
+
+        .col-zoom:hover .card-img {
+            transform: scale(1.1);
+        }
+        .card-content {
+            width: 258px;
+            height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            padding-bottom: 20px;
+            background: rgba(66, 66, 66, .6);
+            border-radius: inherit;
+            position: absolute;
+            bottom: 0;
+            transition: .3s ease-out;
+            opacity: 0;
+        }
+        .col-zoom:hover .card-content {
+            height: 258px;
+            opacity: 1;
+        }
+
+        .card-content a {
+            margin: 0 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="../../../library/bootstrap4/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="cards-zoom">
+        <div class="col-zoom">
+            <div class="card-zoom">
+                <img class="card-img"
+                     src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/5%20%C4%90%E1%BB%8ANH%20D%E1%BA%A0NG%20FILE.png"
+                     alt="">
+                <div class="card-content">
+                    <a href="" class="btn btn-warning text-white">Close</a>
+                    <a href="" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-zoom">
+            <div class="card-zoom">
+                <img class="card-img"
+                     src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/google%20extension.png"
+                     alt="">
+                <div class="card-content">
+                    <a href="" class="btn btn-warning text-white">Close</a>
+                    <a href="" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-zoom">
+            <div class="card-zoom">
+                <img class="card-img"
+                     src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/Wacom%20hay%20Ipad.png"
+                     alt="">
+                <div class="card-content">
+                    <a href="" class="btn btn-warning text-white">Close</a>
+                    <a href="" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-zoom">
+            <div class="card-zoom">
+                <img class="card-img"
+                     src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/procreate.png"
+                     alt="">
+                <div class="card-content">
+                    <a href="" class="btn btn-warning text-white">Close</a>
+                    <a href="" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-zoom">
+            <div class="card-zoom">
+                <img class="card-img"
+                     src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/5%20%C4%90%E1%BB%8ANH%20D%E1%BA%A0NG%20FILE.png"
+                     alt="">
+                <div class="card-content">
+                    <a href="" class="btn btn-warning text-white">Close</a>
+                    <a href="" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-zoom">
+            <div class="card-zoom">
+                <img class="card-img"
+                     src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/google%20extension.png"
+                     alt="">
+                <div class="card-content">
+                    <a href="" class="btn btn-warning text-white">Close</a>
+                    <a href="" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-zoom">
+            <div class="card-zoom">
+                <img class="card-img"
+                     src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/Wacom%20hay%20Ipad.png"
+                     alt="">
+                <div class="card-content">
+                    <a href="" class="btn btn-warning text-white">Close</a>
+                    <a href="" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-zoom">
+            <div class="card-zoom">
+                <img class="card-img"
+                     src="http://itplus-academy.edu.vn//upload/c47d9c29fc44c2b7996a2613aec3c1f9/files/procreate.png"
+                     alt="">
+                <div class="card-content">
+                    <a href="" class="btn btn-warning text-white">Close</a>
+                    <a href="" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
