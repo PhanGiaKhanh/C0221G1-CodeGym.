@@ -2,9 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d2fd35-b1a8-4435-96b8-0bbf983c4590" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/bootstrap4/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/bootstrap4/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/my-css/cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/my-css/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/my-css/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/my-css/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/my-css/product-details.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/library/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module6/sprint3/product-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/card/card-img-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/card/card-zoom-hidden.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/scroll/coding-snow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/scroll/scroll-hidden1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-css/library/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-css/library/popper.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module4/03_views_thymeleaf/exercise/product_management/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/module4/03_views_thymeleaf/exercise/product_management/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/05_csdl_orm/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/05_csdl_orm/practice/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/09_aop_exception_handing/practice/b01_import_aspect_log_grable/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/09_aop_exception_handing/practice/b01_import_aspect_log_grable/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/09_aop_exception_handing/practice/b02_use_exceptionHandle_grable/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/09_aop_exception_handing/practice/b02_use_exceptionHandle_grable/customer-management" afterDir="false" />
@@ -12,22 +68,6 @@
       <change beforePath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/test/test-khoa-pham" beforeDir="false" afterPath="$PROJECT_DIR$/module5/test/test-khoa-pham" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/test-css/card/card-dep-text.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/test-css/css-animation/transform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/test-css/img-introduce/img-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/test-css/img-zoom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/carouse.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/carouse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/clickDropdown.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/input.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/input.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/inputDate.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lickdroup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lickdroup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/navbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/navbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/scroll/thanh-cuon.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +78,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -58,20 +99,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project-Module/Spring2/airline_tickket/GitTong/FrontEnd/airline-tickets-agency-management" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project-Module/Spring2/Ve" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\library" />
-      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\module6\sprint3\library\my-css" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\my-css\app\test-css\card" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\my-css\app\test-css\input" />
       <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\module6" />
       <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\app\test-css" />
-      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\app\test-css\input" />
-      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\app\test-css\nav" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\module6\sprint3" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\my-css\library" />
       <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test\library" />
+      <recent name="D:\CodeGym\C0221G1_Phan_Gia_Khanh\test" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -96,7 +140,17 @@
       <workItem from="1631667418100" duration="7734000" />
       <workItem from="1631686603932" duration="12421000" />
       <workItem from="1631715094677" duration="5555000" />
-      <workItem from="1631742942221" duration="644000" />
+      <workItem from="1631742942221" duration="4535000" />
+      <workItem from="1631756757044" duration="5507000" />
+      <workItem from="1631774201206" duration="8883000" />
+      <workItem from="1631798777196" duration="4618000" />
+      <workItem from="1631841781290" duration="1593000" />
+      <workItem from="1631873630488" duration="598000" />
+      <workItem from="1631886316273" duration="499000" />
+      <workItem from="1631890143828" duration="3391000" />
+      <workItem from="1631917060459" duration="8368000" />
+      <workItem from="1631926707941" duration="14004000" />
+      <workItem from="1631946245966" duration="13642000" />
     </task>
     <servers />
   </component>
@@ -104,13 +158,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1631690138050">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1631951103362">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1631690138050" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1631663836626">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1631951103362" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1631921801128">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1631663836626" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1631921801128" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1631764005102">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1631764005102" />
   </component>
 </project>

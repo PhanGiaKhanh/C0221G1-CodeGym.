@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            /*display: flex;*/
+            /*flex-wrap: wrap;*/
+        }
+        .my-card {
+            margin: 10px 0;
+            display: flex;
+            box-sizing: border-box;
+        }
+        .my-card img, .my-card .my-card-content {
+            width: 50%;
+            background: #f5f5f5;
+        }
+        .my-card img {
+        }
+        .my-card .my-card-content {
+            padding: 20px;
+        }
+        .my-card:nth-child(even) img {
+            order:2;
+            margin-left: 10px;
+        }
+        .my-card:nth-child(odd) img {
+            margin-right: 10px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="../../../library/bootstrap4/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <section class="my-card">
+        <img src="../../../img/hinh1.jpg" alt="">
+        <div class="my-card-content">
+            <h3>Acrylic Painting One</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.
+            </p>
+        </div>
+    </section>
+    <section class="my-card">
+        <img src="../../../img/hinh2.jpg" alt="">
+        <div class="my-card-content">
+            <h3>Acrylic Painting One</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.
+            </p>
+        </div>
+    </section>
+    <section class="my-card">
+        <img src="../../../img/hinh3.jpg" alt="">
+        <div class="my-card-content">
+            <h3>Acrylic Painting One</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.
+            </p>
+        </div>
+    </section>
+    <section class="my-card">
+        <img src="../../../img/hinh4.jpg" alt="">
+        <div class="my-card-content">
+            <h3>Acrylic Painting One</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.
+            </p>
+        </div>
+    </section>
+    <section class="my-card">
+        <img src="../../../img/hinh5.jpg" alt="">
+        <div class="my-card-content">
+            <h3>Acrylic Painting One</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.
+            </p>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

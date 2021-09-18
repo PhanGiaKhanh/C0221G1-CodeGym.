@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .div   {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!------------------------------------------------------------>
+    <div class="div">
+        I am div 1
+    </div>
+    <!--------------------------------------------------------------->
+    <div class="div" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+        I am div 2
+    </div>
+    <!-------------------------------------------------------------->
+    <div class="div" data-aos="fade-right">
+        I am div 3
+    </div>
+    <!-- ------------------------------------------------------------->
+    <div class="div"  data-aos="fade-up">
+        I am div 4
+    </div>
+    <!-- ------------------------------------------------------------->
+    <div class="div"  data-aos="zoom-in">
+        I am div 5
+    </div>
+    <!-- ------------------------------------------------------------->
+    <div class="div" data-aos="flip-up">
+        I am div 6
+    </div>
+    <!-- ------------------------------------------------------------->
+</div>
+<h2>Move vertical scroller</h2>
+<div id="show-div">
+    welcome to dotprogramming.blogspot.com <br>
+    welcome to dotprogramming.blogspot.com <br>
+    welcome to dotprogramming.blogspot.com <br>
+    welcome to dotprogramming.blogspot.com <br>
+    welcome to dotprogramming.blogspot.com <br>
+    welcome to dotprogramming.blogspot.com <br>
+</div>
+<div id="hide-div" style="display: none"></div>
+<div style="height: 600px; background: #999"></div>
+<div>
+    <div class="a">
+        A
+    </div>
+</div>​
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 3000,
+        once: true,
+    });
+</script>
+</body>
+</html>

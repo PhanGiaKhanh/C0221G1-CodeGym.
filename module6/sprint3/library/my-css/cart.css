@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f1f1f1;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.cart {
+    margin-top: 72px;
+}
+.cart h1{
+}
+.cart img {
+    width: 70px;
+    height: 70px;
+}
+.cart-quantity {
+    width: 60px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #999;
+    outline: #999;
+    margin: 0 10px;
+}
+.cart table thead {
+    color: white;
+    background: #ff6643;
+}
+.cart table tbody tr th,
+.cart table tbody tr td:nth-child(3),
+.cart table tbody tr td:nth-child(4),
+.cart table tbody tr td:nth-child(5),
+.cart table tbody tr td:last-child {
+    vertical-align: middle;
+}
+.cart table tbody tr td:nth-child(4) i {
+    color: blue;
+}

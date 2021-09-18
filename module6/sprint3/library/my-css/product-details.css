@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f1f1f1;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.product {
+    margin-top: 100px;
+}
+
+.product-img {
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+}
+
+.product-info {
+    padding: 20px 40px;
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+.product-title {
+    color: #FFA500;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.product-rate {
+    font-size: 20px;
+    padding: 10px 0 20px;
+}
+
+.product-content {
+    font-size: 20px;
+}
+
+.comment {
+    margin-top: 40px;
+}
+
+.comment .col-10 {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.commented {
+    padding: 10px 0;
+    display: flex;
+}
+.commented-number {
+    font-size: 25px;
+}
+.commented .commented-icon {
+    font-size: 40px;
+    padding: 5px 30px;
+}
+.commented-content-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.comment-content-day {
+    color: red;
+}
+@media (max-width: 768px) {
+
+}

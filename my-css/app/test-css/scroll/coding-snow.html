@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal Website Elements On Scroll</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body{
+            background: #1D212B;
+        }
+
+        section{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section:nth-child(1){
+            color: #fff;
+        }
+
+        section:nth-child(2){
+            color: #1D212B;
+            background: #fff;
+        }
+
+        section:nth-child(3){
+            color: #fff;
+        }
+
+        section:nth-child(4){
+            color: #1D212B;
+            background: #fff;
+        }
+
+        section .container{
+            margin: 100px;
+        }
+
+        section h1{
+            font-size: 60px;
+        }
+
+        section h2{
+            font-size: 40px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        section .cards{
+            display: flex;
+        }
+
+        section .cards .text-card{
+            background: #2696E9;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        section .cards .text-card h3{
+            font-size: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 900px){
+            section h1{
+                font-size: 40px;
+            }
+
+            section .cards{
+                flex-direction: column;
+            }
+        }
+
+        .reveal{
+            position: relative;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: all 2s ease;
+        }
+
+        .reveal.active{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <h1>Reveal Elements On Scroll</h1>
+</section>
+<section>
+    <div class="container reveal">
+        <h2>Your Title</h2>
+        <div class="cards">
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container reveal">
+        <h2>Your Title</h2>
+        <div class="cards">
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container reveal">
+        <h2>Your Title</h2>
+        <div class="cards">
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="text-card">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+        var reveals = document.querySelectorAll('.reveal');
+
+        for(var i = 0; i < reveals.length; i++){
+
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+            var revealpoint = 50;
+
+            if(revealtop < windowheight - revealpoint){
+                reveals[i].classList.add('active');
+            }
+            else{
+                reveals[i].classList.remove('active');
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

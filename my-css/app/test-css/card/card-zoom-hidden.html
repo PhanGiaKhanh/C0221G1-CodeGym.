@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../module6/sprint3/library/bootstrap4/bootstrap.min.css">
+    <style>
+        .my-card {
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+
+        .my-card-zoom {
+            width: inherit;
+            height: inherit;
+            position: relative;
+            transition: .3s linear;
+        }
+
+        .my-card:hover .my-card-zoom{
+            transform: scale(1.1);
+        }
+        .my-card-cover {
+            width: inherit;
+            height: 0;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            transition: .3s linear;
+        }
+        .my-card:hover .my-card-cover{
+            height: 100%;
+        }
+        .my-card-img {
+            width: inherit;
+            height: inherit;
+        }
+
+        .my-card-content {
+            width: inherit;
+            height: auto;
+            color: white;
+            padding: 2px;
+            text-align: center;
+            position: absolute;
+            background: rgba(255, 0, 0, 0.5);
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="my-card">
+    <div class="my-card-zoom">
+        <div class="my-card-cover">
+        </div>
+        <img class="my-card-img" src="../../../../module6/sprint3/img/chef.jpg"/>
+        <div class="my-card-content"> Hello guy</div>
+    </div>
+</div>
+</body>
+</html>
