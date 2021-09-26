@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table sticky</title>
+    <style>
+        .table-scroll {
+            position: relative;
+            width:100%;
+            z-index: 1;
+            margin: auto;
+            overflow: auto;
+            height: 350px;
+        }
+        .table-scroll table {
+            width: 100%;
+            /*min-width: 1280px;*/
+            /*margin: auto;*/
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .table-scroll th,
+        .table-scroll td {
+            padding: 5px 10px;
+            border: 1px solid #f8f8f8;
+            background: #fff;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .table-scroll thead th:first-child,
+        .table-scroll tbody th:first-child,
+        .table-scroll tfoot th:first-child {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 0;
+        }
+        .table-scroll tbody th:first-child {
+            z-index: 2;
+            background: darkslategray;
+            color: #fff;
+        }
+        .table-scroll thead th {
+            background: lightseagreen;
+            color: #fff;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        /* safari and ios need the tfoot itself to be position:sticky also */
+        .table-scroll tfoot,
+        .table-scroll tfoot th,
+        .table-scroll tfoot td {
+            position: -webkit-sticky;
+            position: sticky;
+            bottom: 0;
+            background: midnightblue;
+            color: #fff;
+            z-index:4;
+        }
+        .table-scroll table thead th:first-child,
+        .table-scroll table tfoot th:first-child {
+            z-index: 5;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;               /* width of vertical scrollbar */
+            height: 6px;              /* height of horizontal scrollbar ← You're missing this */
+            border: 1px solid #d5d5d5;
+            background: lightgray;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 255, 0.41);
+            border-radius: 4px;
+        }
+
+        .table-scroll table .user {
+            display: flex;
+            align-items: center;
+            gap: 0 10px;
+        }
+        .table-scroll table .user img {
+            width: 30px;
+            height: 30px;
+            border-radius: 100rem;
+            object-fit: cover;
+            /*flex-shrink: 0; !*Để hình ko bị méo  *!*/
+        }
+    </style>
+</head>
+<body>
+<div class="table-scroll">
+    <table class="main-table">
+        <thead>
+        <tr>
+            <th scope="col">Header 1</th>
+            <th scope="col">Header 2</th>
+            <th scope="col">Header 3 with longer content</th>
+            <th scope="col">Header 4 text</th>
+            <th scope="col">Header 5</th>
+            <th scope="col">Header 6</th>
+            <th scope="col">Header 7</th>
+            <th scope="col">Header 8</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>First top Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 111111111111111</span>
+                </div>
+            </td>
+            <td><a href="#">Cell content longer</a></td>
+            <td>Cell content with more content and more content Cell </td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td><a href="#">Cell content longer</a></td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        <tr>
+            <th>Left Column last</th>
+            <td>Cell content</td>
+            <td>Cell content longer</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+            <td>Cell content</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Footer 1</th>
+            <td>Footer 2</td>
+            <td>Footer 3</td>
+            <td>Footer 4</td>
+            <td>Footer 5</td>
+            <td>Footer 6</td>
+            <td>Footer 7</td>
+            <td>Footer 8</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>

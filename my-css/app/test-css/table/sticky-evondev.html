@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <style>
+        table {
+            width: 100%;
+            /*border: 1px solid #f0f4f8;*/
+            border: 1px solid black;
+        }
+        table th,
+        table td {
+            padding: 15px 30px;
+            text-align: left;
+            vertical-align: middle; /*canh giữa với nhau*/
+            white-space: nowrap; /*không để xuống hàng*/
+        }
+        table th {
+            color: #364d67;
+            font-weight: 600;
+            background: #f1f7fd;
+        }
+        table tbody tr {
+            /*border-top: 1px solid currentColor;*/
+            /*border-bottom: 1px solid black;*/
+        }
+        table .user {
+            display: flex;
+            align-items: center;
+            gap: 0 10px;
+        }
+        table .user img {
+            width: 50px;
+            height: 50px;
+            border-radius: 100rem;
+            object-fit: cover;
+            /*flex-shrink: 0; !*Để hình ko bị méo  *!*/
+        }
+        .sticky-table {
+            overflow: auto;
+            border-left: 1px solid black;
+        }
+
+        .sticky-table thead th:first-child,
+        .sticky-table tbody td:first-child {
+            position: sticky;
+            left: 0;
+            /*border-left: 1px solid black;*/
+        }
+
+        .sticky-table td {
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="sticky-table">
+    <table>
+        <thead>
+        <tr>
+            <th>header1</th>
+            <th>header2</th>
+            <th>header3</th>
+            <th>header4</th>
+            <th>header5</th>
+            <th>header6</th>
+            <th>header7</th>
+            <th>header8</th>
+            <th>header9</th>
+            <th>header10</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 111111111111111</span>
+                </div>
+            </td>
+            <td>Content2</td>
+            <td>Content3</td>
+            <td>Content4</td>
+            <td>Content5</td>
+            <td>Content6</td>
+            <td>Content7</td>
+            <td>Content8</td>
+            <td>Content9</td>
+            <td>Content10</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Content2</td>
+            <td>Content3</td>
+            <td>Content4</td>
+            <td>Content5</td>
+            <td>Content6</td>
+            <td>Content7</td>
+            <td>Content8</td>
+            <td>Content9</td>
+            <td>Content10</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Content2</td>
+            <td>Content3</td>
+            <td>Content4</td>
+            <td>Content5</td>
+            <td>Content6</td>
+            <td>Content7</td>
+            <td>Content8</td>
+            <td>Content9</td>
+            <td>Content10</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="user">
+                    <img src="https://source.unsplash.com/random" alt="">
+                    <span>Name 1</span>
+                </div>
+            </td>
+            <td>Content2</td>
+            <td>Content3</td>
+            <td>Content4</td>
+            <td>Content5</td>
+            <td>Content6</td>
+            <td>Content7</td>
+            <td>Content8</td>
+            <td>Content9</td>
+            <td>Content10</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
