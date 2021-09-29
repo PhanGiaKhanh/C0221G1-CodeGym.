@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d2fd35-b1a8-4435-96b8-0bbf983c4590" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/nav/test/click-outside-close-menu-B4-1-Hay.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/nav/test/click-outside-close-menu-B4-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/nav/test/click-outside-close-menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/scroll/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/table/my-sticky.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/table/sticky-evondev.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/table/sticky-good.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/table/sticky-supper.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/table/sticky1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/table/sticky2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/table/sticky3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/text/ellipsis-to-multiline-text.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/text/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-css/app/test-css/text/PVCuong-tooltip.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/01_spring_mvc_overview/practice/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/module4/02_spring_controller/practice/customer-management" afterDir="false" />
@@ -26,9 +13,7 @@
       <change beforePath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/08_modules_dependency_injection/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" beforeDir="false" afterPath="$PROJECT_DIR$/module5/09_connect_back-end/product-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module5/test/test-khoa-pham" beforeDir="false" afterPath="$PROJECT_DIR$/module5/test/test-khoa-pham" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module6/sprint3/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/module6/sprint3/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-css/app/test-css/nav/create-menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/my-css/app/test-css/nav/create-menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-css/app/test-css/scroll/thanh-cuon.html" beforeDir="false" afterPath="$PROJECT_DIR$/my-css/app/test-css/scroll/thanh-cuon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-css/app/test-css/table/my-sticky.html" beforeDir="false" afterPath="$PROJECT_DIR$/my-css/app/test-css/table/my-sticky.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project-Module/Hoang/frontend-drug-store-HoangNV/pharmacy-management-frontend" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
@@ -121,7 +106,13 @@
       <workItem from="1632560779434" duration="5876000" />
       <workItem from="1632577282797" duration="5626000" />
       <workItem from="1632609539657" duration="3691000" />
-      <workItem from="1632616876654" duration="1721000" />
+      <workItem from="1632616876654" duration="4321000" />
+      <workItem from="1632644434607" duration="4402000" />
+      <workItem from="1632668055632" duration="428000" />
+      <workItem from="1632696447391" duration="3903000" />
+      <workItem from="1632710941134" duration="1605000" />
+      <workItem from="1632724399106" duration="3628000" />
+      <workItem from="1632819115245" duration="857000" />
     </task>
     <servers />
   </component>
@@ -129,14 +120,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1632112989246">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1632819373682">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1632112989246" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1631921801128">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1632819373682" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1632699792492">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1631921801128" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1632699792492" />
     <state x="346" y="49" width="670" height="58" key="search.everywhere.popup" timestamp="1632611485555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

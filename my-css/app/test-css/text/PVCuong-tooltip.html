@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tooltip PVCuong</title>
+    <style>
+        body {
+            font-size: 18px;
+        }
+
+        #wrapper {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px 0;
+        }
+
+        /*#region TOOLTIP HTML CSS author PHAN VĂN CƯƠNG - https://www.youtube.com/watch?v=z38my_pl3KU&t=19s*/
+        a {
+            text-decoration: none;
+        }
+
+        a[data-tooltip] {
+            border-bottom: 1px dotted #333;
+            position: relative;
+        }
+
+        a[data-tooltip]:before {
+            content: attr(data-tooltip);
+            background-color: #333;
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+            padding: 4px 5px;
+            line-height: 1rem;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: -10%;
+            right: -10%;
+            transform: scale(0);
+            /*opacity: 0;*/
+            transition: .25s ease-in-out;
+        }
+
+        a[data-tooltip]:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #333;
+            position: absolute;
+            bottom: 100%;
+            /*left: 50%;*/
+            /*transform: translateX(-50%);*/
+            left:  calc(50% - 2.5px);
+            transform: scale(0);
+            opacity: 0;
+            transition: .2s ease-in-out;
+        }
+
+        a[data-tooltip]:hover::after {
+            opacity: 1;
+            transform: scale(1);
+            bottom: calc(100% - 5px);
+        }
+        a[data-tooltip]:hover::before {
+            opacity: 1;
+            transform: scale(1);
+            bottom: 100%;
+        }
+        /*#endregion*/
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <h1>Tooltips website with HTML CSS</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit <a href="#" data-tooltip="Lập trình viên tương lai">Phan
+        Gia Khánh</a>. Aliquam aspernatur at commodi debitis dolore eaque
+        eligendi, eos harum impedit, iure libero nisi odit officia, quidem reprehenderit saepe vitae voluptas
+        voluptates.</p>
+    <p>Aspernatur dolores doloribus eligendi est explicabo, facere id impedit ipsam perferendis repudiandae temporibus
+        voluptatum! Alias dignissimos <a href="#" data-tooltip="Thầy Cương Unitop.vn">Phan Văn Cương</a> rem vel?
+        Aliquam asperiores corporis delectus deserunt dolores facilis molestiae
+        quod recusandae rerum sit!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur at commodi debitis dolore eaque
+        eligendi, eos harum impedit, iure libero nisi odit officia, quidem reprehenderit saepe vitae voluptas
+        voluptates.</p>
+    <p>Aspernatur dolores doloribus eligendi est explicabo, facere id impedit ipsam perferendis repudiandae temporibus
+        voluptatum! Alias dignissimos rem vel? Aliquam asperiores corporis delectus deserunt dolores facilis molestiae
+        quod recusandae rerum sit!</p>
+</div>
+</body>
+</html>
